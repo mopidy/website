@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Mopidy</title>
+    <link rel="stylesheet" type="text/css" href="/media/style/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/media/style/mopidy.css">
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      (function() {
+        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+        t.parentNode.insertBefore(s, t);
+      })();
+      /* ]]> */
+    </script>
+  </head>
+
+  <body>
+
+    <div class="box focus">
+      <h1>Mopidy &#x266a;</h1>
+
+      <p>
+      Mopidy is a music server which can play music from Spotify, or from your
+      local hard drive.
+      </p>
+
+      <p class="alternative next">
+        Skip to <a href="/docs/master/">latest release docs</a>
+        or <a href="/docs/develop/">development docs</a>
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>It's a server</h2>
+
+      <p>
+      Mopidy is a server without any graphical user interface. It runs on the
+      Linux computer with the speakers.
+      </p>
+
+      <div class="center">
+        <img src="/media/images/penguin_speakers.jpg" width="234"
+        height="146" alt="Penguin speakers">
+      </div>
+
+      <p>
+      Mopidy keep track of the music, your playlists, and the clients that
+      commands it.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Use your favorite client</h2>
+
+      <p>
+      You can use your favorite <a
+        href="http://en.wikipedia.org/wiki/Music_Player_Daemon">MPD</a> client
+      to search for music and manage the playlist. MPD clients are available
+      for many platforms, including Windows, Mac OS&nbsp;X, Linux, Android, and
+      iOS.
+      </p>
+
+      <div class="center">
+        <img src="/media/images/android_skateboard.png" width="450"
+        height="155" alt="Android's skating">
+      </div>
+
+      <p>
+      In other words, you can control the music from any computer or
+      smartphone in your home.
+      </p>
+    </div>
+
+    <div class="box">
+      <div class="icon">
+        <img src="/media/images/spotify-core-128x128.png" width="128"
+        height="128" alt="Spotify Core">
+      </div>
+
+      <h2>Stream from Spotify</h2>
+
+      <p>
+      If you got a subscription for <a
+        href="http://www.spotify.com/">Spotify</a> Premium, then Mopidy can
+      stream music from Spotify's archive of 10 million tracks. You'll never
+      need to refill your collection with new music again.
+      </p>
+    </div>
+
+    <div class="box focus">
+      <h2>Ready to get started?</h2>
+
+      <p class="next">
+      <a href="/docs/master/installation/">Install the latest release</a>
+      </p>
+    </div>
+
+    <div class="box ubuntu">
+      <div class="icon">
+        <img src="/media/images/ubuntu-cof-128x128.png" width="128"
+        height="128" alt="Ubuntu">
+      </div>
+      <h2>Running Ubuntu?</h2>
+
+      <p>
+      If you're running Ubuntu you can install Mopidy from APT in a matter of
+      seconds. Copy the following commands into the terminal, then follow the
+      link in step&nbsp;5.
+      </p>
+
+      <ol>
+        <li>Add APT repository key
+          <code>wget -q -O - http://apt.mopidy.com/mopidy.gpg | sudo apt-key add -</code>
+        </li>
+        <li>Add APT repository
+          <code>sudo wget -q -O /etc/apt/sources.list.d/mopidy.list http://apt.mopidy.com/mopidy.list</code>
+        </li>
+        <li>Update package cache
+          <code>sudo apt-get update</code>
+        </li>
+        <li>Install Mopidy
+          <code>sudo apt-get install mopidy</code>
+        </li>
+        <li>Continue with the <a href="/docs/master/settings/">the
+          settings</a></li>
+      </ol>
+    </div>
+
+    <div class="box" style="position: relative;">
+      <a href="https://github.com/mopidy/mopidy"><img style="position: absolute;
+        top: 0; right: 0; border: 0;" src="/media/images/fork_me_at_github.png"
+        alt="Fork me on GitHub"></a>
+
+      <h2>Join the team</h2>
+
+      <p>
+      The <a href="https://github.com/mopidy/mopidy/issues/labels/wishlist">
+        list of ideas</a> that we could transform into cool and useful features
+      is ever growing.
+      </p>
+
+      <p>
+      To help out making Mopidy even better, fork us at <a
+        href="https://github.com/mopidy/mopidy">GitHub</a> and join us at
+      <code>#mopidy</code> at Freenode.
+      </p>
+    </div>
+
+    <div class="box">
+      <div class="donate">
+        <div>
+          <a class="FlattrButton" style="display: none;"
+            href="http://www.mopidy.com/"></a>
+        </div>
+        <div>
+          <a href='http://www.pledgie.com/campaigns/12647'>
+            <img alt="Make a donation to Mopidy"
+            src="http://www.pledgie.com/campaigns/12647.png?skin_name=chrome">
+          </a>
+        </div>
+      </div>
+
+      <h2>Donate</h2>
+
+      <p>You can show your appreciation by donating to the project.</p>
+    </div>
+
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-15510432-1");
+        pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
+
+  </body>
+</html>

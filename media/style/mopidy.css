@@ -1,0 +1,86 @@
+html {
+    background: #eee;
+    font-family: "Droid Serif", "Georgia", "Times New Roman", "Palatino",
+    "Hoefler Text", "Baskerville", serif;
+    font-size: 180%;
+    line-height: 1.4em;
+}
+body {
+    max-width: 20em;
+    margin: 0 auto;
+}
+div.box {
+    background: white;
+    padding: 1em;
+    margin: 4em 0;
+    -moz-border-radius: 10px;
+    border-radius: 15px;
+    -webkit-box-shadow: 5px 5px 5px #ddd;
+    -moz-box-shadow: 5px 5px 5px #ddd;
+    box-shadow: 5px 5px 5px #ddd;
+}
+div.box.focus {
+    background: #6ba81e;
+    color: white;
+}
+div.box.ubuntu h2 {
+    color: #dd4814;
+}
+div.box.ubuntu p.
+div.box.ubuntu li {
+    font-size: 80%;
+}
+div.icon {
+    float: right;
+}
+h1, h2 {
+    font-family: "Ubuntu", "Arial", "Helvetica", "Lucida Grande",
+    "Verdana", "Gill Sans", sans-serif;
+    line-height: 1.1em;
+}
+h2 {
+    margin: 0.2em 0 0;
+}
+p.next {
+    text-align: right;
+}
+a {
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px dashed;
+}
+img {
+    border: 0;
+}
+code {
+    font-family: "Droid Sans Mono", Menlo, Courier New, Courier, Mono, monospace;
+}
+.box.ubuntu code {
+    background: #dd4814;
+    color: white;
+    display: block;
+    font-size: 12pt;
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    white-space: pre;
+    overflow: auto;
+}
+.box a {
+    color: #6ba81e;
+}
+.box.focus a {
+    color: black;
+}
+.donate div {
+    float: right;
+    padding-left: 1em;
+}
+.donate a {
+    border: 0;
+}
+.alternative {
+    font-size: 60%;
+}
+.center {
+    text-align: center;
+}

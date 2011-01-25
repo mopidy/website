@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Mopidy APT archive</title>
+    <style type="text/css">
+      body {
+        font-family: Ubuntu, sans-serif;
+        max-width: 42em;
+        margin: 0 auto;
+        padding: 1em;
+      }
+      h1, h2 {
+        margin-top: 2em;
+      }
+      pre {
+        background: #eee;
+        border: 1px solid #ddd;
+        font-family: "Andale Mono", monospace;
+        font-size: small;
+        padding: 1em;
+        -webkit-box-shadow: 2px 2px 4px #eee;
+        -moz-box-shadow: 2px 2px 4px #eee;
+        box-shadow: 2px 2px 4px #eee;
+      }
+      #flattr {
+        float: right;
+        margin-left: 1em;
+      }
+    </style>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+      (function() {
+        var s = document.createElement('script');
+        var t = document.getElementsByTagName('script')[0];
+
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+
+        t.parentNode.insertBefore(s, t);
+      })();
+    /* ]]> */
+    </script>
+  </head>
+  <body>
+
+<h1>Mopidy APT archive</h1>
+
+<div id="flattr">
+<a class="FlattrButton" style="display:none;" href="http://www.mopidy.com/"></a>
+</div>
+
+<p>The packages found here should work for all Debian based distributions, but
+are only tested on the latest release of Ubuntu. If you are having problems
+using the packages from this archive, open an issue at
+<a href="http://github.com/mopidy/mopidy/issues">GitHub</a>.</p>
+
+<p>See <a href="http://www.mopidy.com/">www.mopidy.com</a> for information
+about Mopidy.</p>
+
+
+<h2>Howto</h2>
+
+<h3>Add the archive's GPG key</h3>
+
+<pre>
+wget -q -O - http://apt.mopidy.com/mopidy.gpg | sudo apt-key add -
+</pre>
+
+<p>If you want to verify the key, this is its fingerprint:</p>
+
+<pre>
+pub   4096R/271D2943 2010-11-07
+      Key fingerprint = 9E36 464A 7C03 0945 EEB7  6328 78FD 980E 271D 2943
+uid                  Mopidy Archive Automatic Signing Key &lt;archive@mopidy.com&gt;
+sub   4096R/A3C4580E 2010-11-07
+</pre>
+
+<h3>Add archive to sources.list</h3>
+
+<p>Add this to <code>/etc/apt/sources.list</code>, or if you have the directory
+<code>/etc/apt/sources.list.d/</code>, add it to a file called
+<code>mopidy.list</code> in that directory:</p>
+
+<pre>
+# Mopidy APT archive
+deb http://apt.mopidy.com/ stable main contrib non-free
+deb-src http://apt.mopidy.com/ stable main contrib non-free
+</pre>
+
+<h3>Install packages</h3>
+
+<pre>
+sudo apt-get update
+sudo apt-get install mopidy
+</pre>
+
+
+<h2>Browse the archive</h2>
+
+<p>To browse the archive, go to <a href="/dists">/dists</a>.</p>
+
+
+  </body>
+</html>

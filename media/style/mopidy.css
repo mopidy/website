@@ -52,18 +52,30 @@ a {
 img {
     border: 0;
 }
-code {
+code, pre {
     font-family: "Droid Sans Mono", Menlo, Courier New, Courier, Mono, monospace;
-}
-.box.ubuntu code {
-    background: #dd4814;
-    color: white;
     display: block;
     font-size: 12pt;
+    line-height: 1.2em;
     padding: 0.5em 1em;
     margin: 1em 0;
     white-space: pre;
     overflow: auto;
+}
+.box code,
+.box pre {
+    background: #eee;
+    color: black;
+}
+.box.focus code,
+.box.focus pre {
+    background: black;
+    color: white;
+}
+.box.ubuntu code,
+.box.ubuntu pre {
+    background: #dd4814;
+    color: white;
 }
 .box a {
     color: #6ba81e;

@@ -2,7 +2,7 @@ html {
     background: #eee;
     font-family: "Droid Serif", "Georgia", "Times New Roman", "Palatino",
     "Hoefler Text", "Baskerville", serif;
-    font-size: 180%;
+    font-size: 150%;
     line-height: 1.4em;
 }
 body {
@@ -54,7 +54,6 @@ img {
 }
 code, pre {
     font-family: "Droid Sans Mono", Menlo, Courier New, Courier, Mono, monospace;
-    display: block;
     font-size: 12pt;
     line-height: 1.2em;
     padding: 0.5em 1em;

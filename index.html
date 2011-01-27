@@ -110,26 +110,31 @@
 
       <p>
       If you're running Ubuntu you can install Mopidy from APT in a matter of
-      seconds. Copy the following commands into the terminal, then follow the
-      link in step&nbsp;5.
+      seconds. To install Mopidy from the <a href="http://apt.mopidy.com/">
+      Mopidy APT archive</a>, you need to do the following:
       </p>
 
       <ol>
-        <li>Add APT repository key
-          <code>wget -q -O - http://apt.mopidy.com/mopidy.gpg | sudo apt-key add -</code>
-        </li>
-        <li>Add APT repository
-          <code>sudo wget -q -O /etc/apt/sources.list.d/mopidy.list http://apt.mopidy.com/mopidy.list</code>
-        </li>
-        <li>Update package cache
-          <code>sudo apt-get update</code>
-        </li>
-        <li>Install Mopidy
-          <code>sudo apt-get install mopidy</code>
-        </li>
-        <li>Continue with the <a href="/docs/master/settings/">the
-          settings</a></li>
+        <li>Add APT repository key</li>
+        <li>Add APT repository</li>
+        <li>Update package cache</li>
+        <li>Install Mopidy</li>
       </ol>
+
+      <p>
+      Luckily, that is only four commands which you can copy into the terminal:
+      </p>
+
+      <pre>
+wget -q -O - http://apt.mopidy.com/mopidy.gpg | sudo apt-key add -
+sudo wget -q -O /etc/apt/sources.list.d/mopidy.list http://apt.mopidy.com/mopidy.list
+sudo apt-get update
+sudo apt-get install mopidy</pre>
+
+      <p>
+      Then, configure
+      <a href="/docs/master/settings/">Mopidy's settings</a>.
+      </p>
     </div>
 
     <div class="box" style="position: relative;">

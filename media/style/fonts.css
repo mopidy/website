@@ -14,32 +14,32 @@
 
 @font-face {
     font-family: 'Ubuntu';
-    src: url('/media/fonts/ubuntu/Ubuntu-B-webfont.eot');
-    src: local('☺'), url('/media/fonts/ubuntu/Ubuntu-B-webfont.woff') format('woff'), url('/media/fonts/ubuntu/Ubuntu-B-webfont.ttf') format('truetype'), url('/media/fonts/ubuntu/Ubuntu-B-webfont.svg#webfontX4pGz9fc') format('svg');
+    src: url('/media/fonts/Ubuntu/Ubuntu-B-webfont.eot');
+    src: local('☺'), url('/media/fonts/Ubuntu/Ubuntu-B-webfont.woff') format('woff'), url('/media/fonts/Ubuntu/Ubuntu-B-webfont.ttf') format('truetype'), url('/media/fonts/Ubuntu/Ubuntu-B-webfont.svg#webfontX4pGz9fc') format('svg');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Ubuntu';
-    src: url('/media/fonts/ubuntu/Ubuntu-BI-webfont.eot');
-    src: local('☺'), url('/media/fonts/ubuntu/Ubuntu-BI-webfont.woff') format('woff'), url('/media/fonts/ubuntu/Ubuntu-BI-webfont.ttf') format('truetype'), url('/media/fonts/ubuntu/Ubuntu-BI-webfont.svg#webfontX4pGz9fc') format('svg');
+    src: url('/media/fonts/Ubuntu/Ubuntu-BI-webfont.eot');
+    src: local('☺'), url('/media/fonts/Ubuntu/Ubuntu-BI-webfont.woff') format('woff'), url('/media/fonts/Ubuntu/Ubuntu-BI-webfont.ttf') format('truetype'), url('/media/fonts/Ubuntu/Ubuntu-BI-webfont.svg#webfontX4pGz9fc') format('svg');
     font-weight: 700;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Ubuntu';
-    src: url('/media/fonts/ubuntu/Ubuntu-I-webfont.eot');
-    src: local('☺'), url('/media/fonts/ubuntu/Ubuntu-I-webfont.woff') format('woff'), url('/media/fonts/ubuntu/Ubuntu-I-webfont.ttf') format('truetype'), url('/media/fonts/ubuntu/Ubuntu-I-webfont.svg#webfontX4pGz9fc') format('svg');
+    src: url('/media/fonts/Ubuntu/Ubuntu-I-webfont.eot');
+    src: local('☺'), url('/media/fonts/Ubuntu/Ubuntu-I-webfont.woff') format('woff'), url('/media/fonts/Ubuntu/Ubuntu-I-webfont.ttf') format('truetype'), url('/media/fonts/Ubuntu/Ubuntu-I-webfont.svg#webfontX4pGz9fc') format('svg');
     font-weight: 400;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Ubuntu';
-    src: url('/media/fonts/ubuntu/Ubuntu-R-webfont.eot');
-    src: local('☺'), url('/media/fonts/ubuntu/Ubuntu-R-webfont.woff') format('woff'), url('/media/fonts/ubuntu/Ubuntu-R-webfont.ttf') format('truetype'), url('/media/fonts/ubuntu/Ubuntu-R-webfont.svg#webfontX4pGz9fc') format('svg');
+    src: url('/media/fonts/Ubuntu/Ubuntu-R-webfont.eot');
+    src: local('☺'), url('/media/fonts/Ubuntu/Ubuntu-R-webfont.woff') format('woff'), url('/media/fonts/Ubuntu/Ubuntu-R-webfont.ttf') format('truetype'), url('/media/fonts/Ubuntu/Ubuntu-R-webfont.svg#webfontX4pGz9fc') format('svg');
     font-weight: 400;
     font-style: normal;
 }

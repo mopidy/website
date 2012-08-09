@@ -21,13 +21,6 @@ div.box.focus {
     background: #465158;
     color: #e8ecef;
 }
-div.box.ubuntu h2 {
-    color: #dd4814;
-}
-div.box.ubuntu p.
-div.box.ubuntu li {
-    font-size: 80%;
-}
 div.icon {
     float: right;
 }
@@ -62,17 +55,7 @@ code, pre {
 .box code,
 .box pre {
     background: #e8ecef;
-    color: black;
-}
-.box.focus code,
-.box.focus pre {
-    background: black;
-    color: white;
-}
-.box.ubuntu code,
-.box.ubuntu pre {
-    background: #dd4814;
-    color: white;
+    color: #555;
 }
 .box a {
     color: #465158;

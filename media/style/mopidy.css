@@ -1,5 +1,6 @@
 html {
-    background: #eee;
+    background: #e8ecef;
+    color: #555;
     font-family: "Droid Serif", "Georgia", "Times New Roman", "Palatino",
     "Hoefler Text", "Baskerville", serif;
     font-size: 150%;
@@ -11,17 +12,14 @@ body {
 }
 div.box {
     background: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #d8dcdf;
+    margin: 2em 0;
     padding: 1em;
-    margin: 3em 0;
-    -moz-border-radius: 10px;
-    border-radius: 15px;
-    -webkit-box-shadow: 5px 5px 5px #ddd;
-    -moz-box-shadow: 5px 5px 5px #ddd;
-    box-shadow: 5px 5px 5px #ddd;
 }
 div.box.focus {
-    background: #6ba81e;
-    color: white;
+    background: #465158;
+    color: #e8ecef;
 }
 div.box.ubuntu h2 {
     color: #dd4814;
@@ -45,9 +43,9 @@ p.next {
     text-align: right;
 }
 a {
-    color: black;
+    color: #555;
     text-decoration: none;
-    border-bottom: 1px dashed;
+    border-bottom: 1px dotted;
 }
 img {
     border: 0;
@@ -63,7 +61,7 @@ code, pre {
 }
 .box code,
 .box pre {
-    background: #eee;
+    background: #e8ecef;
     color: black;
 }
 .box.focus code,
@@ -77,10 +75,13 @@ code, pre {
     color: white;
 }
 .box a {
-    color: #6ba81e;
+    color: #465158;
+}
+.box a:hover {
+    opacity: 0.8;
 }
 .box.focus a {
-    color: black;
+    color: #e8ecef;
 }
 .alternative {
     font-size: 60%;

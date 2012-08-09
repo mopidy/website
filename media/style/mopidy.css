@@ -82,13 +82,6 @@ code, pre {
 .box.focus a {
     color: black;
 }
-.donate div {
-    float: right;
-    padding-left: 1em;
-}
-.donate a {
-    border: 0;
-}
 .alternative {
     font-size: 60%;
 }

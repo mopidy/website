@@ -24,6 +24,14 @@ div.box.focus {
 div.icon {
     float: right;
 }
+div.icon.soundcloud {
+    background: #f60;
+    background: -webkit-linear-gradient(#f60,#f30);
+    background: -moz-linear-gradient(#f60,#f30);
+    background: -o-linear-gradient(#f60,#f30);
+    background: linear-gradient(#f60,#f30);
+    box-shadow: -1px 0 0 rgba(255,255,255,.08);
+}
 h1, h2 {
     font-family: "Ubuntu", "Arial", "Helvetica", "Lucida Grande",
     "Verdana", "Gill Sans", sans-serif;
@@ -42,6 +50,12 @@ a {
 }
 img {
     border: 0;
+}
+input{
+    display: block;
+    width:100%;
+    margin: 1em 0 1em;
+    font-size: 1.05em;
 }
 code, pre {
     font-family: "Droid Sans Mono", Menlo, Courier New, Courier, Mono, monospace;

@@ -66,6 +66,11 @@ code, pre {
     white-space: pre;
     overflow: auto;
 }
+cite{
+    font-family: "Droid Sans Mono", Menlo, Courier New, Courier, Mono, monospace;
+    display: block;
+    font-size: .5em;
+}
 .box code,
 .box pre {
     background: #e8ecef;

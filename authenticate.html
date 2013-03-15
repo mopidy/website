@@ -60,8 +60,14 @@
         }
       </script>
       <p>
-      <input type="text" disabled placeholder="Your auth token">
-      <a href="#soundcloud" onclick="javascript:auth_soundcloud()"><img src="http://connect.soundcloud.com/2/btn-connect-sc-l.png" alt="Connect with SoundCloud"></a>
+      Steps to configure:
+      <ol>
+        <li><a href="#soundcloud" onclick="javascript:auth_soundcloud()"><img src="http://connect.soundcloud.com/2/btn-connect-sc-l.png" alt="Connect with SoundCloud"></a></li>
+        <li>Copy <input type="text" disabled placeholder="Your auth token"> to your mopidy settings file.</li>
+      </ol>
+      For more info see the <a href="http://docs.mopidy.com/en/latest/settings/#mopidy.settings.SOUNDCLOUD_AUTHTOKEN">docs</a>
+      
+      
       <cite>No credentials or tokens are ever sent to the Mopidy site!</cite>
       </p>
     </div>

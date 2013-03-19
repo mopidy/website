@@ -40,14 +40,11 @@ a {
     text-decoration: none;
     border-bottom: 1px dotted;
 }
+a[href="#soundcloud"] {
+    border-bottom: none;
+}
 img {
     border: 0;
-}
-input{
-    display: block;
-    width:100%;
-    margin: 1em 0 1em;
-    font-size: 1.05em;
 }
 code, pre {
     font-family: "Droid Sans Mono", Menlo, Courier New, Courier, Mono, monospace;
@@ -57,11 +54,6 @@ code, pre {
     margin: 1em 0;
     white-space: pre;
     overflow: auto;
-}
-cite{
-    font-family: "Droid Sans Mono", Menlo, Courier New, Courier, Mono, monospace;
-    display: block;
-    font-size: .5em;
 }
 .box code,
 .box pre {
@@ -79,4 +71,12 @@ cite{
 }
 .center {
     text-align: center;
+}
+#soundcloud input {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 12pt;
+    margin: 1em 0;
+    padding: 0.5em;
+    width: 100%;
 }

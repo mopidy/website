@@ -25,11 +25,8 @@
       <h1>Authenticate Mopidy</h1>
 
       <p>
-      If you want to use SoundCloud backend, you must first authenticate Mopidy to access your account.
-      </p>
-      
-      <p class="next">
-        <a href="#soundcloud">Authenticate SoundCloud</a>
+      Some services require you to get authentication tokens for Mopidy so that
+      it can connect to your service accounts. This page helps you on the way.
       </p>
     </div>
 
@@ -38,7 +35,9 @@
         <img src="media/images/soundcloud-80x50.png" width="80"
           height="50" alt="SoundCloud">
       </div>
+
       <h2>SoundCloud</h2>
+
       <script src="//connect.soundcloud.com/sdk.js"></script>
       <script>
         SC.initialize({
@@ -46,11 +45,11 @@
           redirect_uri: "http://www.mopidy.com/soundcloud_callback",
         });
         function auth_soundcloud () {
-          SC.connect(function(){
-            SC.get("/me", function(user, error){
-              if(error){
+          SC.connect(function() {
+            SC.get("/me", function(user, error) {
+              if (error) {
                 alert("Error: " + error.message);
-              }else{
+              } else {
                 var input = document.querySelector("#soundcloud input");
                 input.value = SC.accessToken();
                 input.disabled = false;
@@ -59,17 +58,31 @@
           });
         }
       </script>
+
       <p>
-      Steps to configure:
-      <ol>
-        <li><a href="#soundcloud" onclick="javascript:auth_soundcloud()"><img src="http://connect.soundcloud.com/2/btn-connect-sc-l.png" alt="Connect with SoundCloud"></a></li>
-        <li>Copy <input type="text" disabled placeholder="Your auth token"> to your mopidy settings file.</li>
-      </ol>
-      For more info see the <a href="http://docs.mopidy.com/en/latest/settings/#mopidy.settings.SOUNDCLOUD_AUTHTOKEN">docs</a>
-      
-      
-      <cite>No credentials or tokens are ever sent to the Mopidy site!</cite>
+      If you want to use the SoundCloud backend, you must first authenticate
+      your Mopidy installation to access your SoundCloud account.
       </p>
+
+      <ol>
+        <li>
+          <a href="#soundcloud" onclick="javascript:auth_soundcloud()">
+            <img src="http://connect.soundcloud.com/2/btn-connect-sc-l.png"
+              alt="Connect with SoundCloud"></a>
+
+          <p>No information is shared with the Mopidy web site.</p>
+        </li>
+        <li>
+          Get your auth token here:
+          <input type="text" disabled placeholder="Connect to get a token">
+        </li>
+        <li>Add the token to the <tt>SOUNDCLOUD_AUTH_TOKEN</tt> setting in your
+        Mopidy settings file.</li>
+      </ol>
+
+      <p>For more information see the
+      <a href="http://docs.mopidy.com/en/latest/settings/#mopidy.settings.SOUNDCLOUD_AUTH_TOKEN">
+      docs</a>.</p>
     </div>
   </body>
 </html>

@@ -40,7 +40,7 @@ a {
     text-decoration: none;
     border-bottom: 1px dotted;
 }
-a[href="#soundcloud"] {
+a.img {
     border-bottom: none;
 }
 img {
@@ -71,6 +71,9 @@ code, pre {
 }
 .center {
     text-align: center;
+}
+.pull-right {
+    float: right;
 }
 #soundcloud input {
     border: 1px solid #ccc;

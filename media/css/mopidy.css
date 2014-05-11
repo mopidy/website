@@ -1,0 +1,43 @@
+body {
+    font-family: Asap, sans-serif;
+}
+
+.bg-light {
+    background: #f8f8f8;
+}
+.bg-dark {
+    background: #465158;  
+    color: #e8ecef;
+}
+
+.banner {
+    background: url('../images/sergiu_bacioiu-audio_mix.jpg') bottom no-repeat;
+    background-size: cover;
+    color: #e8ecef;
+    margin-top: -20px;
+
+    position: relative;
+}
+.banner .shadow {
+    background: rgba(0, 0, 0, 0.6);
+    padding-top: 40px;
+    padding-bottom: 200px;
+}
+.banner .image-credits {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.feature {
+    padding: 40px 0;
+}
+
+.social {
+    padding: 15px 0;
+}
+
+.footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

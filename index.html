@@ -4,9 +4,13 @@
 
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mopidy</title>
-    <link rel="stylesheet" type="text/css" href="media/style/fonts.css">
-    <link rel="stylesheet" type="text/css" href="media/style/mopidy.css">
+    <link rel="stylesheet" type="text/css"
+      href="http://fonts.googleapis.com/css?family=Asap">
+    <link rel="stylesheet" type="text/css"
+      href="media/css/bootstrap-3.1.1.min.css">
+    <link rel="stylesheet" type="text/css" href="media/css/mopidy.css">
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-15510432-1']);
@@ -21,181 +25,217 @@
 
   <body>
 
-    <div class="box focus">
-      <h1>Mopidy &#x266a;</h1>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle"
+              data-toggle="collapse" data-target="#nav">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://www.mopidy.com/">
+            Mopidy &#x266a;</a>
+        </div>
 
-      <p>
-      Mopidy is a music server which can play music both from multiple sources,
-      like your local hard drive, radio streams, and from Spotify and
-      SoundCloud.
-      </p>
-
-      <p class="next">
-        <a href="http://docs.mopidy.com/">Go to the docs</a>
-      </p>
-    </div>
-
-    <div class="center">
-      <iframe
-        src="http://ghbtns.com/github-btn.html?user=mopidy&repo=mopidy&type=watch&count=true&size=large"
-        allowtransparency="true" frameborder="0" scrolling="0" width="140px"
-        height="30px"></iframe>
-
-      <iframe
-        src="http://ghbtns.com/github-btn.html?user=mopidy&repo=mopidy&type=fork&count=true&size=large"
-        allowtransparency="true" frameborder="0" scrolling="0" width="140px"
-        height="30px"></iframe>
-    </div>
-
-    <div class="center">
-      <a href="https://twitter.com/mopidy" class="twitter-follow-button"
-        data-show-count="true" data-size="large" data-width="240px">
-        Follow @mopidy</a>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    </div>
-
-    <div class="box">
-      <h2>It's a server</h2>
-
-      <p>
-      Mopidy is a server without any graphical user interface. It runs on the
-      Linux or OS X computer with the speakers.
-      </p>
-
-      <div class="center">
-        <img src="media/images/penguin_speakers.jpg" width="234"
-        height="146" alt="Penguin speakers">
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://docs.mopidy.com/">Documentation</a></li>
+            <li><a href="https://github.com/mopidy/mopidy">GitHub</a></li>
+          </ul>
+        </div>
       </div>
+    </nav>
 
-      <p>
-      Mopidy keeps track of the music, your playlists, and the clients that
-      command it.
-      </p>
-    </div>
-
-    <div class="box">
-      <h2>Use your favorite client</h2>
-
-      <p>
-      You can use your favorite <a
-        href="http://en.wikipedia.org/wiki/Music_Player_Daemon">MPD</a> client
-      to search for music and manage the playlist. MPD clients are available
-      for many platforms, including Windows, Mac OS&nbsp;X, Linux, Android, and
-      iOS.
-      </p>
-
-      <p>
-      There are also multiple web clients available that let you control Mopidy
-      from your browser.
-      </p>
-
-      <div class="center">
-        <img src="media/images/android_skateboard.png" width="450"
-        height="155" alt="Android's skating">
+    <div class="banner">
+      <div class="shadow">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-lg-6">
+              <h1>
+                Mopidy is an extensible music server written in Python.
+              </h1>
+              <p class="lead">
+                Mopidy plays music from local disk, Spotify, SoundCloud,
+                Google Play Music, and more. You edit the playlist from any
+                phone, tablet, or computer using a range of MPD and web
+                clients.
+              </p>
+            </div>
+          </div>
+          <div class="image-credits text-muted text-right">
+            Image by
+            <a href="https://www.flickr.com/photos/sergiu_bacioiu">
+            Sergiu Bacioiu</a>
+          </div>
+        </div>
       </div>
-
-      <p>
-      In other words, you can control the music from any computer or
-      smartphone in your home.
-      </p>
     </div>
 
-    <div class="box">
-      <div class="icon">
-        <img src="media/images/spotify-128x166.png" width="128"
-        height="166" alt="Spotify">
+    <div class="social bg-light">
+      <div class="container">
+        <div class="text-center">
+          <iframe
+            src="http://ghbtns.com/github-btn.html?user=mopidy&repo=mopidy&type=watch&count=true&size=large"
+            allowtransparency="true" frameborder="0" scrolling="0" width="140px"
+            height="30px"></iframe>
+
+          <iframe
+            src="http://ghbtns.com/github-btn.html?user=mopidy&repo=mopidy&type=fork&count=true&size=large"
+            allowtransparency="true" frameborder="0" scrolling="0" width="140px"
+            height="30px"></iframe>
+
+          <a href="https://twitter.com/mopidy" class="twitter-follow-button"
+            data-show-count="true" data-size="large" data-width="240px">
+            Follow @mopidy</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
       </div>
-
-      <h2>Stream from Spotify</h2>
-
-      <p>
-      If you got a subscription for <a
-        href="http://www.spotify.com/">Spotify</a> Premium, then Mopidy can
-      stream music from Spotify's archive of 15 million tracks. You'll never
-      need to refill your collection with new music again.
-      </p>
     </div>
 
-    <div class="box">
-      <div class="icon soundcloud">
-        <img src="media/images/soundcloud-128x80.png" width="128"
-          height="80" alt="SoundCloud">
+    <div class="feature">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2>Stream from the cloud</h2>
+
+            <p class="lead">Vanilla Mopidy only plays music from your local
+            disk. Through extensions, Mopidy can play music from cloud services
+            like Spotify, SoundCloud, and Google Play Music.</p>
+
+            <p class="lead">With Mopidy's extension support, new music sources
+            can be easily added.</p>
+          </div>
+          <div class="col-sm-6">
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-6">
+                  <img src="media/images/spotify.jpg" alt="Spotify"
+                  class="img-responsive">
+                </div>
+                <div class="col-xs-6">
+                  <img src="media/images/soundcloud.png" alt="SoundCloud"
+                  class="img-responsive">
+                </div>
+              </div>
+              <img src="media/images/google-play.png" alt="Google Play"
+              class="img-responsive">
+            </div>
+          </div>
+        </div>
       </div>
-
-      <h2>Stream from SoundCloud</h2>
-
-      <p>
-      If you got a <a href="http://www.soundcloud.com/">SoundCloud</a> account
-      and the Mopidy-SoundCloud extension, then Mopidy can search for and
-      stream music from SoundCloud as well.
-      </p>
-
-      <p>
-      With Mopidy's extension support, new music sources can be easily added.
-      </p>
     </div>
 
-    <div class="box focus">
-      <h2>Ready to get started?</h2>
+    <div class="feature bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 text-right">
+            <img src="media/images/mopidy-screenshot.png"
+              class="img-responsive">
+          </div>
+          <div class="col-sm-6">
+            <h2>It's a server</h2>
 
-      <p class="next">
-      <a href="http://docs.mopidy.com/en/latest/installation/">Install the latest release</a>
-      </p>
-    </div>
+            <p class="lead">Mopidy is a Python application that runs on Linux
+            computers or Macs that have network connectivity and audio
+            output.</p>
 
-    <div class="box ubuntu">
-      <div class="icon">
-        <img src="media/images/ubuntu-cof-128x128.png" width="128"
-        height="128" alt="Ubuntu">
+            <p class="lead">Out of the box, Mopidy is an
+            <a href="http://en.wikipedia.org/wiki/Music_Player_Daemon">MPD</a>
+            and HTTP server. Additional frontends for controlling Mopidy can
+            be installed from extensions.</p>
+          </div>
+        </div>
       </div>
-      <h2>Running Ubuntu?</h2>
-
-      <p>
-      If you're running Ubuntu you can install Mopidy from APT in a matter of
-      seconds. To install Mopidy from the <a href="https://apt.mopidy.com/">
-      Mopidy APT archive</a>, you need to do the following:
-      </p>
-
-      <ol>
-        <li>Add APT repository key</li>
-        <li>Add APT repository</li>
-        <li>Update package cache</li>
-        <li>Install Mopidy</li>
-      </ol>
-
-      <p>
-      Luckily, that is only four commands which you can copy into the terminal:
-      </p>
-
-      <pre>
-wget -q -O - https://apt.mopidy.com/mopidy.gpg | sudo apt-key add -
-sudo wget -q -O /etc/apt/sources.list.d/mopidy.list https://apt.mopidy.com/mopidy.list
-sudo apt-get update
-sudo apt-get install mopidy</pre>
-
-      <p>
-      Then,
-      <a href="http://docs.mopidy.com/en/latest/config/">configure Mopidy</a>.
-      </p>
     </div>
 
-    <div class="box" style="position: relative;">
+    <div class="feature">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2>Use your favorite client</h2>
 
-      <h2>Join the team</h2>
+            <p class="lead">You use your favorite MPD or web client to search
+            for music and manage the playlist. MPD clients are available for
+            many platforms, including Windows, Mac, Linux, Android, and
+            iOS.</p>
 
-      <p>
-      The <a href="https://github.com/mopidy/mopidy/issues">list of ideas</a>
-      that we could transform into cool and useful features is ever growing.
-      </p>
-
-      <p>
-      To help out making Mopidy even better, fork us at <a
-        href="https://github.com/mopidy/mopidy">GitHub</a> and join the
-      discussion on IRC. We're staying at <tt>#mopidy</tt> on
-      <tt>irc.freenode.net</tt>.
-      </p>
-
+            <p class="lead">You can control the music from any phone, tablet,
+            or computer in your home.</p>
+          </div>
+          <div class="col-sm-6">
+            <img src="media/images/martijnboland-moped.png" alt="Moped"
+              class="img-responsive">
+            <p class="text-muted text-right">
+              <a href="https://github.com/martijnboland/moped">Moped</a>
+              by Martjin Boland
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <div class="feature bg-dark">
+      <div class="container text-center">
+        <h3>Ready to get started?</h3>
+
+        <a href="http://docs.mopidy.com/en/latest/installation/"
+          class="btn btn-info btn-lg">
+          Install the latest release</a>
+      </div>
+    </div>
+
+    <div class="footer bg-light text-muted">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-sm-3">
+            <ul class="list-unstyled">
+              <li><strong>Resources</strong></li>
+              <li><a href="http://docs.mopidy.com/">Documentation</a></li>
+              <li><a href="https://github.com/mopidy/mopidy">
+                Source code</a></li>
+              <li><a href="https://github.com/mopidy/mopidy/issues">
+                Issues</a></li>
+              <li><a href="https://apt.mopidy.com/">APT archive</a></li>
+            </ul>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <ul class="list-unstyled">
+              <li><strong>Community</strong></li>
+              <li><a href="http://webchat.freenode.net/?channels=mopidy">
+                #mopidy at freenode</a></li>
+              <li><a href="https://botbot.me/freenode/mopidy/">#mopidy logs</a></li>
+              <li><a href="https://groups.google.com/d/forum/mopidy">
+                Mailing list</a></li>
+              <li><a href="https://twitter.com/mopidy">Twitter</a></li>
+              <li><a href="https://plus.google.com/u/0/communities/111233698354110067290">
+                Google+</a></li>
+            </ul>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <ul class="list-unstyled">
+              <li><strong>Development</strong></li>
+              <li><a href="http://docs.mopidy.com/en/latest/contributing/">
+                Contributing</a></li>
+              <li><a href="https://travis-ci.org/mopidy/mopidy">
+                Travis CI</a></li>
+              <li><a href="https://ci.mopidy.com/">Jenkins</a></li>
+            </ul>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <ul class="list-unstyled">
+              <li><strong>Related projects</strong></li>
+              <li><a href="http://pyspotify.mopidy.com/">pyspotify</a></li>
+              <li><a href="http://www.pimusicbox.com/">Pi MusicBox</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="media/js/jquery-2.1.1.min.js"></script>
+    <script src="media/js/bootstrap-3.1.1.min.js"></script>
   </body>
 </html>

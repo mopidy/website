@@ -2,6 +2,10 @@ body {
     font-family: Asap, sans-serif;
 }
 
+iframe {
+    border: 0;
+}
+
 .bg-light {
     background: #f8f8f8;
 }

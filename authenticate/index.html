@@ -1,0 +1,97 @@
+---
+layout: default
+---
+
+<div class="banner banner-sm bg-dark">
+  <div class="shadow">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-lg-6">
+          <h1>
+            Authenticate Mopidy with music services.
+          </h1>
+          <p class="lead">
+            Some services require you to get authentication tokens for
+            Mopidy so that it can connect to your service accounts. This
+            page helps you on the way.
+          </p>
+        </div>
+      </div>
+      <div class="image-credits text-muted text-right">
+        Photo by
+        <a href="https://www.flickr.com/photos/sergiu_bacioiu">
+        Sergiu Bacioiu</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="feature" id="soundcloud">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+
+        <img src="/media/images/soundcloud.png" alt="SoundCloud"
+        class="img-responsive">
+
+      </div>
+      <div class="col-sm-9">
+
+        <h2>SoundCloud</h2>
+
+        <script src="https://connect.soundcloud.com/sdk.js"></script>
+        <script>
+          SC.initialize({
+            client_id: "93e33e327fd8a9b77becd179652272e2",
+            redirect_uri: "http://www.mopidy.com/soundcloud_callback"
+          });
+          function auth_soundcloud () {
+            SC.connect(function() {
+              SC.get("/me", function(user, error) {
+                if (error) {
+                  alert("Error: " + error.message);
+                } else {
+                  $("#soundcloud .token").text(SC.accessToken());
+                }
+              });
+            });
+          }
+        </script>
+
+        <p>If you want to use the SoundCloud extension, you must first
+        authenticate your Mopidy installation to access your SoundCloud
+        account.</p>
+
+        <ol>
+          <li>
+            <p><a href="#soundcloud" class="img"
+              onclick="javascript:auth_soundcloud()">
+              <img src="http://connect.soundcloud.com/2/btn-connect-sc-l.png"
+                alt="Connect with SoundCloud"></a></p>
+
+            <p>No information is shared with the Mopidy web site.</p>
+          </li>
+          <li>
+            <p>Take your auth token:</p>
+
+            <div class="well well-sm token">
+              Connect with SoundCloud to get a token</div>
+          </li>
+          <li>
+            <p>Add the token to the <code>soundcloud/auth_token</code>
+            config value in your <code>mopidy.conf</code> file:</p>
+
+            <pre>
+[soundcloud]
+auth_token = <span class="token">...token goes here...</span></pre>
+          </li>
+        </ol>
+
+        <p>For more information see the
+        <a href="https://github.com/mopidy/mopidy-soundcloud">
+        Mopidy-SoundCloud docs</a>.</p>
+
+      </div>
+    </div>
+  </div>
+</div>

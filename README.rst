@@ -8,6 +8,13 @@ based on the ``docs/`` dir of the main Mopidy repo, and is hosted by `Read The
 Docs <http://readthedocs.org/>`_.
 
 
+Running locally
+---------------
+
+See the docs on using `Jekyll with GitHub docs
+<https://help.github.com/articles/using-jekyll-with-pages>`_.
+
+
 Deploying changes
 -----------------
 

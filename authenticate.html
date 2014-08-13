@@ -4,9 +4,13 @@
 
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mopidy</title>
-    <link rel="stylesheet" type="text/css" href="media/style/fonts.css">
-    <link rel="stylesheet" type="text/css" href="media/style/mopidy.css">
+    <link rel="stylesheet" type="text/css"
+      href="http://fonts.googleapis.com/css?family=Asap">
+    <link rel="stylesheet" type="text/css"
+      href="media/css/bootstrap-3.1.1.min.css">
+    <link rel="stylesheet" type="text/css" href="media/css/mopidy.css">
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-15510432-1']);
@@ -21,69 +25,174 @@
 
   <body>
 
-    <div class="box focus">
-      <h1>Authenticate Mopidy</h1>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle"
+              data-toggle="collapse" data-target="#nav">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://www.mopidy.com/">
+            Mopidy &#x266a;</a>
+        </div>
 
-      <p>
-      Some services require you to get authentication tokens for Mopidy so that
-      it can connect to your service accounts. This page helps you on the way.
-      </p>
-    </div>
-
-    <div class="box" id="soundcloud">
-      <div class="icon">
-        <img src="media/images/soundcloud-128x80.png" width="128"
-          height="80" alt="SoundCloud">
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://docs.mopidy.com/">Documentation</a></li>
+            <li><a href="https://github.com/mopidy/mopidy">GitHub</a></li>
+          </ul>
+        </div>
       </div>
+    </nav>
 
-      <h2>SoundCloud</h2>
-
-      <script src="//connect.soundcloud.com/sdk.js"></script>
-      <script>
-        SC.initialize({
-          client_id: "93e33e327fd8a9b77becd179652272e2",
-          redirect_uri: "http://www.mopidy.com/soundcloud_callback",
-        });
-        function auth_soundcloud () {
-          SC.connect(function() {
-            SC.get("/me", function(user, error) {
-              if (error) {
-                alert("Error: " + error.message);
-              } else {
-                var input = document.querySelector("#soundcloud input");
-                input.value = SC.accessToken();
-                input.disabled = false;
-              }
-            });
-          });
-        }
-      </script>
-
-      <p>
-      If you want to use the SoundCloud extension, you must first authenticate
-      your Mopidy installation to access your SoundCloud account.
-      </p>
-
-      <ol>
-        <li>
-          <a href="#soundcloud" class="img"
-            onclick="javascript:auth_soundcloud()">
-            <img src="http://connect.soundcloud.com/2/btn-connect-sc-l.png"
-              alt="Connect with SoundCloud"></a>
-
-          <p>No information is shared with the Mopidy web site.</p>
-        </li>
-        <li>
-          Get your auth token here:
-          <input type="text" disabled placeholder="Connect to get a token">
-        </li>
-        <li>Add the token to the <tt>soundcloud/auth_token</tt> config value in
-        your <tt>mopidy.conf</tt> file.</li>
-      </ol>
-
-      <p>For more information see the
-      <a href="https://github.com/dz0ny/mopidy-soundcloud/">
-      Mopidy-SoundCloud docs</a>.</p>
+    <div class="banner banner-sm bg-dark">
+      <div class="shadow">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-lg-6">
+              <h1>
+                Authenticate Mopidy with music services.
+              </h1>
+              <p class="lead">
+                Some services require you to get authentication tokens for
+                Mopidy so that it can connect to your service accounts. This
+                page helps you on the way.
+              </p>
+            </div>
+          </div>
+          <div class="image-credits text-muted text-right">
+            Photo by
+            <a href="https://www.flickr.com/photos/sergiu_bacioiu">
+            Sergiu Bacioiu</a>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div class="feature" id="soundcloud">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+
+            <img src="media/images/soundcloud.png" alt="SoundCloud"
+            class="img-responsive">
+
+          </div>
+          <div class="col-sm-9">
+
+            <h2>SoundCloud</h2>
+
+            <script src="https://connect.soundcloud.com/sdk.js"></script>
+            <script>
+              SC.initialize({
+                client_id: "93e33e327fd8a9b77becd179652272e2",
+                redirect_uri: "http://www.mopidy.com/soundcloud_callback"
+              });
+              function auth_soundcloud () {
+                SC.connect(function() {
+                  SC.get("/me", function(user, error) {
+                    if (error) {
+                      alert("Error: " + error.message);
+                    } else {
+                      $("#soundcloud .token").text(SC.accessToken());
+                    }
+                  });
+                });
+              }
+            </script>
+
+            <p>If you want to use the SoundCloud extension, you must first
+            authenticate your Mopidy installation to access your SoundCloud
+            account.</p>
+
+            <ol>
+              <li>
+                <p><a href="#soundcloud" class="img"
+                  onclick="javascript:auth_soundcloud()">
+                  <img src="http://connect.soundcloud.com/2/btn-connect-sc-l.png"
+                    alt="Connect with SoundCloud"></a></p>
+
+                <p>No information is shared with the Mopidy web site.</p>
+              </li>
+              <li>
+                <p>Take your auth token:</p>
+
+                <div class="well well-sm token">
+                  Connect with SoundCloud to get a token</div>
+              </li>
+              <li>
+                <p>Add the token to the <code>soundcloud/auth_token</code>
+                config value in your <code>mopidy.conf</code> file:</p>
+
+                <pre>
+[soundcloud]
+auth_token = <span class="token">...token goes here...</span></pre>
+              </li>
+            </ol>
+
+            <p>For more information see the
+            <a href="https://github.com/dz0ny/mopidy-soundcloud/">
+            Mopidy-SoundCloud docs</a>.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer bg-light text-muted">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-sm-3">
+            <ul class="list-unstyled">
+              <li><strong>Resources</strong></li>
+              <li><a href="http://docs.mopidy.com/">Documentation</a></li>
+              <li><a href="https://github.com/mopidy/mopidy">
+                Source code</a></li>
+              <li><a href="https://github.com/mopidy/mopidy/issues">
+                Issues</a></li>
+              <li><a href="https://apt.mopidy.com/">APT archive</a></li>
+            </ul>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <ul class="list-unstyled">
+              <li><strong>Community</strong></li>
+              <li><a href="http://webchat.freenode.net/?channels=mopidy">
+                #mopidy at freenode</a></li>
+              <li><a href="https://botbot.me/freenode/mopidy/">#mopidy logs</a></li>
+              <li><a href="https://groups.google.com/d/forum/mopidy">
+                Mailing list</a></li>
+              <li><a href="https://twitter.com/mopidy">Twitter</a></li>
+              <li><a href="https://plus.google.com/u/0/communities/111233698354110067290">
+                Google+</a></li>
+            </ul>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <ul class="list-unstyled">
+              <li><strong>Development</strong></li>
+              <li><a href="http://docs.mopidy.com/en/latest/authors/">
+                Authors</a></li>
+              <li><a href="http://docs.mopidy.com/en/latest/contributing/">
+                Contributing</a></li>
+              <li><a href="https://travis-ci.org/mopidy/mopidy">
+                Travis CI</a></li>
+              <li><a href="https://ci.mopidy.com/">Jenkins</a></li>
+            </ul>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <ul class="list-unstyled">
+              <li><strong>Related projects</strong></li>
+              <li><a href="http://pyspotify.mopidy.com/">pyspotify</a></li>
+              <li><a href="http://www.pimusicbox.com/">Pi MusicBox</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="media/js/jquery-2.1.1.min.js"></script>
+    <script src="media/js/bootstrap-3.1.1.min.js"></script>
   </body>
 </html>

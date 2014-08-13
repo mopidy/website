@@ -32,6 +32,9 @@ iframe {
     bottom: 20px;
     right: 20px;
 }
+.banner-sm .shadow {
+    padding-bottom: 40px;
+}
 
 .feature {
     padding: 40px 0;

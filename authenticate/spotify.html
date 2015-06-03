@@ -12,17 +12,18 @@ layout: default
         <h2>Spotify Web</h2>
 
         <script>
-          var SP = (function() {
-            var popup;
-            function callback(result) {
-              if (popup !== null) { popup.close() }
+          var SpotifyConnect = (function() {
+            window.addEventListener("message", function(event) {
+              if (event.origin !== 'https://auth.mopidy.com/') {
+                return;
+              }
               // TODO: handle errors
-              $("#spotify .client_id").text(result['client_id']);
-              $("#spotify .client_secret").text(result['client_secret']);
-            }
-            function connect() {
-              popup = window.open(
-                'https://auth.mopidy.com/spotify', 'Connect with Spotify', [
+              $("#spotify .client_id").text(event.data['client_id']);
+              $("#spotify .client_secret").text(event.data['client_secret']);
+              event.source.close()
+            }, false);
+            return function() {
+              var child = window.open('https://auth.mopidy.com/spotify', 'Connect with Spotify', [
                   'toolbar=no',
                   'location=no',
                   'directories=no',
@@ -36,8 +37,14 @@ layout: default
                   'left=' + ((screen.width/2)-(800/2)),
                   'top=' + ((screen.height/2)-(600/2))
                 ].join(', '));
-            }
-            return {'connect': connect, 'callback': callback};
+              var interval = setInterval(function() {
+                if (child.closed) {
+                  clearInterval(interval);
+                } else {
+                  child.postMessage('requestResult', 'https://auth.mopidy.com')
+                }
+              }, 1000);
+            };
           })();
         </script>
 
@@ -47,7 +54,7 @@ layout: default
 
         <ol>
           <li>
-            <p><a href="#" class="img" onclick="javascript:SP.connect(); return false">
+            <p><a href="#" class="img" onclick="javascript:SpotifyConnect(); return false">
               <img src="/media/images/spotify-log-in.png"
                 alt="Connect with Spotify"></a></p>
 

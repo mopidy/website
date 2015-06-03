@@ -14,7 +14,7 @@ layout: default
         <script>
           var SpotifyConnect = (function() {
             window.addEventListener("message", function(event) {
-              if (event.origin !== 'https://auth.mopidy.com/') {
+              if (event.origin !== 'https://auth.mopidy.com') {
                 return;
               }
               // TODO: handle errors
@@ -22,6 +22,7 @@ layout: default
               $("#spotify .client_secret").text(event.data['client_secret']);
               event.source.close()
             }, false);
+
             return function() {
               var child = window.open('https://auth.mopidy.com/spotify', 'Connect with Spotify', [
                   'toolbar=no',
@@ -37,6 +38,9 @@ layout: default
                   'left=' + ((screen.width/2)-(800/2)),
                   'top=' + ((screen.height/2)-(600/2))
                 ].join(', '));
+
+              // Poll child with postMessage calls to give it a safe cross
+              // domain reference back to us.
               var interval = setInterval(function() {
                 if (child.closed) {
                   clearInterval(interval);

@@ -106,9 +106,9 @@ auth_token = <span class="token">...token goes here...</span></pre>
                 return;
               }
               if (event.data['error']) {
-                $("#spotify .spotify_error").text(event.data['error']).show();
+                $("#spotify .spotify_error").text(event.data['error']).removeClass('hidden');
               } else {
-                $("#spotify .spotify_error").hide();
+                $("#spotify .spotify_error").addClass('hidden');
                 $("#spotify .spotify_client_id").text(event.data['client_id']);
                 $("#spotify .spotify_client_secret").text(event.data['client_secret']);
               }

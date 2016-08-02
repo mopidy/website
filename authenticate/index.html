@@ -105,9 +105,13 @@ auth_token = <span class="token">...token goes here...</span></pre>
               if (event.origin !== 'https://auth.mopidy.com') {
                 return;
               }
-              // TODO: handle errors
-              $("#spotify .client_id").text(event.data['client_id']);
-              $("#spotify .client_secret").text(event.data['client_secret']);
+              if (event.data['error']) {
+                $("#spotify .spotify_error").text(event.data['error']).show();
+              } else {
+                $("#spotify .spotify_error").hide();
+                $("#spotify .spotify_client_id").text(event.data['client_id']);
+                $("#spotify .spotify_client_secret").text(event.data['client_secret']);
+              }
               event.source.close()
             }, false);
 
@@ -158,10 +162,11 @@ auth_token = <span class="token">...token goes here...</span></pre>
             <p>Add the credentials to the <code>spotify_web</code>
             config value in your <code>mopidy.conf</code> file:</p>
 
+            <div class="spotify_error alert alert-danger hidden"></div>
             <pre>
 [spotify_web]
-client_id = <span class="client_id">...client_id goes here...</span>
-client_secret = <span class="client_secret">...client_secret goes here...</span></pre>
+client_id = <span class="spotify_client_id">...client_id goes here...</span>
+client_secret = <span class="spotify_client_secret">...client_secret goes here...</span></pre>
           </li>
         </ol>
 

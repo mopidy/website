@@ -49,9 +49,11 @@ layout: default
             SC.connect(function() {
               SC.get("/me", function(user, error) {
                 if (error) {
-                  alert("Error: " + error.message);
+                  $("#soundcloud .soundcloud_error").text(error.message).removeClass('hidden');
+                  $("#soundcloud .soundcloud_token").text('');
                 } else {
-                  $("#soundcloud .token").text(SC.accessToken());
+                  $("#soundcloud .soundcloud_error").addClass('hidden');
+                  $("#soundcloud .soundcloud_token").text(SC.accessToken());
                 }
               });
             });
@@ -75,9 +77,10 @@ layout: default
             <p>Add the token to the <code>soundcloud/auth_token</code>
             config value in your <code>mopidy.conf</code> file:</p>
 
+            <div class="soundcloud_error alert alert-danger hidden"></div>
             <pre>
 [soundcloud]
-auth_token = <span class="token">...token goes here...</span></pre>
+auth_token = <span class="soundcloud_token">...token goes here...</span></pre>
           </li>
         </ol>
 

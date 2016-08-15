@@ -110,6 +110,8 @@ auth_token = <span class="soundcloud_token">...token goes here...</span></pre>
               }
               if (event.data['error']) {
                 $("#spotify .spotify_error").text(event.data['error']).removeClass('hidden');
+                $("#spotify .spotify_client_id").text('');
+                $("#spotify .spotify_client_secret").text('');
               } else {
                 $("#spotify .spotify_error").addClass('hidden');
                 $("#spotify .spotify_client_id").text(event.data['client_id']);

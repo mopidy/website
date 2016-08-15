@@ -121,7 +121,7 @@ auth_token = <span class="soundcloud_token">...token goes here...</span></pre>
             }, false);
 
             return function() {
-              var child = window.open('https://auth.mopidy.com/spotify', 'Connect with Spotify', [
+              window.open('https://auth.mopidy.com/spotify', 'Connect with Spotify', [
                   'toolbar=no',
                   'location=no',
                   'directories=no',
@@ -136,15 +136,6 @@ auth_token = <span class="soundcloud_token">...token goes here...</span></pre>
                   'top=' + ((screen.height/2)-(600/2))
                 ].join(', '));
 
-              // Poll child with postMessage calls to give it a safe cross
-              // domain reference back to us.
-              var interval = setInterval(function() {
-                if (child.closed) {
-                  clearInterval(interval);
-                } else {
-                  child.postMessage('requestResult', 'https://auth.mopidy.com')
-                }
-              }, 1000);
             };
           })();
         </script>

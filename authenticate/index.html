@@ -140,7 +140,7 @@ auth_token = <span class="soundcloud_token">...token goes here...</span></pre>
           })();
         </script>
 
-        <p>If you want to use the Mopidy-Spotify-Web extension, you must first
+        <p>If you want to use the Mopidy-Spotify and/or Mopidy-Spotify-Web extensions, you must first
         authenticate your Mopidy installation to access your Spotify
         account.</p>
 
@@ -155,18 +155,32 @@ auth_token = <span class="soundcloud_token">...token goes here...</span></pre>
             </p>
           </li>
           <li>
-            <p>Add the credentials to the <code>spotify_web</code>
-            config value in your <code>mopidy.conf</code> file:</p>
+            <p>Add the credentials to the <code>spotify</code>
+            config section in your <code>mopidy.conf</code> file:</p>
+
+            <div class="spotify_error alert alert-danger hidden"></div>
+            <pre>
+[spotify]
+client_id = <span class="spotify_client_id">...client_id goes here...</span>
+client_secret = <span class="spotify_client_secret">...client_secret goes here...</span></pre>
+          </li>
+          <li>
+            <p>If also using Mopidy-Spotify-Web then also add the same
+            credentials to the <code>spotify_web</code>
+            config section in your <code>mopidy.conf</code> file:</p>
 
             <div class="spotify_error alert alert-danger hidden"></div>
             <pre>
 [spotify_web]
-client_id = <span class="spotify_client_id">...client_id goes here...</span>
-client_secret = <span class="spotify_client_secret">...client_secret goes here...</span></pre>
+client_id = <span class="spotify_client_id">...client_id also goes here...</span>
+client_secret = <span class="spotify_client_secret">...client_secret also goes here...</span></pre>
           </li>
         </ol>
 
         <p>For more information see the
+        <a href="https://github.com/mopidy/mopidy-spotify">
+        Mopidy-Spotify docs
+        </a> and
         <a href="https://github.com/lfcabend/mopidy-spotify-web">
         Mopidy-Spotify-Web docs</a>.</p>
 

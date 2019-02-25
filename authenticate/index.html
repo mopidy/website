@@ -107,13 +107,13 @@ auth_token = <span class="soundcloud_token">...token goes here...</span></pre>
 
         <script>
           var SpotifyConnect = (function() {
-            var errorEl = document.querySelector('.spotify_error');
-            var clientIdEls = document.querySelectorAll('.spotify_client_id');
-            var clientSecretEls = document.querySelectorAll('.spotify_client_secret');
             window.addEventListener("message", function(event) {
               if (event.origin !== 'https://auth.mopidy.com') {
                 return;
               }
+              var errorEl = document.querySelector('.spotify_error');
+              var clientIdEls = document.querySelectorAll('.spotify_client_id');
+              var clientSecretEls = document.querySelectorAll('.spotify_client_secret');
               if (event.data['error']) {
                 errorEl.innerText = event.data['error'];
                 errorEl.classList.remove('hidden');

@@ -5,7 +5,7 @@ This repo is the source for https://www.mopidy.com, hosted at GitHub Pages.
 
 The documentation site, https://docs.mopidy.com, does not use this repo. It is
 based on the ``docs/`` dir of the main Mopidy repo, and is hosted by `Read The
-Docs <http://readthedocs.org/>`_.
+Docs <https://readthedocs.org/>`_.
 
 
 Running locally

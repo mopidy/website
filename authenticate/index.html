@@ -46,14 +46,17 @@ layout: default
             redirect_uri: "https://www.mopidy.com/soundcloud_callback"
           });
           function auth_soundcloud () {
+            var errorEl = document.querySelector('.soundcloud_error');
+            var tokenEl = document.querySelector('.soundcloud_token');
             SC.connect(function() {
               SC.get("/me", function(user, error) {
                 if (error) {
-                  $("#soundcloud .soundcloud_error").text(error.message).removeClass('hidden');
-                  $("#soundcloud .soundcloud_token").text('');
+                  errorEl.innerText = error.message;
+                  errorEl.classList.remove('hidden');
+                  tokenEl.innerText = '';
                 } else {
-                  $("#soundcloud .soundcloud_error").addClass('hidden');
-                  $("#soundcloud .soundcloud_token").text(SC.accessToken());
+                  errorEl.classList.add('hidden');
+                  tokenEl.innerText = SC.accessToken();
                 }
               });
             });
@@ -104,18 +107,26 @@ auth_token = <span class="soundcloud_token">...token goes here...</span></pre>
 
         <script>
           var SpotifyConnect = (function() {
+            var errorEl = document.querySelector('.spotify_error');
+            var clientIdEls = document.querySelectorAll('.spotify_client_id');
+            var clientSecretEls = document.querySelectorAll('.spotify_client_secret');
             window.addEventListener("message", function(event) {
               if (event.origin !== 'https://auth.mopidy.com') {
                 return;
               }
               if (event.data['error']) {
-                $("#spotify .spotify_error").text(event.data['error']).removeClass('hidden');
-                $("#spotify .spotify_client_id").text('');
-                $("#spotify .spotify_client_secret").text('');
+                errorEl.innerText = event.data['error'];
+                errorEl.classList.remove('hidden');
+                clientIdEl.innerText = '';
+                clientSeceretEl.innerText = '';
               } else {
-                $("#spotify .spotify_error").addClass('hidden');
-                $("#spotify .spotify_client_id").text(event.data['client_id']);
-                $("#spotify .spotify_client_secret").text(event.data['client_secret']);
+                errorEl.classList.add('hidden');
+                clientIdEls.forEach(function (el) {
+                  el.innerText = event.data['client_id'];
+                });
+                clientSecretEls.forEach(function (el) {
+                  el.innerText = event.data['client_secret'];
+                });
               }
               event.source.close()
             }, false);
@@ -135,7 +146,6 @@ auth_token = <span class="soundcloud_token">...token goes here...</span></pre>
                   'left=' + ((screen.width/2)-(800/2)),
                   'top=' + ((screen.height/2)-(600/2))
                 ].join(', '));
-
             };
           })();
         </script>

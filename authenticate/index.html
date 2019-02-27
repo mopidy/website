@@ -150,6 +150,8 @@ auth_token = <span class="soundcloud_token">...token goes here...</span></pre>
             }, false);
 
             return function() {
+              clearInterval(interval);
+
               var opened = window.open('https://auth.mopidy.com/spotify/', 'Connect with Spotify', [
                   'toolbar=no',
                   'location=no',

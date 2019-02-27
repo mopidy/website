@@ -121,10 +121,18 @@ auth_token = <span class="soundcloud_token">...token goes here...</span></pre>
               var clientIdEls = document.querySelectorAll('.spotify_client_id');
               var clientSecretEls = document.querySelectorAll('.spotify_client_secret');
               if (event.data['error']) {
-                errorEl.innerText = event.data['error'];
+                if (event.data['error_description']) {
+                  errorEl.innerText = event.data['error_description'] + ' (' + event.data['error'] + ')';
+                } else {
+                  errorEl.innerText = event.data['error'];
+                }
                 errorEl.classList.remove('hidden');
-                clientIdEl.innerText = '';
-                clientSeceretEl.innerText = '';
+                clientIdEls.forEach(function (el) {
+                  el.innerText = '';
+                });
+                clientSecretEls.forEach(function (el) {
+                  el.innerText = '';
+                });
               } else {
                 errorEl.classList.add('hidden');
                 clientIdEls.forEach(function (el) {
@@ -138,6 +146,7 @@ auth_token = <span class="soundcloud_token">...token goes here...</span></pre>
             }, false);
 
             return function() {
+              // TODO: Check for window having closed without getting a message?
               window.open('https://auth.mopidy.com/spotify/', 'Connect with Spotify', [
                   'toolbar=no',
                   'location=no',

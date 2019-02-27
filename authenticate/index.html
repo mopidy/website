@@ -113,40 +113,39 @@ auth_token = <span class="soundcloud_token">...token goes here...</span></pre>
 
         <script>
           var SpotifyConnect = (function() {
+            function update(id, secret, error, desc) {
+              var errorEl = document.querySelector('.spotify_error');
+              var clientIdEls = document.querySelectorAll('.spotify_client_id');
+              var clientSecretEls = document.querySelectorAll('.spotify_client_secret');
+
+              clientIdEls.forEach(function (el) {
+                el.innerText = id;
+              });
+              clientSecretEls.forEach(function (el) {
+                el.innerText = secret;
+              });
+
+              if (!error) {
+                errorEl.classList.add('hidden');
+                errorEl.innerText = '';
+              } else {
+                errorEl.innerText = desc ? desc + ' (' + error + ')' : error;
+                errorEl.classList.remove('hidden');
+              }
+            }
+
             window.addEventListener("message", function(event) {
               if (event.origin !== 'https://auth.mopidy.com') {
                 return;
               }
-              var errorEl = document.querySelector('.spotify_error');
-              var clientIdEls = document.querySelectorAll('.spotify_client_id');
-              var clientSecretEls = document.querySelectorAll('.spotify_client_secret');
-              if (event.data['error']) {
-                if (event.data['error_description']) {
-                  errorEl.innerText = event.data['error_description'] + ' (' + event.data['error'] + ')';
-                } else {
-                  errorEl.innerText = event.data['error'];
-                }
-                errorEl.classList.remove('hidden');
-                clientIdEls.forEach(function (el) {
-                  el.innerText = '';
-                });
-                clientSecretEls.forEach(function (el) {
-                  el.innerText = '';
-                });
-              } else {
-                errorEl.classList.add('hidden');
-                clientIdEls.forEach(function (el) {
-                  el.innerText = event.data['client_id'];
-                });
-                clientSecretEls.forEach(function (el) {
-                  el.innerText = event.data['client_secret'];
-                });
-              }
+
+              update(event.data['client_id'], event.data['client_secret'],
+                     event.data['error'], event.data['error_description']);
+
               event.source.close()
             }, false);
 
             return function() {
-              // TODO: Check for window having closed without getting a message?
               window.open('https://auth.mopidy.com/spotify/', 'Connect with Spotify', [
                   'toolbar=no',
                   'location=no',

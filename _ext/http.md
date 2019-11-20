@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-HTTPD
+name: Mopidy-HTTP
 type: frontend
 dev:
   github: mopidy/mopidy

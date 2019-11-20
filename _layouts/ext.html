@@ -66,13 +66,45 @@ layout: default
 
         <h2 class="page-header">Installation</h2>
 
+        {% case ext.py3 %}
+          {% when true %}
+            <p class="alert alert-success">
+              {{ ext.name }} supports Python 3.7+.
+            </p>
+          {% when "prerelease" %}
+            <div class="alert alert-block alert-warning">
+              <h3 style="margin-top: 0">Python 3 support in pre-release</h3>
+
+              <p>
+                This extension has a pre-release on PyPI with Python 3.7+ support.
+                To help test the extension on Python 3,
+                you can install the pre-release using:
+              </p>
+
+              <pre style="margin-top: 10px">python3 -m pip install --pre {{ ext.dist.pypi }}</pre>
+
+              <p>
+                Please report any issues you find in the extension's
+                <a href="https://github.com/{{ ext.dev.github }}/issues">issue tracker</a>.
+              </p>
+            </div>
+          {% else %}
+            <p class="alert alert-danger">
+              {{ ext.name }} does not support Python 3.7+, as far as we know.
+            </p>
+        {% endcase %}
+
         {% if ext.dist.pypi %}
           <h3>From source</h3>
           <p>
             Install the <code>{{ ext.dist.pypi }}</code> package from
             <a href="https://pypi.org/project/{{ ext.dist.pypi }}">PyPI</a>:
           </p>
-          <pre>python -m pip install {{ ext.dist.pypi }}</pre>
+          {% if ext.py3 == true %}
+            <pre>python3 -m pip install {{ ext.dist.pypi }}</pre>
+          {% else %}
+            <pre>python -m pip install {{ ext.dist.pypi }}</pre>
+          {% endif %}
         {% endif %}
 
         {% if ext.dist.apt-debian or ext.dist.apt-mopidy %}

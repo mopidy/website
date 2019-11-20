@@ -2,6 +2,12 @@
   {% for ext in exts %}
     <li>
       <a href="{{ ext.url }}">{{ ext.name }}</a>
+      {% case ext.py3 %}
+        {% when "prerelease"%}
+          <span class="label label-warning">Python 3</span>
+        {% when true %}
+          <span class="label label-success">Python 3</span>
+      {% endcase %}
     </li>
   {% else %}
     <li><em>(none)</em></li>

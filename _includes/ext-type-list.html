@@ -2,6 +2,9 @@
   {% for ext in exts %}
     <li>
       <a href="{{ ext.url }}">{{ ext.name }}</a>
+      {% if ext.dist.bundled %}
+        <span class="label label-primary">Bundled</span>
+      {% endif %}
       {% case ext.py3 %}
         {% when "prerelease"%}
           <span class="label label-warning">Python 3</span>

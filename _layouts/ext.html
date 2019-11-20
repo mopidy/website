@@ -85,22 +85,38 @@ layout: default
 
               <p>
                 This extension has a pre-release on PyPI with Python 3.7+ support.
-                To help test the extension on Python 3,
-                you can install the pre-release using:
               </p>
 
-              <pre style="margin-top: 10px">python3 -m pip install --pre {{ ext.dist.pypi }}</pre>
+              {% if ext.dist.pypi %}
+                <p>
+                  To help test the extension on Python 3,
+                  you can install the pre-release using:
+                </p>
 
-              <p>
-                Please report any issues you find in the extension's
-                <a href="https://github.com/{{ ext.dev.github }}/issues">issue tracker</a>.
-              </p>
+                <pre style="margin-top: 10px">python3 -m pip install --pre {{ ext.dist.pypi }}</pre>
+              {% endif %}
+
+              {% if ext.dev.github %}
+                <p>
+                  Please report any issues you find in the extension's
+                  <a href="https://github.com/{{ ext.dev.github }}/issues">issue tracker</a>.
+                </p>
+              {% endif %}
             </div>
           {% else %}
             <p class="alert alert-danger">
               {{ ext.name }} does not support Python 3.7+, as far as we know.
             </p>
         {% endcase %}
+
+        {% if ext.dist.bundled %}
+          <h3>Bundled with Mopidy</h3>
+          <p>
+            This extension is bundled with Mopidy itself. See
+            [Mopidy's documentation](https://docs.mopidy.com/)
+            for how to install and configure the extension.
+          </p>
+        {% endif %}
 
         {% if ext.dist.pypi %}
           <h3>From source</h3>

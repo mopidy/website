@@ -8,6 +8,7 @@ dev:
   coveralls: true
 dist:
   pypi: Mopidy-Spotify-Tunigo
+  apt-mopidy: mopidy-spotify-tunigo
   arch-aur: mopidy-spotify-tunigo
 py3: false
 ---

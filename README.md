@@ -51,10 +51,10 @@ dev:                       # Development related fields
   codecov: true                 # Whether using Codecov code coverage
   coveralls: false              # Whether using Coveralls code coverage
 dist:                      # Distribution related fields:
-  pypi: Mopidy-SomaFM           # PyPI package name
-  apt-debian: mopidy-somafm     # Debian/Ubuntu package name
-  apt-mopidy: mopidy-somafm     # apt.mopidy.com package name
-  arch-aur: mopidy-somafm       # Arch Linux AUR package name
+  pypi: Mopidy-Foo              # PyPI package name
+  apt-debian: mopidy-foo        # Debian/Ubuntu package name
+  apt-mopidy: mopidy-foo        # apt.mopidy.com package name
+  arch-aur: mopidy-foo          # Arch Linux AUR package name
   homebrew:
     tap: mopidy/mopidy          # Homebrew tap name
     formula: mopidy-foo         # Homebrew formula name in above tap

@@ -64,6 +64,14 @@ layout: default
           {% endif %}
         </ul>
 
+        <div class="ext-images">
+          {% for image in ext.images %}
+            <a href="{{ image }}" class="thumbnail">
+              <img src="{{ image }}" class="img-responsive">
+            </a>
+          {% endfor %}
+        </div>
+
         <h2 class="page-header">Installation</h2>
 
         {% case ext.py3 %}

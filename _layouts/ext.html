@@ -1,0 +1,250 @@
+---
+layout: default
+---
+
+{% include ext-header.html %}
+{% assign ext = page %}
+
+<style>
+  .ext-links {
+    line-height: 3em;
+  }
+  .ext-badges h5 {
+    color: #767676; /* .text-muted */
+    margin-top: 5px; /* half of regular */
+    text-transform: uppercase;
+  }
+</style>
+
+<div class="feature">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li><a href="/ext/">Extensions</a></li>
+      <li class="active">{{ ext.name }}</li>
+    </ol>
+
+    <h1 class="page-header">
+      {{ ext.name }}
+      <small>
+        {% case ext.type %}
+          {% when "backend" %}
+            backend extension
+          {% when "frontend" %}
+            frontend extension
+          {% when "mixer" %}
+            mixer extension
+          {% when "web" %}
+            web extension
+        {% endcase %}
+      </small>
+    </h1>
+
+    <div class="row">
+      <div class="col-sm-8">
+
+        <div class="lead">
+          {{ ext.content }}
+        </div>
+
+        <ul class="list-inline ext-links">
+          {% if ext.dev.github %}
+            <li>
+              <a href="https://github.com/{{ ext.dev.github }}" class="btn btn-default">
+                GitHub: <strong>{{ ext.dev.github }}</strong>
+              </a>
+            </li>
+          {% endif %}
+          {% if ext.dist.pypi %}
+            <li>
+              <a href="https://pypi.org/project/{{ ext.dist.pypi }}" class="btn btn-default">
+                PyPI: <strong>{{ ext.dist.pypi }}</strong>
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+
+        <h2 class="page-header">Installation</h2>
+
+        {% if ext.dist.pypi %}
+          <h3>From source</h3>
+          <p>
+            Install the <code>{{ ext.dist.pypi }}</code> package from
+            <a href="https://pypi.org/project/{{ ext.dist.pypi }}">PyPI</a>:
+          </p>
+          <pre>python -m pip install {{ ext.dist.pypi }}</pre>
+        {% endif %}
+
+        {% if ext.dist.apt-debian or ext.dist.apt-mopidy %}
+          <h3>Debian and Ubuntu</h3>
+        {% endif %}
+        {% if ext.dist.apt-debian %}
+          <p>
+            Install the <code>{{ ext.dist.apt-debian }}</code> package from
+            <a href="https://packages.debian.org/{{ ext.dist.apt-debian }}">Debian</a> or
+            <a href="https://packages.ubuntu.com/{{ ext.dist.apt-debian }}">Ubuntu</a>:
+          </p>
+          <pre>apt install {{ ext.dist.apt-debian }}</pre>
+        {% endif %}
+        {% if ext.dist.apt-mopidy %}
+          {% if ext.dist.apt-debian %}
+            <h4>Mopidy's APT repository</h4>
+            <p>
+              Alternatively,
+              you can install the <code>{{ ext.dist.apt-mopidy }}</code>
+              Debian package from Mopidy's APT repository,
+              which often has newer versions than Debian/Ubuntu.
+            </p>
+          {% else %}
+            <p>
+              This extension is currently not packaged in Debian/Ubuntu, but
+              you can install the <code>{{ ext.dist.apt-mopidy }}</code>
+              Debian package from Mopidy's APT repository.
+            </p>
+          {% endif %}
+          <p>
+            First, follow the instructions at
+            <a href="https://apt.mopidy.com/">apt.mopidy.com</a>
+            on how to setup Mopidy's APT repo on your system.
+          </p>
+          <p>
+            Then, install the <code>{{ ext.dist.apt-mopidy }}</code> package:
+          </p>
+          <pre>apt install {{ ext.dist.apt-mopidy }}</pre>
+        {% endif %}
+
+        {% if ext.dist.arch-aur %}
+          <h3>Arch Linux</h3>
+          <p>
+            Install the
+            <a href="https://aur.archlinux.org/packages/{{ ext.dist.arch-aur }}">
+              {{ ext.dist.arch-aur }}</a>
+            package from AUR:
+          </p>
+          <pre>yay -S {{ ext.dist.arch-aur }}</pre>
+        {% endif %}
+
+        {% if ext.dist.homebrew %}
+          {% assign homebrew_repo = ext.dist.homebrew.tap | replace: "/", "/homebrew-" %}
+          <h3>macOS</h3>
+          <p>
+            Install the
+            <a href="https://github.com/{{ homebrew_repo }}/blob/master/Formula/{{ ext.dist.homebrew.formula }}.rb">
+              {{ ext.dist.homebrew.formula }}</a>
+            formula with <a href="https://brew.sh/">Homebrew</a>:
+          </p>
+          <pre>brew install {{ ext.dist.homebrew.tap }}/{{ ext.dist.homebrew.formula }}</pre>
+        {% endif %}
+
+      </div>
+      <div class="col-sm-4">
+
+        <ol class="list-group ext-badges">
+
+          {% if ext.dev.github or ext.dist.pypi %}
+            <li class="list-group-item">
+              <h5>Popularity</h5>
+              {% if ext.dev.github %}
+                <a href="https://github.com/{{ ext.dev.github }}/stargazers">
+                  <img
+                    alt="GitHub stars"
+                    src="https://img.shields.io/github/stars/{{ ext.dev.github }}?label=GitHub%20stars&amp;style=flat-square"
+                  />
+                </a>
+              {% endif %}
+              {% if ext.dist.pypi %}
+                <img
+                  alt="PyPI - Downloads"
+                  src="https://img.shields.io/pypi/dm/{{ ext.dist.pypi }}?label=PyPI%20downloads&amp;style=flat-square"
+                />
+              {% endif %}
+            </li>
+          {% endif %}
+
+          {% if ext.dist.pypi %}
+            <li class="list-group-item">
+              <h5>PyPI</h5>
+              <img
+                alt="PyPI - Package version"
+                src="https://img.shields.io/pypi/v/{{ ext.dist.pypi }}?label=Package%20version&amp;style=flat-square"
+              />
+              <img
+                alt="PyPI - Python support"
+                src="https://img.shields.io/pypi/pyversions/{{ ext.dist.pypi }}?label=Python%20support&amp;style=flat-square"
+              />
+            </li>
+          {% endif %}
+
+          {% if ext.dist.pypi %}
+            <li class="list-group-item">
+              <h5>License</h5>
+              <img
+                alt="PyPI - License"
+                src="https://img.shields.io/pypi/l/{{ ext.dist.pypi }}?label=&amp;style=flat-square"
+              />
+            </li>
+          {% endif %}
+
+          {% if ext.dev.github %}
+            <li class="list-group-item">
+              <h5>Project stats</h5>
+              <a href="https://github.com/{{ ext.dev.github }}/issues">
+                <img
+                  alt="GitHub issues"
+                  src="https://img.shields.io/github/issues/{{ ext.dev.github }}?label=Issues&amp;style=flat-square"
+                />
+              </a>
+              <a href="https://github.com/{{ ext.dev.github }}/pulls">
+                <img
+                  alt="GitHub pull requests"
+                  src="https://img.shields.io/github/issues-pr/{{ ext.dev.github }}?label=Pull%20requests&amp;style=flat-square"
+                />
+              </a>
+            </li>
+          {% endif %}
+
+          {% if ext.dev.circleci or ext.dev.travisci or ext.dev.codecov or ext.dev.coveralls %}
+            <li class="list-group-item">
+              <h5>Quality metrics</h5>
+              {% if ext.dev.circleci %}
+                <a href="https://circleci.com/gh/{{ ext.dev.github }}">
+                  <img
+                    alt="CircleCI build status"
+                    src="https://img.shields.io/circleci/build/gh/{{ ext.dev.github }}?label=CircleCI build&amp;style=flat-square"
+                  />
+                </a>
+              {% endif %}
+              {% if ext.dev.travisci %}
+                <a href="https://travis-ci.org/{{ ext.dev.github }}">
+                  <img
+                    alt="CircleCI build status"
+                    src="https://img.shields.io/travis/{{ ext.dev.github }}?label=Travis CI build&amp;style=flat-square"
+                  />
+                </a>
+              {% endif %}
+              {% if ext.dev.codecov %}
+                <a href="https://codecov.io/gh/{{ ext.dev.github }}">
+                  <img
+                    alt="Codecov test coverage"
+                    src="https://img.shields.io/codecov/c/gh/{{ ext.dev.github }}?label=Test coverage&amp;style=flat-square"
+                  />
+                </a>
+              {% endif %}
+              {% if ext.dev.coveralls %}
+                <a href="https://coveralls.io/r/{{ ext.dev.github }}">
+                  <img
+                    alt="Coveralls test coverage"
+                    src="https://img.shields.io/coveralls/github/{{ ext.dev.github }}?label=Test coverage&amp;style=flat-square"
+                  />
+                </a>
+              {% endif %}
+            </li>
+          {% endif %}
+        </ol>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include ext-footer.html %}

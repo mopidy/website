@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+{% include ext-header.html %}
+
+<div class="feature">
+  <div class="container">
+
+    <ol class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li class="active">Extensions</a></li>
+    </ol>
+
+    <h1 class="page-header">Extension registry</h1>
+
+    <p class="lead">
+      Extend Mopidy with additional music sources, audio mixers, control
+      planes, web clients, and more.
+    </p>
+
+    <div class="row">
+      <div class="col-sm-6">
+
+        <h2 class="page-header">Backends</h2>
+        <p class="lead text-muted">
+          Add additional music sources.
+        </p>
+        {% assign exts = site.ext | where: "type", "backend" %}
+        {% include ext-type-list.html %}
+
+      </div>
+      <div class="col-sm-6">
+
+        <h2 class="page-header">Web clients</h2>
+        <p class="lead text-muted">
+          Serve web-based players with Mopidy's builtin web server.
+        </p>
+        {% assign exts = site.ext | where: "type", "web" %}
+        {% include ext-type-list.html %}
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+
+        <h2 class="page-header">Frontends</h2>
+        <p class="lead text-muted">
+          Add control planes for user interfaces or event listeners.
+        </p>
+        {% assign exts = site.ext | where: "type", "frontend" %}
+        {% include ext-type-list.html %}
+
+      </div>
+      <div class="col-sm-6">
+
+        <h2 class="page-header">Mixers</h2>
+        <p class="lead text-muted">
+          Alternative ways to control volume and muting.
+        </p>
+        {% assign exts = site.ext | where: "type", "mixer" %}
+        {% include ext-type-list.html %}
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% include ext-footer.html %}

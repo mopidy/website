@@ -1,0 +1,9 @@
+<ul class="list-unstyled lead">
+  {% for ext in exts %}
+    <li>
+      <a href="{{ ext.url }}">{{ ext.name }}</a>
+    </li>
+  {% else %}
+    <li><em>(none)</em></li>
+  {% endfor %}
+</ul>

@@ -9,7 +9,7 @@ dist:
   arch-aur: mopidy-mopify
 py3: false
 images:
-  - /media/ext/mopify.jpg
+  - /media/ext/mopify.png
 ---
 
 A web client that uses external web services to provide additional features and

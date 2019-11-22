@@ -2,204 +2,193 @@
 layout: default
 ---
 
-{% include ext-header.html %}
 {% assign ext = page %}
 
-<style>
-  .ext-links {
-    line-height: 3em;
-  }
-  .ext-badges h5 {
-    color: #767676; /* .text-muted */
-    margin-top: 5px; /* half of regular */
-    text-transform: uppercase;
-  }
-</style>
-
-<div class="feature">
+<section class="section">
   <div class="container">
-    <ol class="breadcrumb">
-      <li><a href="/">Home</a></li>
-      <li><a href="/ext/">Extensions</a></li>
-      <li class="active">{{ ext.name }}</li>
-    </ol>
 
-    <h1 class="page-header">
-      {{ ext.name }}
-      <small>
-        {% case ext.type %}
-          {% when "backend" %}
-            backend extension
-          {% when "frontend" %}
-            frontend extension
-          {% when "mixer" %}
-            mixer extension
-          {% when "web" %}
-            web extension
-        {% endcase %}
-      </small>
-    </h1>
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/ext/">Extensions</a></li>
+        <li class="is-active"><a href="{{ ext.url }}">{{ ext.name }}</a></li>
+      </ol>
+    </nav>
 
-    <div class="row">
-      <div class="col-sm-8">
+    <h1 class="title is-size-2">{{ ext.name }}</h1>
+    <h2 class="subtitle is-size-4 has-text-grey">
+      {% case ext.type %}
+        {% when "backend" %}
+          backend extension
+        {% when "frontend" %}
+          frontend extension
+        {% when "mixer" %}
+          mixer extension
+        {% when "web" %}
+          web extension
+      {% endcase %}
+    </h2>
 
-        <div class="lead">
+    <div class="columns is-variable is-8">
+      <div class="column">
+
+        <div class="content is-medium">
           {{ ext.content }}
         </div>
 
-        <ul class="list-inline ext-links">
+        <div class="buttons">
           {% if ext.dev.github %}
-            <li>
-              <a href="https://github.com/{{ ext.dev.github }}" class="btn btn-default">
-                GitHub: <strong>{{ ext.dev.github }}</strong>
-              </a>
-            </li>
+            <a href="https://github.com/{{ ext.dev.github }}" class="button">
+              GitHub:&nbsp;<strong>{{ ext.dev.github }}</strong>
+            </a>
           {% endif %}
           {% if ext.dist.pypi %}
-            <li>
-              <a href="https://pypi.org/project/{{ ext.dist.pypi }}" class="btn btn-default">
-                PyPI: <strong>{{ ext.dist.pypi }}</strong>
-              </a>
-            </li>
-          {% endif %}
-        </ul>
-
-        <div class="ext-images">
-          {% for image in ext.images %}
-            <a href="{{ image }}" class="thumbnail">
-              <img src="{{ image }}" class="img-responsive">
+            <a href="https://pypi.org/project/{{ ext.dist.pypi }}" class="button">
+              PyPI:&nbsp;<strong>{{ ext.dist.pypi }}</strong>
             </a>
-          {% endfor %}
+          {% endif %}
         </div>
 
-        <h2 class="page-header">Installation</h2>
+        <div class="content">
 
-        {% case ext.py3 %}
-          {% when true %}
-            <p class="alert alert-success">
-              {{ ext.name }} supports Python 3.7+.
-            </p>
-          {% when "prerelease" %}
-            <div class="alert alert-block alert-warning">
-              <h3 style="margin-top: 0">Python 3 support in pre-release</h3>
-
-              <p>
-                This extension has a pre-release on PyPI with Python 3.7+ support.
-              </p>
-
-              {% if ext.dist.pypi %}
-                <p>
-                  To help test the extension on Python 3,
-                  you can install the pre-release using:
-                </p>
-
-                <pre style="margin-top: 10px">python3 -m pip install --pre {{ ext.dist.pypi }}</pre>
-              {% endif %}
-
-              {% if ext.dev.github %}
-                <p>
-                  Please report any issues you find in the extension's
-                  <a href="https://github.com/{{ ext.dev.github }}/issues">issue tracker</a>.
-                </p>
-              {% endif %}
+          {% for image in ext.images %}
+            <div class="image box">
+              <a href="{{ image }}">
+                <img src="{{ image }}">
+              </a>
             </div>
-          {% else %}
-            <p class="alert alert-danger">
-              {{ ext.name }} does not support Python 3.7+, as far as we know.
+          {% endfor %}
+
+          <h2>Installation</h2>
+
+          {% case ext.py3 %}
+            {% when true %}
+              <p class="notification is-success">
+                {{ ext.name }} supports Python 3.7+.
+              </p>
+            {% when "prerelease" %}
+              <article class="message is-warning">
+                <div class="message-header">Python 3 support in pre-release</div>
+                <div class="message-body">
+                  <p>
+                    This extension has a pre-release on PyPI with Python 3.7+ support.
+                  </p>
+
+                  {% if ext.dist.pypi %}
+                    <p>
+                      To help test the extension on Python 3,
+                      you can install the pre-release using:
+                    </p>
+
+                    <pre>python3 -m pip install --pre {{ ext.dist.pypi }}</pre>
+                  {% endif %}
+
+                  {% if ext.dev.github %}
+                    <p>
+                      Please report any issues you find in the extension's
+                      <a href="https://github.com/{{ ext.dev.github }}/issues">issue tracker</a>.
+                    </p>
+                  {% endif %}
+                </div>
+              </article>
+            {% else %}
+              <p class="notification is-danger">
+                {{ ext.name }} does not support Python 3.7+, as far as we know.
+              </p>
+          {% endcase %}
+
+          {% if ext.dist.bundled %}
+            <h3>Bundled with Mopidy</h3>
+            <p>
+              This extension is bundled with Mopidy itself. See
+              <a href="https://docs.mopidy.com/">Mopidy's documentation</a>
+              for how to configure the extension.
             </p>
-        {% endcase %}
-
-        {% if ext.dist.bundled %}
-          <h3>Bundled with Mopidy</h3>
-          <p>
-            This extension is bundled with Mopidy itself. See
-            <a href="https://docs.mopidy.com/">Mopidy's documentation</a>
-            for how to configure the extension.
-          </p>
-        {% endif %}
-
-        {% if ext.dist.pypi %}
-          <h3>From PyPI</h3>
-          <p>
-            Install the <code>{{ ext.dist.pypi }}</code> package from
-            <a href="https://pypi.org/project/{{ ext.dist.pypi }}">PyPI</a>:
-          </p>
-          {% if ext.py3 == true %}
-            <pre>python3 -m pip install {{ ext.dist.pypi }}</pre>
-          {% else %}
-            <pre>python -m pip install {{ ext.dist.pypi }}</pre>
           {% endif %}
-        {% endif %}
 
-        {% if ext.dist.apt-debian or ext.dist.apt-mopidy %}
-          <h3>Debian and Ubuntu</h3>
-        {% endif %}
-        {% if ext.dist.apt-debian %}
-          <p>
-            Install the <code>{{ ext.dist.apt-debian }}</code> package from
-            <a href="https://packages.debian.org/{{ ext.dist.apt-debian }}">Debian</a> or
-            <a href="https://packages.ubuntu.com/{{ ext.dist.apt-debian }}">Ubuntu</a>:
-          </p>
-          <pre>apt install {{ ext.dist.apt-debian }}</pre>
-        {% endif %}
-        {% if ext.dist.apt-mopidy %}
+          {% if ext.dist.pypi %}
+            <h3>From PyPI</h3>
+            <p>
+              Install the <code>{{ ext.dist.pypi }}</code> package from
+              <a href="https://pypi.org/project/{{ ext.dist.pypi }}">PyPI</a>:
+            </p>
+            {% if ext.py3 == true %}
+              <pre>python3 -m pip install {{ ext.dist.pypi }}</pre>
+            {% else %}
+              <pre>python -m pip install {{ ext.dist.pypi }}</pre>
+            {% endif %}
+          {% endif %}
+
+          {% if ext.dist.apt-debian or ext.dist.apt-mopidy %}
+            <h3>Debian and Ubuntu</h3>
+          {% endif %}
           {% if ext.dist.apt-debian %}
-            <h4>Mopidy's APT repository</h4>
             <p>
-              Alternatively,
-              you can install the <code>{{ ext.dist.apt-mopidy }}</code>
-              Debian package from Mopidy's APT repository,
-              which often has newer versions than Debian/Ubuntu.
+              Install the <code>{{ ext.dist.apt-debian }}</code> package from
+              <a href="https://packages.debian.org/{{ ext.dist.apt-debian }}">Debian</a> or
+              <a href="https://packages.ubuntu.com/{{ ext.dist.apt-debian }}">Ubuntu</a>:
             </p>
-          {% else %}
-            <p>
-              This extension is currently not packaged in Debian/Ubuntu, but
-              you can install the <code>{{ ext.dist.apt-mopidy }}</code>
-              Debian package from Mopidy's APT repository.
-            </p>
+            <pre>apt install {{ ext.dist.apt-debian }}</pre>
           {% endif %}
-          <p>
-            First, follow the instructions at
-            <a href="https://apt.mopidy.com/">apt.mopidy.com</a>
-            on how to setup Mopidy's APT repo on your system.
-          </p>
-          <p>
-            Then, install the <code>{{ ext.dist.apt-mopidy }}</code> package:
-          </p>
-          <pre>apt install {{ ext.dist.apt-mopidy }}</pre>
-        {% endif %}
+          {% if ext.dist.apt-mopidy %}
+            {% if ext.dist.apt-debian %}
+              <h4>Mopidy's APT repository</h4>
+              <p>
+                Alternatively,
+                you can install the <code>{{ ext.dist.apt-mopidy }}</code>
+                Debian package from Mopidy's APT repository,
+                which often has newer versions than Debian/Ubuntu.
+              </p>
+            {% else %}
+              <p>
+                This extension is currently not packaged in Debian/Ubuntu, but
+                you can install the <code>{{ ext.dist.apt-mopidy }}</code>
+                Debian package from Mopidy's APT repository.
+              </p>
+            {% endif %}
+            <p>
+              First, follow the instructions at
+              <a href="https://apt.mopidy.com/">apt.mopidy.com</a>
+              on how to setup Mopidy's APT repo on your system.
+            </p>
+            <p>
+              Then, install the <code>{{ ext.dist.apt-mopidy }}</code> package:
+            </p>
+            <pre>apt install {{ ext.dist.apt-mopidy }}</pre>
+          {% endif %}
 
-        {% if ext.dist.arch-aur %}
-          <h3>Arch Linux</h3>
-          <p>
-            Install the
-            <a href="https://aur.archlinux.org/packages/{{ ext.dist.arch-aur }}">
-              {{ ext.dist.arch-aur }}</a>
-            package from AUR:
-          </p>
-          <pre>yay -S {{ ext.dist.arch-aur }}</pre>
-        {% endif %}
+          {% if ext.dist.arch-aur %}
+            <h3>Arch Linux</h3>
+            <p>
+              Install the
+              <a href="https://aur.archlinux.org/packages/{{ ext.dist.arch-aur }}">
+                {{ ext.dist.arch-aur }}</a>
+              package from AUR:
+            </p>
+            <pre>yay -S {{ ext.dist.arch-aur }}</pre>
+          {% endif %}
 
-        {% if ext.dist.homebrew %}
-          {% assign homebrew_repo = ext.dist.homebrew.tap | replace: "/", "/homebrew-" %}
-          <h3>macOS</h3>
-          <p>
-            Install the
-            <a href="https://github.com/{{ homebrew_repo }}/blob/master/Formula/{{ ext.dist.homebrew.formula }}.rb">
-              {{ ext.dist.homebrew.formula }}</a>
-            formula with <a href="https://brew.sh/">Homebrew</a>:
-          </p>
-          <pre>brew install {{ ext.dist.homebrew.tap }}/{{ ext.dist.homebrew.formula }}</pre>
-        {% endif %}
+          {% if ext.dist.homebrew %}
+            {% assign homebrew_repo = ext.dist.homebrew.tap | replace: "/", "/homebrew-" %}
+            <h3>macOS</h3>
+            <p>
+              Install the
+              <a href="https://github.com/{{ homebrew_repo }}/blob/master/Formula/{{ ext.dist.homebrew.formula }}.rb">
+                {{ ext.dist.homebrew.formula }}</a>
+              formula with <a href="https://brew.sh/">Homebrew</a>:
+            </p>
+            <pre>brew install {{ ext.dist.homebrew.tap }}/{{ ext.dist.homebrew.formula }}</pre>
+          {% endif %}
+        </div>
 
       </div>
-      <div class="col-sm-4">
+      <div class="column is-4">
 
-        <ol class="list-group ext-badges">
+        <nav class="panel">
 
           {% if ext.dev.github or ext.dist.pypi %}
-            <li class="list-group-item">
-              <h5>Popularity</h5>
+            <div class="panel-block is-block">
+              <h5 class="is-uppercase has-text-grey">Popularity</h5>
               {% if ext.dev.github %}
                 <a href="https://github.com/{{ ext.dev.github }}/stargazers">
                   <img
@@ -214,12 +203,12 @@ layout: default
                   src="https://img.shields.io/pypi/dm/{{ ext.dist.pypi }}?label=PyPI%20downloads&amp;style=flat-square"
                 />
               {% endif %}
-            </li>
+            </div>
           {% endif %}
 
           {% if ext.dist.pypi %}
-            <li class="list-group-item">
-              <h5>PyPI</h5>
+            <div class="panel-block is-block">
+              <h5 class="is-uppercase has-text-grey">PyPI</h5>
               <img
                 alt="PyPI - Package version"
                 src="https://img.shields.io/pypi/v/{{ ext.dist.pypi }}?label=Package%20version&amp;style=flat-square"
@@ -228,22 +217,22 @@ layout: default
                 alt="PyPI - Python support"
                 src="https://img.shields.io/pypi/pyversions/{{ ext.dist.pypi }}?label=Python%20support&amp;style=flat-square"
               />
-            </li>
+            </div>
           {% endif %}
 
           {% if ext.dist.pypi %}
-            <li class="list-group-item">
-              <h5>License</h5>
+            <div class="panel-block is-block">
+              <h5 class="is-uppercase has-text-grey">License</h5>
               <img
                 alt="PyPI - License"
                 src="https://img.shields.io/pypi/l/{{ ext.dist.pypi }}?label=&amp;style=flat-square"
               />
-            </li>
+            </div>
           {% endif %}
 
           {% if ext.dev.github %}
-            <li class="list-group-item">
-              <h5>Project stats</h5>
+            <div class="panel-block is-block">
+              <h5 class="is-uppercase has-text-grey">Project stats</h5>
               <a href="https://github.com/{{ ext.dev.github }}/issues">
                 <img
                   alt="GitHub issues"
@@ -256,12 +245,12 @@ layout: default
                   src="https://img.shields.io/github/issues-pr/{{ ext.dev.github }}?label=Pull%20requests&amp;style=flat-square"
                 />
               </a>
-            </li>
+            </div>
           {% endif %}
 
           {% if ext.dev.circleci or ext.dev.travisci or ext.dev.codecov or ext.dev.coveralls %}
-            <li class="list-group-item">
-              <h5>Quality metrics</h5>
+            <div class="panel-block is-block">
+              <h5 class="is-uppercase has-text-grey">Quality metrics</h5>
               {% if ext.dev.circleci %}
                 <a href="https://circleci.com/gh/{{ ext.dev.github }}">
                   <img
@@ -294,13 +283,14 @@ layout: default
                   />
                 </a>
               {% endif %}
-            </li>
+            </div>
           {% endif %}
-        </ol>
+
+        </nav>
 
       </div>
     </div>
   </div>
-</div>
+</section>
 
 {% include ext-footer.html %}

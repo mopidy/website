@@ -2,42 +2,34 @@
 layout: default
 ---
 
-<div class="banner banner-sm bg-dark">
-  <div class="shadow">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-lg-6">
-          <h1>
-            Authenticate Mopidy with music services.
-          </h1>
-          <p class="lead">
-            Some services require you to get authentication tokens for
-            Mopidy so that it can connect to your service accounts. This
-            page helps you on the way.
-          </p>
-        </div>
-      </div>
-      <div class="image-credits text-muted text-right">
-        Photo by
-        <a href="https://www.flickr.com/photos/sergiu_bacioiu">
-        Sergiu Bacioiu</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="feature" id="soundcloud">
+<section class="section">
   <div class="container">
-    <div class="row">
-      <div class="col-sm-3">
 
-        <img src="/media/images/soundcloud.png" alt="SoundCloud"
-        class="img-responsive">
+    <h1 class="title is-size-2">Authenticate Mopidy with music services</h1>
+
+    <p class="is-size-4">
+      Some services require you to get authentication tokens for
+      Mopidy so that it can connect to your service accounts. This
+      page helps you on the way.
+    </p>
+
+  </div>
+</section>
+
+<section class="section" id="soundcloud">
+  <div class="container">
+
+    <div class="columns is-variable is-8">
+      <div class="column is-2">
+
+        <figure class="image">
+          <img src="/media/images/soundcloud.png" alt="SoundCloud">
+        </figure>
 
       </div>
-      <div class="col-sm-9">
+      <div class="column content is-medium">
 
-        <h2>SoundCloud</h2>
+        <h2 class="title">SoundCloud</h2>
 
         <script src="https://connect.soundcloud.com/sdk.js"></script>
         <script>
@@ -52,10 +44,10 @@ layout: default
               SC.get("/me", function(user, error) {
                 if (error) {
                   errorEl.innerText = error.message;
-                  errorEl.classList.remove('hidden');
+                  errorEl.classList.remove('is-hidden');
                   tokenEl.innerText = '';
                 } else {
-                  errorEl.classList.add('hidden');
+                  errorEl.classList.add('is-hidden');
                   tokenEl.innerText = SC.accessToken();
                 }
               });
@@ -63,9 +55,11 @@ layout: default
           }
         </script>
 
-        <p>If you want to use the SoundCloud extension, you must first
-        authenticate your Mopidy installation to access your SoundCloud
-        account.</p>
+        <p>
+          If you want to use the <a href="/ext/soundcloud">SoundCloud extension</a>,
+          you must first authenticate your Mopidy installation to access your
+          SoundCloud account.
+        </p>
 
         <ol>
           <li>
@@ -80,12 +74,12 @@ layout: default
             <p>Add the token to the <code>soundcloud/auth_token</code>
             config value in your <code>mopidy.conf</code> file:</p>
 
-            <div class="soundcloud_error alert alert-danger hidden"></div>
+            <p class="soundcloud_error notification is-danger is-hidden"></p>
             <pre id="soundcloud-snippet">
 [soundcloud]
 auth_token = <span class="soundcloud_token">...token goes here...</span></pre>
             <p>
-              <button data-clipboard-target="#soundcloud-snippet" type="button" class="btn btn-xs">
+              <button data-clipboard-target="#soundcloud-snippet" type="button" class="button is-small">
                 Copy to clipboard
               </button>
               <small></small>
@@ -99,17 +93,24 @@ auth_token = <span class="soundcloud_token">...token goes here...</span></pre>
 
       </div>
     </div>
-  </div>
-</div>
 
-<div class="feature" id="spotify">
+  </div>
+</section>
+
+<section class="section" id="spotify">
   <div class="container">
-    <div class="row">
-      <div class="col-sm-3">
-        <img src="/media/images/spotify.png" alt="Spotify" class="img-responsive">
+
+    <div class="columns is-variable is-8">
+      <div class="column is-2">
+
+        <figure class="image">
+          <img src="/media/images/spotify.png" alt="Spotify">
+        </figure>
+
       </div>
-      <div class="col-sm-9">
-        <h2>Spotify</h2>
+      <div class="column content is-medium">
+
+        <h2 class="title">Spotify</h2>
 
         <script>
           var SpotifyConnect = (function() {
@@ -128,11 +129,11 @@ auth_token = <span class="soundcloud_token">...token goes here...</span></pre>
               });
 
               if (!error) {
-                errorEl.classList.add('hidden');
+                errorEl.classList.add('is-hidden');
                 errorEl.innerText = '';
               } else {
                 errorEl.innerText = desc ? desc + ' (' + error + ')' : error;
-                errorEl.classList.remove('hidden');
+                errorEl.classList.remove('is-hidden');
               }
             }
 
@@ -177,9 +178,13 @@ auth_token = <span class="soundcloud_token">...token goes here...</span></pre>
           })();
         </script>
 
-        <p>If you want to use the Mopidy-Spotify and/or Mopidy-Spotify-Web extensions, you must first
-        authenticate your Mopidy installation to access your Spotify
-        account. Once authenticated, your credentials will appear below.</p>
+        <p>
+          If you want to use the
+          <a href="/ext/spotify">Mopidy-Spotify</a> and/or
+          Mopidy-Spotify-Web extensions,
+          you must first authenticate your Mopidy installation to access your
+          Spotify account. Once authenticated, your credentials will appear below.
+        </p>
 
         <ol>
           <li>
@@ -195,13 +200,13 @@ auth_token = <span class="soundcloud_token">...token goes here...</span></pre>
             <p>Add the credentials to the <code>spotify</code>
             config section in your <code>mopidy.conf</code> file:</p>
 
-            <div class="spotify_error alert alert-danger hidden"></div>
+            <p class="spotify_error notification is-danger is-hidden"></p>
             <pre id="spotify-snippet">
 [spotify]
 client_id = <span class="spotify_client_id">...client_id will appear here...</span>
 client_secret = <span class="spotify_client_secret">...client_secret will appear here...</span></pre>
             <p>
-              <button data-clipboard-target="#spotify-snippet" type="button" class="btn btn-xs">
+              <button data-clipboard-target="#spotify-snippet" type="button" class="button is-small">
                 Copy to clipboard
               </button>
               <small></small>
@@ -212,13 +217,13 @@ client_secret = <span class="spotify_client_secret">...client_secret will appear
             credentials to the <code>spotify_web</code>
             config section in your <code>mopidy.conf</code> file:</p>
 
-            <div class="spotify_error alert alert-danger hidden"></div>
+            <p class="spotify_error notification is-danger is-hidden"></p>
             <pre id="spotify-web-snippet">
 [spotify_web]
 client_id = <span class="spotify_client_id">...client_id will also appear here...</span>
 client_secret = <span class="spotify_client_secret">...client_secret will also appear here...</span></pre>
             <p>
-              <button data-clipboard-target="#spotify-web-snippet" type="button" class="btn btn-xs">
+              <button data-clipboard-target="#spotify-web-snippet" type="button" class="button is-small">
                 Copy to clipboard
               </button>
               <small></small>
@@ -235,8 +240,9 @@ client_secret = <span class="spotify_client_secret">...client_secret will also a
 
       </div>
     </div>
+
   </div>
-</div>
+</section>
 
 <script src="/media/js/clipboard.min.js"></script>
 <script>

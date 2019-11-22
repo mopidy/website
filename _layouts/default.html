@@ -1,120 +1,114 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mopidy</title>
+  <link rel="stylesheet" href="/media/css/mopidy.css">
+  <script src="/media/js/mopidy.js"></script>
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-15510432-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+<body>
 
-<html>
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item is-size-4" href="/">Mopidy &#x266a;</a>
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mopidy</title>
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Asap">
-    <link rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
-      crossorigin="anonymous">
-    <link rel="stylesheet" href="/media/css/mopidy.css">
-    <script>
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-15510432-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
-      crossorigin="anonymous"></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
-      integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
-      crossorigin="anonymous"></script>
-  </head>
+      <a
+        class="navbar-burger burger"
+        role="button" aria-label="menu" aria-expanded="false"
+        data-target="nav"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
 
-  <body>
-
-    <nav class="navbar navbar-inverse navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle"
-              data-toggle="collapse" data-target="#nav">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">
-            Mopidy &#x266a;</a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="nav">
-          <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/ext/">Extensions</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="https://docs.mopidy.com/">Documentation</a></li>
-            <li><a href="https://discourse.mopidy.com/">Discourse forum</a></li>
-            <li><a href="https://mopidy.zulipchat.com/">Zulip chat</a></li>
-            <li><a href="https://github.com/mopidy">GitHub</a></li>
-          </ul>
-        </div>
+    <div id="nav" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/">Home</a>
+        <a class="navbar-item" href="/ext/">Extensions</a>
       </div>
-    </nav>
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://docs.mopidy.com/">Documentation</a>
+        <a class="navbar-item" href="https://discourse.mopidy.com/">Discourse forum</a>
+        <a class="navbar-item" href="https://mopidy.zulipchat.com/">Zulip chat</a>
+        <a class="navbar-item" href="https://github.com/mopidy">GitHub</a>
+      </div>
+    </div>
+  </div>
+</nav>
 
 {{ content }}
 
-    <div class="menu bg-dark">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-6 col-sm-3">
-            <ul class="list-unstyled">
-              <li><strong>Learn More</strong></li>
-              <li><a href="https://docs.mopidy.com/en/latest/">
-                Documentation</a></li>
-              <li><a href="https://docs.mopidy.com/en/latest/api/">
-                API reference</a></li>
-              <li><a href="https://github.com/mopidy">
-                Source code</a></li>
-            </ul>
-          </div>
-          <div class="col-xs-6 col-sm-3">
-            <ul class="list-unstyled">
-              <li><strong>User Community</strong></li>
-              <li><a href="https://discourse.mopidy.com/">Discourse forum</a></li>
-              <li><a href="https://mopidy.zulipchat.com/#narrow/stream/211349-mopidy-users">
-		Users chat at Zulip</a></li>
-            </ul>
-          </div>
-          <div class="col-xs-6 col-sm-3">
-            <ul class="list-unstyled">
-              <li><strong>Get Involved</strong></li>
-              <li><a href="https://docs.mopidy.com/en/latest/contributing/">
-                Contribution guide</a></li>
-	      <li><a href="https://github.com/mopidy/mopidy/issues">GitHub Issues</a></li>
-              <li><a href="https://mopidy.zulipchat.com/#narrow/stream/207265-mopidy-dev">
-                Dev chat at Zulip</a></li>
-            </ul>
-          </div>
-          <div class="col-xs-6 col-sm-3">
-            <ul class="list-unstyled">
-              <li><strong>Related Projects</strong></li>
-              <li><a href="https://pyspotify.mopidy.com/">pyspotify</a></li>
-              <li><a href="https://www.pimusicbox.com/">Pi MusicBox</a></li>
-            </ul>
-          </div>
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
+
+      <div class="columns">
+        <div class="column">
+          <p class="is-size-5">Learn More</p>
+          <ul>
+            <li><a href="https://docs.mopidy.com/en/latest/">
+              Documentation</a></li>
+            <li><a href="https://docs.mopidy.com/en/latest/api/">
+              API reference</a></li>
+            <li><a href="https://github.com/mopidy">
+              Source code</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <p class="is-size-5">Community</p>
+          <ul>
+            <li><a href="https://discourse.mopidy.com/">Discourse forum</a></li>
+            <li><a href="https://mopidy.zulipchat.com/#narrow/stream/211349-mopidy-users">
+              Users chat at Zulip</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <p class="is-size-5">Get Involved</p>
+          <ul>
+            <li><a href="https://docs.mopidy.com/en/latest/contributing/">
+              Contribution guide</a></li>
+      <li><a href="https://github.com/mopidy/mopidy/issues">GitHub Issues</a></li>
+            <li><a href="https://mopidy.zulipchat.com/#narrow/stream/207265-mopidy-dev">
+              Dev chat at Zulip</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <p class="is-size-5">Related Projects</p>
+          <ul>
+            <li><a href="https://pyspotify.mopidy.com/">pyspotify</a></li>
+            <li><a href="https://www.pimusicbox.com/">Pi MusicBox</a></li>
+          </ul>
         </div>
       </div>
-    </div>
 
-    <div class="footer bg-darkest">
-      <div class="container">
-        <p>
-          Copyright &copy; 2009-2019 Stein Magnus Jodal and contributors.
-        </p>
-      </div>
     </div>
-  </body>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+
+    <p>
+      Copyright &copy; 2009-2019 Stein Magnus Jodal and contributors.
+    </p>
+
+  </div>
+</footer>
+
+</body>
 </html>

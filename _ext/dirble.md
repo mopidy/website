@@ -11,9 +11,6 @@ dist:
   apt-debian: mopidy-dirble
   apt-mopidy: mopidy-dirble
   arch-aur: mopidy-dirble
-  homebrew:
-    tap: mopidy/mopidy
-    formula: mopidy-dirble
 py3: false
 ---
 

@@ -8,7 +8,6 @@ dev:
   coveralls: true
 dist:
   pypi: Mopidy-Dirble
-  apt-debian: mopidy-dirble
   apt-mopidy: mopidy-dirble
   arch-aur: mopidy-dirble
 py3: false

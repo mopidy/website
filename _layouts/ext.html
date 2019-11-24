@@ -104,80 +104,105 @@ layout: default
               <a href="https://docs.mopidy.com/">Mopidy's documentation</a>
               for how to configure the extension.
             </p>
+          {% else %}
+            <div class="tabs is-medium">
+              <ul class="is-marginless">
+                {% if ext.dist.pypi %}
+                  <li class="is-active"><a href="#pypi">PyPI</a></li>
+                {% endif %}
+                {% if ext.dist.apt-debian or ext.dist.apt-mopidy %}
+                  <li><a href="#debian">Debian</a></li>
+                {% endif %}
+                {% if ext.dist.arch-aur %}
+                  <li><a href="#arch">Arch</a></li>
+                {% endif %}
+                {% if ext.dist.homebrew %}
+                  <li><a href="#macos">macOS</a></li>
+                {% endif %}
+              </ul>
+            </div>
           {% endif %}
 
           {% if ext.dist.pypi %}
-            <h3>From PyPI</h3>
-            <p>
-              Install the <code>{{ ext.dist.pypi }}</code> package from
-              <a href="https://pypi.org/project/{{ ext.dist.pypi }}">PyPI</a>:
-            </p>
-            {% if ext.py3 == true %}
-              <pre>python3 -m pip install {{ ext.dist.pypi }}</pre>
-            {% else %}
-              <pre>python -m pip install {{ ext.dist.pypi }}</pre>
-            {% endif %}
+            <div class="tab-content" id="pypi">
+              <h3>PyPI</h3>
+              <p>
+                Install the <code>{{ ext.dist.pypi }}</code> package from
+                <a href="https://pypi.org/project/{{ ext.dist.pypi }}">PyPI</a>:
+              </p>
+              {% if ext.py3 == true %}
+                <pre>python3 -m pip install {{ ext.dist.pypi }}</pre>
+              {% else %}
+                <pre>python -m pip install {{ ext.dist.pypi }}</pre>
+              {% endif %}
+            </div>
           {% endif %}
 
           {% if ext.dist.apt-debian or ext.dist.apt-mopidy %}
-            <h3>Debian and Ubuntu</h3>
-          {% endif %}
-          {% if ext.dist.apt-debian %}
-            <p>
-              Install the <code>{{ ext.dist.apt-debian }}</code> package from
-              <a href="https://packages.debian.org/{{ ext.dist.apt-debian }}">Debian</a> or
-              <a href="https://packages.ubuntu.com/{{ ext.dist.apt-debian }}">Ubuntu</a>:
-            </p>
-            <pre>apt install {{ ext.dist.apt-debian }}</pre>
-          {% endif %}
-          {% if ext.dist.apt-mopidy %}
-            {% if ext.dist.apt-debian %}
-              <h4>Mopidy's APT repository</h4>
-              <p>
-                Alternatively,
-                you can install the <code>{{ ext.dist.apt-mopidy }}</code>
-                Debian package from Mopidy's APT repository,
-                which often has newer versions than Debian/Ubuntu.
-              </p>
-            {% else %}
-              <p>
-                This extension is currently not packaged in Debian/Ubuntu, but
-                you can install the <code>{{ ext.dist.apt-mopidy }}</code>
-                Debian package from Mopidy's APT repository.
-              </p>
-            {% endif %}
-            <p>
-              First, follow the instructions at
-              <a href="https://apt.mopidy.com/">apt.mopidy.com</a>
-              on how to setup Mopidy's APT repo on your system.
-            </p>
-            <p>
-              Then, install the <code>{{ ext.dist.apt-mopidy }}</code> package:
-            </p>
-            <pre>apt install {{ ext.dist.apt-mopidy }}</pre>
+            <div class="tab-content is-hidden" id="debian">
+              <h3>Debian and Ubuntu</h3>
+              {% if ext.dist.apt-debian %}
+                <p>
+                  Install the <code>{{ ext.dist.apt-debian }}</code> package from
+                  <a href="https://packages.debian.org/{{ ext.dist.apt-debian }}">Debian</a> or
+                  <a href="https://packages.ubuntu.com/{{ ext.dist.apt-debian }}">Ubuntu</a>:
+                </p>
+                <pre>apt install {{ ext.dist.apt-debian }}</pre>
+              {% endif %}
+              {% if ext.dist.apt-mopidy %}
+                {% if ext.dist.apt-debian %}
+                  <h4>Mopidy's APT repository</h4>
+                  <p>
+                    Alternatively,
+                    you can install the <code>{{ ext.dist.apt-mopidy }}</code>
+                    Debian package from Mopidy's APT repository,
+                    which often has newer versions than Debian/Ubuntu.
+                  </p>
+                {% else %}
+                  <p>
+                    This extension is currently not packaged in Debian/Ubuntu, but
+                    you can install the <code>{{ ext.dist.apt-mopidy }}</code>
+                    Debian package from Mopidy's APT repository.
+                  </p>
+                {% endif %}
+                <p>
+                  First, follow the instructions at
+                  <a href="https://apt.mopidy.com/">apt.mopidy.com</a>
+                  on how to setup Mopidy's APT repo on your system.
+                </p>
+                <p>
+                  Then, install the <code>{{ ext.dist.apt-mopidy }}</code> package:
+                </p>
+                <pre>apt install {{ ext.dist.apt-mopidy }}</pre>
+              {% endif %}
+            </div>
           {% endif %}
 
           {% if ext.dist.arch-aur %}
-            <h3>Arch Linux</h3>
-            <p>
-              Install the
-              <a href="https://aur.archlinux.org/packages/{{ ext.dist.arch-aur }}">
-                {{ ext.dist.arch-aur }}</a>
-              package from AUR:
-            </p>
-            <pre>yay -S {{ ext.dist.arch-aur }}</pre>
+            <div class="tab-content is-hidden" id="arch">
+              <h3>Arch Linux</h3>
+              <p>
+                Install the
+                <a href="https://aur.archlinux.org/packages/{{ ext.dist.arch-aur }}">
+                  {{ ext.dist.arch-aur }}</a>
+                package from AUR:
+              </p>
+              <pre>yay -S {{ ext.dist.arch-aur }}</pre>
+            </div>
           {% endif %}
 
           {% if ext.dist.homebrew %}
-            {% assign homebrew_repo = ext.dist.homebrew.tap | replace: "/", "/homebrew-" %}
-            <h3>macOS</h3>
-            <p>
-              Install the
-              <a href="https://github.com/{{ homebrew_repo }}/blob/master/Formula/{{ ext.dist.homebrew.formula }}.rb">
-                {{ ext.dist.homebrew.formula }}</a>
-              formula with <a href="https://brew.sh/">Homebrew</a>:
-            </p>
-            <pre>brew install {{ ext.dist.homebrew.tap }}/{{ ext.dist.homebrew.formula }}</pre>
+            <div class="tab-content is-hidden" id="macos">
+              {% assign homebrew_repo = ext.dist.homebrew.tap | replace: "/", "/homebrew-" %}
+              <h3>macOS</h3>
+              <p>
+                Install the
+                <a href="https://github.com/{{ homebrew_repo }}/blob/master/Formula/{{ ext.dist.homebrew.formula }}.rb">
+                  {{ ext.dist.homebrew.formula }}</a>
+                formula with <a href="https://brew.sh/">Homebrew</a>:
+              </p>
+              <pre>brew install {{ ext.dist.homebrew.tap }}/{{ ext.dist.homebrew.formula }}</pre>
+            </div>
           {% endif %}
         </div>
 

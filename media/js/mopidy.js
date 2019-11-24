@@ -10,6 +10,28 @@ function setupNavbarBurger(navbarBurger) {
   });
 }
 
+function setupTabs(tabContainer) {
+  const tabs = tabContainer.querySelectorAll("li");
+  const contents = [];
+
+  forEach(tabs, function(tab) {
+    const link = tab.querySelector("a");
+    const content = document.querySelector(link.getAttribute("href"));
+    contents.push(content);
+
+    link.addEventListener("click", function(event) {
+      event.preventDefault();
+
+      forEach(tabs, e => e.classList.remove("is-active"));
+      tab.classList.add("is-active");
+
+      forEach(contents, e => e.classList.add("is-hidden"));
+      content.classList.remove("is-hidden");
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   forEach(document.querySelectorAll(".navbar-burger"), setupNavbarBurger);
+  forEach(document.querySelectorAll(".tabs"), setupTabs);
 });

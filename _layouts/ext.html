@@ -125,7 +125,6 @@ layout: default
 
           {% if ext.dist.pypi %}
             <div class="tab-content" id="pypi">
-              <h3>PyPI</h3>
               <p>
                 Install the <code>{{ ext.dist.pypi }}</code> package from
                 <a href="https://pypi.org/project/{{ ext.dist.pypi }}">PyPI</a>:
@@ -140,7 +139,6 @@ layout: default
 
           {% if ext.dist.apt-debian or ext.dist.apt-mopidy %}
             <div class="tab-content is-hidden" id="debian">
-              <h3>Debian and Ubuntu</h3>
               {% if ext.dist.apt-debian %}
                 <p>
                   Install the <code>{{ ext.dist.apt-debian }}</code> package from
@@ -180,7 +178,6 @@ layout: default
 
           {% if ext.dist.arch-aur %}
             <div class="tab-content is-hidden" id="arch">
-              <h3>Arch Linux</h3>
               <p>
                 Install the
                 <a href="https://aur.archlinux.org/packages/{{ ext.dist.arch-aur }}">
@@ -194,7 +191,6 @@ layout: default
           {% if ext.dist.homebrew %}
             <div class="tab-content is-hidden" id="macos">
               {% assign homebrew_repo = ext.dist.homebrew.tap | replace: "/", "/homebrew-" %}
-              <h3>macOS</h3>
               <p>
                 Install the
                 <a href="https://github.com/{{ homebrew_repo }}/blob/master/Formula/{{ ext.dist.homebrew.formula }}.rb">

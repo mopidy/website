@@ -1,5 +1,7 @@
-function forEach(arg, fn) {
-  Array.prototype.forEach.call(arg, fn);
+if (window.NodeList && !NodeList.prototype.forEach) {
+  // Polyfill NodeList.forEach
+  // https://caniuse.com/#feat=mdn-api_nodelist_foreach
+  NodeList.prototype.forEach = Array.prototype.forEach;
 }
 
 function setupNavbarBurger(navbarBurger) {
@@ -14,24 +16,24 @@ function setupTabs(tabContainer) {
   const tabs = tabContainer.querySelectorAll("li");
   const contents = [];
 
-  forEach(tabs, function(tab) {
+  tabs.forEach(tab => {
     const link = tab.querySelector("a");
     const content = document.querySelector(link.getAttribute("href"));
     contents.push(content);
 
-    link.addEventListener("click", function(event) {
+    link.addEventListener("click", event => {
       event.preventDefault();
 
-      forEach(tabs, e => e.classList.remove("is-active"));
+      tabs.forEach(el => el.classList.remove("is-active"));
       tab.classList.add("is-active");
 
-      forEach(contents, e => e.classList.add("is-hidden"));
+      contents.forEach(el => el.classList.add("is-hidden"));
       content.classList.remove("is-hidden");
     });
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  forEach(document.querySelectorAll(".navbar-burger"), setupNavbarBurger);
-  forEach(document.querySelectorAll(".tabs"), setupTabs);
+  document.querySelectorAll(".navbar-burger").forEach(setupNavbarBurger);
+  document.querySelectorAll(".tabs").forEach(setupTabs);
 });

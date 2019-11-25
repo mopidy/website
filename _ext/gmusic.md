@@ -9,7 +9,7 @@ dev:
 dist:
   pypi: Mopidy-GMusic
   arch-aur: mopidy-gmusic
-py3: false
+py3: prerelease
 ---
 
 A backend for playing music from

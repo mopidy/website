@@ -4,12 +4,12 @@ name: Mopidy-GMusic
 type: backend
 dev:
   github: mopidy/mopidy-gmusic
-  travisci: true
-  coveralls: true
+  circleci: true
+  codecov: true
 dist:
   pypi: Mopidy-GMusic
   arch-aur: mopidy-gmusic
-py3: false
+py3: prerelease
 ---
 
 A backend for playing music from

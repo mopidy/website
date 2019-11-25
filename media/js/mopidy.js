@@ -33,7 +33,36 @@ function setupTabs(tabContainer) {
   });
 }
 
+function select(el) {
+  const range = document.createRange();
+  range.selectNodeContents(el);
+
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  selection.addRange(range);
+}
+
+function setupCopy(el) {
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("copy-container");
+
+  const button = document.createElement("button");
+  button.textContent = "Copy";
+  button.addEventListener("click", event => {
+    event.preventDefault();
+    button.classList.add("is-loading");
+    setTimeout(_ => button.classList.remove("is-loading"), 200);
+    select(el);
+    document.execCommand("copy");
+  });
+
+  el.parentNode.insertBefore(wrapper, el);
+  wrapper.appendChild(el);
+  wrapper.appendChild(button);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".navbar-burger").forEach(setupNavbarBurger);
   document.querySelectorAll(".tabs").forEach(setupTabs);
+  document.querySelectorAll(".copy").forEach(setupCopy);
 });

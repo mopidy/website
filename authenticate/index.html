@@ -75,15 +75,9 @@ layout: default
             config value in your <code>mopidy.conf</code> file:</p>
 
             <p class="soundcloud_error notification is-danger is-hidden"></p>
-            <pre id="soundcloud-snippet">
+            <pre class="copy" id="soundcloud-snippet">
 [soundcloud]
 auth_token = <span class="soundcloud_token">...token goes here...</span></pre>
-            <p>
-              <button data-clipboard-target="#soundcloud-snippet" type="button" class="button is-small">
-                Copy to clipboard
-              </button>
-              <small></small>
-            </p>
           </li>
         </ol>
 
@@ -201,16 +195,10 @@ auth_token = <span class="soundcloud_token">...token goes here...</span></pre>
             config section in your <code>mopidy.conf</code> file:</p>
 
             <p class="spotify_error notification is-danger is-hidden"></p>
-            <pre id="spotify-snippet">
+            <pre class="copy" id="spotify-snippet">
 [spotify]
 client_id = <span class="spotify_client_id">...client_id will appear here...</span>
 client_secret = <span class="spotify_client_secret">...client_secret will appear here...</span></pre>
-            <p>
-              <button data-clipboard-target="#spotify-snippet" type="button" class="button is-small">
-                Copy to clipboard
-              </button>
-              <small></small>
-            </p>
           </li>
           <li>
             <p>If also using Mopidy-Spotify-Web then also add the same
@@ -218,16 +206,10 @@ client_secret = <span class="spotify_client_secret">...client_secret will appear
             config section in your <code>mopidy.conf</code> file:</p>
 
             <p class="spotify_error notification is-danger is-hidden"></p>
-            <pre id="spotify-web-snippet">
+            <pre class="copy" id="spotify-web-snippet">
 [spotify_web]
 client_id = <span class="spotify_client_id">...client_id will also appear here...</span>
 client_secret = <span class="spotify_client_secret">...client_secret will also appear here...</span></pre>
-            <p>
-              <button data-clipboard-target="#spotify-web-snippet" type="button" class="button is-small">
-                Copy to clipboard
-              </button>
-              <small></small>
-            </p>
           </li>
         </ol>
 
@@ -243,14 +225,3 @@ client_secret = <span class="spotify_client_secret">...client_secret will also a
 
   </div>
 </section>
-
-<script src="/media/js/clipboard.min.js"></script>
-<script>
-  (function() {
-    document.querySelectorAll('[data-clipboard-target]').forEach(function(el) {
-      new ClipboardJS(el).on('success', function(e) {
-        e.trigger.nextSibling.textContent = ' Copied...';
-      });
-    });
-  })();
-</script>

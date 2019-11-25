@@ -80,7 +80,7 @@ layout: default
                       you can install the pre-release using:
                     </p>
 
-                    <pre>python3 -m pip install --pre {{ ext.dist.pypi }}</pre>
+                    <pre class="copy">python3 -m pip install --pre {{ ext.dist.pypi }}</pre>
                   {% endif %}
 
                   {% if ext.dev.github %}
@@ -130,9 +130,9 @@ layout: default
                 <a href="https://pypi.org/project/{{ ext.dist.pypi }}">PyPI</a>:
               </p>
               {% if ext.py3 == true %}
-                <pre>python3 -m pip install {{ ext.dist.pypi }}</pre>
+                <pre class="copy">python3 -m pip install {{ ext.dist.pypi }}</pre>
               {% else %}
-                <pre>python -m pip install {{ ext.dist.pypi }}</pre>
+                <pre class="copy">python -m pip install {{ ext.dist.pypi }}</pre>
               {% endif %}
             </div>
           {% endif %}
@@ -145,7 +145,7 @@ layout: default
                   <a href="https://packages.debian.org/{{ ext.dist.apt-debian }}">Debian</a> or
                   <a href="https://packages.ubuntu.com/{{ ext.dist.apt-debian }}">Ubuntu</a>:
                 </p>
-                <pre>apt install {{ ext.dist.apt-debian }}</pre>
+                <pre class="copy">apt install {{ ext.dist.apt-debian }}</pre>
               {% endif %}
               {% if ext.dist.apt-mopidy %}
                 {% if ext.dist.apt-debian %}
@@ -171,7 +171,7 @@ layout: default
                 <p>
                   Then, install the <code>{{ ext.dist.apt-mopidy }}</code> package:
                 </p>
-                <pre>apt install {{ ext.dist.apt-mopidy }}</pre>
+                <pre class="copy">apt install {{ ext.dist.apt-mopidy }}</pre>
               {% endif %}
             </div>
           {% endif %}
@@ -184,7 +184,7 @@ layout: default
                   {{ ext.dist.arch-aur }}</a>
                 package from AUR:
               </p>
-              <pre>yay -S {{ ext.dist.arch-aur }}</pre>
+              <pre class="copy">yay -S {{ ext.dist.arch-aur }}</pre>
             </div>
           {% endif %}
 
@@ -197,7 +197,7 @@ layout: default
                   {{ ext.dist.homebrew.formula }}</a>
                 formula with <a href="https://brew.sh/">Homebrew</a>:
               </p>
-              <pre>brew install {{ ext.dist.homebrew.tap }}/{{ ext.dist.homebrew.formula }}</pre>
+              <pre class="copy">brew install {{ ext.dist.homebrew.tap }}/{{ ext.dist.homebrew.formula }}</pre>
             </div>
           {% endif %}
         </div>

@@ -34,3 +34,14 @@ $primary: $blue;
   @extend .mw-cover;
   background-image: url("/media/images/hannah-troupe-wL_w5t_OKtI-unsplash.jpg");
 }
+
+.copy-container{
+  position: relative;
+  button {
+    @extend .button;
+    font-size: 0.5rem;
+    position: absolute;
+    top: 0.25em;
+    right: 0.25em;
+  }
+}

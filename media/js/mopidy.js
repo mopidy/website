@@ -62,7 +62,73 @@ function setupCopy(el) {
 }
 
 function setupSelect(el) {
-  el.addEventListener('dblclick', _ => select(el));
+  el.addEventListener("dblclick", _ => select(el));
+}
+
+function openPopup(target, title) {
+  return window.open(
+    target, title,
+    [
+      "toolbar=no",
+      "location=no",
+      "directories=no",
+      "status=no",
+      "menubar=no",
+      "scrollbars=no",
+      "resizable=no",
+      "copyhistory=no",
+      "width=" + 800,
+      "height=" + 600,
+      "left=" + ((screen.width/2)-(800/2)),
+      "top=" + ((screen.height/2)-(600/2))
+    ].join(", "));
+}
+
+function setupAuth(auth) {
+  let checkPopupInterval = null;
+
+  const button = auth.querySelector(".auth-button");
+  const error = auth.querySelector(".auth-error");
+
+  const reset = _ => {
+    clearInterval(checkPopupInterval);
+    error.classList.add("is-hidden");
+  }
+
+  window.addEventListener("message", event => {
+    if (!event.origin.match(/https:\/\/(auth\.)?mopidy\.com/)) {
+      return;
+    }
+
+    reset();
+    event.source.close()
+
+    if (event.data.error) {
+      error.classList.remove("is-hidden");
+      error.innerText = "[" + event.data.error + "]";
+      if (event.data.error_description) {
+        error.innerText += " " + event.data.error_description;
+      }
+    } else {
+      auth.querySelectorAll("[data-name]").forEach(el => {
+        el.innerText = event.data[el.dataset.name];
+      });
+    }
+  });
+
+  button.addEventListener("click", event => {
+    reset();
+    event.preventDefault();
+
+    const popup = openPopup(button.href, "Authenticate Mopidy extension.");
+    checkPopupInterval = setInterval(_ => {
+      if (popup.closed) {
+        reset();
+        error.innerText = "Popup closed without completing authentication.";
+        error.classList.remove("is-hidden");
+      };
+    }, 1000);
+  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -70,4 +136,5 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".tabs").forEach(setupTabs);
   document.querySelectorAll(".copy").forEach(setupCopy);
   document.querySelectorAll(".select").forEach(setupSelect);
+  document.querySelectorAll(".auth").forEach(setupAuth);
 });

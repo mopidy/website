@@ -201,28 +201,30 @@ layout: default
             </div>
           {% endif %}
 
-          {% if ext.auth %}
-            <h2 id="authentication">Authentication</h2>
-            <p>
-              {{ ext.name }} needs API access, to grant access click the button bellow and
-              follow the instructions. Your data is <b>never</b> shared with this site.
-            </p>
-            <p><a href="#" class="img" id="auth-button">
-              <img src="{{ ext.auth.button }}" alt="Authenticate {{ ext.name }}"></a></p>
-            <p>
-              After the pop up closes, add the following to you <code>mopidy.conf</code> file:
-            </p>
-            <p id="auth-error" class="notification is-danger is-hidden"></p>
-            <pre class="copy" id="auth-config">{% for config in ext.auth.config %}
+          {% if ext.oauth %}
+            <div class="auth">
+              <h2 id="authentication">Authentication</h2>
+              <p>
+                {{ ext.name }} needs API access, to grant access click the button bellow and
+                follow the instructions. Your data is <b>never</b> shared with this site.
+              </p>
+              <p><a class="img auth-button" href="{{ ext.oauth.target }}">
+                <img src="{{ ext.oauth.button }}" alt="Authenticate {{ ext.name }}"></a></p>
+              <p>
+                After the pop up closes, add the following to you <code>mopidy.conf</code> file:
+              </p>
+              <p class="auth-error notification is-danger is-hidden"></p>
+              {% for config in ext.oauth.config %}
+                <pre class="copy auth-config">
 [{{ config[0] }}]{% for item in config[1] %}
-{{ item[0] }} = <b data-name="{{ item[0] }}" class="select">{{ item[1] }} will appear here.</b>{% endfor %}{% endfor %}</pre>
-            <p>
-              For more information see the
-              <a href="https://github.com/{{ ext.dev.github }}">{{ ext.name }} docs</a>.
-            </p>
-            {% for script in ext.auth.scripts %}
-              <script type="text/javascript" src="{{ script }}"></script>
-            {% endfor %}
+{{ item }} = <b data-name="{{ item }}" class="select">The config value will appear here.</b>{% endfor %}</pre>
+              {% endfor %}
+              <p>
+                For more information see the
+                <a href="https://github.com/{{ ext.dev.github }}">{{ ext.name }} docs</a>.
+              </p>
+              {{ ext.oauth.note|markdownify }}
+            </div>
           {% endif %}
         </div>
 

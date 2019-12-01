@@ -20,7 +20,7 @@
       try {
         window.opener.setTimeout(window.opener.SC.connectCallback, 1);
       } catch(error) {
-        window.opener.postMessage(data, '*');
+        window.opener.postMessage(data, 'https://mopidy.com');
       }
       setInterval(_ => {
         if (!window.opener || window.opener.closed) {

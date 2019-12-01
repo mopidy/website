@@ -14,15 +14,16 @@ dist:
     tap: mopidy/mopidy
     formula: mopidy-spotify
 py3: prerelease
-auth:
+oauth:
   button: /media/images/spotify-log-in.png
+  target: https://auth.mopidy.com/spotify/
   config:
     spotify:
-      client_id: Client ID
-      client_secret: Client Secret
-  scripts:
-    - /media/js/spotify-auth.js
-
+      - client_id
+      - client_secret
+  note: |
+    If you are using [Mopidy-Spotify-Web](https://github.com/lfcabend/mopidy-spotify-web)
+    you can use the same credentials in the `spotify_web` config section.
 ---
 
 Extension for playing music from the [Spotify](https://spotify.com/) music

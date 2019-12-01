@@ -62,7 +62,7 @@ function setupCopy(el) {
 }
 
 function setupSelect(el) {
-  el.addEventListener("dblclick", _ => select(el));
+  el.addEventListener("click", _ => select(el));
 }
 
 function openPopup(target, title) {

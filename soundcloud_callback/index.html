@@ -5,9 +5,32 @@
   <head>
     <meta charset="UTF-8">
     <title>Connect with SoundCloud</title>
+    <script type="text/javascript">
+      const parse = value => new Map(value.substr(1).split("&").map(v => v.split("=", 2)));
+      const get = (map, key) => map.has(key) ? decodeURIComponent(map.get(key)) : null;
+      const hash = parse(window.location.hash);
+      const query = parse(window.location.search);
+
+      const data = {
+        auth_token: get(hash, "access_token"),
+        error: get(query, "error_code"),
+        error_description: get(query, "error_description"),
+      }
+
+      try {
+        window.opener.setTimeout(window.opener.SC.connectCallback, 1);
+      } catch(error) {
+        window.opener.postMessage(data, '*');
+      }
+      setInterval(_ => {
+        if (!window.opener || window.opener.closed) {
+          window.self.close();
+        }
+      }, 1000);
+    </script>
   </head>
 
-  <body onload="window.opener.setTimeout(window.opener.SC.connectCallback, 1)">
+  <body>
     <p>This popup should automatically close in a few seconds.</p>
   </body>
 

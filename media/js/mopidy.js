@@ -107,7 +107,10 @@ function setupAuth(auth) {
       error.classList.remove("is-hidden");
       error.innerText = "[" + event.data.error + "]";
       if (event.data.error_description) {
-        error.innerText += " " + event.data.error_description;
+        let desc = event.data.error_description;
+        desc = desc.replace(/^\w/, c => c.toUpperCase);
+        desc = desc.replace(/([.]?$)/, ".");
+        error.innerText += " " + desc;
       }
     } else {
       auth.querySelectorAll("[data-name]").forEach(el => {

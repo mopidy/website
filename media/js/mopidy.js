@@ -104,7 +104,7 @@ function setupAuth(auth) {
       error.innerText = "[" + event.data.error + "]";
       if (event.data.error_description) {
         let desc = event.data.error_description;
-        desc = desc.replace(/^\w/, c => c.toUpperCase);
+        desc = desc.replace(/^\w/, c => c.toUpperCase());
         desc = desc.replace(/([.]?$)/, ".");
         error.innerText += " " + desc;
       }

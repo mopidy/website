@@ -200,6 +200,30 @@ layout: default
               <pre class="copy">brew install {{ ext.dist.homebrew.tap }}/{{ ext.dist.homebrew.formula }}</pre>
             </div>
           {% endif %}
+
+          {% if ext.auth %}
+            <h2 id="authentication">Authentication</h2>
+            <p>
+              {{ ext.name }} needs API access, to grant access click the button bellow and
+              follow the instructions. Your data is <b>never</b> shared with this site.
+            </p>
+            <p><a href="#" class="img" id="auth-button">
+              <img src="{{ ext.auth.button }}" alt="Authenticate {{ ext.name }}"></a></p>
+            <p>
+              After the pop up closes, add the following to you <code>mopidy.conf</code> file:
+            </p>
+            <p id="auth-error" class="notification is-danger is-hidden"></p>
+            <pre class="copy" id="auth-config">{% for config in ext.auth.config %}
+[{{ config[0] }}]{% for item in config[1] %}
+{{ item[0] }} = <b data-name="{{ item[0] }}" class="select">{{ item[1] }} will appear here.</b>{% endfor %}{% endfor %}</pre>
+            <p>
+              For more information see the
+              <a href="https://github.com/{{ ext.dev.github }}">{{ ext.name }} docs</a>.
+            </p>
+            {% for script in ext.auth.scripts %}
+              <script type="text/javascript" src="{{ script }}"></script>
+            {% endfor %}
+          {% endif %}
         </div>
 
       </div>

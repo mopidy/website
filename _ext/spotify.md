@@ -14,6 +14,15 @@ dist:
     tap: mopidy/mopidy
     formula: mopidy-spotify
 py3: prerelease
+auth:
+  button: /media/images/spotify-log-in.png
+  config:
+    spotify:
+      client_id: Client ID
+      client_secret: Client Secret
+  scripts:
+    - /media/js/spotify-auth.js
+
 ---
 
 Extension for playing music from the [Spotify](https://spotify.com/) music

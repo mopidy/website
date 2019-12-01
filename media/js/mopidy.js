@@ -61,10 +61,6 @@ function setupCopy(el) {
   wrapper.appendChild(button);
 }
 
-function setupSelect(el) {
-  el.addEventListener("click", _ => select(el));
-}
-
 function openPopup(target, title) {
   return window.open(
     target, title,

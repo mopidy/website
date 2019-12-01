@@ -22,7 +22,7 @@
         if (event.origin === 'https://mopidy.com') {
           event.source.postMessage(data, event.origin);
         }
-      }
+      });
 
       try {
         // Continue supporting SDK based callback.

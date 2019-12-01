@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', _ => {
 
   SC.initialize({
     client_id: '93e33e327fd8a9b77becd179652272e2',
-    redirect_uri: 'https://mopidy.com/soundcloud_callback'
+    redirect_uri: 'https://www.mopidy.com/soundcloud_callback'
   });
 
   buttonEl.addEventListener('click', _ => SC.connect(_ => SC.get('/me', update)));

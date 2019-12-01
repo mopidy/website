@@ -134,6 +134,5 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".navbar-burger").forEach(setupNavbarBurger);
   document.querySelectorAll(".tabs").forEach(setupTabs);
   document.querySelectorAll(".copy").forEach(setupCopy);
-  document.querySelectorAll(".select").forEach(setupSelect);
   document.querySelectorAll(".auth").forEach(setupAuth);
 });

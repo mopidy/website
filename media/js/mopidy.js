@@ -61,8 +61,13 @@ function setupCopy(el) {
   wrapper.appendChild(button);
 }
 
+function setupSelect(el) {
+  el.addEventListener('dblclick', _ => select(el));
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".navbar-burger").forEach(setupNavbarBurger);
   document.querySelectorAll(".tabs").forEach(setupTabs);
   document.querySelectorAll(".copy").forEach(setupCopy);
+  document.querySelectorAll(".select").forEach(setupSelect);
 });

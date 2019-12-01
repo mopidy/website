@@ -125,8 +125,10 @@ function setupAuth(auth) {
         reset();
         error.innerText = "Popup closed without completing authentication.";
         error.classList.remove("is-hidden");
+      } else {
+        popup.postMessage({}, '*');
       };
-    }, 1000);
+    }, 200);
   });
 }
 

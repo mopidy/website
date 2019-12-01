@@ -17,11 +17,20 @@
         error_description: get(query, "error_description"),
       }
 
+      // Support custom handling using post messages.
+      window.addEventListener("message", event => {
+        if (event.origin === 'https://mopidy.com') {
+          event.source.postMessage(data, event.origin);
+        }
+      }
+
       try {
+        // Continue supporting SDK based callback.
         window.opener.setTimeout(window.opener.SC.connectCallback, 1);
       } catch(error) {
-        window.opener.postMessage(data, 'https://mopidy.com');
+        console.log(error);
       }
+
       setInterval(_ => {
         if (!window.opener || window.opener.closed) {
           window.self.close();

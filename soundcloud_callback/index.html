@@ -6,6 +6,10 @@
     <meta charset="UTF-8">
     <title>Connect with SoundCloud</title>
     <script type="text/javascript">
+      const allowedOrigins = [
+        'https://mopidy.com', 'https://auth.mopidy.com',
+        'http://localhost:4000', 'http://localhost:5000'];
+
       const parse = value => new Map(value.substr(1).split("&").map(v => v.split("=", 2)));
       const get = (map, key) => map.has(key) ? decodeURIComponent(map.get(key)) : null;
       const hash = parse(window.location.hash);
@@ -19,7 +23,7 @@
 
       // Support custom handling using post messages.
       window.addEventListener("message", event => {
-        if (event.origin === 'https://mopidy.com') {
+        if (allowedOrigins.indexOf(event.origin) >= 0) {
           event.source.postMessage(data, event.origin);
         }
       });

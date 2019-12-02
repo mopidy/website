@@ -126,7 +126,7 @@ function setupAuth(auth) {
 
     const popup = openPopup(button.href, "Authenticate Mopidy extension.");
     checkPopupInterval = setInterval(_ => {
-      if (popup.closed) {
+      if (!popup || popup.closed) {
         reset();
         error.innerText = "Popup closed without completing authentication.";
         error.classList.remove("is-hidden");

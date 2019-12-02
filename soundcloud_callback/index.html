@@ -6,42 +6,41 @@
     <meta charset="UTF-8">
     <title>Connect with SoundCloud</title>
     <script type="text/javascript">
+      // Try and keep supporting popups from the SC SDK.
+      if (window.opener && window.opener.SC) {
+        window.opener.setTimeout(window.opener.SC.connectCallback, 1);
+      }
+
+      // Rest of code is to get access_token, error and state.
+      function parse(value) {
+        return new Map(value.substr(1).split("&").map(v => v.split("=", 2)));
+      }
+
+      function get(map, key) {
+        return map.has(key) ? decodeURIComponent(map.get(key)) : null;
+      }
+
       const allowedOrigins = [
         'https://mopidy.com', 'https://auth.mopidy.com',
         'http://localhost:4000', 'http://localhost:5000'];
 
-      const parse = value => new Map(value.substr(1).split("&").map(v => v.split("=", 2)));
-      const get = (map, key) => map.has(key) ? decodeURIComponent(map.get(key)) : null;
       const hash = parse(window.location.hash);
       const query = parse(window.location.search);
 
       const data = {
         auth_token: get(hash, "access_token"),
+        state: get(query, "state"),
         error: get(query, "error_code"),
         error_description: get(query, "error_description"),
       }
 
-      // Support custom handling using post messages.
+      // Our opener will poll us with messages so we get a reference to them
+      // and can post back the result. This avoids the relying on window.opener.
       window.addEventListener("message", event => {
         if (allowedOrigins.indexOf(event.origin) >= 0) {
           event.source.postMessage(data, event.origin);
         }
       });
-
-      try {
-        // Continue supporting SDK based callback.
-        if (window.opener && window.opener.SC) {
-          window.opener.setTimeout(window.opener.SC.connectCallback, 1);
-        }
-      } catch(error) {
-        console.log(error);
-      }
-
-      setInterval(_ => {
-        if (!window.opener || window.opener.closed) {
-          window.self.close();
-        }
-      }, 1000);
     </script>
   </head>
 

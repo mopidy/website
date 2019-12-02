@@ -85,6 +85,7 @@ function setupAuth(auth) {
 
   const button = auth.querySelector(".auth-button");
   const error = auth.querySelector(".auth-error");
+  const callbackOrigin = (new URL(auth.dataset.origin || button.href)).origin;
 
   const reset = _ => {
     clearInterval(checkPopupInterval);
@@ -126,7 +127,7 @@ function setupAuth(auth) {
         error.innerText = "Popup closed without completing authentication.";
         error.classList.remove("is-hidden");
       } else {
-        popup.postMessage({}, '*');
+        popup.postMessage({}, callbackOrigin);
       };
     }, 200);
   });

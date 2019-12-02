@@ -202,7 +202,7 @@ layout: default
           {% endif %}
 
           {% if ext.oauth %}
-            <div class="auth">
+            <div class="auth"{% if ext.oauth.origin %} data-origin="{{ ext.oauth.origin }}"{% endif %}>
               <h2 id="authentication">Authentication</h2>
               <p>
                 {{ ext.name }} needs API access, to grant access click the button bellow and

@@ -16,7 +16,7 @@ dist:
 py3: prerelease
 oauth:
   button: /media/images/spotify-log-in.png
-  target: https://auth.mopidy.com/spotify/
+  endpoint: https://auth.mopidy.com/spotify/
   config:
     spotify:
       - client_id

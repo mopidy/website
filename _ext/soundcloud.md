@@ -1,7 +1,7 @@
 ---
 layout: ext
 name: Mopidy-SoundCloud
-logo: /media/images/soundcloud.png
+logo: /media/ext/soundcloud.png
 type: backend
 dev:
   github: mopidy/mopidy-soundcloud

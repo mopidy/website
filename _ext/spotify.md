@@ -1,7 +1,7 @@
 ---
 layout: ext
 name: Mopidy-Spotify
-logo: /media/images/spotify.png
+logo: /media/ext/spotify.png
 type: backend
 dev:
   github: mopidy/mopidy-spotify
@@ -16,7 +16,7 @@ dist:
     formula: mopidy-spotify
 py3: prerelease
 oauth:
-  button: /media/images/spotify-log-in.png
+  button: /media/ext/spotify-log-in.png
   endpoint: https://auth.mopidy.com/spotify/
   config:
     spotify:

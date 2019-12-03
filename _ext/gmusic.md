@@ -1,6 +1,7 @@
 ---
 layout: ext
 name: Mopidy-GMusic
+logo: /media/ext/gmusic.png
 type: backend
 dev:
   github: mopidy/mopidy-gmusic

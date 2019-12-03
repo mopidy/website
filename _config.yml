@@ -6,6 +6,7 @@ description: The extensible music server
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 collections:
   ext:

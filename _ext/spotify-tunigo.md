@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Spotify-Tunigo
+title: Mopidy-Spotify-Tunigo
 type: backend
 dev:
   github: trygveaa/mopidy-spotify-tunigo

@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-ALSAMixer
+title: Mopidy-ALSAMixer
 type: mixer
 dev:
   github: mopidy/mopidy-alsamixer

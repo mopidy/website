@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Scrobbler
+title: Mopidy-Scrobbler
 type: frontend
 dev:
   github: mopidy/mopidy-scrobbler

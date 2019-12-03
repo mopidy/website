@@ -11,11 +11,11 @@ layout: default
       <ol>
         <li><a href="/">Home</a></li>
         <li><a href="/ext/">Extensions</a></li>
-        <li class="is-active"><a href="{{ ext.url }}">{{ ext.name }}</a></li>
+        <li class="is-active"><a href="{{ ext.url }}">{{ ext.title }}</a></li>
       </ol>
     </nav>
 
-    <h1 class="title is-size-2">{{ ext.name }}</h1>
+    <h1 class="title is-size-2">{{ ext.title }}</h1>
     <h2 class="subtitle is-size-4 has-text-grey">
       {% case ext.type %}
         {% when "backend" %}
@@ -66,7 +66,7 @@ layout: default
           {% case ext.py3 %}
             {% when true %}
               <p class="notification is-success">
-                {{ ext.name }} supports Python 3.7+.
+                {{ ext.title }} supports Python 3.7+.
               </p>
             {% when "prerelease" %}
               <article class="message is-warning">
@@ -95,7 +95,7 @@ layout: default
               </article>
             {% else %}
               <p class="notification is-danger">
-                {{ ext.name }} does not support Python 3.7+, as far as we know.
+                {{ ext.title }} does not support Python 3.7+, as far as we know.
               </p>
           {% endcase %}
 
@@ -207,11 +207,11 @@ layout: default
             <div class="auth"{% if ext.oauth.origin %} data-origin="{{ ext.oauth.origin }}"{% endif %}>
               <h2 id="authentication" style="margin-top: 1.5em">Authentication</h2>
               <p>
-                {{ ext.name }} needs API access, to grant access click the button bellow and
+                {{ ext.title }} needs API access, to grant access click the button bellow and
                 follow the instructions. Your data is <b>never</b> shared with this site.
               </p>
               <p><a class="img auth-button" href="{{ ext.oauth.endpoint }}">
-                <img src="{{ ext.oauth.button }}" alt="Authenticate {{ ext.name }}"></a></p>
+                <img src="{{ ext.oauth.button }}" alt="Authenticate {{ ext.title }}"></a></p>
               <p>
                 After the pop up closes, add the following to you <code>mopidy.conf</code> file:
               </p>
@@ -223,7 +223,7 @@ layout: default
               {% endfor %}
               <p>
                 For more information see the
-                <a href="https://github.com/{{ ext.dev.github }}">{{ ext.name }} docs</a>.
+                <a href="https://github.com/{{ ext.dev.github }}">{{ ext.title }} docs</a>.
               </p>
               {{ ext.oauth.note|markdownify }}
             </div>

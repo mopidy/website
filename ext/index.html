@@ -32,7 +32,7 @@ layout: default
         <p>
           Add additional music sources.
         </p>
-        {% assign exts = site.ext | where: "type", "backend" | sort_natural: "name" %}
+        {% assign exts = site.ext | where: "type", "backend" | sort_natural: "title" %}
         {% include ext-type-list.html %}
 
       </div>
@@ -42,7 +42,7 @@ layout: default
         <p>
           Serve web-based players with Mopidy's builtin web server.
         </p>
-        {% assign exts = site.ext | where: "type", "web" | sort_natural: "name" %}
+        {% assign exts = site.ext | where: "type", "web" | sort_natural: "title" %}
         {% include ext-type-list.html %}
 
       </div>
@@ -54,7 +54,7 @@ layout: default
         <p>
           Add control planes for user interfaces or event listeners.
         </p>
-        {% assign exts = site.ext | where: "type", "frontend" | sort_natural: "name" %}
+        {% assign exts = site.ext | where: "type", "frontend" | sort_natural: "title" %}
         {% include ext-type-list.html %}
 
       </div>
@@ -64,7 +64,7 @@ layout: default
         <p>
           Alternative ways to control volume and muting.
         </p>
-        {% assign exts = site.ext | where: "type", "mixer" | sort_natural: "name" %}
+        {% assign exts = site.ext | where: "type", "mixer" | sort_natural: "title" %}
         {% include ext-type-list.html %}
 
       </div>

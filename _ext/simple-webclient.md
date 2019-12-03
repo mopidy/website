@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Simple-Webclient
+title: Mopidy-Simple-Webclient
 type: web
 dev:
   github: xolox/mopidy-simple-webclient

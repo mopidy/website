@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Material-Webclient
+title: Mopidy-Material-Webclient
 type: web
 dev:
   github: matgallacher/mopidy-material-webclient

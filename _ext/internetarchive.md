@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-InternetArchive
+title: Mopidy-InternetArchive
 type: backend
 dev:
   github: tkem/mopidy-internetarchive

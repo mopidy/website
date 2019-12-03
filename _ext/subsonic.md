@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Subsonic
+title: Mopidy-Subsonic
 type: backend
 dev:
   github: rattboi/mopidy-subsonic

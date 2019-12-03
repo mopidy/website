@@ -12,7 +12,7 @@ layout: default
   </div>
 </section>
 
-{% assign exts = site.ext | sort_natural: "name" %}
+{% assign exts = site.ext | sort_natural: "title" %}
 
 {% for ext in exts %}
   {% if ext.oauth %}
@@ -22,12 +22,12 @@ layout: default
     <div class="column is-2">
       {% if ext.logo %}
       <figure class="image">
-        <img src="{{ ext.logo }}" alt="{{ ext.name }} logo">
+        <img src="{{ ext.logo }}" alt="{{ ext.title }} logo">
       </figure>
       {% endif %}
     </div>
     <div class="column content is-medium">
-      <h2>{{ ext.name }}</h2>
+      <h2>{{ ext.title }}</h2>
       <p>
         This functionality has moved to the
         <a href="{{ ext.url | append: "#authentication" }}">extension page</a>.

@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Party
+title: Mopidy-Party
 type: web
 dev:
   github: Lesterpig/mopidy-party

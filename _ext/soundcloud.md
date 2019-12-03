@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-SoundCloud
+title: Mopidy-SoundCloud
 logo: /media/ext/soundcloud.png
 type: backend
 dev:

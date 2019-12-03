@@ -40,7 +40,7 @@ with the following fields:
 ``` yaml
 # Required fields:
 layout: ext                # Should always be "ext"
-name: Mopidy-Foo           # Name of extension
+title: Mopidy-Foo          # Name of extension
 type: backend              # One of "backend"/"frontend"/"mixer"/"web"
 
 # Optional fields:
@@ -58,6 +58,7 @@ dist:                      # Distribution related fields:
   homebrew:
     tap: mopidy/mopidy          # Homebrew tap name
     formula: mopidy-foo         # Homebrew formula name in above tap
+logo: /media/ext/foo.png   # Logo, e.g. of the music service
 images:                    # List of images of the extension in use
   - /media/ext/foo.jpg
 py3: false                 # Python 3 support. One of true/false/"prerelease"

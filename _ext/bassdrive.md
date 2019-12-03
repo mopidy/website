@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Bassdrive
+title: Mopidy-Bassdrive
 type: backend
 dev:
   github: felixb/mopidy-bassdrive

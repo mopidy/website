@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-MPRIS
+title: Mopidy-MPRIS
 type: frontend
 dev:
   github: mopidy/mopidy-mpris

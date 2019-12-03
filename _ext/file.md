@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-File
+title: Mopidy-File
 type: backend
 dev:
   github: mopidy/mopidy

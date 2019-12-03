@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Auto
+title: Mopidy-Auto
 type: web
 dev:
   github: gotling/mopidy-auto

@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-YouTube
+title: Mopidy-YouTube
 type: backend
 dev:
   github: mopidy/mopidy-youtube

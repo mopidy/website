@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Arcam
+title: Mopidy-Arcam
 type: mixer
 dev:
   github: TooDizzy/mopidy-arcam

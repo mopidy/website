@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Beets
+title: Mopidy-Beets
 type: backend
 dev:
   github: mopidy/mopidy-beets

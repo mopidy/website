@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-OE1
+title: Mopidy-OE1
 type: backend
 dev:
   github: tischlda/mopidy-oe1

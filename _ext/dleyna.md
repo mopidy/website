@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-dLeyna
+title: Mopidy-dLeyna
 type: backend
 dev:
   github: tkem/mopidy-dleyna

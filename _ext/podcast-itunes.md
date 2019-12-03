@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Podcast-iTunes
+title: Mopidy-Podcast-iTunes
 type: backend
 dev:
   github: tkem/mopidy-podcast-itunes

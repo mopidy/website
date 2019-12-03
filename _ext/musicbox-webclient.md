@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-MusicBox-Webclient
+title: Mopidy-MusicBox-Webclient
 type: web
 dev:
   github: pimusicbox/mopidy-musicbox-webclient

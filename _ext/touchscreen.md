@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Touchscreen
+title: Mopidy-Touchscreen
 type: frontend
 dev:
   github: 9and3r/mopidy-touchscreen

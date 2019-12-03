@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-TtsGpio
+title: Mopidy-TtsGpio
 type: frontend
 dev:
   github: 9and3r/mopidy-ttsgpio

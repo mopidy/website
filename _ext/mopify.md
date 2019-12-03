@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Mopify
+title: Mopidy-Mopify
 type: web
 dev:
   github: dirkgroenen/mopidy-mopify

@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-SomaFM
+title: Mopidy-SomaFM
 type: backend
 dev:
   github: AlexandrePTJ/mopidy-somafm

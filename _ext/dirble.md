@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Dirble
+title: Mopidy-Dirble
 type: backend
 dev:
   github: mopidy/mopidy-dirble

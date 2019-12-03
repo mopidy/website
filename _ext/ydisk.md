@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-YDisk
+title: Mopidy-YDisk
 type: backend
 dev:
   github: vonZeppelin/mopidy-ydisk

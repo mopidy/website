@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-RNZ
+title: Mopidy-RNZ
 type: backend
 dev:
   github: danbrough/mopidy-rnz

@@ -1,7 +1,7 @@
 <ul class="list-unstyled lead">
   {% for ext in exts %}
     <li>
-      <a href="{{ ext.url }}">{{ ext.name }}</a>
+      <a href="{{ ext.url }}">{{ ext.title }}</a>
       {% if ext.dist.bundled %}
         <span class="tag is-primary">Bundled</span>
       {% endif %}

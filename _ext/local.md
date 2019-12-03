@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Local
+title: Mopidy-Local
 type: backend
 dev:
   github: mopidy/mopidy-local

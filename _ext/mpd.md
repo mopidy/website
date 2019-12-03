@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-MPD
+title: Mopidy-MPD
 type: frontend
 dev:
   github: mopidy/mopidy

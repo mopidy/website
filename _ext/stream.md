@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Stream
+title: Mopidy-Stream
 type: backend
 dev:
   github: mopidy/mopidy

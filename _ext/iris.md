@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Iris
+title: Mopidy-Iris
 type: web
 dev:
   github: jaedb/iris

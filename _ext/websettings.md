@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-WebSettings
+title: Mopidy-WebSettings
 type: web
 dev:
   github: pimusicbox/mopidy-websettings

@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Spotify
+title: Mopidy-Spotify
 logo: /media/ext/spotify.png
 type: backend
 dev:

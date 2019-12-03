@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-SoftwareMixer
+title: Mopidy-SoftwareMixer
 type: mixer
 dev:
   github: mopidy/mopidy

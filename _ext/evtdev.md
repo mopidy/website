@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-EvtDev
+title: Mopidy-EvtDev
 type: frontend
 dev:
   github: liamw9534/mopidy-evtdev

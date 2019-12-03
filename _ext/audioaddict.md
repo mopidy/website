@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-AudioAddict
+title: Mopidy-AudioAddict
 type: backend
 dev:
   github: nilicule/mopidy-audioaddict

@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Yamaha
+title: Mopidy-Yamaha
 type: mixer
 dev:
   github: knutz3n/mopidy-yamaha

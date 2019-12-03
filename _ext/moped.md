@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Moped
+title: Mopidy-Moped
 type: web
 dev:
   github: martijnboland/moped

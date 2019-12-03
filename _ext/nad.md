@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-NAD
+title: Mopidy-NAD
 type: mixer
 dev:
   github: mopidy/mopidy-nad

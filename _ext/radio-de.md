@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-radio-de
+title: Mopidy-radio-de
 type: backend
 dev:
   github: hechtus/mopidy-radio-de

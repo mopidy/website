@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-VKontakte
+title: Mopidy-VKontakte
 type: backend
 dev:
   github: sibuser/mopidy-vkontakte

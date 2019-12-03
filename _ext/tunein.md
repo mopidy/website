@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-TuneIn
+title: Mopidy-TuneIn
 type: backend
 dev:
   github: kingosticks/mopidy-tunein

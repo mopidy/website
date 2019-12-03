@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-API-Explorer
+title: Mopidy-API-Explorer
 type: web
 dev:
   github: dz0ny/mopidy-api-explorer

@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Banshee
+title: Mopidy-Banshee
 type: backend
 dev:
   github: tamland/mopidy-banshee

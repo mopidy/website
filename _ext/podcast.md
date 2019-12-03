@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Podcast
+title: Mopidy-Podcast
 type: backend
 dev:
   github: tkem/mopidy-podcast

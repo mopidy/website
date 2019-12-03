@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Webhooks
+title: Mopidy-Webhooks
 type: frontend
 dev:
   github: paddycarey/mopidy-webhooks

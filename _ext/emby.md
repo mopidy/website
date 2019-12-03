@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Emby
+title: Mopidy-Emby
 type: backend
 dev:
   github: xsteadfastx/mopidy-emby

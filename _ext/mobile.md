@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Mobile
+title: Mopidy-Mobile
 type: web
 dev:
   github: tkem/mopidy-mobile

@@ -1,6 +1,6 @@
 ---
 layout: ext
-name: Mopidy-Jukepi
+title: Mopidy-Jukepi
 type: web
 dev:
   github: meantimeit/jukepi

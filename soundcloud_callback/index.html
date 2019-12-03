@@ -20,9 +20,7 @@
         return map.has(key) ? decodeURIComponent(map.get(key)) : null;
       }
 
-      const allowedOrigins = [
-        'https://mopidy.com', 'https://auth.mopidy.com',
-        'http://localhost:4000', 'http://localhost:5000'];
+      const allowedOrigins = ['https://mopidy.com', 'https://auth.mopidy.com'];
 
       const hash = parse(window.location.hash);
       const query = parse(window.location.search);

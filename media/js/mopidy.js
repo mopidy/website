@@ -63,7 +63,8 @@ function setupCopy(el) {
 
 function openPopup(target, title) {
   return window.open(
-    target, title,
+    target,
+    title,
     [
       "toolbar=no",
       "location=no",
@@ -75,26 +76,30 @@ function openPopup(target, title) {
       "copyhistory=no",
       "width=" + 800,
       "height=" + 600,
-      "left=" + ((screen.width/2)-(800/2)),
-      "top=" + ((screen.height/2)-(600/2))
-    ].join(", "));
+      "left=" + (screen.width / 2 - 800 / 2),
+      "top=" + (screen.height / 2 - 600 / 2)
+    ].join(", ")
+  );
 }
 
 function setupAuth(auth) {
   let checkPopupInterval = null;
 
   const allowedOrigins = [
-    'https://mopidy.com', 'https://auth.mopidy.com',
-    'http://localhost:4000', 'http://localhost:5000'];
+    "https://mopidy.com",
+    "https://auth.mopidy.com",
+    "http://localhost:4000",
+    "http://localhost:5000"
+  ];
 
   const button = auth.querySelector(".auth-button");
   const error = auth.querySelector(".auth-error");
-  const callbackOrigin = (new URL(auth.dataset.origin || button.href)).origin;
+  const callbackOrigin = new URL(auth.dataset.origin || button.href).origin;
 
   const reset = _ => {
     clearInterval(checkPopupInterval);
     error.classList.add("is-hidden");
-  }
+  };
 
   window.addEventListener("message", event => {
     if (allowedOrigins.indexOf(event.origin) < 0) {
@@ -102,7 +107,7 @@ function setupAuth(auth) {
     }
 
     reset();
-    event.source.close()
+    event.source.close();
 
     if (event.data.error) {
       error.innerText = event.data.error.toUpperCase();
@@ -132,7 +137,7 @@ function setupAuth(auth) {
         error.classList.remove("is-hidden");
       } else {
         popup.postMessage({}, callbackOrigin);
-      };
+      }
     }, 200);
   });
 }

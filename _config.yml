@@ -1,6 +1,12 @@
 safe: true
 permalink: pretty
 
+title: Mopidy
+description: The extensible music server
+
+plugins:
+  - jekyll-seo-tag
+
 collections:
   ext:
     permalink: /ext/:title/

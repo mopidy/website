@@ -1,37 +1,40 @@
 ---
 layout: default
 ---
+
 <section class="section">
   <div class="container">
     <h1 class="title is-size-2">Authenticate Mopidy with music services</h1>
     <p class="is-size-4">
       The following services require you to get authentication tokens for
-      Mopidy so that it can connect to your service accounts. Please see
-      the respective extensions page for more details.
+      Mopidy so that it can connect to your service accounts.
     </p>
   </div>
 </section>
 
 {% assign exts = site.ext | sort_natural: "name" %}
 
-{% for ext in exts %}{% if ext.oauth %}
-<section class="section" id="{{ ext.slug }}">
-  <div class="container">
-    <div class="columns is-variable is-8">
-      <div class="column is-2">
-        {% if ext.logo %}
-        <figure class="image">
-          <img src="{{ ext.logo }}" alt="{{ ext.name }} logo">
-        </figure>
-        {% endif %}
-      </div>
-      <div class="column content is-medium">
-        <h2 class="title">{{ ext.name }}</h2>
-        <p>
-          This functionality has moved to the extensions <a href="{{ ext.url | append: "#authentication" }}">page</a>.
-        </p>
-      </div>
+{% for ext in exts %}
+  {% if ext.oauth %}
+    <section class="section" id="{{ ext.slug }}">
+      <div class="container">
+        <div class="columns is-variable is-8">
+    <div class="column is-2">
+      {% if ext.logo %}
+      <figure class="image">
+        <img src="{{ ext.logo }}" alt="{{ ext.name }} logo">
+      </figure>
+      {% endif %}
     </div>
-  </div>
-</section>
-{% endif %}{% endfor %}
+    <div class="column content is-medium">
+      <h2>{{ ext.name }}</h2>
+      <p>
+        This functionality has moved to the
+        <a href="{{ ext.url | append: "#authentication" }}">extension page</a>.
+      </p>
+    </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+{% endfor %}

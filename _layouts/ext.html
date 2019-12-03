@@ -231,117 +231,130 @@ layout: default
       </div>
       <div class="column is-4">
 
-        <nav class="panel">
+        <div class="card">
 
-          {% if ext.dev.github or ext.dist.pypi %}
-            <div class="panel-block is-block">
-              <h5 class="is-uppercase has-text-grey">Popularity</h5>
-              {% if ext.dev.github %}
-                <a href="https://github.com/{{ ext.dev.github }}/stargazers">
-                  <img
-                    alt="GitHub stars"
-                    src="https://img.shields.io/github/stars/{{ ext.dev.github }}?label=GitHub%20stars&amp;style=flat-square"
-                  />
-                </a>
-              {% endif %}
-              {% if ext.dist.pypi %}
+          {% if ext.logo %}
+            <div class="card-header">
+              <div class="card-image">
+                <figure class="image" style="padding: 1.5em">
+                  <img src="{{ ext.logo }}">
+                </figure>
+              </div>
+            </div>
+          {% endif %}
+
+          <div class="card-content">
+
+            {% if ext.dev.github or ext.dist.pypi %}
+              <h5 class="is-size-7 is-uppercase has-text-grey">Popularity</h5>
+              <p>
+                {% if ext.dev.github %}
+                  <a href="https://github.com/{{ ext.dev.github }}/stargazers">
+                    <img
+                      alt="GitHub stars"
+                      src="https://img.shields.io/github/stars/{{ ext.dev.github }}?label=GitHub%20stars&amp;style=flat-square"
+                    />
+                  </a>
+                {% endif %}
+                {% if ext.dist.pypi %}
+                  <a href="https://pypi.org/project/{{ ext.dist.pypi }}">
+                    <img
+                      alt="PyPI - Downloads"
+                      src="https://img.shields.io/pypi/dm/{{ ext.dist.pypi }}?label=PyPI%20downloads&amp;style=flat-square"
+                    />
+                  </a>
+                {% endif %}
+              </p>
+            {% endif %}
+
+            {% if ext.dist.pypi %}
+              <h5 class="is-size-7 is-uppercase has-text-grey">PyPI</h5>
+              <p>
                 <a href="https://pypi.org/project/{{ ext.dist.pypi }}">
                   <img
-                    alt="PyPI - Downloads"
-                    src="https://img.shields.io/pypi/dm/{{ ext.dist.pypi }}?label=PyPI%20downloads&amp;style=flat-square"
+                    alt="PyPI - Package version"
+                    src="https://img.shields.io/pypi/v/{{ ext.dist.pypi }}?label=Package%20version&amp;style=flat-square"
                   />
                 </a>
-              {% endif %}
-            </div>
-          {% endif %}
-
-          {% if ext.dist.pypi %}
-            <div class="panel-block is-block">
-              <h5 class="is-uppercase has-text-grey">PyPI</h5>
-              <a href="https://pypi.org/project/{{ ext.dist.pypi }}">
-                <img
-                  alt="PyPI - Package version"
-                  src="https://img.shields.io/pypi/v/{{ ext.dist.pypi }}?label=Package%20version&amp;style=flat-square"
-                />
-              </a>
-              <a href="https://pypi.org/project/{{ ext.dist.pypi }}">
-                <img
-                  alt="PyPI - Python support"
-                  src="https://img.shields.io/pypi/pyversions/{{ ext.dist.pypi }}?label=Python%20support&amp;style=flat-square"
-                />
-              </a>
-            </div>
-          {% endif %}
-
-          {% if ext.dist.pypi %}
-            <div class="panel-block is-block">
-              <h5 class="is-uppercase has-text-grey">License</h5>
-              <a href="https://pypi.org/project/{{ ext.dist.pypi }}">
-                <img
-                  alt="PyPI - License"
-                  src="https://img.shields.io/pypi/l/{{ ext.dist.pypi }}?label=&amp;style=flat-square"
-                />
-              </a>
-            </div>
-          {% endif %}
-
-          {% if ext.dev.github %}
-            <div class="panel-block is-block">
-              <h5 class="is-uppercase has-text-grey">Project stats</h5>
-              <a href="https://github.com/{{ ext.dev.github }}/issues">
-                <img
-                  alt="GitHub issues"
-                  src="https://img.shields.io/github/issues/{{ ext.dev.github }}?label=Issues&amp;style=flat-square"
-                />
-              </a>
-              <a href="https://github.com/{{ ext.dev.github }}/pulls">
-                <img
-                  alt="GitHub pull requests"
-                  src="https://img.shields.io/github/issues-pr/{{ ext.dev.github }}?label=Pull%20requests&amp;style=flat-square"
-                />
-              </a>
-            </div>
-          {% endif %}
-
-          {% if ext.dev.circleci or ext.dev.travisci or ext.dev.codecov or ext.dev.coveralls %}
-            <div class="panel-block is-block">
-              <h5 class="is-uppercase has-text-grey">Quality metrics</h5>
-              {% if ext.dev.circleci %}
-                <a href="https://circleci.com/gh/{{ ext.dev.github }}">
+                <a href="https://pypi.org/project/{{ ext.dist.pypi }}">
                   <img
-                    alt="CircleCI build status"
-                    src="https://img.shields.io/circleci/build/gh/{{ ext.dev.github }}?label=CircleCI build&amp;style=flat-square"
+                    alt="PyPI - Python support"
+                    src="https://img.shields.io/pypi/pyversions/{{ ext.dist.pypi }}?label=Python%20support&amp;style=flat-square"
                   />
                 </a>
-              {% endif %}
-              {% if ext.dev.travisci %}
-                <a href="https://travis-ci.org/{{ ext.dev.github }}">
-                  <img
-                    alt="CircleCI build status"
-                    src="https://img.shields.io/travis/{{ ext.dev.github }}?label=Travis CI build&amp;style=flat-square"
-                  />
-                </a>
-              {% endif %}
-              {% if ext.dev.codecov %}
-                <a href="https://codecov.io/gh/{{ ext.dev.github }}">
-                  <img
-                    alt="Codecov test coverage"
-                    src="https://img.shields.io/codecov/c/gh/{{ ext.dev.github }}?label=Test coverage&amp;style=flat-square"
-                  />
-                </a>
-              {% endif %}
-              {% if ext.dev.coveralls %}
-                <a href="https://coveralls.io/r/{{ ext.dev.github }}">
-                  <img
-                    alt="Coveralls test coverage"
-                    src="https://img.shields.io/coveralls/github/{{ ext.dev.github }}?label=Test coverage&amp;style=flat-square"
-                  />
-                </a>
-              {% endif %}
-            </div>
-          {% endif %}
+              </p>
+            {% endif %}
 
-        </nav>
+            {% if ext.dist.pypi %}
+              <h5 class="is-size-7 is-uppercase has-text-grey">License</h5>
+              <p>
+                <a href="https://pypi.org/project/{{ ext.dist.pypi }}">
+                  <img
+                    alt="PyPI - License"
+                    src="https://img.shields.io/pypi/l/{{ ext.dist.pypi }}?label=&amp;style=flat-square"
+                  />
+                </a>
+              </p>
+            {% endif %}
+
+            {% if ext.dev.github %}
+              <h5 class="is-size-7 is-uppercase has-text-grey">Project stats</h5>
+              <p>
+                <a href="https://github.com/{{ ext.dev.github }}/issues">
+                  <img
+                    alt="GitHub issues"
+                    src="https://img.shields.io/github/issues/{{ ext.dev.github }}?label=Issues&amp;style=flat-square"
+                  />
+                </a>
+                <a href="https://github.com/{{ ext.dev.github }}/pulls">
+                  <img
+                    alt="GitHub pull requests"
+                    src="https://img.shields.io/github/issues-pr/{{ ext.dev.github }}?label=Pull%20requests&amp;style=flat-square"
+                  />
+                </a>
+              </p>
+            {% endif %}
+
+            {% if ext.dev.circleci or ext.dev.travisci or ext.dev.codecov or ext.dev.coveralls %}
+              <h5 class="is-size-7 is-uppercase has-text-grey">Quality metrics</h5>
+              <p>
+                {% if ext.dev.circleci %}
+                  <a href="https://circleci.com/gh/{{ ext.dev.github }}">
+                    <img
+                      alt="CircleCI build status"
+                      src="https://img.shields.io/circleci/build/gh/{{ ext.dev.github }}?label=CircleCI build&amp;style=flat-square"
+                    />
+                  </a>
+                {% endif %}
+                {% if ext.dev.travisci %}
+                  <a href="https://travis-ci.org/{{ ext.dev.github }}">
+                    <img
+                      alt="CircleCI build status"
+                      src="https://img.shields.io/travis/{{ ext.dev.github }}?label=Travis CI build&amp;style=flat-square"
+                    />
+                  </a>
+                {% endif %}
+                {% if ext.dev.codecov %}
+                  <a href="https://codecov.io/gh/{{ ext.dev.github }}">
+                    <img
+                      alt="Codecov test coverage"
+                      src="https://img.shields.io/codecov/c/gh/{{ ext.dev.github }}?label=Test coverage&amp;style=flat-square"
+                    />
+                  </a>
+                {% endif %}
+                {% if ext.dev.coveralls %}
+                  <a href="https://coveralls.io/r/{{ ext.dev.github }}">
+                    <img
+                      alt="Coveralls test coverage"
+                      src="https://img.shields.io/coveralls/github/{{ ext.dev.github }}?label=Test coverage&amp;style=flat-square"
+                    />
+                  </a>
+                {% endif %}
+              </p>
+            {% endif %}
+
+          </div>
+        </div>
 
       </div>
     </div>

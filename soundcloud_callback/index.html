@@ -9,12 +9,6 @@ sitemap: false
     <meta charset="UTF-8">
     <title>Connect with SoundCloud</title>
     <script type="text/javascript">
-      // Try and keep supporting popups from the SC SDK.
-      if (window.opener && window.opener.SC) {
-        window.opener.setTimeout(window.opener.SC.connectCallback, 1);
-      }
-
-      // Rest of code is to get access_token, error and state.
       function parse(value) {
         return new Map(value.substr(1).split("&").map(v => v.split("=", 2)));
       }

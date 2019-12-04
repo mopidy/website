@@ -62,4 +62,42 @@ logo: /media/ext/foo.png   # Logo, e.g. of the music service
 images:                    # List of images of the extension in use
   - /media/ext/foo.jpg
 py3: false                 # Python 3 support. One of true/false/"prerelease"
+oauth:                     # OAuth integration for services that require tokens
+  button: /media/ext/bar.png    # "Log in with" / "Connect with" image
+  endpoint: https://example.com # Redirection endpoint to start OAuth flow
+  origin: https://example.org   # Origin of callback page at end of OAuth flow
+                                # Defaults to endpoint's origin if not set
+  config:                       # One or more config sections to fill with data
+    section_name:               # Name of the config section
+     - config_field             # Config field name
+  note: Extra markdown info...  # Optional text adding more info
 ```
+
+### OAuth authentication
+
+The extension registry has support for integrating OAuth for service
+integration. This works by opening a pop-up targeted at the configured
+endpoint, during the flow we try polling with `postMessage` targeted at the
+callback origin. Once the flow is complete, and your callback page loads it
+should install an event listener that will reply to our polling. Once our code
+has the data we close the pop-up for you.
+
+``` javascript
+      const data = {
+        auth_token: ...,
+        state: ...,
+        error: ...,
+        error_description: ...,
+      };
+      window.addEventListener('message', event => {
+        if (event.origin === 'https://mopidy.com') {
+          event.source.postMessage(data, event.origin);
+        }
+      });
+```
+
+Note that the field names in the data should be mapped to the expected config
+field names. E.g. mapping `access_token` to `auth_token`. The `error` field is
+an error code, and `error_description` a human friendly version of the same
+error. `state` is there to pass back any initial state we might have sent to
+the endpoint.

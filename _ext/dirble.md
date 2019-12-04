@@ -4,13 +4,11 @@ title: Mopidy-Dirble
 type: backend
 dev:
   github: mopidy/mopidy-dirble
-  travisci: true
-  coveralls: true
 dist:
   pypi: Mopidy-Dirble
-  apt-mopidy: mopidy-dirble
-  arch-aur: mopidy-dirble
-py3: false
+archived: |
+  The Dirble service is no longer available. For more details see the
+  extension’s [repo](https://github.com/mopidy/mopidy-dirble#warning).
 ---
 
 A backend for browsing the Internet radio channels from the

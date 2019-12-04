@@ -122,14 +122,18 @@ function setupAuth(auth) {
     reset();
     event.preventDefault();
 
-    const popup = openPopup(button.href, "Authenticate Mopidy extension.");
+    const url = new URL(button.href);
+    const state = Math.random().toString(36).substr(2);
+    url.search += (url.search ? '&' : '?') + 'state=' + state;
+
+    const popup = openPopup(url.href, "Authenticate Mopidy extension.");
     checkPopupInterval = setInterval(_ => {
       if (!popup || popup.closed) {
         reset();
         error.innerText = "Popup closed without completing authentication.";
         error.classList.remove("is-hidden");
       } else {
-        popup.postMessage({}, callbackOrigin);
+        popup.postMessage(state, callbackOrigin);
       }
     }, 200);
   });

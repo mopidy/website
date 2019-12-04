@@ -17,12 +17,17 @@ sitemap: false
         return map.has(key) ? decodeURIComponent(map.get(key)) : null;
       }
 
+      const stateError = {
+        error: 'INVALID_STATE',
+        error_description: 'Authentication page send wrong state to pop-up.'
+      };
+
       const hash = parse(window.location.hash);
       const query = parse(window.location.search);
 
+      const state = get(query, "state");
       const data = {
         auth_token: get(hash, "access_token"),
-        state: get(query, "state"),
         error: get(query, "error_code"),
         error_description: get(query, "error_description"),
       }
@@ -31,7 +36,11 @@ sitemap: false
       // and can post back the result. This avoids the relying on window.opener.
       window.addEventListener("message", event => {
         if (event.origin === "https://mopidy.com") {
-          event.source.postMessage(data, event.origin);
+          if (!state || state === event.data) {
+            event.source.postMessage(data, event.origin);
+          } else {
+            event.source.postMessage(stateError, event.origin);
+          }
         }
       });
     </script>

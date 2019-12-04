@@ -36,7 +36,7 @@ sitemap: false
       // Our opener will poll us with messages so we get a reference to them
       // and can post back the result. This avoids the relying on window.opener.
       window.addEventListener("message", event => {
-        if (event.origin === "https://mopidy.com")) {
+        if (event.origin === "https://mopidy.com") {
           event.source.postMessage(data, event.origin);
         }
       });

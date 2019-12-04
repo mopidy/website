@@ -85,13 +85,6 @@ function openPopup(target, title) {
 function setupAuth(auth) {
   let checkPopupInterval = null;
 
-  const allowedOrigins = [
-    "https://mopidy.com",
-    "https://auth.mopidy.com",
-    "http://localhost:4000",
-    "http://localhost:5000"
-  ];
-
   const button = auth.querySelector(".auth-button");
   const error = auth.querySelector(".auth-error");
   const callbackOrigin = new URL(auth.dataset.origin || button.href).origin;
@@ -102,7 +95,7 @@ function setupAuth(auth) {
   };
 
   window.addEventListener("message", event => {
-    if (allowedOrigins.indexOf(event.origin) < 0) {
+    if (event.origin !== callbackOrigin) {
       return;
     }
 

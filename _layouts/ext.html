@@ -32,6 +32,15 @@ layout: default
     <div class="columns is-variable is-8">
       <div class="column">
 
+        {% if ext.archived %}
+          <article class="message is-danger">
+            <div class="message-header">Archived</div>
+            <div class="message-body">
+              {{ ext.archived|markdownify }}
+            </div>
+          </article>
+        {% endif %}
+
         <div class="content is-medium">
           {{ ext.content }}
         </div>
@@ -63,6 +72,7 @@ layout: default
 
           <h2>Installation</h2>
 
+          {% if ext.archived == nil %}
           {% case ext.py3 %}
             {% when true %}
               <p class="notification is-success">
@@ -98,6 +108,7 @@ layout: default
                 {{ ext.title }} does not support Python 3.7+, as far as we know.
               </p>
           {% endcase %}
+          {% endif %}
 
           {% if ext.dist.bundled %}
             <h3>Bundled with Mopidy</h3>

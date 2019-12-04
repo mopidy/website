@@ -11,6 +11,9 @@
         {% when true %}
           <span class="tag is-success">Python 3</span>
       {% endcase %}
+      {% if ext.archived %}
+        <span class="tag is-danger is-light">Archived</span>
+      {% endif %}
     </li>
   {% else %}
     <li><em>(none)</em></li>

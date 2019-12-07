@@ -92,6 +92,7 @@ function setupAuth(auth) {
   const reset = _ => {
     clearInterval(checkPopupInterval);
     error.classList.add("is-hidden");
+    button.classList.remove("is-loading");
   };
 
   window.addEventListener("message", event => {
@@ -119,8 +120,14 @@ function setupAuth(auth) {
   });
 
   button.addEventListener("click", event => {
-    reset();
     event.preventDefault();
+    if (button.classList.contains("is-loading")) {
+      return;
+    }
+
+
+    reset();
+    button.classList.add("is-loading");
 
     const url = new URL(button.href);
     const state = Math.random().toString(36).substr(2);

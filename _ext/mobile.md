@@ -8,10 +8,11 @@ dev:
   coveralls: true
 dist:
   pypi: Mopidy-Mobile
-py3: false
+py3: true
 images:
   - /media/ext/mobile.jpg
 ---
 
-A Mopidy web client extension and hybrid mobile app.
-Made with Ionic, AngularJS and Apache Cordova.
+A simple, easy to use remote that lets you fully control a Mopidy music server
+from your mobile device. It is available as a Web client extension and a hybrid
+app for Android version 4.4 and later.

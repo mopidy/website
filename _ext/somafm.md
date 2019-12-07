@@ -11,7 +11,7 @@ dist:
   apt-debian: mopidy-somafm
   apt-mopidy: mopidy-somafm
   arch-aur: mopidy-somafm
-py3: false
+py3: prerelease
 ---
 
 A backend for playing music from the

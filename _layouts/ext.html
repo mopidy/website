@@ -121,16 +121,36 @@ layout: default
             <div class="tabs is-medium">
               <ul class="is-marginless">
                 {% if ext.dist.pypi %}
-                  <li class="is-active"><a href="#pypi">PyPI</a></li>
+                  <li class="is-active">
+                    <a href="#pypi">
+                      <span class="icon"><img src="https://unpkg.com/simple-icons@latest/icons/pypi.svg" /></span>
+                      <span>PyPI</span>
+                    </a>
+                  </li>
                 {% endif %}
                 {% if ext.dist.apt-debian or ext.dist.apt-mopidy %}
-                  <li><a href="#debian">Debian</a></li>
+                  <li>
+                    <a href="#debian">
+                      <span class="icon"><img src="https://unpkg.com/simple-icons@latest/icons/debian.svg" /></span>
+                      <span>Debian</span>
+                    </a>
+                  </li>
                 {% endif %}
                 {% if ext.dist.arch-aur %}
-                  <li><a href="#arch">Arch</a></li>
+                  <li>
+                    <a href="#arch">
+                      <span class="icon"><img src="https://unpkg.com/simple-icons@latest/icons/archlinux.svg" /></span>
+                      <span>arch</span>
+                    </a>
+                  </li>
                 {% endif %}
                 {% if ext.dist.homebrew %}
-                  <li><a href="#macos">macOS</a></li>
+                  <li>
+                    <a href="#macos">
+                      <span class="icon"><img src="https://unpkg.com/simple-icons@latest/icons/apple.svg" /></span>
+                      <span>MacOS</span>
+                    </a>
+                  </li>
                 {% endif %}
               </ul>
             </div>

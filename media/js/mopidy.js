@@ -146,9 +146,26 @@ function setupAuth(auth) {
   });
 }
 
+function setupLazyIFrame(el) {
+  const frame = document.createElement("iframe");
+  frame.setAttribute("frameborder", "0");
+  frame.setAttribute("allowfullscreen", "");
+  frame.setAttribute("src", el.dataset.iframe);
+
+  el.addEventListener('click', event => {
+    event.preventDefault();
+    el.style.display = "block";
+    frame.setAttribute("width", el.offsetWidth);
+    frame.setAttribute("height", el.offsetHeight);
+    frame.setAttribute("class", el.getAttribute("class"));
+    el.parentNode.replaceChild(frame, el);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".navbar-burger").forEach(setupNavbarBurger);
   document.querySelectorAll(".tabs").forEach(setupTabs);
   document.querySelectorAll(".copy").forEach(setupCopy);
   document.querySelectorAll(".auth").forEach(setupAuth);
+  document.querySelectorAll("[data-iframe]").forEach(setupLazyIFrame);
 });

@@ -52,3 +52,18 @@ $primary: $blue;
   -ms-user-select: all;
   user-select: all;
 }
+
+.youtube {
+  position: relative;
+}
+
+.youtube .overlay {
+  position: absolute;
+  width: 15%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: invert(1);
+  opacity: 0.9;
+}

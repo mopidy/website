@@ -17,7 +17,11 @@ dist:
     formula: mopidy-spotify
 py3: prerelease
 oauth:
-  color: 1ED760
+  button:
+    style: "background-color: #1ED760; color: #FFF"
+    logo:
+      url: https://unpkg.com/simple-icons@latest/icons/spotify.svg
+      style: "filter: invert(1); width: 1.2rem"
   endpoint: https://auth.mopidy.com/spotify/
   config:
     spotify:

@@ -15,7 +15,11 @@ dist:
   arch-aur: mopidy-soundcloud
 py3: prerelease
 oauth:
-  color: FF3300
+  button:
+    style: "background-color: #FF3300; color: #FFF"
+    logo:
+      url: https://unpkg.com/simple-icons@latest/icons/soundcloud.svg
+      style: "filter: invert(1)"
   endpoint: https://secure.soundcloud.com/connect?client_id=93e33e327fd8a9b77becd179652272e2&scope=non-expiring&response_type=code_and_token&redirect_uri=https://www.mopidy.com/soundcloud_callback
   origin: https://mopidy.com
   config:

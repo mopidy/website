@@ -243,8 +243,10 @@ layout: default
                 Your data is <b>never</b> shared with this site.
               </p>
               <p>
-                <a class="button auth-button has-text-white" href="{{ ext.oauth.endpoint }}" style="background: #{{ ext.oauth.color }}">
-                  <span class="icon">{% include ext/{{ ext.slug }}.svg %}</span>
+                <a class="button auth-button" href="{{ ext.oauth.endpoint }}"{% if ext.oauth.button.style %} style="{{ ext.oauth.button.style}}"{%endif%}>
+                  {% if ext.oauth.button.logo %}
+                    <span class="icon"><img src="{{ ext.oauth.button.logo.url }}"{% if ext.oauth.button.logo.style %} style="{{ ext.oauth.button.logo.style }}"{% endif %} /></span>
+                  {% endif %}
                   <span>Authenticate Mopidy with <b>{{ ext.service }}</b></span>
                 </a>
               </p>

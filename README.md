@@ -64,10 +64,14 @@ images:                    # List of images of the extension in use
   - /media/ext/foo.jpg
 py3: false                 # Python 3 support. One of true/false/"prerelease"
 oauth:                     # OAuth integration for services that require tokens
-  color: 000                    # HEX color to use for the auth button
   endpoint: https://example.com # Redirection endpoint to start OAuth flow
   origin: https://example.org   # Origin of callback page at end of OAuth flow
                                 # Defaults to endpoint's origin if not set
+  button:                       # Styling for auth button
+    style: background: ...      # Inline CSS to apply to button.
+    logo:
+      url:                      # URL to logo to use
+      style:                    # Inline CSS to apply to logo.
   config:                       # One or more config sections to fill with data
     section_name:               # Name of the config section
      - config_field             # Config field name

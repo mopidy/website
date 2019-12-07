@@ -238,11 +238,16 @@ layout: default
             <div class="auth"{% if ext.oauth.origin %} data-origin="{{ ext.oauth.origin }}"{% endif %}>
               <h2 id="authentication" style="margin-top: 1.5em">Authentication</h2>
               <p>
-                {{ ext.title }} needs API access, to grant access click the button bellow and
-                follow the instructions. Your data is <b>never</b> shared with this site.
+                {{ ext.title }} needs API access to {{ ext.service }}, to grant
+                access click the button bellow and follow the instructions.
+                Your data is <b>never</b> shared with this site.
               </p>
-              <p><a class="img auth-button" href="{{ ext.oauth.endpoint }}">
-                <img src="{{ ext.oauth.button }}" alt="Authenticate {{ ext.title }}"></a></p>
+              <p>
+                <a class="button auth-button has-text-white" href="{{ ext.oauth.endpoint }}" style="background: #{{ ext.oauth.color }}">
+                  <span class="icon">{% include ext/{{ ext.slug }}.svg %}</span>
+                  <span>Authenticate Mopidy with <b>{{ ext.service }}</b></span>
+                </a>
+              </p>
               <p>
                 After the pop up closes, add the following to you <code>mopidy.conf</code> file:
               </p>

@@ -44,6 +44,7 @@ title: Mopidy-Foo          # Name of extension
 type: backend              # One of "backend"/"frontend"/"mixer"/"web"
 
 # Optional fields:
+service: FooBar            # Name of the upstream service if any.
 dev:                       # Development related fields
   github: mopidy/mopidy-foo     # GitHub repo
   circle: true                  # Whether using CircleCI
@@ -63,7 +64,7 @@ images:                    # List of images of the extension in use
   - /media/ext/foo.jpg
 py3: false                 # Python 3 support. One of true/false/"prerelease"
 oauth:                     # OAuth integration for services that require tokens
-  button: /media/ext/bar.png    # "Log in with" / "Connect with" image
+  color: 000                    # HEX color to use for the auth button
   endpoint: https://example.com # Redirection endpoint to start OAuth flow
   origin: https://example.org   # Origin of callback page at end of OAuth flow
                                 # Defaults to endpoint's origin if not set

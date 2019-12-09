@@ -8,7 +8,7 @@ dev:
   codecov: true
 dist:
   pypi: Mopidy-Local
-py3: false
+py3: prerelease
 ---
 
 Extension for playing music from your local music archive.

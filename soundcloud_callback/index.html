@@ -9,37 +9,28 @@ sitemap: false
     <meta charset="UTF-8">
     <title>Connect with SoundCloud</title>
     <script type="text/javascript">
-      function parse(value) {
-        return new Map(value.substr(1).split("&").map(v => v.split("=", 2)));
-      }
+      const hash = new URLSearchParams(window.location.hash.substr(1));
+      const query = new URLSearchParams(window.location.search.substr(1));
 
-      function get(map, key) {
-        return map.has(key) ? decodeURIComponent(map.get(key)) : null;
+      const data = {
+        auth_token: hash.get("access_token") || null,
+        error: query.get("error_code") || null,
+        error_description: query.get("error_description") || null
       }
 
       const stateError = {
-        error: 'INVALID_STATE',
-        error_description: 'Authentication page send wrong state to pop-up.'
+        error: 'invalid_state',
+        error_description: 'Authentication page sent wrong state to pop-up.'
       };
-
-      const hash = parse(window.location.hash);
-      const query = parse(window.location.search);
-
-      const state = get(query, "state");
-      const data = {
-        auth_token: get(hash, "access_token"),
-        error: get(query, "error_code"),
-        error_description: get(query, "error_description"),
-      }
 
       // Our opener will poll us with messages so we get a reference to them
       // and can post back the result. This avoids the relying on window.opener.
       window.addEventListener("message", event => {
         if (event.origin === "https://mopidy.com") {
-          if (!state || state === event.data) {
-            event.source.postMessage(data, event.origin);
-          } else {
+          if (query.has("state") && query.get("state") !== event.data) {
             event.source.postMessage(stateError, event.origin);
+          } else {
+            event.source.postMessage(data, event.origin);
           }
         }
       });

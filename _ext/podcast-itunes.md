@@ -11,7 +11,7 @@ dist:
   apt-debian: mopidy-podcast-itunes
   apt-mopidy: mopidy-podcast-itunes
   arch-aur: mopidy-podcast-itunes
-py3: false
+py3: prerelease
 ---
 
 This is an extension to the [Mopidy-Podcast](/ext/podcast/) backend that lets

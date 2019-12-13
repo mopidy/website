@@ -10,7 +10,9 @@ dist:
   pypi: Mopidy-Spotify-Tunigo
   apt-mopidy: mopidy-spotify-tunigo
   arch-aur: mopidy-spotify-tunigo
-py3: false
+archived: |
+  The Tunigo service is no longer available. For more details see the
+  [extension’s repo](https://github.com/trygveaa/mopidy-spotify-tunigo#warning).
 ---
 
 Extension for providing the browse feature of

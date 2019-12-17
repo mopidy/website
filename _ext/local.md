@@ -8,6 +8,9 @@ dev:
   codecov: true
 dist:
   pypi: Mopidy-Local
+  homebrew:
+    tap: mopidy/mopidy
+    formula: mopidy-local
 py3: prerelease
 ---
 

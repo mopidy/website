@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-Mopify
 type: web
 dev:

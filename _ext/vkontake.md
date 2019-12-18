@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-VKontakte
 type: backend
 dev:

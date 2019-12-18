@@ -17,4 +17,11 @@ defaults:
   - scope:
       path: ""
     values:
+      layout: default
       image: /media/images/hannah-troupe-wL_w5t_OKtI-unsplash-1900x1200.jpg
+
+  - scope:
+      path: ""
+      type: ext
+    values:
+      layout: ext

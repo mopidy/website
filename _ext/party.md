@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-Party
 type: web
 dev:

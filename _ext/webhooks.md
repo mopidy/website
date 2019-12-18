@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-Webhooks
 type: frontend
 dev:

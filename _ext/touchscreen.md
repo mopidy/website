@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-Touchscreen
 type: frontend
 dev:

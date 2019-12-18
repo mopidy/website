@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-InternetArchive
 type: backend
 dev:

@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-AudioAddict
 type: backend
 dev:

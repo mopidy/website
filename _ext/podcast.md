@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-Podcast
 type: backend
 dev:

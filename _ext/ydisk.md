@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-YDisk
 type: backend
 dev:

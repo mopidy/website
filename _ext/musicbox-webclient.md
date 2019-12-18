@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-MusicBox-Webclient
 type: web
 dev:

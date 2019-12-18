@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-WebSettings
 type: web
 dev:

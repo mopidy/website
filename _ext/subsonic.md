@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-Subsonic
 type: backend
 dev:

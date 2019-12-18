@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-RNZ
 type: backend
 dev:

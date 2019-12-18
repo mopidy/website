@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-Bassdrive
 type: backend
 dev:

@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-API-Explorer
 type: web
 dev:

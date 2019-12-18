@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-Simple-Webclient
 type: web
 dev:

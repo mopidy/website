@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-Scrobbler
 type: frontend
 dev:

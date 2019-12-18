@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-HTTP
 type: frontend
 dev:

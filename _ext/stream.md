@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-Stream
 type: backend
 dev:

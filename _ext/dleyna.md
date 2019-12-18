@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-dLeyna
 type: backend
 dev:

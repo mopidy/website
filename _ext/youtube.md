@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-YouTube
 type: backend
 dev:

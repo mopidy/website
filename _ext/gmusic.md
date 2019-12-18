@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-GMusic
 logo: /media/ext/gmusic.png
 type: backend

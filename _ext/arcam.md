@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-Arcam
 type: mixer
 dev:

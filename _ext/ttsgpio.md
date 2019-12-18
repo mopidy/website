@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-TtsGpio
 type: frontend
 dev:

@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-Auto
 type: web
 dev:

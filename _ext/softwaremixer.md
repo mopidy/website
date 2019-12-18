@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-SoftwareMixer
 type: mixer
 dev:

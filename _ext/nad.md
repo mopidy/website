@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-NAD
 type: mixer
 dev:

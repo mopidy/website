@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-Dirble
 type: backend
 dev:

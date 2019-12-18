@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-OE1
 type: backend
 dev:

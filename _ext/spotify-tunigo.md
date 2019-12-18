@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-Spotify-Tunigo
 type: backend
 dev:

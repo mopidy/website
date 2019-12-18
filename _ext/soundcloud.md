@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-SoundCloud
 service: SoundCloud
 logo: /media/ext/soundcloud.png

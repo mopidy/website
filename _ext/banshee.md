@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-Banshee
 type: backend
 dev:

@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-MPRIS
 type: frontend
 dev:

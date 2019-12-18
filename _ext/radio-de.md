@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-radio-de
 type: backend
 dev:

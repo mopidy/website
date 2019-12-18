@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-SomaFM
 type: backend
 dev:

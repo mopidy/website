@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-EvtDev
 type: frontend
 dev:

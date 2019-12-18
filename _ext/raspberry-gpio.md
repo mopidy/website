@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-Raspberry-GPIO
 type: frontend
 dev:

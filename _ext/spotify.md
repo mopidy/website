@@ -1,5 +1,4 @@
 ---
-layout: ext
 title: Mopidy-Spotify
 service: Spotify
 logo: /media/ext/spotify.png

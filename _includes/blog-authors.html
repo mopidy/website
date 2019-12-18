@@ -1,0 +1,37 @@
+<div class="box">
+
+  <h3 class="title is-5">Contributors</h3>
+
+  {% for author_name in post.authors %}
+
+    {% assign author = site.data.authors[author_name] %}
+
+    <div class="media">
+      <div class="media-left">
+        <p class="image is-64x64">
+          {% avatar user=author.github size=64 %}
+        </p>
+      </div>
+      <div class="media-content author vcard">
+        <p class="title is-size-5">{{ author_name }}</p>
+        <p class="fn subtitle is-size-6">{{ author.name }}</p>
+        {% if author.github %}
+          <a class="url" href="https://github.com/{{ author.github }}">
+            <span class="icon has-text-grey">
+              <img src="https://unpkg.com/simple-icons@latest/icons/github.svg">
+            </span>
+          </a>
+        {% endif %}
+        {% if author.twitter %}
+          <a class="url" href="https://twitter.com/{{ author.twitter }}">
+            <span class="icon has-text-grey">
+              <img src="https://unpkg.com/simple-icons@latest/icons/twitter.svg">
+            </span>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+  {% endfor %}
+
+</div>

@@ -6,6 +6,7 @@ title: Mopidy
 description: The extensible music server
 
 plugins:
+  - jekyll-avatar
   - jekyll-seo-tag
   - jekyll-sitemap
 

@@ -35,6 +35,10 @@ $primary: $blue;
   background-image: url("/media/images/hannah-troupe-wL_w5t_OKtI-unsplash-1900x1200.jpg");
 }
 
+.avatar {
+  @extend .is-rounded;
+}
+
 .copy-container {
   position: relative;
   button {

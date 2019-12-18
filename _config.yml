@@ -12,3 +12,9 @@ collections:
   ext:
     permalink: /ext/:title/
     output: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /media/images/hannah-troupe-wL_w5t_OKtI-unsplash-1900x1200.jpg

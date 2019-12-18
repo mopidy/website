@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+{% assign post = page %}
+
+<section class="section">
+  <div class="container">
+
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li class="is-active"><a href="{{ post.url }}">{{ post.title }}</a></li>
+      </ol>
+    </nav>
+
+    <article class="hentry content">
+
+      <h1 class="entry-title title is-size-2">
+        <a href="{{ post.url }}" class="has-text-black">{{ post.title }}</a>
+      </h1>
+
+      <p class="has-text-grey">
+        <time class="updated" datetime="{{ post.date | date: "%F" }}">
+          {{ post.date | date: "%B %e, %Y" }}
+        </time>
+      </p>
+
+      <div class="columns is-variable is-8">
+        <div class="column">
+
+          <div class="entry-content is-size-5">
+            {{ content }}
+          </div>
+
+        </div>
+        <div class="column is-4">
+
+        </div>
+      </div>
+
+    </article>
+
+  </div>
+</section>

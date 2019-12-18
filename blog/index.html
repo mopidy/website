@@ -1,0 +1,88 @@
+---
+layout: default
+title: Blog
+---
+
+<section class="section">
+  <div class="container">
+
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li class="is-active"><a href="/blog/">Blog</a></li>
+      </ol>
+    </nav>
+
+    <h1 class="title is-size-2">Blog</h1>
+
+  </div>
+</section>
+
+{% for post in site.posts limit:3 %}
+  <section class="section">
+    <div class="container">
+
+      {% assign author = site.data.authors[post.author] %}
+      <article class="hentry content">
+
+        <h2 class="entry-title title is-size-3">
+          <a href="{{ post.url }}" class="has-text-black">{{ post.title }}</a>
+        </h2>
+
+        <p class="has-text-grey">
+          <time class="updated" datetime="{{ post.date | date: "%F" }}">
+            {{ post.date | date: "%B %e, %Y" }}
+          </time>
+        </p>
+
+        <div class="columns is-variable is-8">
+          <div class="column is-8">
+
+            <div class="entry-content is-size-5">
+              {{ post.excerpt }}
+              <p><a href="{{ post.url }}">Read more...</a></p>
+            </div>
+
+          </div>
+        </div>
+
+      </article>
+
+    </div>
+  </section>
+{% endfor %}
+
+{% for post in site.posts offset:3 %}
+
+  {% unless post.next %}
+    <section class="section">
+      <div class="container">
+        <h2 class="title is-size-3">{{ post.date | date: '%Y' }}</h2>
+        <ul class="is-size-5">
+  {% else %}
+    {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+    {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+    {% if year != nyear %}
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="title is-size-3">{{ post.date | date: '%Y' }}</h2>
+          <ul class="is-size-5">
+    {% endif %}
+  {% endunless %}
+
+  <li>
+    <span class="has-text-grey">{{ post.date | date:"%B %e" }}:</span>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+  </li>
+
+  {% unless post.previous %}
+        </ul>
+      </div>
+    </section>
+  {% endunless %}
+
+{% endfor %}

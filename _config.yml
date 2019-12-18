@@ -1,5 +1,6 @@
 safe: true
 permalink: pretty
+excerpt_separator: "<!-- more -->"
 
 title: Mopidy
 description: The extensible music server
@@ -12,6 +13,9 @@ collections:
   ext:
     permalink: /ext/:title/
     output: true
+  posts:
+    permalink: /blog/:year/:month/:day/:title/
+    output: true
 
 defaults:
   - scope:
@@ -20,7 +24,11 @@ defaults:
     values:
       layout: default
       image: /media/images/hannah-troupe-wL_w5t_OKtI-unsplash-1900x1200.jpg
-
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
   - scope:
       path: ""
       type: ext

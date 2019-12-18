@@ -16,6 +16,7 @@ collections:
 defaults:
   - scope:
       path: ""
+      type: pages
     values:
       layout: default
       image: /media/images/hannah-troupe-wL_w5t_OKtI-unsplash-1900x1200.jpg

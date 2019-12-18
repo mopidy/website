@@ -1,0 +1,14 @@
+<div class="buttons">
+  {% if ext.dev.github %}
+    <a href="https://github.com/{{ ext.dev.github }}" class="button" title="GitHub ext">
+      <span class="icon has-text-grey-dark" title="GitHub"><img src="https://unpkg.com/simple-icons@latest/icons/github.svg" /></span>
+      &nbsp;<strong>{{ ext.dev.github }}</strong>
+    </a>
+  {% endif %}
+  {% if ext.dist.pypi %}
+    <a href="https://pypi.org/ext/{{ ext.dist.pypi }}" class="button" title="PyPi ext">
+      <span class="icon has-text-grey-dark" title="PyPI"><img src="https://unpkg.com/simple-icons@latest/icons/python.svg" /></span>
+      &nbsp;<strong>{{ ext.dist.pypi }}</strong>
+    </a>
+  {% endif %}
+</div>

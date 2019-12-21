@@ -199,10 +199,8 @@ layout: default
           {% if ext.dist.arch-aur %}
             <div class="tab-content is-hidden" id="arch">
               <p>
-                Install the
-                <a href="https://aur.archlinux.org/packages/{{ ext.dist.arch-aur }}">
-                  {{ ext.dist.arch-aur }}</a>
-                package from AUR:
+		Install the <code>{{ ext.dist.arch-aur }}</code> package from
+                <a href="https://aur.archlinux.org/packages/{{ ext.dist.arch-aur }}">AUR</a>:
               </p>
               <pre class="select copy">yay -S {{ ext.dist.arch-aur }}</pre>
             </div>

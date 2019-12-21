@@ -15,9 +15,8 @@ title: Mopidy
 
           <p class="subtitle is-3">
             Mopidy plays music from local disk, Spotify, SoundCloud,
-            Google Play Music, and more. You edit the playlist from any
-            phone, tablet, or computer using a range of MPD and web
-            clients.
+            Google Play Music, and more. You can edit the playlist from any
+            phone, tablet, or computer using a variety of MPD and web clients.
           </p>
 
         </div>
@@ -36,14 +35,15 @@ title: Mopidy
         <h2>Stream music from the cloud</h2>
 
         <p>
-          Vanilla Mopidy only plays music from your local
-          disk and radio streams. Through extensions, Mopidy can play music
-          from cloud services like Spotify, SoundCloud, and Google Play Music.
+          Vanilla Mopidy only plays music from files and radio streams.
+          Through <a href="/ext/">extensions</a>,
+          Mopidy can play music from cloud services like Spotify, SoundCloud,
+          and Google Play Music.
         </p>
 
         <p>
-          With Mopidy's extension support, backends for new
-          music sources can be easily added.
+          With Mopidy's extension support,
+          you can easily add backends for new music sources.
         </p>
 
       </div>
@@ -102,9 +102,11 @@ title: Mopidy
         </p>
 
         <p>
-          Out of the box, Mopidy is an MPD and HTTP server.
-          Additional frontends for controlling Mopidy can
-          be installed from extensions.
+          Out of the box, Mopidy is an HTTP server.
+          If you install the <a href="/ext/mpd/">Mopidy-MPD</a> extension,
+          it becomes an MPD server too.
+          Many additional frontends for controlling Mopidy are available as
+          extensions.
         </p>
 
       </div>
@@ -168,19 +170,18 @@ title: Mopidy
         <p>
           The
           <a href="https://www.raspberrypi.org/">Raspberry Pi</a>
-          is a popular device to run Mopidy on, either using Raspbian or Arch
-          Linux.
+          is an approachable single-board computer to run Mopidy on,
+          either using Raspbian, Ubuntu, or Arch Linux.
         </p>
 
         <p>
-          In fact, the Kickstarter funded
-          <a href="https://www.kickstarter.com/projects/fon/gramofon-modern-cloud-jukebox">
-          Gramofon: Modern Cloud Jukebox</a> project used Mopidy on a
-          Raspberry Pi to prototype the Gramofon device.
+          Pomoroni recommends Mopidy for use with their
+          <a href="https://shop.pimoroni.com/collections/pirate-audio">Pirate Audio</a>
+          audio gear for Raspberry Pi.
         </p>
 
         <p>
-          Mopidy is also a major building block in the
+          Mopidy is also a significant building block in the
           <a href="https://www.pimusicbox.com/">Pi Musicbox</a> integrated
           audio jukebox system for Raspberry Pi.
         </p>
@@ -200,15 +201,15 @@ title: Mopidy
 
         <p>
           Mopidy's extension support and Python, JSON-RPC, and JavaScript
-          APIs makes Mopidy perfect for building your own hacks.
+          APIs make Mopidy a perfect base for your projects.
         </p>
 
         <p>
-          In this example project, a Raspberry Pi is embedded
-          in an old cassette player. The buttons and volume control are wired
-          up with
+          In this example project,
+          a Raspberry Pi was embedded in an old cassette player.
+          The buttons and volume control are wired up with
           <abbr title="General-purpose input/output">GPIO</abbr>
-          on the Raspberry Pi, and is used to control playback through a
+          on the Raspberry Pi and is used to control playback through a
           custom Mopidy extension. The cassettes have
           <abbr title="Near field communication">NFC</abbr>
           tags used to select playlists from Spotify.

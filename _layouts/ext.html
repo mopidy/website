@@ -79,7 +79,7 @@ layout: default
                       you can install the pre-release using:
                     </p>
 
-                    <pre class="select copy">python3 -m pip install --pre {{ ext.dist.pypi }}</pre>
+                    <pre class="select copy">sudo python3 -m pip install --pre {{ ext.dist.pypi }}</pre>
                   {% endif %}
 
                   {% if ext.dev.github %}
@@ -150,9 +150,9 @@ layout: default
                 <a href="https://pypi.org/project/{{ ext.dist.pypi }}">PyPI</a>:
               </p>
               {% if ext.py3 == true %}
-                <pre class="select copy">python3 -m pip install {{ ext.dist.pypi }}</pre>
+                <pre class="select copy">sudo python3 -m pip install {{ ext.dist.pypi }}</pre>
               {% else %}
-                <pre class="select copy">python -m pip install {{ ext.dist.pypi }}</pre>
+                <pre class="select copy">sudo python -m pip install {{ ext.dist.pypi }}</pre>
               {% endif %}
             </div>
           {% endif %}
@@ -165,7 +165,7 @@ layout: default
                   <a href="https://packages.debian.org/{{ ext.dist.apt-debian }}">Debian</a> or
                   <a href="https://packages.ubuntu.com/{{ ext.dist.apt-debian }}">Ubuntu</a>:
                 </p>
-                <pre class="select copy">apt install {{ ext.dist.apt-debian }}</pre>
+                <pre class="select copy">sudo apt install {{ ext.dist.apt-debian }}</pre>
               {% endif %}
               {% if ext.dist.apt-mopidy %}
                 {% if ext.dist.apt-debian %}
@@ -191,7 +191,7 @@ layout: default
                 <p>
                   Then, install the <code>{{ ext.dist.apt-mopidy }}</code> package:
                 </p>
-                <pre class="select copy">apt install {{ ext.dist.apt-mopidy }}</pre>
+                <pre class="select copy">sudo apt install {{ ext.dist.apt-mopidy }}</pre>
               {% endif %}
             </div>
           {% endif %}

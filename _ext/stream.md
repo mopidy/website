@@ -5,7 +5,7 @@ dev:
   github: mopidy/mopidy
 dist:
   bundled: true
-py3: prerelease
+py3: true
 ---
 
 Backend for playing streaming music.

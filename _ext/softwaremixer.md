@@ -5,7 +5,7 @@ dev:
   github: mopidy/mopidy
 dist:
   bundled: true
-py3: prerelease
+py3: true
 ---
 
 Mixer for volume and mute control in software.

@@ -12,7 +12,7 @@ dist:
   apt-debian: mopidy-soundcloud
   apt-mopidy: mopidy-soundcloud
   arch-aur: mopidy-soundcloud
-py3: prerelease
+py3: true
 oauth:
   button:
     style: "background-color: #FF3300; color: #FFF"

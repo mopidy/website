@@ -6,7 +6,7 @@ dev:
 dist:
   pypi: Mopidy-MusicBox-Webclient
   arch-aur: mopidy-musicbox
-py3: prerelease
+py3: true
 images:
   - /media/ext/musicbox-webclient.jpg
 ---

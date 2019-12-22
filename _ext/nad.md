@@ -7,7 +7,7 @@ dev:
   codecov: true
 dist:
   pypi: Mopidy-NAD
-py3: prerelease
+py3: true
 ---
 
 Mixer for controlling volume using an [NAD](https://nadelectronics.com/) amplifier.

@@ -10,7 +10,7 @@ dist:
   apt-debian: mopidy-alsamixer
   apt-mopidy: mopidy-alsamixer
   arch-aur: mopidy-alsamixer
-py3: prerelease
+py3: true
 ---
 
 Extension for controlling volume on a Linux system using

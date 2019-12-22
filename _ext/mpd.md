@@ -10,7 +10,7 @@ dist:
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-mpd
-py3: prerelease
+py3: true
 ---
 
 Frontend that provides a full MPD server implementation

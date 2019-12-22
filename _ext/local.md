@@ -10,7 +10,7 @@ dist:
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-local
-py3: prerelease
+py3: true
 ---
 
 Extension for playing music from your local music archive.

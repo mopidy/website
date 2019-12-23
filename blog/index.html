@@ -52,37 +52,17 @@ title: Blog
   </section>
 {% endfor %}
 
-{% for post in site.posts offset:3 %}
 
-  {% unless post.next %}
-    <section class="section">
-      <div class="container">
-        <h2 class="title is-size-3">{{ post.date | date: '%Y' }}</h2>
-        <ul class="is-size-5">
-  {% else %}
-    {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-    {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-    {% if year != nyear %}
-          </ul>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <h2 class="title is-size-3">{{ post.date | date: '%Y' }}</h2>
-          <ul class="is-size-5">
-    {% endif %}
-  {% endunless %}
-
-  <li>
-    <span class="has-text-grey">{{ post.date | date:"%B %e" }}:</span>
-    <a href="{{ post.url }}">{{ post.title }}</a>
-  </li>
-
-  {% unless post.previous %}
-        </ul>
-      </div>
-    </section>
-  {% endunless %}
-
-{% endfor %}
+<section class="section">
+  <div class="container">
+    <h2 class="title is-size-3">Blog archive</h2>
+    <ul class="is-size-5">
+      {% for post in site.posts offset:3 %}
+        <li>
+          <span class="has-text-grey">{{ post.date | date:"%B %e, %Y" }}:</span>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

@@ -7,6 +7,7 @@ dev:
   codecov: true
 dist:
   pypi: Mopidy-MPD
+  arch-aur: mopidy-mpd
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-mpd

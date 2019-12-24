@@ -10,7 +10,7 @@ dist:
   apt-debian: mopidy-tunein
   apt-mopidy: mopidy-tunein
   arch-aur: mopidy-tunein
-py3: prerelease
+py3: true
 ---
 
 A backend for playing music from the

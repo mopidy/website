@@ -34,23 +34,6 @@ layout: default
             {{ content }}
           </div>
 
-          {% if post.discourse-topic-id %}
-            <div id="discourse-comments" class="box"></div>
-            <script type="text/javascript">
-              window.DiscourseEmbed = {
-                discourseUrl: "https://discourse.mopidy.com/",
-                topicId: {{ post.discourse-topic-id }}
-              };
-              (function(d) {
-                var s = document.createElement("script");
-                s.type = "text/javascript";
-                s.async = true;
-                s.src = window.DiscourseEmbed.discourseUrl + "javascripts/embed.js";
-                document.body.appendChild(s);
-              })();
-            </script>
-          {% endif %}
-
         </div>
         <div class="column is-4">
 
@@ -63,3 +46,34 @@ layout: default
 
   </div>
 </section>
+
+{% if post.discourse-topic-id %}
+  <section class="section">
+    <div class="container">
+
+      <h2 class="title">Comments</h2>
+
+      <div class="columns is-variable is-8">
+        <div class="column is-8">
+
+          <div id="discourse-comments"></div>
+          <script type="text/javascript">
+            window.DiscourseEmbed = {
+              discourseUrl: "https://discourse.mopidy.com/",
+              topicId: {{ post.discourse-topic-id }}
+            };
+            (function(d) {
+              var s = document.createElement("script");
+              s.type = "text/javascript";
+              s.async = true;
+              s.src = window.DiscourseEmbed.discourseUrl + "javascripts/embed.js";
+              document.body.appendChild(s);
+            })();
+          </script>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+{% endif %}

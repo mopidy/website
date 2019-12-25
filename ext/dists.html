@@ -39,7 +39,7 @@ title: Extension distributions
                 {% if ext.dist.bundled %}<span class="tag is-pulled-right is-primary">Bundled</span>{% endif %}
                 {% if ext.archived %}<span class="tag is-pulled-right is-danger">Archived</span>{% endif %}
               </td>
-              <td>{{ ext.type }}</td>
+              <td>{{ ext.type | capitalize }}</td>
               <td class="has-text-centered">
                 {% case ext.py3 %}
                   {% when "prerelease"%}

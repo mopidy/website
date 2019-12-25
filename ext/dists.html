@@ -1,0 +1,108 @@
+---
+title: Extension distributions
+---
+
+<section class="section">
+  <div class="container">
+
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/ext/">Extensions</a></li>
+        <li class="is-active"><a href="/ext/distributions/">Distributions</a></li>
+      </ol>
+    </nav>
+
+    <h1 class="title is-size-2">Extension distributions</h1>
+
+    {% assign exts = site.ext | sort_natural: "title" %}
+
+    <table class="table is-hoverable is-fullwidth">
+      <thead>
+        <tr>
+          <th>Extensions</th>
+          <th>Type</th>
+          <th class="has-text-centered">Python 3?</th>
+          <th class="has-text-centered">PyPI</th>
+          <th class="has-text-centered">APT (Debian)</th>
+          <th class="has-text-centered">APT (Mopidy)</th>
+          <th class="has-text-centered">Arch (AUR)</th>
+          <th class="has-text-centered">macOS</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for ext in exts %}
+          <tr>
+            <td>
+              <a href="{{ ext.url }}">{{ ext.title }}</a>
+              {% if ext.dist.bundled %}<span class="tag is-primary">Bundled</span>{% endif %}
+            </td>
+            <td>{{ ext.type }}</td>
+            <td class="has-text-centered">
+              {% case ext.py3 %}
+                {% when "prerelease"%}
+                  <span class="tag is-warning" title="Python 3 pre-release">&#10003;</span>
+                {% when true %}
+                  <span class="tag is-success" title="Python 3">&#10003;</span>
+              {% endcase %}
+            </td>
+            <td class="has-text-centered">
+              {% assign pypi = ext.dist.pypi %}
+              {% if ext.dist.bundled %}{% assign pypi = "Mopidy" %}{% endif %}
+              {% if pypi %}
+                <a href="https://pypi.org/project/{{ pypi }}" title="PyPI">
+                  <span class="icon"><img src="https://unpkg.com/simple-icons@latest/icons/pypi.svg" /></span>
+                </a>
+              {% endif %}
+            </td>
+            <td class="has-text-centered">
+              {% assign apt = ext.dist.apt-debian %}
+              {% if ext.dist.bundled %}{% assign apt = "mopidy" %}{% endif %}
+              {% if apt %}
+                <a href="https://packages.debian.org/{{ apt }}" title="APT (Debian)">
+                  <span class="icon"><img src="https://unpkg.com/simple-icons@latest/icons/debian.svg" /></span>
+                </a>
+              {% endif %}
+            </td>
+            <td class="has-text-centered">
+              {% assign apt = ext.dist.apt-mopidy %}
+              {% if ext.dist.bundled %}{% assign apt = "mopidy" %}{% endif %}
+              {% if apt %}
+                <a href="https://apt.mopidy.com/" title="APT (Mopidy)">
+                  <span class="icon"><img src="https://unpkg.com/simple-icons@latest/icons/debian.svg" /></span>
+                </a>
+              {% endif %}
+            </td>
+            <td class="has-text-centered">
+              {% if ext.dist.arch-aur %}
+                <a href="https://aur.archlinux.org/packages/{{ ext.dist.arch-aur }}/" title="Arch Linux (AUR)">
+                  <span class="icon"><img src="https://unpkg.com/simple-icons@latest/icons/archlinux.svg" /></span>
+                </a>
+              {% endif %}
+              {% if ext.dist.bundled %}
+                <a href="https://www.archlinux.org/packages/community/any/mopidy/" title="Arch Linux (Community)">
+                  <span class="icon"><img src="https://unpkg.com/simple-icons@latest/icons/archlinux.svg" /></span>
+                </a>
+              {% endif %}
+            </td>
+            <td class="has-text-centered">
+              {% if ext.dist.homebrew %}
+                {% assign repo = ext.dist.homebrew.tap | replace: "/", "/homebrew-" %}
+                {% assign formula = ext.dist.homebrew.formula %}
+              {% else if ext.dist.bundled %}
+                {% assign repo = "mopidy/homebrew-mopidy" %}
+                {% assign formula = "mopidy" %}
+              {% endif %}
+              {% if ext.dist.homebrew or ext.dist.bundled %}
+                <a href="https://github.com/{{ repo }}/blob/master/Formula/{{ formula }}.rb" title="Homebrew">
+                  <span class="icon"><img src="https://unpkg.com/simple-icons@latest/icons/apple.svg" /></span>
+                </a>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+</section>

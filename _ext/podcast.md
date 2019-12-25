@@ -10,7 +10,7 @@ dist:
   apt-debian: mopidy-podcast
   apt-mopidy: mopidy-podcast
   arch-aur: mopidy-podcast
-py3: prerelease
+py3: true
 ---
 
 Extension for browsing RSS feeds of podcasts and stream the episodes.

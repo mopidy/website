@@ -3,8 +3,6 @@ title: Mopidy-Spotify-Tunigo
 type: backend
 dev:
   github: trygveaa/mopidy-spotify-tunigo
-  travisci: true
-  coveralls: true
 dist:
   pypi: Mopidy-Spotify-Tunigo
   apt-mopidy: mopidy-spotify-tunigo

@@ -3,8 +3,8 @@ title: Mopidy-dLeyna
 type: backend
 dev:
   github: tkem/mopidy-dleyna
-  travisci: true
-  coveralls: true
+  circleci: true
+  codecov: true
 dist:
   pypi: Mopidy-dLeyna
   apt-debian: mopidy-dleyna

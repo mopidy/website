@@ -3,8 +3,8 @@ title: Mopidy-Podcast-iTunes
 type: backend
 dev:
   github: tkem/mopidy-podcast-itunes
-  travisci: true
-  coveralls: true
+  circleci: true
+  codecov: true
 dist:
   pypi: Mopidy-Podcast-iTunes
   apt-debian: mopidy-podcast-itunes

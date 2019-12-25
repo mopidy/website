@@ -3,8 +3,8 @@ title: Mopidy-TuneIn
 type: backend
 dev:
   github: kingosticks/mopidy-tunein
-  travisci: true
-  coveralls: true
+  circleci: true
+  codecov: true
 dist:
   pypi: Mopidy-TuneIn
   apt-debian: mopidy-tunein

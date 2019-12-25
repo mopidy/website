@@ -3,8 +3,8 @@ title: Mopidy-Podcast
 type: backend
 dev:
   github: tkem/mopidy-podcast
-  travisci: true
-  coveralls: true
+  circleci: true
+  codecov: true
 dist:
   pypi: Mopidy-Podcast
   apt-debian: mopidy-podcast

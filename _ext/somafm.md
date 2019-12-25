@@ -3,8 +3,8 @@ title: Mopidy-SomaFM
 type: backend
 dev:
   github: AlexandrePTJ/mopidy-somafm
-  travisci: true
-  coveralls: true
+  circleci: true
+  codecov: true
 dist:
   pypi: Mopidy-SomaFM
   apt-debian: mopidy-somafm

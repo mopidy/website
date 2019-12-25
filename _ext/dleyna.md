@@ -9,7 +9,7 @@ dist:
   pypi: Mopidy-dLeyna
   apt-debian: mopidy-dleyna
   apt-mopidy: mopidy-dleyna
-py3: prerelease
+py3: true
 ---
 
 A backend that lets you play music from

@@ -162,7 +162,15 @@ function setupLazyIFrame(el) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function onReady(callback) {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', callback);
+  } else {
+    callback();
+  }
+}
+
+onReady(() => {
   document.querySelectorAll(".navbar-burger").forEach(setupNavbarBurger);
   document.querySelectorAll(".tabs").forEach(setupTabs);
   document.querySelectorAll(".copy").forEach(setupCopy);

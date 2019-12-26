@@ -10,7 +10,7 @@ dist:
   apt-debian: mopidy-internetarchive
   apt-mopidy: mopidy-internetarchive
   arch-aur: mopidy-internetarchive
-py3: prerelease
+py3: true
 ---
 
 Backend for playing music and audio from the

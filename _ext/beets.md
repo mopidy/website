@@ -10,7 +10,7 @@ dist:
   apt-debian: mopidy-beets
   apt-mopidy: mopidy-beets
   arch-aur: mopidy-beets
-py3: false
+py3: prerelease
 ---
 
 A backend for playing music from your [Beets](https://beets.io/)

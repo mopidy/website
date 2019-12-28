@@ -7,6 +7,7 @@ dev:
   codecov: true
 dist:
   pypi: Mopidy-Local
+  apt-debian: mopidy-local
   apt-mopidy: mopidy-local
   arch-aur: mopidy-local
   homebrew:

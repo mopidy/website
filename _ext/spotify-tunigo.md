@@ -5,7 +5,6 @@ dev:
   github: trygveaa/mopidy-spotify-tunigo
 dist:
   pypi: Mopidy-Spotify-Tunigo
-  arch-aur: mopidy-spotify-tunigo
 archived: |
   The Tunigo service is no longer available. For more details see the
   [extension’s repo](https://github.com/trygveaa/mopidy-spotify-tunigo#warning).

@@ -10,6 +10,9 @@ dist:
   apt-debian: mopidy-internetarchive
   apt-mopidy: mopidy-internetarchive
   arch-aur: mopidy-internetarchive
+  homebrew:
+    tap: mopidy/mopidy
+    formula: mopidy-internetarchive
 py3: true
 ---
 

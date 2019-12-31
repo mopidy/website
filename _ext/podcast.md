@@ -10,6 +10,9 @@ dist:
   apt-debian: mopidy-podcast
   apt-mopidy: mopidy-podcast
   arch-aur: mopidy-podcast
+  homebrew:
+    tap: mopidy/mopidy
+    formula: mopidy-podcast
 py3: true
 ---
 

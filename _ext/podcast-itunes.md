@@ -10,6 +10,9 @@ dist:
   apt-debian: mopidy-podcast-itunes
   apt-mopidy: mopidy-podcast-itunes
   arch-aur: mopidy-podcast-itunes
+  homebrew:
+    tap: mopidy/mopidy
+    formula: mopidy-podcast-itunes
 py3: true
 ---
 

@@ -10,6 +10,9 @@ dist:
   apt-debian: mopidy-beets
   apt-mopidy: mopidy-beets
   arch-aur: mopidy-beets
+  homebrew:
+    tap: mopidy/mopidy
+    formula: mopidy-beets
 py3: prerelease
 ---
 

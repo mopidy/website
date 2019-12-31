@@ -10,6 +10,9 @@ dist:
   apt-debian: mopidy-tunein
   apt-mopidy: mopidy-tunein
   arch-aur: mopidy-tunein
+  homebrew:
+    tap: mopidy/mopidy
+    formula: mopidy-tunein
 py3: true
 ---
 

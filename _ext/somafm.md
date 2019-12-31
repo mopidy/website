@@ -10,6 +10,9 @@ dist:
   apt-debian: mopidy-somafm
   apt-mopidy: mopidy-somafm
   arch-aur: mopidy-somafm
+  homebrew:
+    tap: mopidy/mopidy
+    formula: mopidy-somafm
 py3: prerelease
 ---
 

@@ -12,6 +12,9 @@ dist:
   apt-debian: mopidy-soundcloud
   apt-mopidy: mopidy-soundcloud
   arch-aur: mopidy-soundcloud
+  homebrew:
+    tap: mopidy/mopidy
+    formula: mopidy-soundcloud
 py3: true
 oauth:
   button:

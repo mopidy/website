@@ -1,5 +1,6 @@
 ---
 title: Debian packaging of Mopidy
+canonical_url: https://jodal.no/2014/10/28/debian-packaging/
 tags:
   - debian
   - python

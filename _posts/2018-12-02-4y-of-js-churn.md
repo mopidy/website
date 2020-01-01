@@ -1,5 +1,6 @@
 ---
 title: "Four years of JavaScript churn: Mopidy.js 1.0"
+canonical_url: https://jodal.no/2018/12/02/4y-of-js-churn/
 tags:
   - mopidy
   - javascript

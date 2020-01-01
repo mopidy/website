@@ -1,5 +1,6 @@
 ---
 title: Mopidy-MPRIS 2.0 released
+canonical_url: https://jodal.no/2018/12/07/mopidy-mpris-2.0/
 tags:
   - mopidy
   - mpris

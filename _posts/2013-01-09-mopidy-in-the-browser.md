@@ -1,5 +1,6 @@
 ---
 title: Bringing the Mopidy music server to the browser
+canonical_url: https://jodal.no/2017/08/26/mopidy-in-the-browser/
 tags:
   - api
   - mopidy

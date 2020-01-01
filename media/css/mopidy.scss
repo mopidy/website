@@ -24,6 +24,11 @@ $primary: $blue;
 @import "bulma-0.8.0/grid/_all";
 @import "bulma-0.8.0/layout/_all";
 
+// Code blocks
+pre.highlight {
+  margin-bottom: 1em;
+}
+
 // Hero covers
 .mw-cover {
   background-position: bottom;

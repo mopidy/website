@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Debian packaging of Mopidy
 tags:
   - debian

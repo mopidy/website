@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Bringing the Mopidy music server to the browser
 tags:
   - api

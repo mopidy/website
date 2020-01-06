@@ -2,7 +2,7 @@
 title: Mopidy-YouTube
 type: backend
 dev:
-  github: mopidy/mopidy-youtube
+  github: natumbri/mopidy-youtube
   travisci: true
   coveralls: true
 dist:

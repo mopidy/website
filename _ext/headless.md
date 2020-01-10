@@ -6,6 +6,7 @@ dev:
   travisci: false
   coveralls: false
 dist:
+  pypi: Mopidy-Headless
   arch-aur: mopidy-headless
 py3: true
 ---

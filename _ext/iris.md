@@ -6,7 +6,7 @@ dev:
 dist:
   pypi: Mopidy-Iris
   arch-aur: mopidy-iris
-py3: false
+py3: true
 images:
   - /media/ext/iris.jpg
 ---

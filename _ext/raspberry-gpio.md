@@ -7,7 +7,7 @@ dev:
   codecov: true
 dist:
   pypi: Mopidy-Raspberry-GPIO
-py3: false
+py3: true
 ---
 
 Frontend for controlling Mopidy from GPIO signals on a Raspberry Pi.

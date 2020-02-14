@@ -13,7 +13,6 @@ dist:
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-internetarchive
-py3: true
 ---
 
 Backend for playing music and audio from the

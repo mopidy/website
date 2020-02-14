@@ -10,7 +10,6 @@ dist:
   pypi: Mopidy-GMusic
   apt-mopidy: mopidy-gmusic
   arch-aur: mopidy-gmusic
-py3: true
 ---
 
 A backend for playing music from

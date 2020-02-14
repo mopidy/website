@@ -13,7 +13,6 @@ dist:
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-tunein
-py3: true
 ---
 
 A backend for playing music from the

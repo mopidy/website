@@ -13,7 +13,6 @@ dist:
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-podcast
-py3: true
 ---
 
 Extension for browsing RSS feeds of podcasts and stream the episodes.

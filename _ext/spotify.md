@@ -14,7 +14,6 @@ dist:
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-spotify
-py3: true
 oauth:
   button:
     style: "background-color: #1ED760; color: #FFF"

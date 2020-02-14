@@ -7,7 +7,6 @@ dev:
   coveralls: true
 dist:
   pypi: Mopidy-Mobile
-py3: true
 images:
   - /media/ext/mobile.jpg
 ---

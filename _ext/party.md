@@ -5,7 +5,6 @@ dev:
   github: Lesterpig/mopidy-party
 dist:
   pypi: Mopidy-Party
-py3: true
 images:
   - /media/ext/party.jpg
 ---

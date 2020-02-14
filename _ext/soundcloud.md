@@ -15,7 +15,6 @@ dist:
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-soundcloud
-py3: true
 oauth:
   button:
     style: "background-color: #FF3300; color: #FFF"

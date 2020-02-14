@@ -10,7 +10,6 @@ dist:
   apt-debian: mopidy-mpris
   apt-mopidy: mopidy-mpris
   arch-aur: mopidy-mpris
-py3: true
 ---
 
 Frontend for controlling Mopidy through the

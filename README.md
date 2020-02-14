@@ -62,7 +62,8 @@ dist:                      # Distribution related fields:
 logo: /media/ext/foo.png   # Logo, e.g. of the music service
 images:                    # List of images of the extension in use
   - /media/ext/foo.jpg
-py3: false                 # Python 3 support. One of true/false/"prerelease"
+prerelease: false          # True when only a prerelease version is compatible
+                           # with Mopidy 3.x
 oauth:                     # OAuth integration for services that require tokens
   endpoint: https://example.com # Redirection endpoint to start OAuth flow
   origin: https://example.org   # Origin of callback page at end of OAuth flow

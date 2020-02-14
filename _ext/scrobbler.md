@@ -13,7 +13,6 @@ dist:
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-scrobbler
-py3: true
 ---
 
 Extension for scrobbling played tracks to [Last.fm](https://www.last.fm/).

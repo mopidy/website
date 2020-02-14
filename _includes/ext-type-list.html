@@ -5,12 +5,9 @@
       {% if ext.dist.bundled %}
         <span class="tag is-primary">Bundled</span>
       {% endif %}
-      {% case ext.py3 %}
-        {% when "prerelease"%}
-          <span class="tag is-warning">Python 3</span>
-        {% when true %}
-          <span class="tag is-success">Python 3</span>
-      {% endcase %}
+      {% if ext.prerelease %}
+        <span class="tag is-warning">Prerelease</span>
+      {% endif %}
       {% if ext.archived %}
         <span class="tag is-danger is-light">Archived</span>
       {% endif %}

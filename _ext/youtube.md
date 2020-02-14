@@ -8,7 +8,7 @@ dev:
 dist:
   pypi: Mopidy-YouTube
   arch-aur: mopidy-youtube
-py3: prerelease
+prerelease: true
 ---
 
 A backend for playing music from the

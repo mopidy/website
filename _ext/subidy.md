@@ -1,11 +1,8 @@
 ---
-title: Mopidy-Subsonic
+title: Mopidy-Subidy
 type: backend
 dev:
-  github: rattboi/mopidy-subsonic
-dist:
-  pypi: Mopidy-Subsonic
-py3: false
+  github: Prior99/mopidy-subidy
 ---
 
 A backend for playing music from a

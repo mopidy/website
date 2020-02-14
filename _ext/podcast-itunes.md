@@ -13,7 +13,6 @@ dist:
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-podcast-itunes
-py3: true
 ---
 
 This is an extension to the [Mopidy-Podcast](/ext/podcast/) backend that lets

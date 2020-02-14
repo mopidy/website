@@ -60,12 +60,7 @@ layout: default
           <h2>Installation</h2>
 
           {% if ext.archived == nil %}
-          {% case ext.py3 %}
-            {% when true %}
-              <p class="notification is-success">
-                {{ ext.title }} supports Python 3.7+.
-              </p>
-            {% when "prerelease" %}
+          {% if ext.prerelease %}
               <article class="message is-warning">
                 <div class="message-header">Python 3 support in pre-release</div>
                 <div class="message-body">
@@ -90,11 +85,7 @@ layout: default
                   {% endif %}
                 </div>
               </article>
-            {% else %}
-              <p class="notification is-danger">
-                {{ ext.title }} does not support Python 3.7+, as far as we know.
-              </p>
-          {% endcase %}
+          {% endif %}
           {% endif %}
 
           {% if ext.dist.bundled %}

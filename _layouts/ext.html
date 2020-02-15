@@ -122,6 +122,14 @@ layout: default
                     </a>
                   </li>
                 {% endif %}
+                {% if ext.dist.fedora or ext.dist.rpmfusion %}
+                  <li>
+                    <a href="#fedora">
+                      <span class="icon"><img src="https://unpkg.com/simple-icons@latest/icons/fedora.svg" /></span>
+                      <span>Fedora</span>
+                    </a>
+                  </li>
+                {% endif %}
                 {% if ext.dist.homebrew %}
                   <li>
                     <a href="#macos">
@@ -194,6 +202,27 @@ layout: default
                 <a href="https://aur.archlinux.org/packages/{{ ext.dist.arch-aur }}">AUR</a>:
               </p>
               <pre class="select copy">yay -S {{ ext.dist.arch-aur }}</pre>
+            </div>
+          {% endif %}
+
+          {% if ext.dist.fedora %}
+            <div class="tab-content is-hidden" id="fedora">
+              <p>
+		Install the <code>{{ ext.dist.fedora }}</code> package from
+                <a href="https://src.fedoraproject.org/rpms/{{ ext.dist.fedora }}">Fedora</a>:
+              </p>
+              <pre class="select copy">dnf install {{ ext.dist.fedora }}</pre>
+            </div>
+          {% endif %}
+
+          {% if ext.dist.rpmfusion %}
+            {% assign parts = ext.dist.rpmfusion | split: '/' %}
+            <div class="tab-content is-hidden" id="fedora">
+              <p>
+		Install the <code>{{ parts | shift }}</code> package from
+                <a href="https://admin.rpmfusion.org/pkgdb/package/{{ ext.dist.rpmfusion }}">RPMFusion-{{ parts | pop }}</a>:
+              </p>
+              <pre class="select copy">dnf install {{ parts | shift }}</pre>
             </div>
           {% endif %}
 

@@ -27,6 +27,7 @@ title: Extension distributions
             <th class="has-text-centered">APT (Debian)</th>
             <th class="has-text-centered">APT (Mopidy)</th>
             <th class="has-text-centered">Arch (AUR)</th>
+            <th class="has-text-centered">Fedora / RPMFusion</th>
             <th class="has-text-centered">macOS</th>
           </tr>
         </thead>
@@ -76,6 +77,23 @@ title: Extension distributions
                 {% if ext.dist.bundled %}
                   <a href="https://www.archlinux.org/packages/community/any/mopidy/" title="Arch Linux (Community)">
                     <span class="icon"><img src="https://unpkg.com/simple-icons@latest/icons/archlinux.svg" /></span>
+                  </a>
+                {% endif %}
+              </td>
+              <td class="has-text-centered">
+                {% if ext.dist.fedora %}
+                  <a href="https://src.fedoraproject.org/rpms/{{ ext.dist.fedora }}/" title="Fedora">
+                    <span class="icon"><img src="https://unpkg.com/simple-icons@latest/icons/fedora.svg" /></span>
+                  </a>
+                {% elsif ext.dist.rpmfusion %}
+                  {% assign parts = ext.dist.rpmfusion | split: '/' %}
+                  <a href="https://admin.rpmfusion.org/pkgdb/packages/{{ ext.dist.rpmfusion }}/" title="RPMFusion ({{ parts | pop }})">
+                    <span class="icon"><img src="https://unpkg.com/simple-icons@latest/icons/fedora.svg" />*</span>
+                  </a>
+                {% endif %}
+                {% if ext.dist.bundled %}
+                  <a href="https://src.fedoraproject.org/rpms/mopidy/" title="Fedora">
+                    <span class="icon"><img src="https://unpkg.com/simple-icons@latest/icons/fedora.svg" /></span>
                   </a>
                 {% endif %}
               </td>

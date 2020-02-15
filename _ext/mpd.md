@@ -10,6 +10,7 @@ dist:
   apt-debian: mopidy-mpd
   apt-mopidy: mopidy-mpd
   arch-aur: mopidy-mpd
+  fedora: mopidy-mpd
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-mpd

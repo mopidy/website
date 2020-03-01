@@ -1,9 +1,7 @@
 ---
-layout: ext
 title: Mopidy-Jellyfin
 logo: /media/ext/jellyfin.png
 type: backend
-service: Jellyfin
 dev:
   github: jellyfin/mopidy-jellyfin
 dist:

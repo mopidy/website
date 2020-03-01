@@ -8,6 +8,7 @@ dev:
   codecov: true
 dist:
   pypi: Mopidy-GMusic
+  apt-debian: mopidy-gmusic
   apt-mopidy: mopidy-gmusic
   arch-aur: mopidy-gmusic
 ---

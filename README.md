@@ -39,7 +39,6 @@ with the following fields:
 
 ``` yaml
 # Required fields:
-layout: ext                # Should always be "ext"
 title: Mopidy-Foo          # Name of extension
 type: backend              # One of "backend"/"frontend"/"mixer"/"web"
 

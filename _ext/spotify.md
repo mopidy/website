@@ -11,6 +11,7 @@ dist:
   pypi: Mopidy-Spotify
   apt-mopidy: mopidy-spotify
   arch-aur: mopidy-spotify
+  rpmfusion: nonfree/mopidy-spotify
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-spotify

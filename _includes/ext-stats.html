@@ -23,7 +23,7 @@
           </a>
         {% endif %}
         {% if ext.dist.pypi %}
-          <a href="https://pypi.org/ext/{{ ext.dist.pypi }}">
+          <a href="https://pypi.org/project/{{ ext.dist.pypi }}">
             <img
               alt="PyPI - Downloads"
               src="https://img.shields.io/pypi/dm/{{ ext.dist.pypi }}?label=PyPI%20downloads&amp;style=flat-square"
@@ -36,13 +36,13 @@
     {% if ext.dist.pypi %}
       <h5 class="is-size-7 is-uppercase has-text-grey">PyPI</h5>
       <p>
-        <a href="https://pypi.org/ext/{{ ext.dist.pypi }}">
+        <a href="https://pypi.org/project/{{ ext.dist.pypi }}">
           <img
             alt="PyPI - Package version"
             src="https://img.shields.io/pypi/v/{{ ext.dist.pypi }}?label=Package%20version&amp;style=flat-square"
           />
         </a>
-        <a href="https://pypi.org/ext/{{ ext.dist.pypi }}">
+        <a href="https://pypi.org/project/{{ ext.dist.pypi }}">
           <img
             alt="PyPI - Python support"
             src="https://img.shields.io/pypi/pyversions/{{ ext.dist.pypi }}?label=Python%20support&amp;style=flat-square"
@@ -54,7 +54,7 @@
     {% if ext.dist.pypi %}
       <h5 class="is-size-7 is-uppercase has-text-grey">License</h5>
       <p>
-        <a href="https://pypi.org/ext/{{ ext.dist.pypi }}">
+        <a href="https://pypi.org/project/{{ ext.dist.pypi }}">
           <img
             alt="PyPI - License"
             src="https://img.shields.io/pypi/l/{{ ext.dist.pypi }}?label=&amp;style=flat-square"

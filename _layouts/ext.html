@@ -148,11 +148,7 @@ layout: default
                 Install the <code>{{ ext.dist.pypi }}</code> package from
                 <a href="https://pypi.org/project/{{ ext.dist.pypi }}">PyPI</a>:
               </p>
-              {% if ext.py3 == true %}
-                <pre class="select copy">sudo python3 -m pip install {{ ext.dist.pypi }}</pre>
-              {% else %}
-                <pre class="select copy">sudo python -m pip install {{ ext.dist.pypi }}</pre>
-              {% endif %}
+              <pre class="select copy">sudo python3 -m pip install {{ ext.dist.pypi }}</pre>
             </div>
           {% endif %}
 

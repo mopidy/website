@@ -13,7 +13,6 @@ dist:
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-beets
-prerelease: true
 ---
 
 A backend for playing music from your [Beets](https://beets.io/)

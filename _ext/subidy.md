@@ -3,6 +3,8 @@ title: Mopidy-Subidy
 type: backend
 dev:
   github: Prior99/mopidy-subidy
+dist:
+  arch-aur: mopidy-subidy
 ---
 
 A backend for playing music from a

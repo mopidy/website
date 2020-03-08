@@ -55,6 +55,8 @@ dist:                      # Distribution related fields:
   apt-debian: mopidy-foo        # Debian/Ubuntu package name
   apt-mopidy: mopidy-foo        # apt.mopidy.com package name
   arch-aur: mopidy-foo          # Arch Linux AUR package name
+  fedora: mopidy-foo            # Fedora package name
+  rpmfusion: mopidy-foo         # RPM Fusion package name
   homebrew:
     tap: mopidy/mopidy          # Homebrew tap name
     formula: mopidy-foo         # Homebrew formula name in above tap

@@ -38,46 +38,52 @@ The "front matter" part of the extension definitions is a YAML data structure
 with the following fields:
 
 ``` yaml
-# Required fields:
-title: Mopidy-Foo          # Name of extension
-type: backend              # One of "backend"/"frontend"/"mixer"/"web"
+### Required fields:
 
-# Optional fields:
-service: FooBar            # Name of the upstream service if any.
-dev:                       # Development related fields
-  github: mopidy/mopidy-foo     # GitHub repo
-  circleci: true                # Whether using CircleCI
-  travisci: false               # Whether using Travis CI
-  codecov: true                 # Whether using Codecov code coverage
-  coveralls: false              # Whether using Coveralls code coverage
-dist:                      # Distribution related fields:
-  pypi: Mopidy-Foo              # PyPI package name
-  apt-debian: mopidy-foo        # Debian/Ubuntu package name
-  apt-mopidy: mopidy-foo        # apt.mopidy.com package name
-  arch-aur: mopidy-foo          # Arch Linux AUR package name
-  fedora: mopidy-foo            # Fedora package name
-  rpmfusion: mopidy-foo         # RPM Fusion package name
+title: Mopidy-Foo               # Name of extension
+type: backend                   # One of "backend"/"frontend"/"mixer"/"web"
+
+### Optional fields:
+
+service: FooBar                 # Name of the upstream service if any.
+logo: /media/ext/foo.png        # Logo, e.g. of the music service
+
+dev:                            # Development related fields
+  github: mopidy/mopidy-foo         # GitHub repo
+  circleci: true                    # Whether using CircleCI
+  travisci: false                   # Whether using Travis CI
+  codecov: true                     # Whether using Codecov code coverage
+  coveralls: false                  # Whether using Coveralls code coverage
+
+dist:                           # Distribution related fields:
+  pypi: Mopidy-Foo                  # PyPI package name
+  apt-debian: mopidy-foo            # Debian/Ubuntu package name
+  apt-mopidy: mopidy-foo            # apt.mopidy.com package name
+  arch-aur: mopidy-foo              # Arch Linux AUR package name
+  fedora: mopidy-foo                # Fedora package name
+  rpmfusion: mopidy-foo             # RPM Fusion package name
   homebrew:
-    tap: mopidy/mopidy          # Homebrew tap name
-    formula: mopidy-foo         # Homebrew formula name in above tap
-logo: /media/ext/foo.png   # Logo, e.g. of the music service
-images:                    # List of images of the extension in use
+    tap: mopidy/mopidy              # Homebrew tap name
+    formula: mopidy-foo             # Homebrew formula name in above tap
+
+images:                         # List of images of the extension in use
   - /media/ext/foo.jpg
-prerelease: false          # True when only a prerelease version is compatible
-                           # with Mopidy 3.x
-oauth:                     # OAuth integration for services that require tokens
-  endpoint: https://example.com # Redirection endpoint to start OAuth flow
-  origin: https://example.org   # Origin of callback page at end of OAuth flow
-                                # Defaults to endpoint's origin if not set
-  button:                       # Styling for auth button
-    style: background: ...      # Inline CSS to apply to button.
+
+prerelease: false               # When only a prerelease version is Python 3 compatible
+
+oauth:                          # OAuth integration for services that require tokens:
+  endpoint: https://example.com     # Redirection endpoint to start OAuth flow
+  origin: https://example.org       # Origin of callback page at end of OAuth flow
+                                    # Defaults to endpoint's origin if not set
+  button:                           # Styling for auth button
+    style: background: ...              # Inline CSS to apply to button.
     logo:
-      url:                      # URL to logo to use
-      style:                    # Inline CSS to apply to logo.
-  config:                       # One or more config sections to fill with data
-    section_name:               # Name of the config section
-     - config_field             # Config field name
-  note: Extra markdown info...  # Optional text adding more info
+      url:                              # URL to logo to use
+      style:                            # Inline CSS to apply to logo.
+  config:                           # One or more config sections to fill with data
+    section_name:                       # Name of the config section
+     - config_field                     # Config field name
+  note: Extra markdown info...      # Optional text adding more info
 ```
 
 ### OAuth authentication

@@ -46,7 +46,7 @@ type: backend              # One of "backend"/"frontend"/"mixer"/"web"
 service: FooBar            # Name of the upstream service if any.
 dev:                       # Development related fields
   github: mopidy/mopidy-foo     # GitHub repo
-  circle: true                  # Whether using CircleCI
+  circleci: true                # Whether using CircleCI
   travisci: false               # Whether using Travis CI
   codecov: true                 # Whether using Codecov code coverage
   coveralls: false              # Whether using Coveralls code coverage

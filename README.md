@@ -45,9 +45,6 @@ type: backend                   # One of "backend"/"frontend"/"mixer"/"web"
 
 ### Optional fields:
 
-service: FooBar                 # Name of the upstream service if any.
-logo: /media/ext/foo.png        # Logo, e.g. of the music service
-
 dev:                            # Development related fields
   github: mopidy/mopidy-foo         # GitHub repo
   circleci: true                    # Whether using CircleCI
@@ -66,10 +63,14 @@ dist:                           # Distribution related fields:
     tap: mopidy/mopidy              # Homebrew tap name
     formula: mopidy-foo             # Homebrew formula name in above tap
 
+prerelease: false               # When only a prerelease version is Python 3 compatible
+
+logo: /media/ext/foo.png        # Logo, e.g. of the music service
+
 images:                         # List of images of the extension in use
   - /media/ext/foo.jpg
 
-prerelease: false               # When only a prerelease version is Python 3 compatible
+service: FooBar                 # Name of the upstream service if any.
 
 oauth:                          # OAuth integration for services that require tokens:
   endpoint: https://example.com     # Redirection endpoint to start OAuth flow

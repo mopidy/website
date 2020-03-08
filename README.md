@@ -97,17 +97,17 @@ should install an event listener that will reply to our polling. Once our code
 has the data we close the pop-up for you.
 
 ``` javascript
-      const data = {
-        auth_token: ...,
-        state: ...,
-        error: ...,
-        error_description: ...,
-      };
-      window.addEventListener('message', event => {
-        if (event.origin === 'https://mopidy.com') {
-          event.source.postMessage(data, event.origin);
-        }
-      });
+const data = {
+  auth_token: ...,
+  state: ...,
+  error: ...,
+  error_description: ...,
+};
+window.addEventListener('message', event => {
+  if (event.origin === 'https://mopidy.com') {
+    event.source.postMessage(data, event.origin);
+  }
+});
 ```
 
 Note that the field names in the data should be mapped to the expected config

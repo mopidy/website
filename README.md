@@ -63,8 +63,6 @@ dist:                           # Distribution related fields:
     tap: mopidy/mopidy              # Homebrew tap name
     formula: mopidy-foo             # Homebrew formula name in above tap
 
-prerelease: false               # When only a prerelease version is Python 3 compatible
-
 logo: /media/ext/foo.png        # Logo, e.g. of the music service
 
 images:                         # List of images of the extension in use

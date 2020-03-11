@@ -13,7 +13,6 @@ dist:
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-somafm
-prerelease: true
 ---
 
 A backend for playing music from the

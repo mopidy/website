@@ -1,13 +1,13 @@
 ---
 title: Mopidy-Muse
-logo: https://cristianpb.github.io/muse/icon.png
+logo: /media/ext/muse-logo.png
 type: web
 dev:
   github: cristianpb/muse
 dist:
   pypi: Mopidy-Muse
 images:
-  - https://cristianpb.github.io/assets/img/mopidy-muse/main.png
+  - /media/ext/muse.jpg
 ---
 
 A light web client with support for Snapcast volume control, track search and

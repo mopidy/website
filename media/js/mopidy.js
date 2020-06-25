@@ -15,9 +15,9 @@ function setupNavbarBurger(navbarBurger) {
 function setupTabs(tabContainer) {
   const tabs = tabContainer.querySelectorAll("li");
   const contents = [];
-  
+
   if (tabs.length == 0) {
-    return; 
+    return;
   }
 
   tabs.forEach(tab => {
@@ -35,7 +35,7 @@ function setupTabs(tabContainer) {
       content.classList.remove("is-hidden");
     });
   });
-  
+
   tabs[0].querySelector("a").click();
 }
 

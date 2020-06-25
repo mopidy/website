@@ -1,30 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title }}</title>
-  <link rel="prefetch" href="https://unpkg.com/simple-icons@latest/icons/github.svg">
-  <link rel="prefetch" href="https://fonts.googleapis.com/css?family=Asap">
-  <link rel="stylesheet" href="/media/css/mopidy.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/media/favicon/favicon-16x16.png">
-  {% seo title=false %}
-  {% feed_meta %}
-  <script defer src="/media/js/mopidy.js"></script>
-  <script>
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-15510432-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-</head>
-<body>
+---
+layout: base
+---
 
 <nav class="navbar is-light" role="navigation" aria-label="main navigation">
   <div class="container">
@@ -146,6 +122,3 @@
 
   </div>
 </footer>
-
-</body>
-</html>

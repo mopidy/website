@@ -4,6 +4,13 @@ if (window.NodeList && !NodeList.prototype.forEach) {
   NodeList.prototype.forEach = Array.prototype.forEach;
 }
 
+function random(length) {
+    return Array.from(
+      crypto.getRandomValues(new Uint8Array(length || 28)),
+      x => `00${x.toString(16)}`.slice(-2)
+    ).join('')
+}
+
 function setupNavbarBurger(navbarBurger) {
   navbarBurger.addEventListener("click", () => {
     const target = document.getElementById(navbarBurger.dataset.target);
@@ -136,7 +143,7 @@ function setupAuth(auth) {
     button.classList.add("is-loading");
 
     const url = new URL(button.href);
-    const state = Math.random().toString(36).substr(2);
+    const state = random();
     url.search += (url.search ? '&' : '?') + 'state=' + state;
 
     const popup = openPopup(url.href, "Authenticate Mopidy extension.");

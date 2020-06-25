@@ -183,6 +183,16 @@ function onReady(callback) {
   }
 }
 
+function base64(value) {
+  return btoa(value).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+
+function urlEncode(data) {
+  return Object.keys(data).map(key => {
+    return [key, data[key]].map(encodeURIComponent).join('=');
+  }).join('&');
+}
+
 onReady(() => {
   document.querySelectorAll(".navbar-burger").forEach(setupNavbarBurger);
   document.querySelectorAll(".tabs").forEach(setupTabs);

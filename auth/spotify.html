@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="prefetch" href="https://fonts.googleapis.com/css?family=Asap">
+    <link rel="stylesheet" href="/media/css/mopidy.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/media/favicon/favicon-16x16.png">
+    <title>Authenticate Mopidy extension with Spotify.</title>
+    <style type="text/css">
+      html, body, .columns { height: 100%; }
+      .columns { align-items:center; }
+    </style>
+    <script defer src="/media/js/mopidy.js"></script>
+    <script type="text/javascript">
+      const config = {
+        client_id: '5c8da95dfe9243748b65b124d77787c7',
+        redirect_uri: 'http://localhost:4000/auth/spotify',
+        scopes: [
+          'playlist-modify-private',
+          'playlist-read-private',
+          'playlist-read-collaborative',
+          'user-follow-read',
+          'user-library-read',
+          'user-read-recently-played',
+          'user-read-private',
+          'user-top-read',
+          'streaming',
+        ]
+      };
+
+      function show(id) {
+        document.querySelectorAll('.message').forEach(element => {
+          if (element.id === id) {
+            element.classList.remove('is-hidden');
+          } else {
+            element.classList.add('is-hidden');
+          }
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', _ => {
+        const hashParams = new URLSearchParams(window.location.hash.substr(1));
+        const queryParams = new URLSearchParams(window.location.search.substr(1));
+        const error = document.querySelector('#error .message-body')
+
+        if (hashParams.has('challenge')) {
+          show('redirect')
+          const target = 'https://accounts.spotify.com/authorize?' + urlEncode({
+            response_type: 'code',
+            code_challenge_method: 'S256',
+            scope: config.scopes.join(','),
+            client_id: config.client_id,
+            redirect_uri: config.redirect_uri,
+            code_challenge: hashParams.get('challenge'),
+            state: hashParams.get('state') || ''
+          });
+          setTimeout(() => window.location = target, 1000);
+        } else if (queryParams.has('code')) {
+          document.querySelector('pre').innerText = base64(queryParams);
+          show('result');
+        } else if (queryParams.has('error')) {
+          const errorCode = queryParams.get('error').toUpperCase();
+          if (errorCode == 'ACCESS_DENIED') {
+            error.innerText = 'The resource owner or authorization server denied the request.';
+          } else {
+            error.innerText = 'Unkown error code: ' + errorCode;
+          }
+          show('error');
+        } else {
+          error.innerText = 'No challenge parameter provided';
+          show('error');
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="message is-warning is-hidden" id="redirect">
+          <div class="message-header">
+            <p>Redirecting</p>
+          </div>
+          <div class="message-body">
+            You are being forwarded to Spotify for authorization...
+          </div>
+        </div>
+        <div class="message is-success is-hidden" id="result">
+          <div class="message-header">
+            <p>Success</p>
+          </div>
+          <div class="message-body">
+            Please copy the following text before closing this site. Mopidy will
+            complete the authentication and store reusable access token on your
+            machine.
+            <pre class="select copy"></pre>
+          </div>
+        </div>
+        <div class="message is-danger is-hidden" id="error">
+          <div class="message-header">
+            <p>Error</p>
+          </div>
+          <div class="message-body"></div>
+        </div>
+        <noscript>
+          <div class="message is-danger">
+            <div class="message-header">
+              <p>Error</p>
+            </div>
+            <div class="message-body">This page requires Javascript.</div>
+          </div>
+        </noscript>
+      </div>
+    </div>
+  </body>
+</html>
+

@@ -11,4 +11,13 @@ dist:
 ---
 
 A backend for playing music from a
-[Subsonic Music Streamer](https://www.subsonic.org/) library.
+[Subsonic API enabled Server ](http://www.subsonic.org/pages/api.jsp) library.
+
+Some of the solutions who provide Subsonic API support are:
+[Subsonic](http://www.subsonic.org)
+[Airsonic](https://github.com/airsonic/airsonic)
+[Navidrome](https://github.com/deluan/navidrome)
+[Funkwhale](https://funkwhale.audio/) - Funkwhale also have his own Mopidy extension provided by themselves
+
+
+

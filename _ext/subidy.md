@@ -11,4 +11,10 @@ dist:
 ---
 
 A backend for playing music from a
-[Subsonic Music Streamer](https://www.subsonic.org/) library.
+[Subsonic-compatible Music Server](http://www.subsonic.org/pages/api.jsp).
+Software compatible with the Subsonic API includes:
+
+- [Subsonic](http://www.subsonic.org)
+- [Airsonic](https://github.com/airsonic/airsonic)
+- [Navidrome](https://github.com/deluan/navidrome)
+- [Funkwhale](https://funkwhale.audio) (also see Mopidy-Funkwhale)

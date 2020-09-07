@@ -1,5 +1,5 @@
 ---
-title: mopidy-funkwhale
+title: Mopidy-Funkwhale
 type: backend
 dev:
   gitlab: https://dev.funkwhale.audio/funkwhale/mopidy/

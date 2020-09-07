@@ -11,4 +11,4 @@ dist:
 ---
 
 A backend for playing music from a
-[Funkwhale Server](https://https://funkwhale.audio/) library.
+[Funkwhale Server](https://funkwhale.audio/) library.

@@ -3,6 +3,7 @@ title: Mopidy-Funkwhale
 type: backend
 dev:
   gitlab: https://dev.funkwhale.audio/funkwhale/mopidy/
+dist:
   pypi: mopidy-funkwhale
 ---
 

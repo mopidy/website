@@ -1,5 +1,6 @@
 ---
 title: Mopidy-TuneIn
+logo: /media/ext/tunein.png
 type: backend
 dev:
   github: kingosticks/mopidy-tunein

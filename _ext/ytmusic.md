@@ -7,8 +7,6 @@ dev:
 dist:
   pypi: Mopidy-YTMusic
 logo: /media/ext/youtubemusic.svg
-images:
-- /media/ext/youtubemusic.svg
 ---
 
 A backend for playing music from

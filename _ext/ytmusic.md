@@ -6,7 +6,7 @@ dev:
   github: OzymandiasTheGreat/mopidy-ytmusic
 dist:
   pypi: Mopidy-YTMusic
-logo: /media/ext/youtubemusic.svg
+logo: /media/ext/youtubemusic.png
 ---
 
 A backend for playing music from Google's streaming music service

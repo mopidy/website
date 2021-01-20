@@ -9,5 +9,5 @@ dist:
 logo: /media/ext/youtubemusic.svg
 ---
 
-A backend for playing music from
-[YouTube Music](https://music.youtube.com/).
+A backend for playing music from Google's streaming music service
+named [YouTube Music](https://music.youtube.com/).

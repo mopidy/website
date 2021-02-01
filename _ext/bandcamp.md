@@ -1,6 +1,5 @@
 ---
 title: Mopidy-Bandcamp
-service: bandcamp
 type: backend
 dev:
   github: impliedchaos/mopidy-bandcamp

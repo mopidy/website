@@ -12,7 +12,7 @@ sitemap: false
       const hash = new URLSearchParams(window.location.hash.substr(1));
       const query = new URLSearchParams(window.location.search.substr(1));
 
-      if (query.has('code') && !hash.hash('access_token') {
+      if (query.has('code') && !hash.has('access_token')) {
         // Redirect to oauth bridge if we think it generated the callback.
         // Errors will just be handled by the code below if something goes wrong.
         window.location.replace('https://auth.mopidy.com/soundcloud/callback' + window.location.search);    

@@ -12,28 +12,34 @@ sitemap: false
       const hash = new URLSearchParams(window.location.hash.substr(1));
       const query = new URLSearchParams(window.location.search.substr(1));
 
-      const data = {
-        auth_token: hash.get("access_token") || null,
-        error: query.get("error_code") || null,
-        error_description: query.get("error_description") || null
-      }
-
-      const stateError = {
-        error: 'invalid_state',
-        error_description: 'Authentication page sent wrong state to pop-up.'
-      };
-
-      // Our opener will poll us with messages so we get a reference to them
-      // and can post back the result. This avoids the relying on window.opener.
-      window.addEventListener("message", event => {
-        if (event.origin === "https://mopidy.com") {
-          if (query.has("state") && query.get("state") !== event.data) {
-            event.source.postMessage(stateError, event.origin);
-          } else {
-            event.source.postMessage(data, event.origin);
-          }
+      if (query.has('code') && !hash.hash('access_token') {
+        // Redirect to oauth bridge if we think it generated the callback.
+        // Errors will just be handled by the code below if something goes wrong.
+        window.location.replace('https://auth.mopidy.com/soundcloud/callback' + window.location.search);    
+      } else {
+        const data = {
+          auth_token: hash.get("access_token") || null,
+          error: query.get("error_code") || null,
+          error_description: query.get("error_description") || null
         }
-      });
+
+        const stateError = {
+          error: 'invalid_state',
+          error_description: 'Authentication page sent wrong state to pop-up.'
+        };
+
+        // Our opener will poll us with messages so we get a reference to them
+        // and can post back the result. This avoids the relying on window.opener.
+        window.addEventListener("message", event => {
+          if (event.origin === "https://mopidy.com") {
+            if (query.has("state") && query.get("state") !== event.data) {
+              event.source.postMessage(stateError, event.origin);
+            } else {
+              event.source.postMessage(data, event.origin);
+            }
+          }
+        });
+      }
     </script>
   </head>
 

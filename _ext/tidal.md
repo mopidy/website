@@ -4,7 +4,7 @@ service: Tidal
 logo: /media/ext/tidal.png
 type: backend
 dev:
-  github: https://github.com/tehkillerbee/mopidy-tidal
+  github: tehkillerbee/mopidy-tidal
   codecov: true
 dist:
   pypi: Mopidy-Tidal

@@ -8,5 +8,5 @@ dist:
 logo: /media/ext/listenbrainz.svg
 ---
 
-Extension for recording song listens to [Listenbrainz](https://listenbrainz.org), a libre alternative to
-Last.fm.  It also provides Listenbrainz-generated recommendation playlists to Mopidy.
+Extension for recording song listens to [ListenBrainz](https://listenbrainz.org), a libre alternative to
+Last.fm.  It also provides ListenBrainz-generated recommendation playlists to Mopidy.

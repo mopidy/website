@@ -11,5 +11,3 @@ images:
 ---
 
 The first web client for Mopidy, made with jQuery Mobile.
-Also the web client used for the popular
-[Pi MusicBox](https://www.pimusicbox.com/) image for Raspberry Pi.

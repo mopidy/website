@@ -57,7 +57,9 @@ layout: default
             </div>
           {% endfor %}
 
+          {% if ext.dist %}
           <h2>Installation</h2>
+          {% endif %}
 
           {% if ext.dist.bundled %}
             <h3>Bundled with Mopidy</h3>

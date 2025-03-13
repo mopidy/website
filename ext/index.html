@@ -45,6 +45,13 @@ title: Extensions
         {% assign exts = site.ext | where: "type", "web" | sort_natural: "title" %}
         {% include ext-type-list.html %}
 
+        <h2>Other clients</h2>
+        <p>
+          Clients that are not web-based.
+        </p>
+        {% assign exts = site.ext | where: "type", "client" | sort_natural: "title" %}
+        {% include ext-type-list.html %}
+
       </div>
     </div>
     <div class="columns">

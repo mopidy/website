@@ -8,4 +8,4 @@ dist:
 
 ---
 
-A backend for playing and browsing playlistsfrom [RadioPit](https://radiopit.drulle.lv/).
+A backend for playing and browsing playlists from [RadioPit](https://radiopit.drulle.lv/).

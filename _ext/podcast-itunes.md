@@ -16,4 +16,5 @@ dist:
 ---
 
 This is an extension to the [Mopidy-Podcast](/ext/podcast/) backend that lets
-you search and browse podcasts from the Apple iTunes Store.
+you search and browse podcasts on [Apple Podcasts](https://podcasts.apple.com/),
+using the [iTunes Search API](https://performance-partners.apple.com/search-api).

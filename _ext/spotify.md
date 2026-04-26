@@ -1,12 +1,14 @@
 ---
-title: Mopidy-Spotify
+title: mopidy-spotify
 service: Spotify
 logo: /media/ext/spotify.png
 type: backend
 dev:
   github: mopidy/mopidy-spotify
-  circleci: true
+  github_actions: true
   codecov: true
+dist:
+  pypi: mopidy-spotify
 oauth:
   button:
     style: "background-color: #1ED760; color: #FFF"
@@ -21,4 +23,4 @@ oauth:
 ---
 
 Extension for playing music from the [Spotify](https://spotify.com/) music
-streaming service. Mopidy-Spotify is currently only available from GitHub.
+streaming service.

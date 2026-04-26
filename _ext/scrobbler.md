@@ -1,12 +1,12 @@
 ---
-title: Mopidy-Scrobbler
+title: mopidy-scrobbler
 type: frontend
 dev:
   github: mopidy/mopidy-scrobbler
-  circleci: true
+  github_actions: true
   codecov: true
 dist:
-  pypi: Mopidy-Scrobbler
+  pypi: mopidy-scrobbler
   apt-debian: mopidy-scrobbler
   apt-mopidy: mopidy-scrobbler
   arch-aur: mopidy-scrobbler

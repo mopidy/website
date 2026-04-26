@@ -1,12 +1,12 @@
 ---
-title: Mopidy-MPRIS
+title: mopidy-mpris
 type: frontend
 dev:
   github: mopidy/mopidy-mpris
-  circleci: true
+  github_actions: true
   codecov: true
 dist:
-  pypi: Mopidy-MPRIS
+  pypi: mopidy-mpris
   apt-debian: mopidy-mpris
   apt-mopidy: mopidy-mpris
   arch-aur: mopidy-mpris

@@ -1,12 +1,12 @@
 ---
-title: Mopidy-SomaFM
+title: mopidy-somafm
 type: backend
 dev:
   github: AlexandrePTJ/mopidy-somafm
   circleci: true
   codecov: true
 dist:
-  pypi: Mopidy-SomaFM
+  pypi: mopidy-somafm
   apt-debian: mopidy-somafm
   apt-mopidy: mopidy-somafm
   arch-aur: mopidy-somafm

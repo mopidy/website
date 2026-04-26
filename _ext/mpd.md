@@ -1,12 +1,12 @@
 ---
-title: Mopidy-MPD
+title: mopidy-mpd
 type: frontend
 dev:
   github: mopidy/mopidy-mpd
-  circleci: true
+  github_actions: true
   codecov: true
 dist:
-  pypi: Mopidy-MPD
+  pypi: mopidy-mpd
   apt-debian: mopidy-mpd
   apt-mopidy: mopidy-mpd
   arch-aur: mopidy-mpd

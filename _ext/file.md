@@ -1,5 +1,5 @@
 ---
-title: Mopidy-File
+title: mopidy-file
 type: backend
 dev:
   github: mopidy/mopidy

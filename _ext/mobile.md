@@ -1,12 +1,10 @@
 ---
-title: Mopidy-Mobile
+title: mopidy-mobile
 type: web
 dev:
   github: tkem/mopidy-mobile
-  travisci: true
-  coveralls: true
 dist:
-  pypi: Mopidy-Mobile
+  pypi: mopidy-mobile
 images:
   - /media/ext/mobile.jpg
 ---

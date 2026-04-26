@@ -47,13 +47,19 @@ type: backend                   # One of "backend"/"frontend"/"mixer"/"web"
 
 dev:                            # Development related fields
   github: mopidy/mopidy-foo         # GitHub repo
+  github_actions: true              # Whether using GitHub Actions; defaults
+                                    # to a `ci.yml` workflow.
+                                    # For a different workflow filename, use
+                                    # the object form below:
+  github_actions:
+    workflow: tests.yml                 # Workflow filename
   circleci: true                    # Whether using CircleCI
   travisci: false                   # Whether using Travis CI
   codecov: true                     # Whether using Codecov code coverage
   coveralls: false                  # Whether using Coveralls code coverage
 
 dist:                           # Distribution related fields:
-  pypi: Mopidy-Foo                  # PyPI package name
+  pypi: mopidy-foo                  # PyPI package name
   apt-debian: mopidy-foo            # Debian/Ubuntu package name
   apt-mopidy: mopidy-foo            # apt.mopidy.com package name
   arch-aur: mopidy-foo              # Arch Linux AUR package name

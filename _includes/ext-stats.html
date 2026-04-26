@@ -81,9 +81,22 @@
       </p>
     {% endif %}
 
-    {% if ext.dev.circleci or ext.dev.travisci or ext.dev.codecov or ext.dev.coveralls %}
+    {% if ext.dev.github_actions or ext.dev.circleci or ext.dev.travisci or ext.dev.codecov or ext.dev.coveralls %}
       <h5 class="is-size-7 is-uppercase has-text-grey">Quality metrics</h5>
       <p>
+        {% if ext.dev.github_actions %}
+          {% if ext.dev.github_actions.workflow %}
+            {% assign workflow = ext.dev.github_actions.workflow %}
+          {% else %}
+            {% assign workflow = "ci.yml" %}
+          {% endif %}
+          <a href="https://github.com/{{ ext.dev.github }}/actions/workflows/{{ workflow }}">
+            <img
+              alt="GitHub Actions build status"
+              src="https://img.shields.io/github/actions/workflow/status/{{ ext.dev.github }}/{{ workflow }}?label=GitHub Actions build&amp;style=flat-square"
+            />
+          </a>
+        {% endif %}
         {% if ext.dev.circleci %}
           <a href="https://circleci.com/gh/{{ ext.dev.github }}">
             <img

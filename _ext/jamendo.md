@@ -1,12 +1,14 @@
 ---
-title: Mopidy-Jamendo
+title: mopidy-jamendo
 service: Jamendo
 logo: /media/ext/jamendo.jpg
 type: backend
 dev:
   github: jonathanhacker/mopidy-jamendo
+  github_actions: true
+  codecov: true
 dist:
-  pypi: Mopidy-Jamendo
+  pypi: mopidy-jamendo
 ---
 
 A backend for playing music from the

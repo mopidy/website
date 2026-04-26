@@ -1,12 +1,12 @@
 ---
-title: Mopidy-PiDi
+title: mopidy-pidi
 type: frontend
 dev:
   github: pimoroni/mopidy-pidi
   circleci: true
   codecov: true
 dist:
-  pypi: Mopidy-PiDi
+  pypi: mopidy-pidi
 ---
 
 Frontend for displaying track info and album art using PiDi display plugins.

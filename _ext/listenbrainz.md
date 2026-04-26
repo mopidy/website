@@ -1,10 +1,11 @@
 ---
-title: Mopidy-Listenbrainz
+title: mopidy-listenbrainz
 type: frontend
 dev:
   github: suaviloquence/mopidy-listenbrainz
+  github_actions: true
 dist:
-  pypi: Mopidy-Listenbrainz
+  pypi: mopidy-listenbrainz
 logo: /media/ext/listenbrainz.svg
 ---
 

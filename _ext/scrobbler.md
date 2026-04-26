@@ -16,4 +16,4 @@ dist:
     formula: mopidy-scrobbler
 ---
 
-Extension for scrobbling played tracks to [Last.fm](https://www.last.fm/).
+Extension for scrobbling played tracks to [Last.fm](https://www.last.fm/) or [Libre.fm](https://libre.fm/).

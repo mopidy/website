@@ -1,13 +1,15 @@
 ---
-title: Mopidy-Tidal
+title: mopidy-tidal
 service: Tidal
 logo: /media/ext/tidal.png
 type: backend
 dev:
-  github: tehkillerbee/mopidy-tidal
+  github: EbbLabs/mopidy-tidal
+  github_actions:
+    workflow: test.yml
   codecov: true
 dist:
-  pypi: Mopidy-Tidal
+  pypi: mopidy-tidal
   arch-aur: python-mopidy-tidal
 ---
 

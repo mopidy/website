@@ -1,8 +1,10 @@
 ---
-title: Mopidy-Mopster
+title: mopidy-mopster
 type: web
 dev:
   github: cowbell/mopster
+  github_actions:
+    workflow: test.yml
 images:
   - /media/ext/mopster.png
 ---

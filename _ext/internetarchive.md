@@ -1,12 +1,12 @@
 ---
-title: Mopidy-InternetArchive
+title: mopidy-internetarchive
 type: backend
 dev:
   github: tkem/mopidy-internetarchive
-  circleci: true
+  github_actions: true
   codecov: true
 dist:
-  pypi: Mopidy-InternetArchive
+  pypi: mopidy-internetarchive
   apt-debian: mopidy-internetarchive
   apt-mopidy: mopidy-internetarchive
   arch-aur: mopidy-internetarchive

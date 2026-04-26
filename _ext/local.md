@@ -1,12 +1,12 @@
 ---
-title: Mopidy-Local
+title: mopidy-local
 type: backend
 dev:
   github: mopidy/mopidy-local
-  circleci: true
+  github_actions: true
   codecov: true
 dist:
-  pypi: Mopidy-Local
+  pypi: mopidy-local
   apt-debian: mopidy-local
   apt-mopidy: mopidy-local
   arch-aur: mopidy-local
@@ -17,7 +17,7 @@ dist:
 
 Extension for playing music from your local music archive.
 
-In contrast to [Mopidy-File](/ext/file), Mopidy-Local builds an index of your
+In contrast to [mopidy-file](/ext/file), mopidy-local builds an index of your
 archive's metadata ahead of time, and can thus provide additional features
 like search.
 
@@ -31,6 +31,6 @@ your media library periodically, for example from a cron job.
 
 This extension is the result of the merging of three old extensions:
 
-- Mopidy-Local, which before Mopidy 3 used to be bundled with Mopidy itself.
-- Mopidy-Local-SQLite, which was an alternative to the old default JSON file storage backend.
-- Mopidy-Local-Images, which provides album art embedded in local files to web clients.
+- mopidy-local, which before Mopidy 3 used to be bundled with Mopidy itself.
+- mopidy-local-sqlite, which was an alternative to the old default JSON file storage backend.
+- mopidy-local-images, which provides album art embedded in local files to web clients.

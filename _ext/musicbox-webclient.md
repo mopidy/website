@@ -1,10 +1,11 @@
 ---
-title: Mopidy-MusicBox-Webclient
+title: mopidy-musicbox-webclient
 type: web
 dev:
   github: pimusicbox/mopidy-musicbox-webclient
+  github_actions: true
 dist:
-  pypi: Mopidy-MusicBox-Webclient
+  pypi: mopidy-musicbox-webclient
   arch-aur: mopidy-musicbox
 images:
   - /media/ext/musicbox-webclient.jpg

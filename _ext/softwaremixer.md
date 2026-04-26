@@ -1,5 +1,5 @@
 ---
-title: Mopidy-SoftwareMixer
+title: mopidy-softwaremixer
 type: mixer
 dev:
   github: mopidy/mopidy

@@ -1,13 +1,11 @@
 ---
-title: Mopidy-TuneIn
+title: mopidy-tunein
 logo: /media/ext/tunein.png
 type: backend
 dev:
   github: kingosticks/mopidy-tunein
-  circleci: true
-  codecov: true
 dist:
-  pypi: Mopidy-TuneIn
+  pypi: mopidy-tunein
   apt-debian: mopidy-tunein
   apt-mopidy: mopidy-tunein
   arch-aur: mopidy-tunein

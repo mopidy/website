@@ -1,5 +1,5 @@
 ---
-title: Mopidy-Subidy
+title: mopidy-subidy
 type: backend
 dev:
   github: Prior99/mopidy-subidy
@@ -7,7 +7,7 @@ dev:
   codecov: true
 dist:
   arch-aur: mopidy-subidy
-  pypi: Mopidy-Subidy
+  pypi: mopidy-subidy
 ---
 
 A backend for playing music from a
@@ -17,4 +17,4 @@ Software compatible with the Subsonic API includes:
 - [Subsonic](http://www.subsonic.org)
 - [Airsonic](https://github.com/airsonic/airsonic)
 - [Navidrome](https://github.com/deluan/navidrome)
-- [Funkwhale](https://funkwhale.audio) (also see Mopidy-Funkwhale)
+- [Funkwhale](https://funkwhale.audio) (also see mopidy-funkwhale)

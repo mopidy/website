@@ -1,12 +1,12 @@
 ---
-title: Mopidy-Pandora
+title: mopidy-pandora
 type: backend
 dev:
   github: mopidy/mopidy-pandora
-  circleci: true
+  github_actions: true
   codecov: true
 dist:
-  pypi: Mopidy-Pandora
+  pypi: mopidy-pandora
   arch-aur: mopidy-pandora
 ---
 

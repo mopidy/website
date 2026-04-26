@@ -1,12 +1,12 @@
 ---
-title: Mopidy-Podcast
+title: mopidy-podcast
 type: backend
 dev:
   github: tkem/mopidy-podcast
-  circleci: true
+  github_actions: true
   codecov: true
 dist:
-  pypi: Mopidy-Podcast
+  pypi: mopidy-podcast
   apt-debian: mopidy-podcast
   apt-mopidy: mopidy-podcast
   arch-aur: mopidy-podcast

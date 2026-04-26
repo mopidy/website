@@ -1,12 +1,12 @@
 ---
-title: Mopidy-Beets
+title: mopidy-beets
 type: backend
 dev:
   github: mopidy/mopidy-beets
-  travisci: true
-  coveralls: true
+  github_actions: true
+  codecov: true
 dist:
-  pypi: Mopidy-Beets
+  pypi: mopidy-beets
   apt-debian: mopidy-beets
   apt-mopidy: mopidy-beets
   arch-aur: mopidy-beets

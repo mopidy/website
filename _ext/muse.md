@@ -1,11 +1,11 @@
 ---
-title: Mopidy-Muse
+title: mopidy-muse
 logo: /media/ext/muse-logo.png
 type: web
 dev:
   github: cristianpb/muse
 dist:
-  pypi: Mopidy-Muse
+  pypi: mopidy-muse
 images:
   - /media/ext/muse.jpg
 ---

@@ -1,11 +1,11 @@
 ---
-title: Mopidy-Jellyfin
+title: mopidy-jellyfin
 logo: /media/ext/jellyfin.png
 type: backend
 dev:
   github: jellyfin/mopidy-jellyfin
 dist:
-  pypi: Mopidy-Jellyfin
+  pypi: mopidy-jellyfin
   arch-aur: mopidy-jellyfin
 ---
 

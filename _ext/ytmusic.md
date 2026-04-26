@@ -1,11 +1,11 @@
 ---
-title: Mopidy-YTMusic
+title: mopidy-ytmusic
 service: YouTube Music
 type: backend
 dev:
   github: OzymandiasTheGreat/mopidy-ytmusic
 dist:
-  pypi: Mopidy-YTMusic
+  pypi: mopidy-ytmusic
 logo: /media/ext/youtubemusic.png
 ---
 

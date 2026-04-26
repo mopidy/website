@@ -1,12 +1,12 @@
 ---
-title: Mopidy-dLeyna
+title: mopidy-dleyna
 type: backend
 dev:
   github: tkem/mopidy-dleyna
-  circleci: true
+  github_actions: true
   codecov: true
 dist:
-  pypi: Mopidy-dLeyna
+  pypi: mopidy-dleyna
   apt-debian: mopidy-dleyna
   apt-mopidy: mopidy-dleyna
 ---

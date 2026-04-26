@@ -1,5 +1,5 @@
 ---
-title: Mopidy-Stream
+title: mopidy-stream
 type: backend
 dev:
   github: mopidy/mopidy

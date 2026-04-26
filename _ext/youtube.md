@@ -1,12 +1,12 @@
 ---
-title: Mopidy-YouTube
+title: mopidy-youtube
 type: backend
 dev:
   github: natumbri/mopidy-youtube
   circleci: true
   codecov: true
 dist:
-  pypi: Mopidy-YouTube
+  pypi: mopidy-youtube
   arch-aur: mopidy-youtube
 ---
 

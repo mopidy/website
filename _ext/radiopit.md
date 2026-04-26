@@ -1,10 +1,10 @@
 ---
-title: Mopidy-RadioPit
+title: mopidy-radiopit
 type: backend
 dev:
   github: andrisdru/radiopit_mopidy
 dist:
-  pypi: Mopidy-RadioPit
+  pypi: mopidy-radiopit
 ---
 
 A backend for playing and browsing playlists from [RadioPit](https://radiopit.drulle.lv/).

@@ -1,10 +1,10 @@
 ---
-title: Mopidy-Mixcloud
+title: mopidy-mixcloud
 type: backend
 dev:
-  github: unusualcomputers/unusualcomputers/tree/master/code/mopidy/mopidymixcloud 
+  github: unusualcomputers/unusualcomputers
 dist:
-  pypi: Mopidy-Mixcloud
+  pypi: mopidy-mixcloud
 
 ---
 

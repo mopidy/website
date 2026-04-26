@@ -1,12 +1,12 @@
 ---
-title: Mopidy-ALSAMixer
+title: mopidy-alsamixer
 type: mixer
 dev:
   github: mopidy/mopidy-alsamixer
-  circleci: true
+  github_actions: true
   codecov: true
 dist:
-  pypi: Mopidy-ALSAMixer
+  pypi: mopidy-alsamixer
   apt-debian: mopidy-alsamixer
   apt-mopidy: mopidy-alsamixer
   arch-aur: mopidy-alsamixer

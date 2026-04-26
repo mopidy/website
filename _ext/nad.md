@@ -1,12 +1,12 @@
 ---
-title: Mopidy-NAD
+title: mopidy-nad
 type: mixer
 dev:
   github: mopidy/mopidy-nad
-  circleci: true
+  github_actions: true
   codecov: true
 dist:
-  pypi: Mopidy-NAD
+  pypi: mopidy-nad
 ---
 
 Mixer for controlling volume using an [NAD](https://nadelectronics.com/) amplifier.

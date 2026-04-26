@@ -1,10 +1,12 @@
 ---
-title: Mopidy-WebM3U
+title: mopidy-webm3u
 type: backend
 dev:
   github: mgoltzsche/mopidy-webm3u
+  github_actions:
+    workflow: workflow.yml
 dist:
-  pypi: Mopidy-WebM3U
+  pypi: mopidy-webm3u
 ---
 
 A backend for loading M3U playlists from an HTTP server.

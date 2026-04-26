@@ -1,12 +1,12 @@
 ---
-title: Mopidy-Raspberry-GPIO
+title: mopidy-raspberry-gpio
 type: frontend
 dev:
   github: pimoroni/mopidy-raspberry-gpio
   circleci: true
   codecov: true
 dist:
-  pypi: Mopidy-Raspberry-GPIO
+  pypi: mopidy-raspberry-gpio
 ---
 
 Frontend for controlling Mopidy from GPIO signals on a Raspberry Pi.

@@ -10,6 +10,7 @@ dev:
   pep621: true
 dist:
   pypi: mopidy-spotify
+  arch-aur: mopidy-spotify
 oauth:
   button:
     style: "background-color: #1ED760; color: #FFF"

@@ -6,6 +6,7 @@ dev:
   github: OzymandiasTheGreat/mopidy-ytmusic
 dist:
   pypi: mopidy-ytmusic
+  arch-aur: mopidy-ytmusic
 logo: /media/ext/youtubemusic.png
 ---
 

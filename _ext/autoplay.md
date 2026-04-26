@@ -5,6 +5,7 @@ dev:
   codeberg: sph/mopidy-autoplay
 dist:
   pypi: mopidy-autoplay
+  arch-aur: mopidy-autoplay
 ---
 
 Mopidy extension to automatically pick up where you left off and start playing

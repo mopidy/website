@@ -6,6 +6,7 @@ dev:
   github_actions: true
 dist:
   pypi: mopidy-listenbrainz
+  arch-aur: mopidy-listenbrainz
 logo: /media/ext/listenbrainz.svg
 ---
 

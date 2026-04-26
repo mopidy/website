@@ -8,6 +8,7 @@ dev:
   codecov: true
 dist:
   pypi: mopidy-bandcamp
+  arch-aur: mopidy-bandcamp
 logo: /media/ext/bandcamp.png
 ---
 

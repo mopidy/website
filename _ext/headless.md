@@ -1,12 +1,10 @@
 ---
-title: Mopidy-Headless
+title: mopidy-headless
 type: frontend
 dev:
   github: avanc/mopidy-headless
-  travisci: false
-  coveralls: false
 dist:
-  pypi: Mopidy-Headless
+  pypi: mopidy-headless
   arch-aur: mopidy-headless
 ---
 

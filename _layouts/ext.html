@@ -229,6 +229,16 @@ layout: default
             </div>
           {% endif %}
 
+          {% if repo_url and ext.dist.bundled != true %}
+            <h2>Usage</h2>
+            <p>
+              Most extensions need configuration, additional system
+              dependencies, or have other usage notes. See
+              <a href="{{ repo_url }}#readme">{{ ext.title }}'s README</a>
+              before getting started.
+            </p>
+          {% endif %}
+
           {% if ext.oauth %}
             <div class="auth"{% if ext.oauth.origin %} data-origin="{{ ext.oauth.origin }}"{% endif %}>
               <h2 id="authentication" style="margin-top: 1.5em">Authentication</h2>

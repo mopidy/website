@@ -1,11 +1,13 @@
 ---
-title: Mopidy-Bandcamp
+title: mopidy-bandcamp
 type: backend
 dev:
   github: impliedchaos/mopidy-bandcamp
+  github_actions:
+    workflow: CI.yml
   codecov: true
 dist:
-  pypi: Mopidy-Bandcamp
+  pypi: mopidy-bandcamp
 logo: /media/ext/bandcamp.png
 ---
 

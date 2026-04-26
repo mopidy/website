@@ -2,7 +2,7 @@
 title: mopidy-autoplay
 type: frontend
 dev:
-  github: sphh/mopidy-autoplay
+  codeberg: sph/mopidy-autoplay
 dist:
   pypi: mopidy-autoplay
 ---

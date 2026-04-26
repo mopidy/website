@@ -46,17 +46,27 @@ type: backend                   # One of "backend"/"frontend"/"mixer"/"web"
 ### Optional fields:
 
 dev:                            # Development related fields
-  github: mopidy/mopidy-foo         # GitHub repo
+  # Pick one of github/gitlab/codeberg as the source repo:
+  github: mopidy/mopidy-foo         # GitHub repo (github.com)
+  gitlab: mopidy/mopidy-foo         # or GitLab repo on gitlab.com,
+                                    # or use the object form below for a
+                                    # self-hosted GitLab instance:
+  gitlab:
+    instance: https://gitlab.example.com  # GitLab instance URL
+    repo: group/mopidy-foo                # Path within the instance
+  codeberg: mopidy/mopidy-foo       # or Codeberg repo (codeberg.org)
   github_actions: true              # Whether using GitHub Actions; defaults
-                                    # to a `ci.yml` workflow.
+                                    # to a `ci.yml` workflow. GitHub-only.
                                     # For a different workflow filename, use
                                     # the object form below:
   github_actions:
     workflow: tests.yml                 # Workflow filename
-  circleci: true                    # Whether using CircleCI
-  travisci: false                   # Whether using Travis CI
-  codecov: true                     # Whether using Codecov code coverage
-  coveralls: false                  # Whether using Coveralls code coverage
+  circleci: true                    # Whether using CircleCI. GitHub-only.
+  travisci: false                   # Whether using Travis CI. GitHub-only.
+  codecov: true                     # Whether using Codecov code coverage.
+                                    # GitHub-only.
+  coveralls: false                  # Whether using Coveralls code coverage.
+                                    # GitHub-only.
 
 dist:                           # Distribution related fields:
   pypi: mopidy-foo                  # PyPI package name

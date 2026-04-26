@@ -4,6 +4,29 @@ layout: default
 
 {% assign ext = page %}
 
+{% if ext.dev.github %}
+  {% assign repo_url = "https://github.com/" | append: ext.dev.github %}
+  {% assign repo_path = ext.dev.github %}
+  {% assign repo_host = "github" %}
+  {% assign repo_host_label = "GitHub" %}
+{% elsif ext.dev.gitlab %}
+  {% if ext.dev.gitlab.repo %}
+    {% assign repo_host_instance = ext.dev.gitlab.instance | default: "https://gitlab.com" %}
+    {% assign repo_path = ext.dev.gitlab.repo %}
+  {% else %}
+    {% assign repo_host_instance = "https://gitlab.com" %}
+    {% assign repo_path = ext.dev.gitlab %}
+  {% endif %}
+  {% assign repo_url = repo_host_instance | append: "/" | append: repo_path %}
+  {% assign repo_host = "gitlab" %}
+  {% assign repo_host_label = "GitLab" %}
+{% elsif ext.dev.codeberg %}
+  {% assign repo_url = "https://codeberg.org/" | append: ext.dev.codeberg %}
+  {% assign repo_path = ext.dev.codeberg %}
+  {% assign repo_host = "codeberg" %}
+  {% assign repo_host_label = "Codeberg" %}
+{% endif %}
+
 <section class="section">
   <div class="container">
 
@@ -233,7 +256,7 @@ layout: default
               {% endfor %}
               <p>
                 For more information see the
-                <a href="https://github.com/{{ ext.dev.github }}">{{ ext.title }} docs</a>.
+                <a href="{{ repo_url }}">{{ ext.title }} docs</a>.
               </p>
               {{ ext.oauth.note|markdownify }}
             </div>

@@ -11,15 +11,29 @@
 
   <div class="card-content">
 
-    {% if ext.dev.github or ext.dist.pypi %}
+    {% if repo_url or ext.dist.pypi %}
       <h5 class="is-size-7 is-uppercase has-text-grey">Popularity</h5>
       <p>
-        {% if ext.dev.github %}
-          <a href="https://github.com/{{ ext.dev.github }}/stargazers">
-            <img
-              alt="GitHub stars"
-              src="https://img.shields.io/github/stars/{{ ext.dev.github }}?label=GitHub%20stars&amp;style=flat-square"
-            />
+        {% if repo_url %}
+          {% case repo_host %}
+            {% when "github" %}
+              {% assign stars_url = repo_url | append: "/stargazers" %}
+              {% assign stars_badge = "https://img.shields.io/github/stars/" | append: repo_path | append: "?label=GitHub%20stars&style=flat-square" %}
+            {% when "gitlab" %}
+              {% if repo_host_instance == "https://gitlab.com" %}
+                {% assign gitlab_url_param = "" %}
+              {% else %}
+                {% assign encoded_instance = repo_host_instance | url_encode %}
+                {% assign gitlab_url_param = "&gitlab_url=" | append: encoded_instance %}
+              {% endif %}
+              {% assign stars_url = repo_url | append: "/-/starrers" %}
+              {% assign stars_badge = "https://img.shields.io/gitlab/stars/" | append: repo_path | append: "?label=GitLab%20stars&style=flat-square" | append: gitlab_url_param %}
+            {% when "codeberg" %}
+              {% assign stars_url = repo_url | append: "/stars" %}
+              {% assign stars_badge = "https://img.shields.io/gitea/stars/" | append: repo_path | append: "?gitea_url=https%3A%2F%2Fcodeberg.org&label=Codeberg%20stars&style=flat-square" %}
+          {% endcase %}
+          <a href="{{ stars_url }}">
+            <img alt="{{ repo_host_label }} stars" src="{{ stars_badge }}" />
           </a>
         {% endif %}
         {% if ext.dist.pypi %}
@@ -63,73 +77,89 @@
       </p>
     {% endif %}
 
-    {% if ext.dev.github %}
+    {% if repo_url %}
       <h5 class="is-size-7 is-uppercase has-text-grey">Project stats</h5>
       <p>
-        <a href="https://github.com/{{ ext.dev.github }}/issues">
-          <img
-            alt="GitHub issues"
-            src="https://img.shields.io/github/issues/{{ ext.dev.github }}?label=Issues&amp;style=flat-square"
-          />
+        {% case repo_host %}
+          {% when "github" %}
+            {% assign issues_url = repo_url | append: "/issues" %}
+            {% assign issues_badge = "https://img.shields.io/github/issues/" | append: repo_path | append: "?label=Issues&style=flat-square" %}
+            {% assign prs_url = repo_url | append: "/pulls" %}
+            {% assign prs_label = "Pull requests" %}
+            {% assign prs_badge = "https://img.shields.io/github/issues-pr/" | append: repo_path | append: "?label=Pull%20requests&style=flat-square" %}
+          {% when "gitlab" %}
+            {% assign issues_url = repo_url | append: "/-/issues" %}
+            {% assign issues_badge = "https://img.shields.io/gitlab/issues/open/" | append: repo_path | append: "?label=Issues&style=flat-square" | append: gitlab_url_param %}
+            {% assign prs_url = repo_url | append: "/-/merge_requests" %}
+            {% assign prs_label = "Merge requests" %}
+            {% assign prs_badge = "https://img.shields.io/gitlab/merge-requests/open/" | append: repo_path | append: "?label=Merge%20requests&style=flat-square" | append: gitlab_url_param %}
+          {% when "codeberg" %}
+            {% assign issues_url = repo_url | append: "/issues" %}
+            {% assign issues_badge = "https://img.shields.io/gitea/issues/open/" | append: repo_path | append: "?gitea_url=https%3A%2F%2Fcodeberg.org&label=Issues&style=flat-square" %}
+            {% assign prs_url = repo_url | append: "/pulls" %}
+            {% assign prs_label = "Pull requests" %}
+            {% assign prs_badge = "https://img.shields.io/gitea/pull-requests/open/" | append: repo_path | append: "?gitea_url=https%3A%2F%2Fcodeberg.org&label=Pull%20requests&style=flat-square" %}
+        {% endcase %}
+        <a href="{{ issues_url }}">
+          <img alt="Issues" src="{{ issues_badge }}" />
         </a>
-        <a href="https://github.com/{{ ext.dev.github }}/pulls">
-          <img
-            alt="GitHub pull requests"
-            src="https://img.shields.io/github/issues-pr/{{ ext.dev.github }}?label=Pull%20requests&amp;style=flat-square"
-          />
+        <a href="{{ prs_url }}">
+          <img alt="{{ prs_label }}" src="{{ prs_badge }}" />
         </a>
       </p>
     {% endif %}
 
-    {% if ext.dev.github_actions or ext.dev.circleci or ext.dev.travisci or ext.dev.codecov or ext.dev.coveralls %}
-      <h5 class="is-size-7 is-uppercase has-text-grey">Quality metrics</h5>
-      <p>
-        {% if ext.dev.github_actions %}
-          {% if ext.dev.github_actions.workflow %}
-            {% assign workflow = ext.dev.github_actions.workflow %}
-          {% else %}
-            {% assign workflow = "ci.yml" %}
+    {% if repo_host == "github" %}
+      {% if ext.dev.github_actions or ext.dev.circleci or ext.dev.travisci or ext.dev.codecov or ext.dev.coveralls %}
+        <h5 class="is-size-7 is-uppercase has-text-grey">Quality metrics</h5>
+        <p>
+          {% if ext.dev.github_actions %}
+            {% if ext.dev.github_actions.workflow %}
+              {% assign workflow = ext.dev.github_actions.workflow %}
+            {% else %}
+              {% assign workflow = "ci.yml" %}
+            {% endif %}
+            <a href="https://github.com/{{ ext.dev.github }}/actions/workflows/{{ workflow }}">
+              <img
+                alt="GitHub Actions build status"
+                src="https://img.shields.io/github/actions/workflow/status/{{ ext.dev.github }}/{{ workflow }}?label=GitHub Actions build&amp;style=flat-square"
+              />
+            </a>
           {% endif %}
-          <a href="https://github.com/{{ ext.dev.github }}/actions/workflows/{{ workflow }}">
-            <img
-              alt="GitHub Actions build status"
-              src="https://img.shields.io/github/actions/workflow/status/{{ ext.dev.github }}/{{ workflow }}?label=GitHub Actions build&amp;style=flat-square"
-            />
-          </a>
-        {% endif %}
-        {% if ext.dev.circleci %}
-          <a href="https://circleci.com/gh/{{ ext.dev.github }}">
-            <img
-              alt="CircleCI build status"
-              src="https://img.shields.io/circleci/build/gh/{{ ext.dev.github }}?label=CircleCI build&amp;style=flat-square"
-            />
-          </a>
-        {% endif %}
-        {% if ext.dev.travisci %}
-          <a href="https://travis-ci.org/{{ ext.dev.github }}">
-            <img
-              alt="CircleCI build status"
-              src="https://img.shields.io/travis/{{ ext.dev.github }}?label=Travis CI build&amp;style=flat-square"
-            />
-          </a>
-        {% endif %}
-        {% if ext.dev.codecov %}
-          <a href="https://codecov.io/gh/{{ ext.dev.github }}">
-            <img
-              alt="Codecov test coverage"
-              src="https://img.shields.io/codecov/c/gh/{{ ext.dev.github }}?label=Test coverage&amp;style=flat-square"
-            />
-          </a>
-        {% endif %}
-        {% if ext.dev.coveralls %}
-          <a href="https://coveralls.io/r/{{ ext.dev.github }}">
-            <img
-              alt="Coveralls test coverage"
-              src="https://img.shields.io/coveralls/github/{{ ext.dev.github }}?label=Test coverage&amp;style=flat-square"
-            />
-          </a>
-        {% endif %}
-      </p>
+          {% if ext.dev.circleci %}
+            <a href="https://circleci.com/gh/{{ ext.dev.github }}">
+              <img
+                alt="CircleCI build status"
+                src="https://img.shields.io/circleci/build/gh/{{ ext.dev.github }}?label=CircleCI build&amp;style=flat-square"
+              />
+            </a>
+          {% endif %}
+          {% if ext.dev.travisci %}
+            <a href="https://travis-ci.org/{{ ext.dev.github }}">
+              <img
+                alt="CircleCI build status"
+                src="https://img.shields.io/travis/{{ ext.dev.github }}?label=Travis CI build&amp;style=flat-square"
+              />
+            </a>
+          {% endif %}
+          {% if ext.dev.codecov %}
+            <a href="https://codecov.io/gh/{{ ext.dev.github }}">
+              <img
+                alt="Codecov test coverage"
+                src="https://img.shields.io/codecov/c/gh/{{ ext.dev.github }}?label=Test coverage&amp;style=flat-square"
+              />
+            </a>
+          {% endif %}
+          {% if ext.dev.coveralls %}
+            <a href="https://coveralls.io/r/{{ ext.dev.github }}">
+              <img
+                alt="Coveralls test coverage"
+                src="https://img.shields.io/coveralls/github/{{ ext.dev.github }}?label=Test coverage&amp;style=flat-square"
+              />
+            </a>
+          {% endif %}
+        </p>
+      {% endif %}
     {% endif %}
 
   </div>

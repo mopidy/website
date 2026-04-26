@@ -1,8 +1,8 @@
 <div class="buttons">
-  {% if ext.dev.github %}
-    <a href="https://github.com/{{ ext.dev.github }}" class="button" title="GitHub ext">
-      <span class="icon has-text-grey-dark" title="GitHub"><img src="https://unpkg.com/simple-icons@latest/icons/github.svg" /></span>
-      &nbsp;<strong>{{ ext.dev.github }}</strong>
+  {% if repo_url %}
+    <a href="{{ repo_url }}" class="button" title="{{ repo_host_label }} ext">
+      <span class="icon has-text-grey-dark" title="{{ repo_host_label }}"><img src="https://unpkg.com/simple-icons@latest/icons/{{ repo_host }}.svg" /></span>
+      &nbsp;<strong>{{ repo_path }}</strong>
     </a>
   {% endif %}
   {% if ext.dist.pypi %}

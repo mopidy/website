@@ -3,7 +3,12 @@
     <li>
       <a href="{{ ext.url }}">{{ ext.title }}</a>
       {% if ext.dist.bundled %}
-        <span class="tag is-primary">Bundled</span>
+        <span class="tag is-success">Bundled</span>
+      {% else %}
+        {% assign repo_owner = ext.dev.github | split: "/" | first %}
+        {% if repo_owner == "mopidy" %}
+          <span class="tag is-primary">First-party</span>
+        {% endif %}
       {% endif %}
       {% if ext.archived %}
         <span class="tag is-danger is-light">Archived</span>

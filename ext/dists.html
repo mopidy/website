@@ -36,7 +36,14 @@ title: Extension distributions
             <tr>
               <td>
                 <a href="{{ ext.url }}">{{ ext.title }}</a>
-                {% if ext.dist.bundled %}<span class="tag is-pulled-right is-primary">Bundled</span>{% endif %}
+                {% if ext.dist.bundled %}
+                  <span class="tag is-pulled-right is-success">Bundled</span>
+                {% else %}
+                  {% assign repo_owner = ext.dev.github | split: "/" | first %}
+                  {% if repo_owner == "mopidy" %}
+                    <span class="tag is-pulled-right is-primary">First-party</span>
+                  {% endif %}
+                {% endif %}
                 {% if ext.archived %}<span class="tag is-pulled-right is-danger is-light">Archived</span>{% endif %}
               </td>
               <td>{{ ext.type | capitalize }}</td>

@@ -1,5 +1,5 @@
 ---
-title: Mopidy-HTTP
+title: mopidy-http
 type: frontend
 dev:
   github: mopidy/mopidy

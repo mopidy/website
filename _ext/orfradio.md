@@ -5,6 +5,7 @@ dev:
   github: mopidy/mopidy-orfradio
   github_actions: true
   codecov: true
+  pep621: true
 dist:
   pypi: mopidy-orfradio
 ---

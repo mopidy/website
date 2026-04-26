@@ -5,6 +5,7 @@ dev:
   github: mopidy/mopidy-mpris
   github_actions: true
   codecov: true
+  pep621: true
 dist:
   pypi: mopidy-mpris
   apt-debian: mopidy-mpris

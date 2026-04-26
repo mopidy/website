@@ -5,6 +5,7 @@ dev:
   github: mopidy/mopidy-api-explorer
   github_actions: true
   codecov: true
+  pep621: true
 dist:
   pypi: mopidy-api-explorer
 images:

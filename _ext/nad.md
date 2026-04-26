@@ -5,6 +5,7 @@ dev:
   github: mopidy/mopidy-nad
   github_actions: true
   codecov: true
+  pep621: true
 dist:
   pypi: mopidy-nad
 ---

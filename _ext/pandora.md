@@ -5,6 +5,7 @@ dev:
   github: mopidy/mopidy-pandora
   github_actions: true
   codecov: true
+  pep621: true
 dist:
   pypi: mopidy-pandora
   arch-aur: mopidy-pandora

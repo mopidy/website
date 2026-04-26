@@ -7,6 +7,7 @@ dev:
   github: mopidy/mopidy-spotify
   github_actions: true
   codecov: true
+  pep621: true
 dist:
   pypi: mopidy-spotify
 oauth:

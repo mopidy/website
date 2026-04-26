@@ -5,6 +5,7 @@ dev:
   github: mopidy/mopidy-mpd
   github_actions: true
   codecov: true
+  pep621: true
 dist:
   pypi: mopidy-mpd
   apt-debian: mopidy-mpd

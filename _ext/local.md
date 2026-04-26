@@ -5,6 +5,7 @@ dev:
   github: mopidy/mopidy-local
   github_actions: true
   codecov: true
+  pep621: true
 dist:
   pypi: mopidy-local
   apt-debian: mopidy-local

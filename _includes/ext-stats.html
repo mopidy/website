@@ -57,10 +57,18 @@
           />
         </a>
         <a href="https://pypi.org/project/{{ ext.dist.pypi }}">
-          <img
-            alt="PyPI - Python support"
-            src="https://img.shields.io/pypi/pyversions/{{ ext.dist.pypi }}?label=Python%20support&amp;style=flat-square"
-          />
+          {% if ext.dev.pep621 and repo_host == "github" %}
+            {% assign toml_url = "https://raw.githubusercontent.com/" | append: repo_path | append: "/HEAD/pyproject.toml" | url_encode %}
+            <img
+              alt="Python support"
+              src="https://img.shields.io/python/required-version-toml?tomlFilePath={{ toml_url }}&amp;label=Python%20support&amp;style=flat-square"
+            />
+          {% else %}
+            <img
+              alt="PyPI - Python support"
+              src="https://img.shields.io/pypi/pyversions/{{ ext.dist.pypi }}?label=Python%20support&amp;style=flat-square"
+            />
+          {% endif %}
         </a>
       </p>
     {% endif %}

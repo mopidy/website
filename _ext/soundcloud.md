@@ -7,6 +7,7 @@ dev:
   github: mopidy/mopidy-soundcloud
   github_actions: true
   codecov: true
+  pep621: true
 dist:
   pypi: mopidy-soundcloud
   apt-debian: mopidy-soundcloud

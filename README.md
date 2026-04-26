@@ -61,6 +61,9 @@ dev:                            # Development related fields
                                     # the object form below:
   github_actions:
     workflow: tests.yml                 # Workflow filename
+  pep621: true                      # Read Python support from pyproject.toml's
+                                    # `requires-python` (PEP 621) instead of
+                                    # PyPI Trove classifiers. GitHub-only.
   circleci: true                    # Whether using CircleCI. GitHub-only.
   travisci: false                   # Whether using Travis CI. GitHub-only.
   codecov: true                     # Whether using Codecov code coverage.

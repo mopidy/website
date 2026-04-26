@@ -5,6 +5,7 @@ dev:
   github: mopidy/mopidy-beets
   github_actions: true
   codecov: true
+  pep621: true
 dist:
   pypi: mopidy-beets
   apt-debian: mopidy-beets

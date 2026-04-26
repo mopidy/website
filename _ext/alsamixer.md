@@ -5,6 +5,7 @@ dev:
   github: mopidy/mopidy-alsamixer
   github_actions: true
   codecov: true
+  pep621: true
 dist:
   pypi: mopidy-alsamixer
   apt-debian: mopidy-alsamixer

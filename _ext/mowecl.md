@@ -1,10 +1,12 @@
 ---
-title: Mopidy-Mowecl
+title: mopidy-mowecl
 type: web
 dev:
   github: sapristi/mopidy-mowecl
+  github_actions:
+    workflow: test.yaml
 dist:
-  pypi: Mopidy-Mowecl
+  pypi: mopidy-mowecl
 images:
   - /media/ext/mowecl.png
 ---

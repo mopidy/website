@@ -1,14 +1,14 @@
 ---
-title: Mopidy-SoundCloud
+title: mopidy-soundcloud
 service: SoundCloud
 logo: /media/ext/soundcloud.png
 type: backend
 dev:
   github: mopidy/mopidy-soundcloud
-  circleci: true
+  github_actions: true
   codecov: true
 dist:
-  pypi: Mopidy-SoundCloud
+  pypi: mopidy-soundcloud
   apt-debian: mopidy-soundcloud
   apt-mopidy: mopidy-soundcloud
   arch-aur: mopidy-soundcloud

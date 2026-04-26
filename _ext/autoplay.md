@@ -1,10 +1,10 @@
 ---
-title: Mopidy-Autoplay
+title: mopidy-autoplay
 type: frontend
 dev:
   github: sphh/mopidy-autoplay
 dist:
-  pypi: Mopidy-Autoplay
+  pypi: mopidy-autoplay
 ---
 
 Mopidy extension to automatically pick up where you left off and start playing

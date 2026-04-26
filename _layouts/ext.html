@@ -142,7 +142,7 @@ layout: default
                 Install the <code>{{ ext.dist.pypi }}</code> package from
                 <a href="https://pypi.org/project/{{ ext.dist.pypi }}">PyPI</a>:
               </p>
-              <pre class="select copy">sudo python3 -m pip install {{ ext.dist.pypi }}</pre>
+              <pre class="select copy">sudo python3 -m pip install --break-system-packages {{ ext.dist.pypi }}</pre>
             </div>
           {% endif %}
 

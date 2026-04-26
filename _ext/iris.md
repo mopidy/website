@@ -1,10 +1,12 @@
 ---
-title: Mopidy-Iris
+title: mopidy-iris
 type: web
 dev:
   github: jaedb/iris
+  github_actions: true
+  codecov: true
 dist:
-  pypi: Mopidy-Iris
+  pypi: mopidy-iris
   arch-aur: mopidy-iris
 images:
   - /media/ext/iris.jpg

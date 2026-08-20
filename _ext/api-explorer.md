@@ -8,6 +8,9 @@ dev:
   pep621: true
 dist:
   pypi: mopidy-api-explorer
+  homebrew:
+    tap: mopidy/mopidy
+    formula: mopidy-api-explorer
 images:
   - /media/ext/api-explorer.jpg
 ---

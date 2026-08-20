@@ -8,6 +8,9 @@ dev:
   pep621: true
 dist:
   pypi: mopidy-nad
+  homebrew:
+    tap: mopidy/mopidy
+    formula: mopidy-nad
 ---
 
 Mixer for controlling volume using an [NAD](https://nadelectronics.com/) amplifier.

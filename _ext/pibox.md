@@ -7,6 +7,9 @@ dev:
   github_actions: true
 dist:
   pypi: mopidy-pibox
+  homebrew:
+    tap: mopidy/mopidy
+    formula: mopidy-pibox
 images:
   - /media/ext/pibox.png
 ---

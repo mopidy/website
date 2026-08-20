@@ -7,6 +7,9 @@ dev:
 dist:
   pypi: mopidy-listenbrainz
   arch-aur: mopidy-listenbrainz
+  homebrew:
+    tap: mopidy/mopidy
+    formula: mopidy-listenbrainz
 logo: /media/ext/listenbrainz.svg
 ---
 

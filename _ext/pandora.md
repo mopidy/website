@@ -9,6 +9,9 @@ dev:
 dist:
   pypi: mopidy-pandora
   arch-aur: mopidy-pandora
+  homebrew:
+    tap: mopidy/mopidy
+    formula: mopidy-pandora
 ---
 
 A backend for playing music from the

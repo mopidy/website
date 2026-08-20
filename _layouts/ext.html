@@ -221,7 +221,7 @@ layout: default
               {% assign homebrew_repo = ext.dist.homebrew.tap | replace: "/", "/homebrew-" %}
               <p>
                 Install the
-                <a href="https://github.com/{{ homebrew_repo }}/blob/master/Formula/{{ ext.dist.homebrew.formula }}.rb">
+                <a href="https://github.com/{{ homebrew_repo }}/blob/HEAD/Formula/{{ ext.dist.homebrew.formula }}.rb">
                   {{ ext.dist.homebrew.formula }}</a>
                 formula with <a href="https://brew.sh/">Homebrew</a>:
               </p>

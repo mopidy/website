@@ -11,6 +11,9 @@ dev:
 dist:
   pypi: mopidy-spotify
   arch-aur: mopidy-spotify
+  homebrew:
+    tap: mopidy/mopidy
+    formula: mopidy-spotify
 oauth:
   button:
     style: "background-color: #1ED760; color: #FFF"

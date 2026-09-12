@@ -10,6 +10,7 @@ dev:
   pep621: true
 dist:
   pypi: mopidy-spotify
+  apt-mopidy: mopidy-spotify
   arch-aur: mopidy-spotify
   homebrew:
     tap: mopidy/mopidy

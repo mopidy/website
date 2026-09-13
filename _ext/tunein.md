@@ -3,7 +3,7 @@ title: mopidy-tunein
 logo: /media/ext/tunein.png
 type: backend
 dev:
-  github: kingosticks/mopidy-tunein
+  github: mopidy/mopidy-tunein
 dist:
   pypi: mopidy-tunein
   apt-debian: mopidy-tunein

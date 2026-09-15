@@ -14,7 +14,7 @@ dist:
   arch-aur: mopidy-tunein
   homebrew:
     tap: mopidy/mopidy
-    formula: mopidy-spotify
+    formula: mopidy-tunein
 ---
 
 A backend for playing music from the

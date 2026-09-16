@@ -79,8 +79,7 @@ pre.highlight {
 
 // Extension cards on /ext/.
 // `.content ul` beats a single class.
-.content .ext-grid,
-.ext-grid {
+.content .ext-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(19.5rem, 1fr));
   gap: 1rem;
@@ -106,6 +105,20 @@ pre.highlight {
   transition: border-color 0.15s ease, box-shadow 0.15s ease,
     transform 0.15s ease;
 
+  &.is-muted {
+    background-color: $white-ter;
+    border-color: darken($white-ter, 6%);
+
+    .ext-card-title {
+      color: darken($link, 9%);
+    }
+
+    .ext-card-logo {
+      filter: grayscale(1);
+      opacity: 0.55;
+    }
+  }
+
   &:hover {
     border-color: $primary;
     box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.07);
@@ -114,7 +127,7 @@ pre.highlight {
   }
 }
 
-.tag.ext-tag {
+.ext-tag {
   border: 1px solid rgba(0, 0, 0, 0.16);
 }
 
@@ -125,25 +138,6 @@ pre.highlight {
 .tag.ext-tag-unconfirmed {
   background-color: $white;
   color: $grey-dark;
-}
-
-.ext-card.is-muted {
-  background-color: $white-ter;
-  border-color: darken($white-ter, 6%);
-
-  // Same specificity as `.ext-card:hover`, and later.
-  &:hover {
-    border-color: $primary;
-  }
-
-  .ext-card-title {
-    color: darken($link, 9%);
-  }
-
-  .ext-card-logo {
-    filter: grayscale(1);
-    opacity: 0.55;
-  }
 }
 
 .ext-card-head {
@@ -198,8 +192,6 @@ pre.highlight {
   margin-top: 3rem;
 }
 
-// `.image img` beats a single class.
-.image img.ext-page-logo,
 .ext-page-logo {
   height: 5rem;
   max-width: 100%;

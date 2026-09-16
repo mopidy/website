@@ -4,7 +4,7 @@ layout: base
 
 <header class="border-b border-border bg-surface">
   <nav class="mx-auto max-w-6xl px-6" aria-label="Main">
-    <div class="flex items-center gap-6 py-3">
+    <div class="flex items-center gap-5 py-3">
       <a href="/" class="text-lg font-semibold text-fg-strong">Mopidy</a>
 
       <div class="hidden gap-5 text-sm sm:flex">
@@ -15,15 +15,22 @@ layout: base
       <div class="ml-auto hidden items-center gap-5 text-sm sm:flex">
         <a href="https://docs.mopidy.com/stable/" class="text-fg-muted hover:text-accent">Documentation</a>
         <a href="https://discourse.mopidy.com/" class="text-fg-muted hover:text-accent">Discourse</a>
-        <a href="https://github.com/mopidy" title="GitHub" class="text-fg-muted hover:text-fg-strong">
-          <span class="sr-only">GitHub</span>
-          <span class="block h-4 w-4 bg-current"
+        <a href="https://github.com/mopidy/mopidy" title="Mopidy on GitHub"
+           class="inline-flex items-center gap-1.5 text-fg-muted hover:text-accent">
+          <span class="sr-only">Mopidy on GitHub</span>
+          <span class="block h-4 w-4 bg-current" aria-hidden="true"
                 style="mask: url(https://unpkg.com/simple-icons@latest/icons/github.svg) center / contain no-repeat"></span>
+          <span id="gh-stars" hidden class="inline-flex items-center gap-1 text-xs font-medium">
+            <svg class="h-3 w-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/>
+            </svg>
+            <span id="gh-stars-count"></span>
+          </span>
         </a>
       </div>
 
       <button type="button" id="scheme-toggle" onclick="__cycleScheme()"
-              class="ml-auto cursor-pointer rounded-md border border-border p-1.5 text-fg-muted hover:text-fg-strong sm:ml-0">
+              class="ml-auto cursor-pointer rounded-md p-1.5 text-fg-muted hover:bg-surface-muted hover:text-fg-strong sm:-mx-1.5">
         <span class="sr-only">Colour scheme</span>
         <svg data-icon="system" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v2M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715M16 12a4 4 0 0 0-4-4M19 5l-1.256 1.256M20 12h2"/></svg>
         <svg data-icon="light" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
@@ -32,7 +39,7 @@ layout: base
 
       <button type="button" aria-label="Menu"
               onclick="document.getElementById('nav-mobile').toggleAttribute('hidden')"
-              class="cursor-pointer rounded-md border border-border p-1.5 text-fg-muted sm:hidden">
+              class="cursor-pointer rounded-md p-1.5 text-fg-muted hover:bg-surface-muted hover:text-fg-strong sm:hidden">
         <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
              stroke-width="2" stroke-linecap="round" aria-hidden="true">
           <path d="M4 6h16M4 12h16M4 18h16"/>
@@ -49,6 +56,36 @@ layout: base
     </div>
   </nav>
 </header>
+
+<script>
+  (function () {
+    var KEY = "gh-stars";
+    var MAX_AGE = 6 * 60 * 60 * 1000;
+
+    function show(count) {
+      document.getElementById("gh-stars-count").textContent =
+        count >= 1000 ? (count / 1000).toFixed(1).replace(/\.0$/, "") + "k" : String(count);
+      document.getElementById("gh-stars").hidden = false;
+    }
+
+    var cached;
+    try { cached = JSON.parse(localStorage.getItem(KEY)); } catch (e) {}
+    if (cached && Date.now() - cached.at < MAX_AGE) {
+      show(cached.count);
+      return;
+    }
+
+    fetch("https://api.github.com/repos/mopidy/mopidy")
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (d) {
+        show(d.stargazers_count);
+        try {
+          localStorage.setItem(KEY, JSON.stringify({ count: d.stargazers_count, at: Date.now() }));
+        } catch (e) {}
+      })
+      .catch(function () {});
+  })();
+</script>
 
 <div class="flex-1">
 {{ content }}

@@ -77,6 +77,11 @@ pre.highlight {
   opacity: 0.9;
 }
 
+.box {
+  border: 1px solid $grey-lighter;
+  box-shadow: none;
+}
+
 // Extension cards on /ext/.
 // `.content ul` beats a single class.
 .content .ext-grid {

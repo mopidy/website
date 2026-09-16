@@ -168,6 +168,32 @@ pre.highlight {
   height: 2rem;
 }
 
+.ext-panel {
+  border: 1px solid $grey-lighter;
+  border-radius: $radius-large;
+  background-color: $white;
+  overflow: hidden;
+}
+
+.ext-panel-logo {
+  display: flex;
+  justify-content: center;
+  padding: 1.75rem 1.15rem;
+  border-bottom: 1px solid $grey-lightest;
+}
+
+.ext-panel-body {
+  padding: 1rem 1.15rem 0.9rem;
+
+  h5 {
+    margin-bottom: 0.35rem;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
 // `.image img` beats a single class.
 .image img.ext-page-logo,
 .ext-page-logo {

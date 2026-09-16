@@ -7,5 +7,8 @@ dist:
   bundled: true
 ---
 
-Backend for browsing a file hierarchy with media file.
-This backend does not support search.
+Backend for playing music straight from your file system, by browsing
+through folders. It needs no setup, but it cannot search.
+
+For a large collection, or to search it, use
+[mopidy-local](/ext/local) instead.

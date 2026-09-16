@@ -21,17 +21,16 @@ compat:
     checked: 2026-09-16
 ---
 
-Extension for playing music from your local music archive.
+Backend for playing music from your local music archive. It scans your
+files ahead of time, so that you can search, and browse by album, artist,
+composer, performer, genre and year.
 
-In contrast to [mopidy-file](/ext/file), mopidy-local builds an index of your
-archive's metadata ahead of time, and can thus provide additional features
-like search.
-
-The music metadata is stored in a SQLite database. This lets you browse your
-music collection by album, artist, composer and performer, and provides
-full-text search capabilities based on SQLite's FTS modules. It also notices
-updates via `mopidy local scan` while Mopidy is running, so you can scan
-your media library periodically, for example from a cron job.
+In contrast to [mopidy-file](/ext/file), which reads your folders as they
+are, mopidy-local keeps an index of the metadata. The index lives in a
+SQLite database, and the search uses SQLite's full-text search. Run
+`mopidy local scan` to build it, and again whenever the collection
+changes. Mopidy picks up a scan while it runs, so the scan can come from
+a cron job.
 
 ## History
 

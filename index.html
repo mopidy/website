@@ -30,34 +30,42 @@ title: Mopidy
 </section>
 
 <section class="mx-auto max-w-6xl px-6 py-16">
-  <div class="grid items-center gap-12 lg:grid-cols-5">
-    <div class="prose prose-lg lg:col-span-3">
 
-      <h2>Stream music from the cloud</h2>
+  <div class="prose prose-lg">
 
-      <p>
-        Out of the box, Mopidy plays music from files and Internet radio.
-        Through <a href="/ext/">extensions</a>,
-        Mopidy can play music from cloud services like Spotify, SoundCloud,
-        and Tidal.
-      </p>
+    <h2>Stream music from the cloud</h2>
 
-      <p>
-        With Mopidy's extension support,
-        you can easily add backends for new music sources.
-      </p>
+    <p>
+      Out of the box, Mopidy plays music from files and Internet radio.
+      Through <a href="/ext/">extensions</a>,
+      Mopidy can play music from many cloud services and radio networks.
+    </p>
 
+    <p>
+      With Mopidy's extension support,
+      you can easily add backends for new music sources.
+    </p>
+
+  </div>
+
+  <div class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+    <div class="flex h-24 items-center justify-center rounded-xl border border-border bg-white p-3">
+      <img src="/media/ext/spotify.png" alt="Spotify" class="h-8 w-auto max-w-full">
     </div>
-    <div class="grid grid-cols-3 gap-4 lg:col-span-2 lg:grid-cols-1">
-      {% assign logos = "spotify,Spotify|soundcloud,SoundCloud|tidal,Tidal" | split: "|" %}
-      {% for logo in logos %}
-        {% assign parts = logo | split: "," %}
-        <div class="flex h-24 items-center justify-center rounded-xl border border-border bg-white p-5">
-          <img src="/media/ext/{{ parts[0] }}.png" alt="{{ parts[1] }}" class="max-h-12 max-w-[60%]">
-        </div>
-      {% endfor %}
+    <div class="flex h-24 items-center justify-center rounded-xl border border-border bg-white p-3">
+      <img src="/media/ext/soundcloud.png" alt="SoundCloud" class="h-5 w-auto max-w-full">
+    </div>
+    <div class="flex h-24 items-center justify-center rounded-xl border border-border bg-white p-3">
+      <img src="/media/ext/tidal.png" alt="Tidal" class="h-5 w-auto max-w-full">
+    </div>
+    <div class="flex h-24 items-center justify-center rounded-xl border border-border bg-white p-3">
+      <img src="/media/ext/tunein.png" alt="TuneIn" class="h-9 w-auto max-w-full">
+    </div>
+    <div class="col-span-2 flex h-24 items-center justify-center rounded-xl border border-border bg-white p-3 sm:col-span-1">
+      <img src="/media/ext/icon-youtube.svg" alt="YouTube" class="h-12 w-auto max-w-full">
     </div>
   </div>
+
 </section>
 
 <section class="mx-auto max-w-6xl px-6 py-16">

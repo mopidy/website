@@ -19,7 +19,7 @@ compat:
     checked: 2026-09-16
 ---
 
-A web client that allows multiple users to search for and queue songs as a group, via a clean and simple interface. Great for parties! 🥳
+A web client that allows multiple users to search for and queue songs as a group, via a clean and simple interface. Great for parties!
 
 - Search for and queue songs using any Mopidy backend
 - Vote to skip queued tracks

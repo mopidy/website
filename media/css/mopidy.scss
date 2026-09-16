@@ -136,6 +136,15 @@ pre.highlight {
   height: 2rem;
 }
 
+// `.image img` beats a single class.
+.image img.ext-page-logo,
+.ext-page-logo {
+  height: 5rem;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
 .ext-card-logo {
   height: 100%;
   max-width: 100%;

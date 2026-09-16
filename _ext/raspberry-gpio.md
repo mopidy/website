@@ -1,5 +1,6 @@
 ---
 title: mopidy-raspberry-gpio
+logo: /media/ext/icon-raspberry-gpio.svg
 type: frontend
 dev:
   github: pimoroni/mopidy-raspberry-gpio
@@ -7,6 +8,12 @@ dev:
   codecov: true
 dist:
   pypi: mopidy-raspberry-gpio
+compat:
+  mopidy4:
+    status: unknown
+    note: >
+      Not tested.
+    checked: 2026-09-16
 ---
 
 Frontend for controlling Mopidy from GPIO signals on a Raspberry Pi.

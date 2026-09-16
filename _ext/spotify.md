@@ -1,7 +1,7 @@
 ---
 title: mopidy-spotify
 service: Spotify
-logo: /media/ext/spotify.png
+logo: /media/ext/icon-spotify.svg
 type: backend
 dev:
   github: mopidy/mopidy-spotify
@@ -26,6 +26,11 @@ oauth:
     spotify:
       - client_id
       - client_secret
+compat:
+  mopidy4:
+    status: supported
+    since: "5.0.0"
+    checked: 2026-09-16
 ---
 
 Extension for playing music from the [Spotify](https://spotify.com/) music

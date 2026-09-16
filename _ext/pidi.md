@@ -7,6 +7,12 @@ dev:
   codecov: true
 dist:
   pypi: mopidy-pidi
+compat:
+  mopidy4:
+    status: unknown
+    note: >
+      Not tested.
+    checked: 2026-09-16
 ---
 
 Frontend for displaying track info and album art using PiDi display plugins.

@@ -1,5 +1,6 @@
 ---
 title: mopidy-stream
+logo: /media/ext/icon-stream.svg
 type: backend
 dev:
   github: mopidy/mopidy
@@ -8,4 +9,3 @@ dist:
 ---
 
 Backend for playing streaming music.
-This backend is bundled with Mopidy.

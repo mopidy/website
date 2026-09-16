@@ -1,5 +1,6 @@
 ---
 title: mopidy-dleyna
+logo: /media/ext/icon-dleyna.svg
 type: backend
 dev:
   github: tkem/mopidy-dleyna
@@ -9,6 +10,11 @@ dist:
   pypi: mopidy-dleyna
   apt-debian: mopidy-dleyna
   apt-mopidy: mopidy-dleyna
+compat:
+  mopidy4:
+    status: supported
+    since: "3.0.0"
+    checked: 2026-09-16
 ---
 
 A backend that lets you play music from

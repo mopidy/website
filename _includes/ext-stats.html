@@ -1,15 +1,11 @@
-<div class="card">
+<div class="ext-panel">
   {% if ext.logo %}
-    <div class="card-header" style="justify-content: center;">
-      <div class="card-image">
-        <figure class="image" style="padding: 1.5em">
-          <img src="{{ ext.logo }}">
-        </figure>
-      </div>
+    <div class="ext-panel-logo">
+      <img class="ext-page-logo" src="{{ ext.logo }}">
     </div>
   {% endif %}
 
-  <div class="card-content">
+  <div class="ext-panel-body">
 
     {% if repo_url or ext.dist.pypi %}
       <h5 class="is-size-7 is-uppercase has-text-grey">Popularity</h5>

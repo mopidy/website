@@ -7,6 +7,12 @@ dev:
     workflow: test.yml
 images:
   - /media/ext/mopster.png
+compat:
+  mopidy4:
+    status: unknown
+    note: >
+      Not tested.
+    checked: 2026-09-16
 ---
 
 Simple web client which does not require local installation. Can be used from hosted web page at [Mopster](http://mopster.urizen.pl).

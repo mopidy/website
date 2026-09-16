@@ -7,6 +7,11 @@ dist:
   pypi: mopidy-mobile
 images:
   - /media/ext/mobile.jpg
+compat:
+  mopidy4:
+    status: supported
+    since: "1.11.0"
+    checked: 2026-09-16
 ---
 
 A simple, easy to use remote that lets you fully control a Mopidy music server

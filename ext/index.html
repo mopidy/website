@@ -14,7 +14,7 @@ title: Extensions
 
     <h1 class="title is-size-2">Extensions</h1>
 
-    <p class="is-size-4">
+    <p class="subtitle is-size-4">
       Extend Mopidy with additional music sources, audio mixers, control
       planes, web clients, and more.
     </p>
@@ -25,52 +25,55 @@ title: Extensions
 <section class="section">
   <div class="container content is-medium">
 
-    <div class="columns">
-      <div class="column">
+    <h2 class="title">Backends</h2>
+    <p class="subtitle">
+      Add additional music sources.
+    </p>
+    {% assign exts = site.ext | where: "type", "backend" | sort_natural: "title" %}
+    {% include ext-cards.html only="supported" %}
+    {% include ext-cards.html only="other" %}
 
-        <h2>Backends</h2>
-        <p>
-          Add additional music sources.
-        </p>
-        {% assign exts = site.ext | where: "type", "backend" | sort_natural: "title" %}
-        {% include ext-type-list.html %}
+  </div>
+</section>
 
-      </div>
-      <div class="column">
+<section class="section">
+  <div class="container content is-medium">
 
-        <h2>Web clients</h2>
-        <p>
-          Serve web-based players with Mopidy's builtin web server.
-        </p>
-        {% assign exts = site.ext | where: "type", "web" | sort_natural: "title" %}
-        {% include ext-type-list.html %}
+    <h2 class="title">Web clients</h2>
+    <p class="subtitle">
+      Serve web-based players with Mopidy's builtin web server.
+    </p>
+    {% assign exts = site.ext | where: "type", "web" | sort_natural: "title" %}
+    {% include ext-cards.html only="supported" %}
+    {% include ext-cards.html only="other" %}
 
-      </div>
-    </div>
-    <div class="columns">
-      <div class="column">
+  </div>
+</section>
 
-        <h2>Frontends</h2>
-        <p>
-          Add control planes for user interfaces or event listeners.
-        </p>
-        {% assign exts = site.ext | where: "type", "frontend" | sort_natural: "title" %}
-        {% include ext-type-list.html %}
+<section class="section">
+  <div class="container content is-medium">
 
-      </div>
-      <div class="column">
+    <h2 class="title">Frontends</h2>
+    <p class="subtitle">
+      Add control planes for user interfaces or event listeners.
+    </p>
+    {% assign exts = site.ext | where: "type", "frontend" | sort_natural: "title" %}
+    {% include ext-cards.html only="supported" %}
+    {% include ext-cards.html only="other" %}
 
-        <h2>Mixers</h2>
-        <p>
-          Alternative ways to control volume and muting.
-        </p>
-        {% assign exts = site.ext | where: "type", "mixer" | sort_natural: "title" %}
-        {% include ext-type-list.html %}
+  </div>
+</section>
 
-      </div>
-    </div>
+<section class="section">
+  <div class="container content is-medium">
 
-    </div>
+    <h2 class="title">Mixers</h2>
+    <p class="subtitle">
+      Alternative ways to control volume and muting.
+    </p>
+    {% assign exts = site.ext | where: "type", "mixer" | sort_natural: "title" %}
+    {% include ext-cards.html only="supported" %}
+    {% include ext-cards.html only="other" %}
 
   </div>
 </section>

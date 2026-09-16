@@ -1,5 +1,6 @@
 ---
 title: mopidy-podcast
+logo: /media/ext/icon-podcast.svg
 type: backend
 dev:
   github: tkem/mopidy-podcast
@@ -13,6 +14,11 @@ dist:
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-podcast
+compat:
+  mopidy4:
+    status: supported
+    since: "4.0.0"
+    checked: 2026-09-16
 ---
 
 Extension for browsing RSS feeds of podcasts and stream the episodes.

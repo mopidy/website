@@ -9,7 +9,15 @@ dev:
 dist:
   pypi: mopidy-bandcamp
   arch-aur: mopidy-bandcamp
-logo: /media/ext/bandcamp.png
+logo: /media/ext/icon-bandcamp.svg
+compat:
+  mopidy4:
+    status: unreleased
+    note: >
+      Albums come up empty.
+    links:
+      - https://github.com/impliedchaos/mopidy-bandcamp/issues/26
+    checked: 2026-09-16
 ---
 
 A backend for searching, browsing, and playing the free 128kbps MP3 streams from

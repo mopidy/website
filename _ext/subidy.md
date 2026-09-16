@@ -1,5 +1,6 @@
 ---
 title: mopidy-subidy
+logo: /media/ext/logo-subidy.png
 type: backend
 dev:
   github: Prior99/mopidy-subidy
@@ -8,10 +9,18 @@ dev:
 dist:
   arch-aur: mopidy-subidy
   pypi: mopidy-subidy
+compat:
+  mopidy4:
+    status: unknown
+    note: >
+      Mopidy 4 starts with this extension. Playing music is not
+      confirmed.
+    checked: 2026-09-16
 ---
 
 A backend for playing music from a
 [Subsonic-compatible Music Server](http://www.subsonic.org/pages/api.jsp).
+
 Software compatible with the Subsonic API includes:
 
 - [Subsonic](http://www.subsonic.org)

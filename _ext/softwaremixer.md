@@ -8,4 +8,3 @@ dist:
 ---
 
 Mixer for volume and mute control in software.
-This mixer is bundled with Mopidy.

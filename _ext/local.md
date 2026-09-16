@@ -1,5 +1,6 @@
 ---
 title: mopidy-local
+logo: /media/ext/icon-local.svg
 type: backend
 dev:
   github: mopidy/mopidy-local
@@ -14,24 +15,20 @@ dist:
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-local
+compat:
+  mopidy4:
+    status: supported
+    since: "4.0.0"
+    checked: 2026-09-16
 ---
 
-Extension for playing music from your local music archive.
+Backend for playing music from your local music archive. It scans your
+files ahead of time, so that you can search, and browse by album, artist,
+composer, performer, genre and year.
 
-In contrast to [mopidy-file](/ext/file), mopidy-local builds an index of your
-archive's metadata ahead of time, and can thus provide additional features
-like search.
-
-The music metadata is stored in a SQLite database. This lets you browse your
-music collection by album, artist, composer and performer, and provides
-full-text search capabilities based on SQLite's FTS modules. It also notices
-updates via `mopidy local scan` while Mopidy is running, so you can scan
-your media library periodically, for example from a cron job.
-
-## History
-
-This extension is the result of the merging of three old extensions:
-
-- mopidy-local, which before Mopidy 3 used to be bundled with Mopidy itself.
-- mopidy-local-sqlite, which was an alternative to the old default JSON file storage backend.
-- mopidy-local-images, which provides album art embedded in local files to web clients.
+In contrast to [mopidy-file](/ext/file), which reads your folders as they
+are, mopidy-local keeps an index of the metadata. The index lives in a
+SQLite database, and the search uses SQLite's full-text search. Run
+`mopidy local scan` to build it, and again whenever the collection
+changes. Mopidy picks up a scan while it runs, so the scan can come from
+a cron job.

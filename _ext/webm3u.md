@@ -7,6 +7,12 @@ dev:
     workflow: workflow.yml
 dist:
   pypi: mopidy-webm3u
+compat:
+  mopidy4:
+    status: unknown
+    note: >
+      Mopidy 4 starts with this extension. Playing music is not confirmed.
+    checked: 2026-09-16
 ---
 
 A backend for loading M3U playlists from an HTTP server.

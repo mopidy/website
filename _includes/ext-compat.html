@@ -1,0 +1,54 @@
+{% comment %}
+  The layout decides when to include this.
+{% endcomment %}
+
+<article class="message {{ site.data.compat.status[compat_status].class }}">
+  <div class="message-header">
+    {{ site.data.compat.status[compat_status].label }}
+  </div>
+  <div class="message-body content">
+    <p>
+      {{ compat.note | markdownify | remove: "<p>" | remove: "</p>" | strip }}
+
+      {%- case compat_status -%}
+        {%- when "unreleased" %} A fix is ready, but there is no release
+          with it yet.
+        {%- when "in-progress" %} Work to support
+          {{ site.data.compat.label }} is in progress.
+        {%- when "unsupported" %} Use it with Mopidy 3.
+      {%- endcase %}
+
+      {%- if compat.links %} See
+        {%- for url in compat.links %}
+          {%- assign parts = url | split: "/" -%}
+          {%- assign number = parts | last -%}
+          {%- assign kind_index = parts.size | minus: 2 -%}
+          {%- case parts[kind_index] -%}
+            {%- when "issues" -%}
+              {%- assign link_text = "issue #" | append: number -%}
+            {%- when "pull" -%}
+              {%- assign link_text = "pull request #" | append: number -%}
+            {%- when "pulls" -%}
+              {%- assign link_text = "pull request #" | append: number -%}
+            {%- when "merge_requests" -%}
+              {%- assign link_text = "merge request #" | append: number -%}
+            {%- else -%}
+              {%- assign link_text = url -%}
+          {%- endcase %} <a href="{{ url }}">{{ link_text }}</a>
+          {%- if forloop.last == false %},{% endif -%}
+        {%- endfor -%}.
+      {%- endif %}
+
+      {%- if compat_status == "unknown" %}
+        <a href="https://github.com/mopidy/website/issues">Tell us</a>
+        if you have used it with {{ site.data.compat.label }}.
+      {%- endif %}
+    </p>
+
+    {% if compat.checked %}
+      <p class="is-size-7">
+        Last checked {{ compat.checked | date: "%-d %B %Y" }}.
+      </p>
+    {% endif %}
+  </div>
+</article>

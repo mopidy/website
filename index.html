@@ -2,256 +2,207 @@
 title: Mopidy
 ---
 
-<section class="hero is-large is-black mw-cover-mixer-hannah">
-  <div class="hero-body">
-    <div class="container">
+<section class="bg-slate-900 bg-[url('/media/images/hannah-troupe-wL_w5t_OKtI-unsplash-1900x1200.jpg')] bg-cover bg-bottom">
+  <div class="bg-slate-950/70">
+    <div class="mx-auto max-w-6xl px-6 py-28 sm:py-36">
 
-      <div class="columns">
-        <div class="column is-two-thirds">
+      <h1 class="max-w-3xl text-4xl font-bold tracking-tight text-balance text-white sm:text-5xl">
+        Mopidy is an extensible music server written in Python.
+      </h1>
 
-          <h1 class="title is-spaced is-1">
-            Mopidy is an extensible music server written in Python.
-          </h1>
+      <p class="mt-6 max-w-2xl text-lg/relaxed text-slate-200 sm:text-xl/relaxed">
+        Mopidy plays music from local disk, Spotify, SoundCloud,
+        Internet radio, and more. You can edit the playlist from any
+        phone, tablet, or computer using a variety of MPD and web clients.
+      </p>
 
-          <p class="subtitle is-3">
-            Mopidy plays music from local disk, Spotify, SoundCloud,
-            Internet radio, and more. You can edit the playlist from any
-            phone, tablet, or computer using a variety of MPD and web clients.
-          </p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="https://docs.mopidy.com/stable/"
+          class="rounded-lg bg-blue-600 px-5 py-3 font-medium text-white hover:bg-blue-500">
+          Install Mopidy</a>
+        <a href="/ext/"
+          class="rounded-lg border border-white/30 px-5 py-3 font-medium text-white hover:border-white/70">
+          Browse extensions</a>
+      </div>
 
+    </div>
+  </div>
+</section>
+
+<section class="mx-auto max-w-6xl px-6 py-16">
+  <div class="grid items-center gap-12 lg:grid-cols-5">
+    <div class="prose prose-lg lg:col-span-3">
+
+      <h2>Stream music from the cloud</h2>
+
+      <p>
+        Out of the box, Mopidy plays music from files and Internet radio.
+        Through <a href="/ext/">extensions</a>,
+        Mopidy can play music from cloud services like Spotify, SoundCloud,
+        and Tidal.
+      </p>
+
+      <p>
+        With Mopidy's extension support,
+        you can easily add backends for new music sources.
+      </p>
+
+    </div>
+    <div class="grid grid-cols-3 gap-4 lg:col-span-2 lg:grid-cols-1">
+      {% assign logos = "spotify,Spotify|soundcloud,SoundCloud|tidal,Tidal" | split: "|" %}
+      {% for logo in logos %}
+        {% assign parts = logo | split: "," %}
+        <div class="flex h-24 items-center justify-center rounded-xl border border-border bg-white p-5">
+          <img src="/media/ext/{{ parts[0] }}.png" alt="{{ parts[1] }}" class="max-h-12 max-w-[60%]">
         </div>
-      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="mx-auto max-w-6xl px-6 py-16">
+  <div class="grid items-center gap-12 lg:grid-cols-2">
+    <div class="overflow-hidden rounded-xl border border-border">
+      <img src="/media/images/mopidy-screenshot.jpg" alt="Mopidy screenshot">
+    </div>
+    <div class="prose prose-lg">
+
+      <h2>Mopidy is just a server</h2>
+
+      <p>
+        Mopidy is a Python application that runs in a
+        terminal or in the background on Linux computers or Macs that have
+        network connectivity and audio output.
+      </p>
+
+      <p>
+        Out of the box, Mopidy is an HTTP server.
+        If you install the <a href="/ext/mpd/">Mopidy-MPD</a> extension,
+        it becomes an MPD server too.
+        Many additional frontends for controlling Mopidy are available as
+        extensions.
+      </p>
 
     </div>
   </div>
 </section>
 
-<section class="section is-medium">
-  <div class="container">
+<section class="mx-auto max-w-6xl px-6 py-16">
+  <div class="grid items-center gap-12 lg:grid-cols-2">
+    <div class="prose prose-lg">
 
-    <div class="columns is-variable is-8">
-      <div class="column content is-large">
+      <h2>Pick your favorite client</h2>
 
-        <h2>Stream music from the cloud</h2>
+      <p>
+        You and the people around you can all connect their
+        favorite MPD or web client to the Mopidy server to search for music
+        and manage the playlist together.
+      </p>
 
-        <p>
-          Out of the box, Mopidy plays music from files and Internet radio.
-          Through <a href="/ext/">extensions</a>,
-          Mopidy can play music from cloud services like Spotify, SoundCloud,
-          and Tidal.
-        </p>
+      <p>
+        With a browser or MPD client, which is available
+        for all popular operating systems, you can control the music from
+        any phone, tablet, or computer.
+      </p>
 
-        <p>
-          With Mopidy's extension support,
-          you can easily add backends for new music sources.
-        </p>
-
-      </div>
-      <div class="column is-3">
-
-        <div class="tile is-ance">
-          <div class="tile is-parent is-vertical">
-            <div class="tile is-child">
-              <figure class="image">
-                <img src="/media/ext/spotify.png" alt="Spotify">
-              </figure>
-            </div>
-            <div class="tile is-child">
-              <figure class="image">
-                <img src="/media/ext/soundcloud.png" alt="SoundCloud">
-              </figure>
-            </div>
-            <div class="tile is-child">
-              <figure class="image">
-                <img src="/media/ext/tidal.png" alt="Tidal">
-              </figure>
-            </div>
-          </div>
-        </div>
-
-      </div>
     </div>
-
+    <figure class="lg:order-last">
+      <div class="overflow-hidden rounded-xl border border-border">
+        <img src="/media/ext/iris.jpg" alt="Iris">
+      </div>
+      <figcaption class="mt-2 text-right text-sm text-fg-muted">
+        <a href="/ext/iris/" class="text-accent hover:underline">Mopidy-Iris</a>
+        by James Barnsley
+      </figcaption>
+    </figure>
   </div>
 </section>
 
-<section class="section is-medium">
-  <div class="container">
+<section class="mx-auto max-w-6xl px-6 py-16">
+  <div class="grid items-center gap-12 lg:grid-cols-2">
+    <img src="/media/images/raspberry_pi_5.png" alt="Raspberry Pi 5">
+    <div class="prose prose-lg">
 
-    <div class="columns is-variable is-8">
-      <div class="column is-7">
+      <h2>Mopidy on Raspberry Pi</h2>
 
-        <div class="card">
-          <div class="card-image">
-            <figure class="image">
-              <img src="/media/images/mopidy-screenshot.jpg"
-                alt="Mopidy screenshot">
-            </figure>
-          </div>
-        </div>
+      <p>
+        The
+        <a href="https://www.raspberrypi.org/">Raspberry Pi</a>
+        is an approachable single-board computer to run Mopidy on,
+        either using Raspberry Pi OS, Ubuntu, or Arch Linux.
+      </p>
 
-      </div>
-      <div class="column content is-large">
+      <p>
+        Pimoroni recommends Mopidy for use with their
+        <a href="https://shop.pimoroni.com/collections/pirate-audio">Pirate Audio</a>
+        audio gear for Raspberry Pi.
+      </p>
 
-        <h2>Mopidy is just a server</h2>
-
-        <p>
-          Mopidy is a Python application that runs in a
-          terminal or in the background on Linux computers or Macs that have
-          network connectivity and audio output.
-        </p>
-
-        <p>
-          Out of the box, Mopidy is an HTTP server.
-          If you install the <a href="/ext/mpd/">Mopidy-MPD</a> extension,
-          it becomes an MPD server too.
-          Many additional frontends for controlling Mopidy are available as
-          extensions.
-        </p>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="section is-medium">
-  <div class="container">
-
-    <div class="columns">
-      <div class="column content is-large">
-
-        <h2>Pick your favorite client</h2>
-
-        <p>
-          You and the people around you can all connect their
-          favorite MPD or web client to the Mopidy server to search for music
-          and manage the playlist together.
-        </p>
-
-        <p>
-          With a browser or MPD client, which is available
-          for all popular operating systems, you can control the music from
-          any phone, tablet, or computer.
-        </p>
-
-      </div>
-      <div class="column is-7">
-
-        <figure class="image">
-          <img src="/media/ext/iris.jpg" alt="Iris">
-          <figcaption class="has-text-right">
-            <a href="/ext/iris/">Mopidy-Iris</a>
-            by James Barnsley
-          </figcaption>
-        </figure>
-
-      </div>
     </div>
   </div>
 </section>
 
-<section class="section is-medium">
-  <div class="container">
+<section class="mx-auto max-w-6xl px-6 py-16">
+  <div class="grid items-center gap-12 lg:grid-cols-2">
+    <div class="prose prose-lg">
 
-    <div class="columns is-variable is-8">
-      <div class="column">
+      <h2>Mopidy is hackable</h2>
 
-        <figure class="image">
-          <img src="/media/images/raspberry_pi_5.png"
-            alt="Raspberry Pi 5">
-        </figure>
+      <p>
+        Mopidy's extension support and Python, JSON-RPC, and JavaScript
+        APIs make Mopidy a perfect base for your projects.
+      </p>
 
-      </div>
-      <div class="column content is-large">
+      <p>
+        In this example project,
+        a Raspberry Pi was embedded in an old cassette player.
+        The buttons and volume control are wired up with
+        <abbr title="General-purpose input/output">GPIO</abbr>
+        on the Raspberry Pi and is used to control playback through a
+        custom Mopidy extension. The cassettes have
+        <abbr title="Near field communication">NFC</abbr>
+        tags used to select playlists from Spotify.
+      </p>
 
-        <h2>Mopidy on Raspberry Pi</h2>
-
-        <p>
-          The
-          <a href="https://www.raspberrypi.org/">Raspberry Pi</a>
-          is an approachable single-board computer to run Mopidy on,
-          either using Raspberry Pi OS, Ubuntu, or Arch Linux.
-        </p>
-
-        <p>
-          Pimoroni recommends Mopidy for use with their
-          <a href="https://shop.pimoroni.com/collections/pirate-audio">Pirate Audio</a>
-          audio gear for Raspberry Pi.
-        </p>
-
-      </div>
     </div>
-
+    <figure class="lg:order-last">
+      <a href="https://www.youtube.com/watch?v=dX4rxSc7nn0"
+        data-iframe="https://www.youtube.com/embed/dX4rxSc7nn0?rel=0&showinfo=0&autoplay=1"
+        class="group relative block aspect-video w-full overflow-hidden rounded-xl border border-border">
+        <img src="https://img.youtube.com/vi/dX4rxSc7nn0/sddefault.jpg" alt="Cassette player hack"
+          class="h-full w-full object-cover">
+        <span class="absolute top-1/2 left-1/2 flex size-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-slate-950/60 group-hover:bg-slate-950/80">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="size-8 translate-x-0.5 fill-white">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </span>
+      </a>
+      <figcaption class="mt-2 text-right text-sm text-fg-muted">
+        Hack by Matt Brailsford
+      </figcaption>
+    </figure>
   </div>
 </section>
 
-<section class="section is-medium">
-  <div class="container">
-    <div class="columns is-variable is-8">
-      <div class="column content is-large">
+<section class="border-y border-border bg-surface-sunken">
+  <div class="mx-auto max-w-6xl px-6 py-20 text-center">
 
-        <h2>Mopidy is hackable</h2>
+    <h2 class="text-3xl font-bold tracking-tight text-fg-strong">Ready to get started?</h2>
 
-        <p>
-          Mopidy's extension support and Python, JSON-RPC, and JavaScript
-          APIs make Mopidy a perfect base for your projects.
-        </p>
-
-        <p>
-          In this example project,
-          a Raspberry Pi was embedded in an old cassette player.
-          The buttons and volume control are wired up with
-          <abbr title="General-purpose input/output">GPIO</abbr>
-          on the Raspberry Pi and is used to control playback through a
-          custom Mopidy extension. The cassettes have
-          <abbr title="Near field communication">NFC</abbr>
-          tags used to select playlists from Spotify.
-         </p>
-
-      </div>
-      <div class="column">
-
-        <figure>
-          <a href="https://www.youtube.com/watch?v=dX4rxSc7nn0" data-iframe="https://www.youtube.com/embed/dX4rxSc7nn0?rel=0&showinfo=0&autoplay=1" class="image youtube">
-            <img src="https://img.youtube.com/vi/dX4rxSc7nn0/sddefault.jpg" />
-            <img src="https://unpkg.com/simple-icons@latest/icons/youtube.svg" class="overlay" />
-          </a>
-          <figcaption class="has-text-right">
-	    Hack by Matt Brailsford
-          </figcaption>
-        </figure>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="hero is-medium is-light">
-  <div class="hero-body has-text-centered">
-
-    <h2 class="title">Ready to get started?</h2>
-
-    <p>
+    <div class="mt-8">
       <a href="https://docs.mopidy.com/stable/"
-        class="button is-danger is-large">
+        class="rounded-lg bg-blue-600 px-6 py-3 text-lg font-medium text-white hover:bg-blue-500">
         Install Mopidy</a>
-    </p>
+    </div>
 
-  </div>
-</section>
-
-<section class="section">
-  <div class="container has-text-centered">
-
-    <iframe
-      src="/github-btn/?user=mopidy&amp;repo=mopidy&amp;type=watch&amp;count=true&amp;size=large"
-      width="150" height="30"></iframe>
-
-    <iframe
-      src="/github-btn/?user=mopidy&amp;repo=mopidy&amp;type=fork&amp;count=true&amp;size=large"
-      width="140" height="30"></iframe>
+    <div class="mt-10 flex justify-center gap-3">
+      <iframe
+        src="/github-btn/?user=mopidy&amp;repo=mopidy&amp;type=watch&amp;count=true&amp;size=large"
+        width="150" height="30"></iframe>
+      <iframe
+        src="/github-btn/?user=mopidy&amp;repo=mopidy&amp;type=fork&amp;count=true&amp;size=large"
+        width="140" height="30"></iframe>
+    </div>
 
   </div>
 </section>

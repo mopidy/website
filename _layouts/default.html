@@ -2,91 +2,109 @@
 layout: base
 ---
 
-<nav class="navbar is-light" role="navigation" aria-label="main navigation">
-  <div class="container">
-    <div class="navbar-brand">
-      <a class="navbar-item is-size-4" href="/">Mopidy</a>
+<header class="border-b border-border bg-surface">
+  <nav class="mx-auto max-w-6xl px-6" aria-label="Main">
+    <div class="flex items-center gap-6 py-3">
+      <a href="/" class="text-lg font-semibold text-fg-strong">Mopidy</a>
 
-      <a
-        class="navbar-burger burger"
-        role="button" aria-label="menu" aria-expanded="false"
-        data-target="nav"
-      >
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-
-    <div id="nav" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" href="/">Home</a>
-        <a class="navbar-item" href="/blog/">Blog</a>
-        <a class="navbar-item" href="/ext/">Extensions</a>
+      <div class="hidden gap-5 text-sm sm:flex">
+        <a href="/" class="text-fg-muted hover:text-accent">Home</a>
+        <a href="/blog/" class="text-fg-muted hover:text-accent">Blog</a>
+        <a href="/ext/" class="text-fg-muted hover:text-accent">Extensions</a>
       </div>
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
+
+      <div class="ml-auto hidden items-center gap-5 text-sm sm:flex">
+        <div class="group relative">
+          <button type="button" class="cursor-pointer text-fg-muted group-hover:text-accent">
             Documentation
-          </a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://docs.mopidy.com/stable/">Get started</a>
-            <a class="navbar-item" href="https://docs.mopidy.com/stable/guides/">Guides</a>
-            <a class="navbar-item" href="https://docs.mopidy.com/stable/reference/">Reference</a>
-            <a class="navbar-item" href="https://docs.mopidy.com/stable/changelog/">Changelog</a>
+          </button>
+          <div class="invisible absolute right-0 z-10 w-48 rounded-lg border border-border bg-surface p-1 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <a href="https://docs.mopidy.com/stable/" class="block rounded-md px-3 py-1.5 hover:bg-surface-muted hover:text-fg-strong">Get started</a>
+            <a href="https://docs.mopidy.com/stable/guides/" class="block rounded-md px-3 py-1.5 hover:bg-surface-muted hover:text-fg-strong">Guides</a>
+            <a href="https://docs.mopidy.com/stable/reference/" class="block rounded-md px-3 py-1.5 hover:bg-surface-muted hover:text-fg-strong">Reference</a>
+            <a href="https://docs.mopidy.com/stable/changelog/" class="block rounded-md px-3 py-1.5 hover:bg-surface-muted hover:text-fg-strong">Changelog</a>
           </div>
         </div>
-        <a class="navbar-item" href="https://discourse.mopidy.com/">Discourse</a>
-        <a class="navbar-item is-hidden-mobile" href="https://github.com/mopidy" title="GitHub">
-          <span class="icon"><img src="https://unpkg.com/simple-icons@latest/icons/github.svg" /></span>
+        <a href="https://discourse.mopidy.com/" class="text-fg-muted hover:text-accent">Discourse</a>
+        <a href="https://github.com/mopidy" title="GitHub" class="text-fg-muted hover:text-fg-strong">
+          <span class="sr-only">GitHub</span>
+          <span class="block h-4 w-4 bg-current"
+                style="mask: url(https://unpkg.com/simple-icons@latest/icons/github.svg) center / contain no-repeat"></span>
         </a>
       </div>
-    </div>
-  </div>
-</nav>
 
+      <button type="button" id="scheme-toggle" onclick="__cycleScheme()"
+              class="ml-auto cursor-pointer rounded-md border border-border p-1.5 text-fg-muted hover:text-fg-strong sm:ml-0">
+        <span class="sr-only">Colour scheme</span>
+        <svg data-icon="system" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v2M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715M16 12a4 4 0 0 0-4-4M19 5l-1.256 1.256M20 12h2"/></svg>
+        <svg data-icon="light" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg data-icon="dark" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </button>
+
+      <button type="button" aria-label="Menu"
+              onclick="document.getElementById('nav-mobile').toggleAttribute('hidden')"
+              class="cursor-pointer rounded-md border border-border p-1.5 text-fg-muted sm:hidden">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="nav-mobile" hidden class="pb-3 text-sm sm:hidden">
+      <a href="/" class="block py-1 text-fg-muted hover:text-accent">Home</a>
+      <a href="/blog/" class="block py-1 text-fg-muted hover:text-accent">Blog</a>
+      <a href="/ext/" class="block py-1 text-fg-muted hover:text-accent">Extensions</a>
+      <p class="pt-2 font-semibold text-fg-strong">Documentation</p>
+        <a href="https://docs.mopidy.com/stable/" class="block py-1 pl-4 text-fg-muted hover:text-accent">Get started</a>
+        <a href="https://docs.mopidy.com/stable/guides/" class="block py-1 pl-4 text-fg-muted hover:text-accent">Guides</a>
+        <a href="https://docs.mopidy.com/stable/reference/" class="block py-1 pl-4 text-fg-muted hover:text-accent">Reference</a>
+        <a href="https://docs.mopidy.com/stable/changelog/" class="block py-1 pl-4 text-fg-muted hover:text-accent">Changelog</a>
+      <a href="https://discourse.mopidy.com/" class="block py-1 text-fg-muted hover:text-accent">Discourse</a>
+      <a href="https://github.com/mopidy" class="block py-1 text-fg-muted hover:text-accent">GitHub</a>
+    </div>
+  </nav>
+</header>
+
+<div class="flex-1">
 {{ content }}
+</div>
 
-<footer class="footer">
-  <div class="container">
-
-    <div class="columns">
-        <div class="column">
-          <p class="subtitle">Mopidy</p>
-          <ul class="menu-list">
-            <li><a href="/">Home</a></li>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/ext/">Extensions</a></li>
-          </ul>
-        </div>
-        <div class="column">
-          <p class="subtitle">Documentation</p>
-          <ul class="menu-list">
-            <li><a href="https://docs.mopidy.com/stable/">Get started</a></li>
-            <li><a href="https://docs.mopidy.com/stable/guides/">Guides</a></li>
-            <li><a href="https://docs.mopidy.com/stable/reference/">Reference</a></li>
-            <li><a href="https://docs.mopidy.com/stable/changelog/">Changelog</a></li>
-          </ul>
-        </div>
-        <div class="column">
-          <p class="subtitle">Community</p>
-          <ul class="menu-list">
-            <li><a href="https://discourse.mopidy.com/">Discourse forum</a></li>
-          </ul>
-        </div>
-        <div class="column">
-          <p class="subtitle">Get involved</p>
-          <ul class="menu-list">
-            <li><a href="https://github.com/mopidy">GitHub</a></li>
-            <li><a href="https://mopidy.zulipchat.com/">Zulip chat</a></li>
-            <li><a href="https://discourse.mopidy.com/c/dev/10">Development forum</a></li>
-          </ul>
-        </div>
+<footer class="mt-20 border-t border-border bg-surface-sunken">
+  <div class="mx-auto max-w-6xl px-6 py-12 text-sm text-fg-muted">
+    <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+      <div>
+        <p class="mb-2 font-semibold text-fg-strong">Mopidy</p>
+        <ul class="space-y-1">
+          <li><a href="/" class="hover:text-accent">Home</a></li>
+          <li><a href="/blog/" class="hover:text-accent">Blog</a></li>
+          <li><a href="/ext/" class="hover:text-accent">Extensions</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mb-2 font-semibold text-fg-strong">Documentation</p>
+        <ul class="space-y-1">
+          <li><a href="https://docs.mopidy.com/stable/" class="hover:text-accent">Get started</a></li>
+          <li><a href="https://docs.mopidy.com/stable/guides/" class="hover:text-accent">Guides</a></li>
+          <li><a href="https://docs.mopidy.com/stable/reference/" class="hover:text-accent">Reference</a></li>
+          <li><a href="https://docs.mopidy.com/stable/changelog/" class="hover:text-accent">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mb-2 font-semibold text-fg-strong">Community</p>
+        <ul class="space-y-1">
+          <li><a href="https://discourse.mopidy.com/" class="hover:text-accent">Discourse forum</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mb-2 font-semibold text-fg-strong">Get involved</p>
+        <ul class="space-y-1">
+          <li><a href="https://github.com/mopidy" class="hover:text-accent">GitHub</a></li>
+          <li><a href="https://mopidy.zulipchat.com/" class="hover:text-accent">Zulip chat</a></li>
+          <li><a href="https://discourse.mopidy.com/c/dev/10" class="hover:text-accent">Development forum</a></li>
+        </ul>
+      </div>
     </div>
-
-    <p>
-      Copyright &copy; 2009-2026 Stein Magnus Jodal and contributors.
-    </p>
-
+    <p class="mt-10">Copyright &copy; 2009-2026 Stein Magnus Jodal and contributors.</p>
   </div>
 </footer>

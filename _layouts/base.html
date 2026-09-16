@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }}</title>
-  <link rel="prefetch" href="https://unpkg.com/simple-icons@latest/icons/github.svg">
-  <link rel="prefetch" href="https://fonts.googleapis.com/css?family=Asap">
-  <link rel="stylesheet" href="/media/css/mopidy.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400..700;1,400..700&amp;display=swap">
+  <link rel="stylesheet" href="/media/css/tailwind.css">
   <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/media/favicon/favicon-16x16.png">
   {% seo title=false %}
   {% feed_meta %}
-  <script defer src="/media/js/mopidy.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BL20SY56SW"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -20,10 +20,57 @@
     gtag('js', new Date());
     gtag('config', 'G-BL20SY56SW');
   </script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var order = ["system", "light", "dark"];
+      var says = { system: "Follow system", light: "Light", dark: "Dark" };
+      window.__applyScheme = function (v) {
+        window.__scheme = v;
+        root.style.colorScheme = v === "system" ? "" : v;
+        var btn = document.getElementById("scheme-toggle");
+        if (!btn) return;
+        btn.title = "Colour scheme: " + says[v];
+        btn.querySelectorAll("[data-icon]").forEach(function (i) {
+          i.style.display = i.dataset.icon === v ? "" : "none";
+        });
+      };
+      window.__cycleScheme = function () {
+        var next = order[(order.indexOf(window.__scheme) + 1) % order.length];
+        try { localStorage.setItem("scheme", next); } catch (e) {}
+        window.__applyScheme(next);
+      };
+      try {
+        window.__scheme = localStorage.getItem("scheme") || "system";
+      } catch (e) {
+        window.__scheme = "system";
+      }
+      root.style.colorScheme = window.__scheme === "system" ? "" : window.__scheme;
+    })();
+  </script>
 </head>
-<body>
+<body class="flex min-h-screen flex-col bg-page font-sans text-fg antialiased">
 
 {{ content }}
 
+<script defer src="/media/js/mopidy.js"></script>
+<script>
+  document.querySelectorAll("[data-tabs]").forEach(function (bar) {
+    var tabs = bar.querySelectorAll("[data-tab]");
+    function show(name) {
+      tabs.forEach(function (t) {
+        t.setAttribute("aria-selected", String(t.dataset.tab === name));
+      });
+      document.querySelectorAll("[data-panel]").forEach(function (p) {
+        p.hidden = p.dataset.panel !== name;
+      });
+    }
+    tabs.forEach(function (t) {
+      t.addEventListener("click", function () { show(t.dataset.tab); });
+    });
+    if (tabs.length) show(tabs[0].dataset.tab);
+  });
+</script>
+<script>__applyScheme(window.__scheme);</script>
 </body>
 </html>

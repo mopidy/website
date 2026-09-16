@@ -1,5 +1,12 @@
 {% unless ext.archived or ext.dist.bundled %}
   {% assign compat_status = ext.compat[site.data.compat.current].status | default: "unknown" %}
-  {% assign compat_style = site.data.compat.status[compat_status] %}
-  <span class="tag ext-tag {{ compat_style.class }}">{{ compat_style.label }}</span>
+  {% case compat_status %}
+    {% when "unreleased" %}{% assign tone = "warn" %}
+    {% when "in-progress" %}{% assign tone = "warn" %}
+    {% when "unsupported" %}{% assign tone = "danger" %}
+    {% when "supported" %}{% assign tone = "ok" %}
+    {% else %}{% assign tone = "neutral" %}
+  {% endcase %}
+  {% assign tag_label = site.data.compat.status[compat_status].label %}
+  {% include tag.html tone=tone label=tag_label %}
 {% endunless %}

@@ -11,42 +11,50 @@
     {% endif %}
     {% if include.only == "supported" and compat_ok == false %}{% continue %}{% endif %}
     {% if include.only == "other" and compat_ok %}{% continue %}{% endif %}
+    {% assign muted = "" %}
+    {% unless include.only == "supported" %}{% assign muted = " bg-surface-muted" %}{% endunless %}
     <li>
-      <a class="ext-card{% unless include.only == "supported" %} is-muted{% endunless %}" href="{{ ext.url }}">
-        <span class="ext-card-logo-slot">
-          {%- if ext.logo %}<img class="ext-card-logo" src="{{ ext.logo }}" alt="" />{% endif -%}
+      <a href="{{ ext.url }}"
+         class="flex h-full flex-col gap-2 rounded-xl border border-border{{ muted }} p-4 transition hover:-translate-y-0.5 hover:border-accent hover:shadow-lg{% if muted == '' %} bg-surface{% endif %}">
+        <span class="flex h-10 items-center">
+          {%- if ext.logo %}
+            <img src="{{ ext.logo }}" alt=""
+                 class="h-10 w-auto max-w-full object-contain{% unless include.only == 'supported' %} opacity-60 grayscale{% endunless %}">
+          {% endif -%}
         </span>
-        <span class="ext-card-head">
-          <span class="ext-card-title">{{ ext.title }}</span>
+        <span class="flex flex-wrap items-baseline justify-between gap-2">
+          <span class="font-semibold text-accent">{{ ext.title }}</span>
           {% assign compat_status = ext.compat[site.data.compat.current].status | default: "unknown" %}
           {% if ext.dist.bundled %}{% assign compat_status = "supported" %}{% endif %}
           {% if ext.archived %}
-            <span class="tag ext-tag is-danger is-light">Archived</span>
+            {% include tag.html tone="danger" label="Archived" %}
           {% elsif compat_status != "supported" %}
-            {% include ext-compat-tag.html %}
+            {% case compat_status %}
+              {% when "unreleased" %}{% assign tone = "warn" %}
+              {% when "in-progress" %}{% assign tone = "warn" %}
+              {% when "unsupported" %}{% assign tone = "danger" %}
+              {% else %}{% assign tone = "neutral" %}
+            {% endcase %}
+            {% assign tag_label = site.data.compat.status[compat_status].label %}
+            {% include tag.html tone=tone label=tag_label %}
           {% elsif ext.dist.bundled %}
-            <span class="tag ext-tag is-success is-light">Bundled</span>
+            {% include tag.html tone="ok" label="Bundled" %}
           {% else %}
             {% assign repo_owner = ext.dev.github | split: "/" | first %}
             {% if repo_owner == "mopidy" %}
-              <span class="tag ext-tag is-primary is-light">First-party</span>
+              {% include tag.html tone="info" label="First-party" %}
             {% endif %}
           {% endif %}
         </span>
-        <span class="ext-card-desc">
-          {%- comment -%}
-            Line breaks must become spaces, or words join up.
-          {%- endcomment -%}
-          {% capture ext_newline %}
-{% endcapture %}
-          {%- assign desc = ext.content | split: "</p>" | first | strip_html
-                            | replace: ext_newline, " " | replace: "  ", " "
-                            | strip -%}
-          <span class="ext-card-desc-text">{{ desc }}</span>
+        <span class="line-clamp-3 grow text-sm leading-relaxed text-fg-muted">
+          {%- capture ext_newline %}
+{% endcapture -%}
+          {{- ext.content | split: "</p>" | first | strip_html
+              | replace: ext_newline, " " | replace: "  ", " " | strip -}}
         </span>
-        <span class="ext-card-foot">
-          <span class="ext-card-repo">{% include ext-repo.html %}</span>
-          <span class="ext-card-dist">{% include ext-dists.html %}</span>
+        <span class="flex flex-wrap items-center justify-between gap-1 border-t border-border pt-2 text-xs text-fg-muted">
+          <span class="flex items-center gap-1">{% include ext-repo.html %}</span>
+          <span class="text-right">{% include ext-dists.html %}</span>
         </span>
       </a>
     </li>
@@ -56,9 +64,9 @@
 {% assign ext_cards_trimmed = ext_cards | strip %}
 {% if ext_cards_trimmed != "" %}
   {% unless include.only == "supported" %}
-    <h3 class="is-size-6 has-text-weight-semibold has-text-grey-dark">
+    <h3 class="mt-10 mb-3 font-semibold text-fg-strong">
       Not known to work with {{ site.data.compat.label }}
     </h3>
   {% endunless %}
-  <ul class="ext-grid">{{ ext_cards }}</ul>
+  <ul class="grid list-none grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">{{ ext_cards }}</ul>
 {% endif %}

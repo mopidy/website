@@ -5,6 +5,7 @@ excerpt_separator: "<!-- more -->"
 exclude:
   - .git/
   - .jj/
+  - media/css/tailwind.src.css
   - Gemfile
   - Gemfile.lock
   - node_modules

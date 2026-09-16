@@ -36,19 +36,18 @@ layout: default
   {% endif %}
 {% endunless %}
 
-<section class="section">
-  <div class="container">
+<main class="mx-auto max-w-6xl px-6 py-12">
 
-    <nav class="breadcrumb" aria-label="breadcrumbs">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li><a href="/ext/">Extensions</a></li>
-        <li class="is-active"><a href="{{ ext.url }}">{{ ext.title }}</a></li>
-      </ol>
-    </nav>
+  <nav class="mb-4 flex gap-2 text-sm text-fg-muted" aria-label="Breadcrumb">
+    <a href="/" class="text-accent hover:underline">Home</a>
+    <span>/</span>
+    <a href="/ext/" class="text-accent hover:underline">Extensions</a>
+    <span>/</span>
+    <span>{{ ext.title }}</span>
+  </nav>
 
-    <h1 class="title is-size-2">{{ ext.title }}</h1>
-    <h2 class="subtitle is-size-4 has-text-grey">
+  <h1 class="text-4xl font-bold tracking-tight text-fg-strong">{{ ext.title }}</h1>
+  <h2 class="mt-1 flex items-center gap-3 text-xl text-fg-muted">
       {% case ext.type %}
         {% when "backend" %}
           backend extension
@@ -64,15 +63,13 @@ layout: default
       {% endunless %}
     </h2>
 
-    <div class="columns is-variable is-8">
-      <div class="column is-8">
+  <div class="mt-8 grid gap-10 lg:grid-cols-3">
+    <div class="min-w-0 lg:col-span-2">
 
         {% if ext.archived %}
-          <article class="message is-danger">
-            <div class="message-header">Archived</div>
-            <div class="message-body">
-              {{ ext.archived|markdownify }}
-            </div>
+          <article class="rounded-xl border border-border bg-tone-danger-bg">
+            <div class="border-b border-border px-4 py-2 font-semibold text-tone-danger-fg">Archived</div>
+            <div class="prose prose-sm max-w-none px-4 py-3">{{ ext.archived|markdownify }}</div>
           </article>
         {% endif %}
 
@@ -80,16 +77,16 @@ layout: default
           {% include ext-compat.html %}
         {% endif %}
 
-        <div class="content is-medium">
-          {{ ext.content }}
-        </div>
+      <div class="prose prose-lg max-w-none">
+        {{ ext.content }}
+      </div>
 
         {% include ext-buttons.html %}
 
-        <div class="content ext-page-body">
+      <div class="prose prose-lg max-w-none">
 
           {% for image in ext.images %}
-            <div class="image box">
+            <div class="overflow-hidden rounded-xl border border-border">
               <a href="{{ image }}">
                 <img src="{{ image }}">
               </a>
@@ -106,54 +103,52 @@ layout: default
               for how to configure the extension.
             </p>
           {% else %}
-            <div class="tabs has-text-weight-bold">
-              <ul class="is-marginless">
+            <div class="not-prose mb-4 flex gap-1 overflow-x-auto overflow-y-hidden border-b border-border" role="tablist" data-tabs>
                 {% if ext.dist.pypi %}
-                  <li class="is-active">
-                    <a href="#pypi">
-                      <span class="icon"><img src="https://unpkg.com/simple-icons@latest/icons/pypi.svg" /></span>
-                      <span>PyPI</span>
-                    </a>
-                  </li>
+                  <button type="button" role="tab" data-tab="pypi"
+                          class="-mb-px flex shrink-0 cursor-pointer items-center gap-1.5 border-b-2 border-transparent px-3 py-2 text-sm font-medium text-fg-muted hover:text-fg-strong aria-selected:border-accent aria-selected:text-accent">
+                    <span class="h-4 w-4 bg-current"
+                          style="mask: url(https://unpkg.com/simple-icons@latest/icons/pypi.svg) center / contain no-repeat"></span>
+                    PyPI
+                  </button>
                 {% endif %}
                 {% if ext.dist.apt-debian or ext.dist.apt-mopidy %}
-                  <li>
-                    <a href="#debian">
-                      <span class="icon"><img src="https://unpkg.com/simple-icons@latest/icons/debian.svg" /></span>
-                      <span>Debian</span>
-                    </a>
-                  </li>
+                  <button type="button" role="tab" data-tab="debian"
+                          class="-mb-px flex shrink-0 cursor-pointer items-center gap-1.5 border-b-2 border-transparent px-3 py-2 text-sm font-medium text-fg-muted hover:text-fg-strong aria-selected:border-accent aria-selected:text-accent">
+                    <span class="h-4 w-4 bg-current"
+                          style="mask: url(https://unpkg.com/simple-icons@latest/icons/debian.svg) center / contain no-repeat"></span>
+                    Debian
+                  </button>
                 {% endif %}
                 {% if ext.dist.arch-aur %}
-                  <li>
-                    <a href="#arch">
-                      <span class="icon"><img src="https://unpkg.com/simple-icons@latest/icons/archlinux.svg" /></span>
-                      <span>Arch</span>
-                    </a>
-                  </li>
+                  <button type="button" role="tab" data-tab="arch"
+                          class="-mb-px flex shrink-0 cursor-pointer items-center gap-1.5 border-b-2 border-transparent px-3 py-2 text-sm font-medium text-fg-muted hover:text-fg-strong aria-selected:border-accent aria-selected:text-accent">
+                    <span class="h-4 w-4 bg-current"
+                          style="mask: url(https://unpkg.com/simple-icons@latest/icons/archlinux.svg) center / contain no-repeat"></span>
+                    Arch
+                  </button>
                 {% endif %}
                 {% if ext.dist.fedora or ext.dist.rpmfusion %}
-                  <li>
-                    <a href="#fedora">
-                      <span class="icon"><img src="https://unpkg.com/simple-icons@latest/icons/fedora.svg" /></span>
-                      <span>Fedora</span>
-                    </a>
-                  </li>
+                  <button type="button" role="tab" data-tab="fedora"
+                          class="-mb-px flex shrink-0 cursor-pointer items-center gap-1.5 border-b-2 border-transparent px-3 py-2 text-sm font-medium text-fg-muted hover:text-fg-strong aria-selected:border-accent aria-selected:text-accent">
+                    <span class="h-4 w-4 bg-current"
+                          style="mask: url(https://unpkg.com/simple-icons@latest/icons/fedora.svg) center / contain no-repeat"></span>
+                    Fedora
+                  </button>
                 {% endif %}
                 {% if ext.dist.homebrew %}
-                  <li>
-                    <a href="#macos">
-                      <span class="icon"><img src="https://unpkg.com/simple-icons@latest/icons/apple.svg" /></span>
-                      <span>MacOS</span>
-                    </a>
-                  </li>
+                  <button type="button" role="tab" data-tab="macos"
+                          class="-mb-px flex shrink-0 cursor-pointer items-center gap-1.5 border-b-2 border-transparent px-3 py-2 text-sm font-medium text-fg-muted hover:text-fg-strong aria-selected:border-accent aria-selected:text-accent">
+                    <span class="h-4 w-4 bg-current"
+                          style="mask: url(https://unpkg.com/simple-icons@latest/icons/apple.svg) center / contain no-repeat"></span>
+                    MacOS
+                  </button>
                 {% endif %}
-              </ul>
             </div>
           {% endif %}
 
           {% if ext.dist.pypi %}
-            <div class="tab-content" id="pypi">
+            <div class="tab-panel" data-panel="pypi">
               <p>
                 Install the <code>{{ ext.dist.pypi }}</code> package from
                 <a href="https://pypi.org/project/{{ ext.dist.pypi }}">PyPI</a>:
@@ -163,7 +158,7 @@ layout: default
           {% endif %}
 
           {% if ext.dist.apt-debian or ext.dist.apt-mopidy %}
-            <div class="tab-content is-hidden" id="debian">
+            <div class="tab-panel" hidden data-panel="debian">
               {% if ext.dist.apt-debian %}
                 <p>
                   Install the <code>{{ ext.dist.apt-debian }}</code> package from
@@ -202,7 +197,7 @@ layout: default
           {% endif %}
 
           {% if ext.dist.arch-aur %}
-            <div class="tab-content is-hidden" id="arch">
+            <div class="tab-panel" hidden data-panel="arch">
               <p>
 		Install the <code>{{ ext.dist.arch-aur }}</code> package from
                 <a href="https://aur.archlinux.org/packages/{{ ext.dist.arch-aur }}">AUR</a>:
@@ -212,7 +207,7 @@ layout: default
           {% endif %}
 
           {% if ext.dist.fedora %}
-            <div class="tab-content is-hidden" id="fedora">
+            <div class="tab-panel" hidden data-panel="fedora">
               <p>
 		Install the <code>{{ ext.dist.fedora }}</code> package from
                 <a href="https://src.fedoraproject.org/rpms/{{ ext.dist.fedora }}">Fedora</a>:
@@ -223,7 +218,7 @@ layout: default
 
           {% if ext.dist.rpmfusion %}
             {% assign parts = ext.dist.rpmfusion | split: '/' %}
-            <div class="tab-content is-hidden" id="fedora">
+            <div class="tab-panel" hidden data-panel="fedora">
               <p>
 		Install the <code>{{ parts | shift }}</code> package from
                 <a href="https://admin.rpmfusion.org/pkgdb/package/{{ ext.dist.rpmfusion }}">RPMFusion-{{ parts | pop }}</a>:
@@ -233,7 +228,7 @@ layout: default
           {% endif %}
 
           {% if ext.dist.homebrew %}
-            <div class="tab-content is-hidden" id="macos">
+            <div class="tab-panel" hidden data-panel="macos">
               {% assign homebrew_repo = ext.dist.homebrew.tap | replace: "/", "/homebrew-" %}
               <p>
                 Install the
@@ -264,7 +259,7 @@ layout: default
                 Your data is <b>never</b> shared with this site.
               </p>
               <p>
-                <a class="button auth-button" href="{{ ext.oauth.endpoint }}"{% if ext.oauth.button.style %} style="{{ ext.oauth.button.style}}"{%endif%}>
+                <a class="not-prose auth-button inline-flex items-center gap-2 rounded-lg border border-border bg-surface px-4 py-2 font-medium text-fg-strong no-underline hover:border-accent" href="{{ ext.oauth.endpoint }}"{% if ext.oauth.button.style %} style="{{ ext.oauth.button.style}}"{%endif%}>
                   {% if ext.oauth.button.logo %}
                     <span class="icon"><img src="{{ ext.oauth.button.logo.url }}"{% if ext.oauth.button.logo.style %} style="{{ ext.oauth.button.logo.style }}"{% endif %} /></span>
                   {% endif %}
@@ -274,7 +269,7 @@ layout: default
               <p>
                 After the pop up closes it will change the text below, add the following to your <code>mopidy.conf</code> file:
               </p>
-              <p class="auth-error notification is-danger is-hidden"></p>
+              <p class="auth-error not-prose hidden rounded-lg border border-border bg-tone-danger-bg px-4 py-3 text-tone-danger-fg"></p>
               {% for config in ext.oauth.config %}
                 <pre class="copy auth-config">
 [{{ config[0] }}]{% for item in config[1] %}
@@ -290,11 +285,10 @@ layout: default
         </div>
 
       </div>
-      <div class="column is-4">
-        {% include ext-stats.html %}
-      </div>
+    <div>
+      {% include ext-stats.html %}
     </div>
-  </div>
-</section>
+    </div>
+</main>
 
 {% include ext-footer.html %}

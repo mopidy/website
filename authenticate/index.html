@@ -1,42 +1,43 @@
 ---
-layout: default
 title: Authenticate
 sitemap: false
 ---
 
-<section class="section">
-  <div class="container">
-    <h1 class="title is-size-2">Authenticate Mopidy with music services</h1>
-    <p class="is-size-4">
-      The following services require you to get authentication tokens for
-      Mopidy so that it can connect to your service accounts.
-    </p>
-  </div>
-</section>
+<main class="mx-auto max-w-6xl px-6 py-12">
 
-{% assign exts = site.ext | sort_natural: "title" %}
+  <nav class="mb-4 flex gap-2 text-sm text-fg-muted" aria-label="Breadcrumb">
+    <a href="/" class="text-accent hover:underline">Home</a>
+    <span>/</span>
+    <span>Authenticate</span>
+  </nav>
 
-{% for ext in exts %}
-  {% if ext.oauth %}
-    <section class="section" id="{{ ext.slug }}">
-      <div class="container">
-        <div class="columns is-variable is-8">
-    <div class="column is-2">
-      {% if ext.logo %}
-      <figure class="image">
-        <img src="{{ ext.logo }}" alt="{{ ext.title }} logo">
-      </figure>
+  <h1 class="text-4xl font-bold tracking-tight text-balance text-fg-strong">
+    Authenticate Mopidy with music services
+  </h1>
+
+  <p class="mt-2 max-w-2xl text-xl text-fg-muted">
+    The following services require you to get authentication tokens for
+    Mopidy so that it can connect to your service accounts.
+  </p>
+
+  <ul class="mt-10 grid gap-4 sm:grid-cols-2">
+    {% assign exts = site.ext | sort_natural: "title" %}
+    {% for ext in exts %}
+      {% if ext.oauth %}
+        <li id="{{ ext.slug }}">
+          <a href="{{ ext.url | append: '#authentication' }}"
+            class="flex h-full items-center gap-4 rounded-xl border border-border bg-surface p-4 hover:border-accent">
+            {% if ext.logo %}
+              <img src="{{ ext.logo }}" alt="" class="size-10 shrink-0 object-contain">
+            {% endif %}
+            <span>
+              <span class="block font-semibold text-fg-strong">{{ ext.title }}</span>
+              <span class="block text-sm text-fg-muted">Authenticate on the extension page</span>
+            </span>
+          </a>
+        </li>
       {% endif %}
-    </div>
-    <div class="column content is-medium">
-      <h2>{{ ext.title }}</h2>
-      <p>
-        This functionality has moved to the
-        <a href="{{ ext.url | append: "#authentication" }}">extension page</a>.
-      </p>
-    </div>
-        </div>
-      </div>
-    </section>
-  {% endif %}
-{% endfor %}
+    {% endfor %}
+  </ul>
+
+</main>

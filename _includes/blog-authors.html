@@ -1,30 +1,28 @@
-<div class="box">
+<div class="rounded-xl border border-border bg-surface px-5 py-4">
 
-  <h3 class="title is-5">Contributors</h3>
+  <h3 class="mb-3 text-xs font-medium tracking-wide text-fg-muted uppercase">Contributors</h3>
 
-  {% for author_name in post.authors %}
-
-    {% assign author = site.data.authors[author_name] %}
-
-    <div class="media">
-      <div class="media-left">
-        <p class="image is-64x64">
-          {% avatar user=author.github size=64 %}
-        </p>
-      </div>
-      <div class="media-content author vcard">
-        <p class="title is-size-5">{{ author_name }}</p>
-        <p class="fn subtitle is-size-6">{{ author.name }}</p>
-        {% if author.github %}
-          <a class="url" href="https://github.com/{{ author.github }}">
-            <span class="icon has-text-grey">
-              <img src="https://unpkg.com/simple-icons@latest/icons/github.svg">
-            </span>
-          </a>
-        {% endif %}
-      </div>
-    </div>
-
-  {% endfor %}
+  <ul class="space-y-4">
+    {% for author_name in post.authors %}
+      {% assign author = site.data.authors[author_name] %}
+      <li class="flex items-center gap-3">
+        <span class="h-12 w-12 shrink-0 overflow-hidden rounded-full border border-border">
+          {% avatar user=author.github size=48 %}
+        </span>
+        <span class="author vcard min-w-0">
+          <span class="block font-semibold text-fg-strong">{{ author_name }}</span>
+          <span class="fn block text-sm text-fg-muted">{{ author.name }}</span>
+          {% if author.github %}
+            <a class="url mt-1 inline-flex items-center gap-1 text-xs text-fg-muted hover:text-accent"
+               href="https://github.com/{{ author.github }}">
+              <span class="h-3.5 w-3.5 bg-current"
+                    style="mask: url(https://unpkg.com/simple-icons@latest/icons/github.svg) center / contain no-repeat"></span>
+              {{ author.github }}
+            </a>
+          {% endif %}
+        </span>
+      </li>
+    {% endfor %}
+  </ul>
 
 </div>

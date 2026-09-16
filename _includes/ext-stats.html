@@ -1,15 +1,15 @@
-<div class="ext-panel">
+<div class="not-prose overflow-hidden rounded-xl border border-border bg-surface">
   {% if ext.logo %}
-    <div class="ext-panel-logo">
-      <img class="ext-page-logo" src="{{ ext.logo }}">
+    <div class="flex items-center justify-center border-b border-border px-5 py-7">
+      <img class="h-20 w-auto max-w-full object-contain" src="{{ ext.logo }}" alt="">
     </div>
   {% endif %}
 
-  <div class="ext-panel-body">
+  <div class="space-y-4 px-5 py-4">
 
     {% if repo_url or ext.dist.pypi %}
-      <h5 class="is-size-7 is-uppercase has-text-grey">Popularity</h5>
-      <p>
+      <h5 class="mb-1 text-xs font-medium tracking-wide text-fg-muted uppercase">Popularity</h5>
+      <div class="flex flex-wrap gap-1">
         {% if repo_url %}
           {% case repo_host %}
             {% when "github" %}
@@ -40,12 +40,12 @@
             />
           </a>
         {% endif %}
-      </p>
+      </div>
     {% endif %}
 
     {% if ext.dist.pypi %}
-      <h5 class="is-size-7 is-uppercase has-text-grey">PyPI</h5>
-      <p>
+      <h5 class="mb-1 text-xs font-medium tracking-wide text-fg-muted uppercase">PyPI</h5>
+      <div class="flex flex-wrap gap-1">
         <a href="https://pypi.org/project/{{ ext.dist.pypi }}">
           <img
             alt="PyPI - Package version"
@@ -66,24 +66,24 @@
             />
           {% endif %}
         </a>
-      </p>
+      </div>
     {% endif %}
 
     {% if ext.dist.pypi %}
-      <h5 class="is-size-7 is-uppercase has-text-grey">License</h5>
-      <p>
+      <h5 class="mb-1 text-xs font-medium tracking-wide text-fg-muted uppercase">License</h5>
+      <div class="flex flex-wrap gap-1">
         <a href="https://pypi.org/project/{{ ext.dist.pypi }}">
           <img
             alt="PyPI - License"
             src="https://img.shields.io/pypi/l/{{ ext.dist.pypi }}?label=&amp;style=flat-square"
           />
         </a>
-      </p>
+      </div>
     {% endif %}
 
     {% if repo_url %}
-      <h5 class="is-size-7 is-uppercase has-text-grey">Project stats</h5>
-      <p>
+      <h5 class="mb-1 text-xs font-medium tracking-wide text-fg-muted uppercase">Project stats</h5>
+      <div class="flex flex-wrap gap-1">
         {% case repo_host %}
           {% when "github" %}
             {% assign issues_url = repo_url | append: "/issues" %}
@@ -110,13 +110,13 @@
         <a href="{{ prs_url }}">
           <img alt="{{ prs_label }}" src="{{ prs_badge }}" />
         </a>
-      </p>
+      </div>
     {% endif %}
 
     {% if repo_host == "github" %}
       {% if ext.dev.github_actions or ext.dev.circleci or ext.dev.travisci or ext.dev.codecov or ext.dev.coveralls %}
-        <h5 class="is-size-7 is-uppercase has-text-grey">Quality metrics</h5>
-        <p>
+        <h5 class="mb-1 text-xs font-medium tracking-wide text-fg-muted uppercase">Quality metrics</h5>
+        <div class="flex flex-wrap gap-1">
           {% if ext.dev.github_actions %}
             {% if ext.dev.github_actions.workflow %}
               {% assign workflow = ext.dev.github_actions.workflow %}
@@ -162,7 +162,7 @@
               />
             </a>
           {% endif %}
-        </p>
+        </div>
       {% endif %}
     {% endif %}
 

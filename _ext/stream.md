@@ -8,4 +8,3 @@ dist:
 ---
 
 Backend for playing streaming music.
-This backend is bundled with Mopidy.

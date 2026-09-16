@@ -19,6 +19,7 @@ compat:
 
 A backend for playing music from a
 [Subsonic-compatible Music Server](http://www.subsonic.org/pages/api.jsp).
+
 Software compatible with the Subsonic API includes:
 
 - [Subsonic](http://www.subsonic.org)

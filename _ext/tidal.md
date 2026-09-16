@@ -22,5 +22,5 @@ compat:
     checked: 2026-09-16
 ---
 
-Extension for playing music from the 
+Extension for playing music from the
 [TIDAL](https://tidal.com/) music streaming service.

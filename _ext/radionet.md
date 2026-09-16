@@ -13,4 +13,4 @@ compat:
     checked: 2026-09-16
 ---
 
-A backend for playing radio channels from the [radio.net](https://radio.net/).
+A backend for playing radio channels from [radio.net](https://radio.net/).

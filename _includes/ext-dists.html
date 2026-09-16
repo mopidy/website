@@ -1,0 +1,14 @@
+
+{%- if ext.dist.bundled -%}
+  Comes with Mopidy
+{%- else -%}
+  {%- assign places = "" -%}
+  {%- if ext.dist.pypi -%}{%- assign places = places | append: "PyPI," -%}{%- endif -%}
+  {%- if ext.dist.apt-debian -%}{%- assign places = places | append: "Debian," -%}{%- endif -%}
+  {%- if ext.dist.apt-mopidy -%}{%- assign places = places | append: "Mopidy APT," -%}{%- endif -%}
+  {%- if ext.dist.arch-aur -%}{%- assign places = places | append: "AUR," -%}{%- endif -%}
+  {%- if ext.dist.fedora -%}{%- assign places = places | append: "Fedora," -%}{%- endif -%}
+  {%- if ext.dist.rpmfusion -%}{%- assign places = places | append: "RPMFusion," -%}{%- endif -%}
+  {%- if ext.dist.homebrew -%}{%- assign places = places | append: "macOS," -%}{%- endif -%}
+  {{- places | split: "," | join: " · " -}}
+{%- endif -%}

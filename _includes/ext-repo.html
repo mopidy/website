@@ -1,0 +1,21 @@
+{%- if ext.dev.github -%}
+  {%- assign repo_host = "github" -%}
+  {%- assign repo_account = ext.dev.github | split: "/" | first -%}
+{%- elsif ext.dev.gitlab -%}
+  {%- assign repo_host = "gitlab" -%}
+  {%- if ext.dev.gitlab.repo -%}
+    {%- assign repo_account = ext.dev.gitlab.repo | split: "/" | first -%}
+  {%- else -%}
+    {%- assign repo_account = ext.dev.gitlab | split: "/" | first -%}
+  {%- endif -%}
+{%- elsif ext.dev.codeberg -%}
+  {%- assign repo_host = "codeberg" -%}
+  {%- assign repo_account = ext.dev.codeberg | split: "/" | first -%}
+{%- endif -%}
+
+{%- if repo_account -%}
+  <img class="ext-card-repo-icon"
+       src="https://unpkg.com/simple-icons@latest/icons/{{ repo_host }}.svg"
+       alt="{{ repo_host }}" />
+  {{ repo_account }}
+{%- endif -%}

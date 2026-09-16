@@ -5,7 +5,7 @@ dev:
   github: avanc/mopidy-headless
 dist:
   pypi: mopidy-headless
-  arch-aur: mopidy-headless
+  arch-aur: mopidy-headless-git
 compat:
   mopidy4:
     status: unsupported

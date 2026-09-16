@@ -16,4 +16,4 @@ status:
     class: is-danger is-light
   unknown:
     label: Unconfirmed
-    class: is-light
+    class: ext-tag-unconfirmed

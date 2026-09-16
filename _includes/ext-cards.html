@@ -12,7 +12,7 @@
     {% if include.only == "supported" and compat_ok == false %}{% continue %}{% endif %}
     {% if include.only == "other" and compat_ok %}{% continue %}{% endif %}
     <li>
-      <a class="ext-card" href="{{ ext.url }}">
+      <a class="ext-card{% unless include.only == "supported" %} is-muted{% endunless %}" href="{{ ext.url }}">
         <span class="ext-card-logo-slot">
           {%- if ext.logo %}<img class="ext-card-logo" src="{{ ext.logo }}" alt="" />{% endif -%}
         </span>
@@ -21,15 +21,15 @@
           {% assign compat_status = ext.compat[site.data.compat.current].status | default: "unknown" %}
           {% if ext.dist.bundled %}{% assign compat_status = "supported" %}{% endif %}
           {% if ext.archived %}
-            <span class="tag is-danger is-light">Archived</span>
+            <span class="tag ext-tag is-danger is-light">Archived</span>
           {% elsif compat_status != "supported" %}
             {% include ext-compat-tag.html %}
           {% elsif ext.dist.bundled %}
-            <span class="tag is-success is-light">Bundled</span>
+            <span class="tag ext-tag is-success is-light">Bundled</span>
           {% else %}
             {% assign repo_owner = ext.dev.github | split: "/" | first %}
             {% if repo_owner == "mopidy" %}
-              <span class="tag is-primary is-light">First-party</span>
+              <span class="tag ext-tag is-primary is-light">First-party</span>
             {% endif %}
           {% endif %}
         </span>

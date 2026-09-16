@@ -114,6 +114,38 @@ pre.highlight {
   }
 }
 
+.tag.ext-tag {
+  border: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.tag.ext-tag.is-warning.is-light {
+  color: hsl(48, 100%, 26%);
+}
+
+.tag.ext-tag-unconfirmed {
+  background-color: $white;
+  color: $grey-dark;
+}
+
+.ext-card.is-muted {
+  background-color: $white-ter;
+  border-color: darken($white-ter, 6%);
+
+  // Same specificity as `.ext-card:hover`, and later.
+  &:hover {
+    border-color: $primary;
+  }
+
+  .ext-card-title {
+    color: darken($link, 9%);
+  }
+
+  .ext-card-logo {
+    filter: grayscale(1);
+    opacity: 0.55;
+  }
+}
+
 .ext-card-head {
   display: flex;
   flex-wrap: wrap;

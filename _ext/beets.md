@@ -1,5 +1,6 @@
 ---
 title: mopidy-beets
+logo: /media/ext/logo-beets.png
 type: backend
 dev:
   github: mopidy/mopidy-beets

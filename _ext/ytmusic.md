@@ -7,7 +7,7 @@ dev:
 dist:
   pypi: mopidy-ytmusic
   arch-aur: mopidy-ytmusic
-logo: /media/ext/youtubemusic.png
+logo: /media/ext/icon-ytmusic.svg
 compat:
   mopidy4:
     status: unsupported

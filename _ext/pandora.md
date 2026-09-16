@@ -1,5 +1,6 @@
 ---
 title: mopidy-pandora
+logo: /media/ext/icon-pandora.svg
 type: backend
 dev:
   github: mopidy/mopidy-pandora

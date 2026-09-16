@@ -1,5 +1,6 @@
 ---
 title: mopidy-subidy
+logo: /media/ext/logo-subidy.png
 type: backend
 dev:
   github: Prior99/mopidy-subidy

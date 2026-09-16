@@ -1,5 +1,6 @@
 ---
 title: mopidy-nad
+logo: /media/ext/logo-nad.png
 type: mixer
 dev:
   github: mopidy/mopidy-nad

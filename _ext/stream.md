@@ -1,5 +1,6 @@
 ---
 title: mopidy-stream
+logo: /media/ext/icon-stream.svg
 type: backend
 dev:
   github: mopidy/mopidy

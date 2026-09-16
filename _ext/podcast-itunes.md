@@ -1,5 +1,6 @@
 ---
 title: mopidy-podcast-itunes
+logo: /media/ext/icon-podcast-itunes.svg
 type: backend
 dev:
   github: tkem/mopidy-podcast-itunes

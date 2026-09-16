@@ -1,5 +1,6 @@
 ---
 title: mopidy-local
+logo: /media/ext/icon-local.svg
 type: backend
 dev:
   github: mopidy/mopidy-local

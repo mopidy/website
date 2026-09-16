@@ -1,5 +1,6 @@
 ---
 title: mopidy-orfradio
+logo: /media/ext/logo-orfradio.svg
 type: backend
 dev:
   github: mopidy/mopidy-orfradio

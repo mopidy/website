@@ -1,5 +1,6 @@
 ---
 title: mopidy-cd
+logo: /media/ext/icon-cd.svg
 type: backend
 dev:
   github: antosart/mopidy-cd

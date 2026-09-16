@@ -9,7 +9,7 @@ dev:
 dist:
   pypi: mopidy-bandcamp
   arch-aur: mopidy-bandcamp
-logo: /media/ext/bandcamp.png
+logo: /media/ext/icon-bandcamp.svg
 compat:
   mopidy4:
     status: unreleased

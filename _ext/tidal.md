@@ -1,7 +1,7 @@
 ---
 title: mopidy-tidal
 service: Tidal
-logo: /media/ext/tidal.png
+logo: /media/ext/icon-tidal.svg
 type: backend
 dev:
   github: EbbLabs/mopidy-tidal

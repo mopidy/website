@@ -1,5 +1,6 @@
 ---
 title: mopidy-internetarchive
+logo: /media/ext/icon-internetarchive.svg
 type: backend
 dev:
   github: tkem/mopidy-internetarchive

@@ -1,5 +1,6 @@
 ---
 title: mopidy-scrobbler
+logo: /media/ext/icon-scrobbler.svg
 type: frontend
 dev:
   github: mopidy/mopidy-scrobbler

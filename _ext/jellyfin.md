@@ -1,6 +1,6 @@
 ---
 title: mopidy-jellyfin
-logo: /media/ext/jellyfin.png
+logo: /media/ext/icon-jellyfin.svg
 type: backend
 dev:
   github: jellyfin/mopidy-jellyfin

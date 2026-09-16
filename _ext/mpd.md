@@ -1,5 +1,6 @@
 ---
 title: mopidy-mpd
+logo: /media/ext/logo-mpd.png
 type: frontend
 dev:
   github: mopidy/mopidy-mpd

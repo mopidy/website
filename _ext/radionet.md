@@ -1,5 +1,6 @@
 ---
 title: mopidy-radionet
+logo: /media/ext/logo-radionet.svg
 type: backend
 dev:
   github: plintx/mopidy-radionet

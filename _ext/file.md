@@ -1,5 +1,6 @@
 ---
 title: mopidy-file
+logo: /media/ext/icon-file.svg
 type: backend
 dev:
   github: mopidy/mopidy

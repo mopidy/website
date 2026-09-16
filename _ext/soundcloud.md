@@ -1,7 +1,7 @@
 ---
 title: mopidy-soundcloud
 service: SoundCloud
-logo: /media/ext/soundcloud.png
+logo: /media/ext/icon-soundcloud.svg
 type: backend
 dev:
   github: mopidy/mopidy-soundcloud

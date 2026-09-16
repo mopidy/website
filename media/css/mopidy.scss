@@ -130,13 +130,10 @@ pre.highlight {
   word-break: break-word;
 }
 
-// The logos are not a set: they run from square icons to wordmarks seven
-// times as wide as they are tall. Only a fixed height holds them together.
-// A row of their own gives the wide ones enough width to stay legible.
 .ext-card-logo-slot {
   display: flex;
   align-items: center;
-  height: 2.5rem;
+  height: 2rem;
 }
 
 .ext-card-logo {

@@ -1,5 +1,6 @@
 ---
 title: mopidy-radiopit
+logo: /media/ext/logo-radiopit.svg
 type: backend
 dev:
   github: andrisdru/radiopit_mopidy

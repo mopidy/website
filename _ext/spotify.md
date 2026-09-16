@@ -1,7 +1,7 @@
 ---
 title: mopidy-spotify
 service: Spotify
-logo: /media/ext/spotify.png
+logo: /media/ext/icon-spotify.svg
 type: backend
 dev:
   github: mopidy/mopidy-spotify

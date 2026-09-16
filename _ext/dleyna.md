@@ -1,5 +1,6 @@
 ---
 title: mopidy-dleyna
+logo: /media/ext/icon-dleyna.svg
 type: backend
 dev:
   github: tkem/mopidy-dleyna

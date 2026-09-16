@@ -1,5 +1,6 @@
 ---
 title: mopidy-mixcloud
+logo: /media/ext/icon-mixcloud.svg
 type: backend
 dev:
   github: unusualcomputers/unusualcomputers

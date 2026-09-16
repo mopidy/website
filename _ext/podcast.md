@@ -1,5 +1,6 @@
 ---
 title: mopidy-podcast
+logo: /media/ext/icon-podcast.svg
 type: backend
 dev:
   github: tkem/mopidy-podcast

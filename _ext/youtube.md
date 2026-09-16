@@ -1,5 +1,6 @@
 ---
 title: mopidy-youtube
+logo: /media/ext/icon-youtube.svg
 type: backend
 dev:
   github: natumbri/mopidy-youtube

@@ -1,5 +1,6 @@
 ---
 title: mopidy-raspberry-gpio
+logo: /media/ext/icon-raspberry-gpio.svg
 type: frontend
 dev:
   github: pimoroni/mopidy-raspberry-gpio

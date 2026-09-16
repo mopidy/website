@@ -1,5 +1,6 @@
 ---
 title: mopidy-funkwhale
+logo: /media/ext/logo-funkwhale.svg
 type: backend
 dev:
   gitlab:

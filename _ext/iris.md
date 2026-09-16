@@ -1,5 +1,6 @@
 ---
 title: mopidy-iris
+logo: /media/ext/logo-iris.png
 type: web
 dev:
   github: jaedb/iris

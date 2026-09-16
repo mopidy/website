@@ -16,14 +16,14 @@
 @theme {
   --font-sans: "Asap", ui-sans-serif, system-ui, sans-serif;
 
-  --color-page: light-dark(var(--color-white), var(--color-slate-900));
-  --color-surface: light-dark(var(--color-white), var(--color-slate-800));
-  --color-surface-sunken: light-dark(var(--color-slate-50), var(--color-slate-950));
-  --color-surface-muted: light-dark(var(--color-slate-100), var(--color-slate-800));
-  --color-border: light-dark(var(--color-slate-200), var(--color-slate-700));
-  --color-fg: light-dark(var(--color-slate-700), var(--color-slate-300));
-  --color-fg-strong: light-dark(var(--color-slate-900), var(--color-slate-100));
-  --color-fg-muted: light-dark(var(--color-slate-500), var(--color-slate-400));
+  --color-page: light-dark(var(--color-white), var(--color-zinc-900));
+  --color-surface: light-dark(var(--color-white), var(--color-zinc-800));
+  --color-surface-sunken: light-dark(var(--color-zinc-50), var(--color-zinc-950));
+  --color-surface-muted: light-dark(var(--color-zinc-100), var(--color-zinc-800));
+  --color-border: light-dark(var(--color-zinc-200), var(--color-zinc-700));
+  --color-fg: light-dark(var(--color-zinc-700), var(--color-zinc-300));
+  --color-fg-strong: light-dark(var(--color-zinc-900), var(--color-zinc-100));
+  --color-fg-muted: light-dark(var(--color-zinc-500), var(--color-zinc-400));
   --color-accent: light-dark(var(--color-blue-700), var(--color-blue-400));
 
   --color-tone-warn-bg: light-dark(var(--color-amber-50), var(--color-amber-950));
@@ -34,8 +34,8 @@
   --color-tone-ok-fg: light-dark(var(--color-emerald-800), var(--color-emerald-200));
   --color-tone-info-bg: light-dark(var(--color-blue-50), var(--color-blue-950));
   --color-tone-info-fg: light-dark(var(--color-blue-800), var(--color-blue-200));
-  --color-tone-neutral-bg: light-dark(var(--color-white), var(--color-slate-900));
-  --color-tone-neutral-fg: light-dark(var(--color-slate-600), var(--color-slate-300));
+  --color-tone-neutral-bg: light-dark(var(--color-white), var(--color-zinc-900));
+  --color-tone-neutral-fg: light-dark(var(--color-zinc-600), var(--color-zinc-300));
 }
 
 :root {

@@ -9,6 +9,12 @@ dev:
   codecov: true
 dist:
   pypi: mopidy-jamendo
+compat:
+  mopidy4:
+    status: unknown
+    note: >
+      Mopidy 4 starts with this extension. Playing music is not confirmed.
+    checked: 2026-09-16
 ---
 
 A backend for playing music from the

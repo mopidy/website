@@ -11,6 +11,11 @@ dist:
   apt-debian: mopidy-mpris
   apt-mopidy: mopidy-mpris
   arch-aur: mopidy-mpris
+compat:
+  mopidy4:
+    status: supported
+    since: "4.0.0"
+    checked: 2026-09-16
 ---
 
 Frontend for controlling Mopidy through the

@@ -14,6 +14,11 @@ dist:
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-local
+compat:
+  mopidy4:
+    status: supported
+    since: "4.0.0"
+    checked: 2026-09-16
 ---
 
 Extension for playing music from your local music archive.

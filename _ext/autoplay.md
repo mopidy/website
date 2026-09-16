@@ -6,6 +6,12 @@ dev:
 dist:
   pypi: mopidy-autoplay
   arch-aur: mopidy-autoplay
+compat:
+  mopidy4:
+    status: unknown
+    note: >
+      Mopidy 4 starts with this extension. Playing music is not confirmed.
+    checked: 2026-09-16
 ---
 
 Mopidy extension to automatically pick up where you left off and start playing

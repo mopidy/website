@@ -1,0 +1,19 @@
+current: mopidy4
+label: Mopidy 4
+
+status:
+  supported:
+    label: Mopidy 4
+    class: is-success
+  unreleased:
+    label: Mopidy 4 pending
+    class: is-warning
+  in-progress:
+    label: Mopidy 4 in progress
+    class: is-warning is-light
+  unsupported:
+    label: Mopidy 3 only
+    class: is-danger is-light
+  unknown:
+    label: Unconfirmed
+    class: is-light

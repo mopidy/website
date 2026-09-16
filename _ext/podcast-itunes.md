@@ -13,6 +13,11 @@ dist:
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-podcast-itunes
+compat:
+  mopidy4:
+    status: supported
+    since: "4.0.0"
+    checked: 2026-09-16
 ---
 
 This is an extension to the [mopidy-podcast](/ext/podcast/) backend that lets

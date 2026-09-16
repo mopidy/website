@@ -11,6 +11,11 @@ dist:
   apt-debian: mopidy-alsamixer
   apt-mopidy: mopidy-alsamixer
   arch-aur: mopidy-alsamixer
+compat:
+  mopidy4:
+    status: supported
+    since: "3.0.0"
+    checked: 2026-09-16
 ---
 
 Extension for controlling volume on a Linux system using

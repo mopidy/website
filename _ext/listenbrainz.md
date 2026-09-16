@@ -11,6 +11,11 @@ dist:
     tap: mopidy/mopidy
     formula: mopidy-listenbrainz
 logo: /media/ext/listenbrainz.svg
+compat:
+  mopidy4:
+    status: supported
+    since: "0.4.0"
+    checked: 2026-09-16
 ---
 
 Extension for recording song listens to [ListenBrainz](https://listenbrainz.org), a libre alternative to

@@ -14,6 +14,11 @@ dist:
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-scrobbler
+compat:
+  mopidy4:
+    status: supported
+    since: "3.0.0"
+    checked: 2026-09-16
 ---
 
 Extension for scrobbling played tracks to [Last.fm](https://www.last.fm/) or [Libre.fm](https://libre.fm/).

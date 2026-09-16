@@ -13,6 +13,11 @@ dist:
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-internetarchive
+compat:
+  mopidy4:
+    status: supported
+    since: "4.0.0"
+    checked: 2026-09-16
 ---
 
 Backend for playing music and audio from the

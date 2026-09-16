@@ -26,6 +26,11 @@ oauth:
     spotify:
       - client_id
       - client_secret
+compat:
+  mopidy4:
+    status: supported
+    since: "5.0.0"
+    checked: 2026-09-16
 ---
 
 Extension for playing music from the [Spotify](https://spotify.com/) music

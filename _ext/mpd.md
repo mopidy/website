@@ -15,6 +15,11 @@ dist:
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-mpd
+compat:
+  mopidy4:
+    status: supported
+    since: "4.0.0"
+    checked: 2026-09-16
 ---
 
 Frontend that provides a full MPD server implementation

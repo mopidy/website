@@ -14,6 +14,11 @@ dist:
   homebrew:
     tap: mopidy/mopidy
     formula: mopidy-beets
+compat:
+  mopidy4:
+    status: supported
+    since: "5.0.0"
+    checked: 2026-09-16
 ---
 
 A backend for playing music from your [Beets](https://beets.io/)

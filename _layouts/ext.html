@@ -27,6 +27,15 @@ layout: default
   {% assign repo_host_label = "Codeberg" %}
 {% endif %}
 
+{% assign compat = ext.compat[site.data.compat.current] %}
+{% assign compat_status = compat.status | default: "unknown" %}
+{% assign compat_banner = false %}
+{% unless ext.archived or ext.dist.bundled %}
+  {% if compat_status != "supported" or compat.note or compat.links %}
+    {% assign compat_banner = true %}
+  {% endif %}
+{% endunless %}
+
 <section class="section">
   <div class="container">
 
@@ -50,6 +59,9 @@ layout: default
         {% when "web" %}
           web extension
       {% endcase %}
+      {% unless compat_banner %}
+        {% include ext-compat-tag.html %}
+      {% endunless %}
     </h2>
 
     <div class="columns is-variable is-8">
@@ -62,6 +74,10 @@ layout: default
               {{ ext.archived|markdownify }}
             </div>
           </article>
+        {% endif %}
+
+        {% if compat_banner %}
+          {% include ext-compat.html %}
         {% endif %}
 
         <div class="content is-medium">

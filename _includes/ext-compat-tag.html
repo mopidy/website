@@ -1,0 +1,5 @@
+{% unless ext.archived or ext.dist.bundled %}
+  {% assign compat_status = ext.compat[site.data.compat.current].status | default: "unknown" %}
+  {% assign compat_style = site.data.compat.status[compat_status] %}
+  <span class="tag {{ compat_style.class }}">{{ compat_style.label }}</span>
+{% endunless %}

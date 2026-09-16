@@ -31,11 +31,3 @@ SQLite database, and the search uses SQLite's full-text search. Run
 `mopidy local scan` to build it, and again whenever the collection
 changes. Mopidy picks up a scan while it runs, so the scan can come from
 a cron job.
-
-## History
-
-This extension is the result of the merging of three old extensions:
-
-- mopidy-local, which before Mopidy 3 used to be bundled with Mopidy itself.
-- mopidy-local-sqlite, which was an alternative to the old default JSON file storage backend.
-- mopidy-local-images, which provides album art embedded in local files to web clients.

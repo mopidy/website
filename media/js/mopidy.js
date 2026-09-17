@@ -11,41 +11,6 @@ function random(length) {
     ).join('')
 }
 
-function setupNavbarBurger(navbarBurger) {
-  navbarBurger.addEventListener("click", () => {
-    const target = document.getElementById(navbarBurger.dataset.target);
-    navbarBurger.classList.toggle("is-active");
-    target.classList.toggle("is-active");
-  });
-}
-
-function setupTabs(tabContainer) {
-  const tabs = tabContainer.querySelectorAll("li");
-  const contents = [];
-
-  if (tabs.length == 0) {
-    return;
-  }
-
-  tabs.forEach(tab => {
-    const link = tab.querySelector("a");
-    const content = document.querySelector(link.getAttribute("href"));
-    contents.push(content);
-
-    link.addEventListener("click", event => {
-      event.preventDefault();
-
-      tabs.forEach(el => el.classList.remove("is-active"));
-      tab.classList.add("is-active");
-
-      contents.forEach(el => el.classList.add("is-hidden"));
-      content.classList.remove("is-hidden");
-    });
-  });
-
-  tabs[0].querySelector("a").click();
-}
-
 function select(el) {
   const range = document.createRange();
   range.selectNodeContents(el);
@@ -104,7 +69,7 @@ function setupAuth(auth) {
 
   const reset = _ => {
     clearInterval(checkPopupInterval);
-    error.classList.add("is-hidden");
+    error.classList.add("hidden");
     button.classList.remove("is-loading");
   };
 
@@ -124,7 +89,7 @@ function setupAuth(auth) {
         desc = desc.replace(/([.]?$)/, ".");
         error.innerText += ": " + desc;
       }
-      error.classList.remove("is-hidden");
+      error.classList.remove("hidden");
     } else {
       auth.querySelectorAll("[data-name]").forEach(el => {
         el.innerText = event.data[el.dataset.name];
@@ -151,7 +116,7 @@ function setupAuth(auth) {
       if (!popup || popup.closed) {
         reset();
         error.innerText = "Popup closed without completing authentication.";
-        error.classList.remove("is-hidden");
+        error.classList.remove("hidden");
       } else {
         popup.postMessage(state, callbackOrigin);
       }
@@ -194,8 +159,6 @@ function urlEncode(data) {
 }
 
 onReady(() => {
-  document.querySelectorAll(".navbar-burger").forEach(setupNavbarBurger);
-  document.querySelectorAll(".tabs").forEach(setupTabs);
   document.querySelectorAll(".copy").forEach(setupCopy);
   document.querySelectorAll(".auth").forEach(setupAuth);
   document.querySelectorAll("[data-iframe]").forEach(setupLazyIFrame);

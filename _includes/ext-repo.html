@@ -14,8 +14,8 @@
 {%- endif -%}
 
 {%- if repo_account -%}
-  <img class="ext-card-repo-icon"
-       src="https://unpkg.com/simple-icons@latest/icons/{{ repo_host }}.svg"
-       alt="{{ repo_host }}" />
+  <span class="h-3.5 w-3.5 shrink-0 bg-current opacity-70"
+        style="mask: url(https://unpkg.com/simple-icons@latest/icons/{{ repo_host }}.svg) center / contain no-repeat"
+        aria-hidden="true"></span>
   {{ repo_account }}
 {%- endif -%}

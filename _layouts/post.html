@@ -4,76 +4,57 @@ layout: default
 
 {% assign post = page %}
 
-<section class="section">
-  <div class="container">
+<main class="mx-auto max-w-6xl px-6 py-12">
 
-    <nav class="breadcrumb" aria-label="breadcrumbs">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li class="is-active"><a href="{{ post.url }}">{{ post.title }}</a></li>
-      </ol>
-    </nav>
+  <nav class="mb-4 flex gap-2 text-sm text-fg-muted" aria-label="Breadcrumb">
+    <a href="/" class="text-accent hover:underline">Home</a>
+    <span>/</span>
+    <a href="/blog/" class="text-accent hover:underline">Blog</a>
+    <span>/</span>
+    <span>{{ post.title }}</span>
+  </nav>
 
-    <article class="hentry content">
+  <article class="hentry">
 
-      <h1 class="entry-title title is-size-2">
-        <a href="{{ post.url }}" class="has-text-black">{{ post.title }}</a>
-      </h1>
+    <h1 class="entry-title text-4xl font-bold tracking-tight text-fg-strong">{{ post.title }}</h1>
 
-      <p class="has-text-grey">
-        <time class="updated" datetime="{{ post.date | date: "%F" }}">
-          {{ post.date | date: "%B %e, %Y" }}
-        </time>
-      </p>
+    <p class="mt-1 text-sm text-fg-muted">
+      <time class="updated" datetime="{{ post.date | date: "%F" }}">
+        {{ post.date | date: "%B %e, %Y" }}
+      </time>
+    </p>
 
-      <div class="columns is-variable is-8">
-        <div class="column is-8">
-
-          <div class="entry-content is-size-5">
-            {{ content }}
-          </div>
-
-        </div>
-        <div class="column is-4">
-
-          {% include blog-authors.html %}
-
-        </div>
+    <div class="mt-8 grid gap-10 lg:grid-cols-3">
+      <div class="entry-content post-body prose prose-lg min-w-0 lg:col-span-2">
+        {{ content }}
       </div>
-
-    </article>
-
-  </div>
-</section>
-
-{% if post.discourse-topic-id %}
-  <section class="section">
-    <div class="container">
-
-      <h2 class="title">Comments</h2>
-
-      <div class="columns is-variable is-8">
-        <div class="column is-8">
-
-          <div id="discourse-comments"></div>
-          <script type="text/javascript">
-            window.DiscourseEmbed = {
-              discourseUrl: "https://discourse.mopidy.com/",
-              topicId: {{ post.discourse-topic-id }}
-            };
-            (function(d) {
-              var s = document.createElement("script");
-              s.type = "text/javascript";
-              s.async = true;
-              s.src = window.DiscourseEmbed.discourseUrl + "javascripts/embed.js";
-              document.body.appendChild(s);
-            })();
-          </script>
-
-        </div>
+      <div>
+        {% include blog-authors.html %}
       </div>
-
     </div>
-  </section>
-{% endif %}
+
+  </article>
+
+  {% if post.discourse-topic-id %}
+    <section class="mt-16 border-t border-border pt-10">
+      <h2 class="text-2xl font-semibold text-fg-strong">Comments</h2>
+      <div class="mt-6 max-w-3xl">
+        <div id="discourse-comments"></div>
+        <script type="text/javascript">
+          window.DiscourseEmbed = {
+            discourseUrl: "https://discourse.mopidy.com/",
+            topicId: {{ post.discourse-topic-id }}
+          };
+          (function(d) {
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = window.DiscourseEmbed.discourseUrl + "javascripts/embed.js";
+            document.body.appendChild(s);
+          })();
+        </script>
+      </div>
+    </section>
+  {% endif %}
+
+</main>

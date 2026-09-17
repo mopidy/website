@@ -2,10 +2,8 @@
 layout: base
 title: Authenticate Mopidy-Spotify
 ---
-<style type="text/css">
-  html, body, .columns { height: 100%; }
+<style>
   pre { white-space: normal; overflow-wrap: anywhere; }
-  .columns { align-items:center; }
 </style>
 
 <script type="text/javascript">
@@ -27,11 +25,7 @@ title: Authenticate Mopidy-Spotify
 
   function show(id) {
     document.querySelectorAll('.message').forEach(element => {
-      if (element.id === id) {
-        element.classList.remove('is-hidden');
-      } else {
-        element.classList.add('is-hidden');
-      }
+      element.classList.toggle('hidden', element.id !== id);
     });
   }
 
@@ -69,39 +63,37 @@ title: Authenticate Mopidy-Spotify
     }
   });
 </script>
-<div class="columns is-centered">
-  <div class="column is-half">
-    <div class="message is-warning is-hidden" id="redirect">
-      <div class="message-header">
-        <p>Redirecting</p>
-      </div>
-      <div class="message-body">
+
+<main class="flex flex-1 items-center justify-center px-6 py-12">
+  <div class="w-full max-w-lg">
+
+    <section class="message hidden overflow-hidden rounded-xl border border-border bg-tone-warn-bg" id="redirect">
+      <h1 class="border-b border-border px-4 py-2 font-semibold text-tone-warn-fg">Redirecting</h1>
+      <div class="message-body px-4 py-3 text-tone-warn-fg">
         You are being forwarded to Spotify for authorization...
       </div>
-    </div>
-    <div class="message is-success is-hidden" id="result">
-      <div class="message-header">
-        <p>Success</p>
-      </div>
-      <div class="message-body">
+    </section>
+
+    <section class="message hidden overflow-hidden rounded-xl border border-border bg-tone-ok-bg" id="result">
+      <h1 class="border-b border-border px-4 py-2 font-semibold text-tone-ok-fg">Success</h1>
+      <div class="message-body px-4 py-3 text-tone-ok-fg">
         Please copy the following text before closing this site. Mopidy will
         complete the authentication and store a token on your machine.
-        <pre class="select copy"></pre>
+        <pre class="select copy mt-3 rounded-lg border border-border bg-surface p-3 font-mono text-sm text-fg"></pre>
       </div>
-    </div>
-    <div class="message is-danger is-hidden" id="error">
-      <div class="message-header">
-        <p>Error</p>
-      </div>
-      <div class="message-body"></div>
-    </div>
+    </section>
+
+    <section class="message hidden overflow-hidden rounded-xl border border-border bg-tone-danger-bg" id="error">
+      <h1 class="border-b border-border px-4 py-2 font-semibold text-tone-danger-fg">Error</h1>
+      <div class="message-body px-4 py-3 text-tone-danger-fg"></div>
+    </section>
+
     <noscript>
-      <div class="message is-danger">
-        <div class="message-header">
-          <p>Error</p>
-        </div>
-        <div class="message-body">This page requires Javascript.</div>
-      </div>
+      <section class="overflow-hidden rounded-xl border border-border bg-tone-danger-bg">
+        <h1 class="border-b border-border px-4 py-2 font-semibold text-tone-danger-fg">Error</h1>
+        <div class="px-4 py-3 text-tone-danger-fg">This page requires Javascript.</div>
+      </section>
     </noscript>
+
   </div>
-</div>
+</main>

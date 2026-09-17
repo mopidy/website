@@ -2,11 +2,18 @@
   The layout decides when to include this.
 {% endcomment %}
 
-<article class="message {{ site.data.compat.status[compat_status].class }}">
-  <div class="message-header">
+{% case compat_status %}
+  {% when "unreleased" %}{% assign tone = "warn" %}
+  {% when "in-progress" %}{% assign tone = "warn" %}
+  {% when "unsupported" %}{% assign tone = "danger" %}
+  {% when "supported" %}{% assign tone = "ok" %}
+  {% else %}{% assign tone = "neutral" %}
+{% endcase %}
+<article class="not-prose mb-6 rounded-xl border border-border bg-tone-{{ tone }}-bg">
+  <div class="border-b border-border px-4 py-2 font-semibold text-tone-{{ tone }}-fg">
     {{ site.data.compat.status[compat_status].label }}
   </div>
-  <div class="message-body content">
+  <div class="px-4 py-3 text-sm">
     <p>
       {{ compat.note | markdownify | remove: "<p>" | remove: "</p>" | strip }}
 
@@ -46,7 +53,7 @@
     </p>
 
     {% if compat.checked %}
-      <p class="is-size-7">
+      <p class="mt-2 text-xs text-fg-muted">
         Last checked {{ compat.checked | date: "%-d %B %Y" }}.
       </p>
     {% endif %}

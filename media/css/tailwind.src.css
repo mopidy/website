@@ -1,0 +1,123 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@source "../../_includes";
+@source "../../_layouts";
+@source "../../*.html";
+@source "../../ext";
+@source "../../blog";
+@source "../../auth";
+@source "../../authenticate";
+@source "../../_posts";
+
+/* Badge tints are chosen per status at render time, so the class names are
+   not literal in the templates. */
+@source inline("{bg,text}-tone-{warn,danger,ok,info,neutral}-{bg,fg}");
+
+@theme {
+  --font-sans: "Asap", ui-sans-serif, system-ui, sans-serif;
+
+  --color-page: light-dark(var(--color-white), var(--color-zinc-900));
+  --color-surface: light-dark(var(--color-white), var(--color-zinc-800));
+  --color-surface-sunken: light-dark(var(--color-zinc-50), var(--color-zinc-950));
+  --color-surface-muted: light-dark(var(--color-zinc-100), var(--color-zinc-800));
+  --color-border: light-dark(var(--color-zinc-200), var(--color-zinc-700));
+  --color-fg: light-dark(var(--color-zinc-700), var(--color-zinc-300));
+  --color-fg-strong: light-dark(var(--color-zinc-900), var(--color-zinc-100));
+  --color-fg-muted: light-dark(var(--color-zinc-500), var(--color-zinc-400));
+  --color-accent: light-dark(var(--color-blue-700), var(--color-blue-400));
+
+  --color-tone-warn-bg: light-dark(var(--color-amber-50), var(--color-amber-950));
+  --color-tone-warn-fg: light-dark(var(--color-amber-800), var(--color-amber-200));
+  --color-tone-danger-bg: light-dark(var(--color-rose-50), var(--color-rose-950));
+  --color-tone-danger-fg: light-dark(var(--color-rose-800), var(--color-rose-200));
+  --color-tone-ok-bg: light-dark(var(--color-emerald-50), var(--color-emerald-950));
+  --color-tone-ok-fg: light-dark(var(--color-emerald-800), var(--color-emerald-200));
+  --color-tone-info-bg: light-dark(var(--color-blue-50), var(--color-blue-950));
+  --color-tone-info-fg: light-dark(var(--color-blue-800), var(--color-blue-200));
+  --color-tone-neutral-bg: light-dark(var(--color-white), var(--color-zinc-900));
+  --color-tone-neutral-fg: light-dark(var(--color-zinc-600), var(--color-zinc-300));
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+/* Typography plugin colours, so prose follows color-scheme like the rest
+   and needs no prose-invert. */
+.prose {
+  --tw-prose-body: var(--color-fg);
+  --tw-prose-headings: var(--color-fg-strong);
+  --tw-prose-lead: var(--color-fg-muted);
+  --tw-prose-links: var(--color-accent);
+  --tw-prose-bold: var(--color-fg-strong);
+  --tw-prose-counters: var(--color-fg-muted);
+  --tw-prose-bullets: var(--color-border);
+  --tw-prose-hr: var(--color-border);
+  --tw-prose-quotes: var(--color-fg-strong);
+  --tw-prose-quote-borders: var(--color-border);
+  --tw-prose-captions: var(--color-fg-muted);
+  --tw-prose-code: var(--color-fg-strong);
+  --tw-prose-pre-code: var(--color-fg);
+  --tw-prose-pre-bg: var(--color-surface-sunken);
+  --tw-prose-th-borders: var(--color-border);
+  --tw-prose-td-borders: var(--color-border);
+}
+
+.select {
+  user-select: all;
+}
+
+.copy-container {
+  position: relative;
+}
+
+.copy-container button {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  padding: 0.1rem 0.5rem;
+  font-size: 0.6875rem;
+  color: var(--color-fg-muted);
+  cursor: pointer;
+}
+
+/* Long-form reading. `balance` keeps a heading from ending on one word;
+   `pretty` keeps a paragraph from ending on one. */
+.prose :is(h1, h2, h3, h4) {
+  text-wrap: balance;
+}
+
+.prose p,
+.prose li {
+  text-wrap: pretty;
+}
+
+.prose a {
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+.prose a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.post-body > p:first-child {
+  font-size: 1.15em;
+  line-height: 1.6;
+  color: var(--color-fg-muted);
+}
+
+.prose :is(p, li) {
+  line-height: 1.65;
+}
+
+.prose p {
+  margin-block: 1.5em;
+}
+
+.is-loading {
+  opacity: 0.6;
+}

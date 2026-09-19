@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 432"
+  width="576" height="432" role="img"
+  aria-label="A terminal window that shows the Mopidy server starting up and logging that it enables extensions, starts backends, logs into Spotify, and serves HTTP and MPD clients.">
+  <style>
+    text {
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+      font-size: 14px;
+      fill: #cdd6f4;
+      white-space: pre;
+    }
+    .time { fill: #679e95; }
+    .level { fill: #89b4fa; }
+    .thread { fill: #74a172; }
+    .logger { fill: #ae9e7a; }
+    .prompt { fill: #a6e3a1; }
+    .cmd { fill: #89b4fa; }
+    .title { font-size: 11.5px; fill: #6c7086; }
+
+    /* Resting state is the finished terminal, so the animations can be
+       switched off without hiding anything. */
+    .e0, .e1, .e2, .e3, .e4, .e5, .e6, .e7, .cursor { opacity: 1; }
+    #typing { opacity: 0; transform: translateX(75.6px); }
+
+    .e0 { animation: e0 18s infinite both; } .e1 { animation: e1 18s infinite both; } .e2 { animation: e2 18s infinite both; } .e3 { animation: e3 18s infinite both; } .e4 { animation: e4 18s infinite both; } .e5 { animation: e5 18s infinite both; } .e6 { animation: e6 18s infinite both; } .e7 { animation: e7 18s infinite both; }
+    .cursor { animation: cursor 18s infinite both; }
+    .caret { animation: blink 1.06s infinite; }
+    #typing { animation: type 18s infinite both; }
+
+    @keyframes blink { 0%,50% { opacity: 1; } 50.01%,100% { opacity: 0; } }
+    @keyframes type {
+      0% { opacity: 1; transform: translateX(0); }
+      2.222% { opacity: 1; transform: translateX(0); animation-timing-function: steps(9, end); }
+      8.333% { opacity: 1; transform: translateX(75.6px); }
+      9.722% { opacity: 1; transform: translateX(75.6px); }
+      9.778%,88.889% { opacity: 0; transform: translateX(75.6px); }
+      91.111%,100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes e0{0%,11.111%{opacity:0}11.778%,88.889%{opacity:1}91.111%,100%{opacity:0}} @keyframes e1{0%,11.944%{opacity:0}12.611%,88.889%{opacity:1}91.111%,100%{opacity:0}} @keyframes e2{0%,12.778%{opacity:0}13.444%,88.889%{opacity:1}91.111%,100%{opacity:0}} @keyframes e3{0%,22.222%{opacity:0}22.889%,88.889%{opacity:1}91.111%,100%{opacity:0}} @keyframes e4{0%,38.889%{opacity:0}39.556%,88.889%{opacity:1}91.111%,100%{opacity:0}} @keyframes e5{0%,39.722%{opacity:0}40.389%,88.889%{opacity:1}91.111%,100%{opacity:0}} @keyframes e6{0%,40.556%{opacity:0}41.222%,88.889%{opacity:1}91.111%,100%{opacity:0}} @keyframes e7{0%,44.444%{opacity:0}45.111%,88.889%{opacity:1}91.111%,100%{opacity:0}} @keyframes cursor{0%,46.667%{opacity:0}47.333%,88.889%{opacity:1}91.111%,100%{opacity:0}}
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+
+  <rect width="576" height="432" fill="#1e1e2e"/>
+
+  <!-- Window title bar -->
+  <rect width="576" height="34" fill="#181825"/>
+  <rect y="33" width="576" height="1" fill="#313244"/>
+  <circle cx="22" cy="17" r="5.5" fill="#f38ba8"/>
+  <circle cx="42" cy="17" r="5.5" fill="#f9e2af"/>
+  <circle cx="62" cy="17" r="5.5" fill="#a6e3a1"/>
+  <text class="title" x="288" y="21" text-anchor="middle">mopidy@raspberrypi: ~</text>
+
+  <!-- Prompt and command -->
+  <text x="20" y="60" xml:space="preserve"><tspan class="prompt">$ </tspan><tspan class="cmd">mopidy -v</tspan></text>
+  <g id="typing">
+    <rect x="36.8" y="48" width="539.2" height="17" fill="#1e1e2e"/>
+    <rect x="36.8" y="48" width="8.4" height="17" fill="#cdd6f4" opacity="0.8" class="caret"/>
+  </g>
+
+  <!-- Log output -->
+  <text class="e0" x="20" y="78" xml:space="preserve"><tspan class="time">18:42:01</tspan><tspan class="level"> INFO</tspan><tspan class="thread">  MainThread</tspan><tspan class="logger"> mopidy._app.cli</tspan></text>
+  <text class="e0" x="20" y="96" xml:space="preserve">               Starting Mopidy 4.0.0</text>
+  <text class="e1" x="20" y="114" xml:space="preserve"><tspan class="time">        </tspan><tspan class="level"> INFO</tspan><tspan class="thread">  MainThread</tspan><tspan class="logger"> mopidy._app.extensions</tspan></text>
+  <text class="e1" x="20" y="132" xml:space="preserve">               Enabled extensions: file, http, local, m3u,</text>
+  <text class="e1" x="20" y="150" xml:space="preserve">               mpd, spotify, stream</text>
+  <text class="e2" x="20" y="168" xml:space="preserve"><tspan class="time">        </tspan><tspan class="level"> INFO</tspan><tspan class="thread">  MainThread</tspan><tspan class="logger"> mopidy._app.server</tspan></text>
+  <text class="e2" x="20" y="186" xml:space="preserve">               Starting Mopidy backends: FileBackend,</text>
+  <text class="e2" x="20" y="204" xml:space="preserve">               LocalBackend, M3UBackend, SpotifyBackend</text>
+  <text class="e3" x="20" y="222" xml:space="preserve"><tspan class="time">18:42:03</tspan><tspan class="level"> INFO</tspan><tspan class="thread">  SpotifyBackend-6</tspan><tspan class="logger"> mopidy_spotify.web</tspan></text>
+  <text class="e3" x="20" y="240" xml:space="preserve">               Logged into Spotify Web API as jodal</text>
+  <text class="e4" x="20" y="258" xml:space="preserve"><tspan class="time">18:42:06</tspan><tspan class="level"> INFO</tspan><tspan class="thread">  MainThread</tspan><tspan class="logger"> mopidy._app.server</tspan></text>
+  <text class="e4" x="20" y="276" xml:space="preserve">               Starting Mopidy frontends: HttpFrontend,</text>
+  <text class="e4" x="20" y="294" xml:space="preserve">               MpdFrontend</text>
+  <text class="e5" x="20" y="312" xml:space="preserve"><tspan class="time">        </tspan><tspan class="level"> INFO</tspan><tspan class="thread">  HttpFrontend-9</tspan><tspan class="logger"> mopidy._exts.http.actor</tspan></text>
+  <text class="e5" x="20" y="330" xml:space="preserve">               HTTP server running at [::ffff:127.0.0.1]:6680</text>
+  <text class="e6" x="20" y="348" xml:space="preserve"><tspan class="time">        </tspan><tspan class="level"> INFO</tspan><tspan class="thread">  MainThread</tspan><tspan class="logger"> mopidy_mpd.actor</tspan></text>
+  <text class="e6" x="20" y="366" xml:space="preserve">               MPD server running at [::ffff:127.0.0.1]:6600</text>
+  <text class="e7" x="20" y="384" xml:space="preserve"><tspan class="time">18:42:07</tspan><tspan class="level"> INFO</tspan><tspan class="thread">  MpdSession-13</tspan><tspan class="logger"> mopidy_mpd.session</tspan></text>
+  <text class="e7" x="20" y="402" xml:space="preserve">               New MPD connection from [::ffff:127.0.0.1]:46160</text>
+
+  <!-- Idle cursor -->
+  <g class="cursor">
+    <rect x="20" y="408" width="8.4" height="17" fill="#cdd6f4" opacity="0.8" class="caret"/>
+  </g>
+</svg>
